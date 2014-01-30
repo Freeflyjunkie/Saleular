@@ -15,7 +15,7 @@ namespace Saleular.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Saleular About Us";
 
             return View();
         }

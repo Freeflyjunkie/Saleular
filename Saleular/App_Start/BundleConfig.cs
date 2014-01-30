@@ -24,7 +24,7 @@ namespace Saleular
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap/bootstrap-cosmo.css",
+                      "~/Content/bootstrap/bootstrap-yeti.css",
                       "~/Content/site.css"));
         }
     }
