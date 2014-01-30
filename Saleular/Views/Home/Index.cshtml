@@ -2,74 +2,164 @@
     ViewBag.Title = "Sell Your iPhone";
 }
 
-<style>
-    h2, hr {
-        padding: 0px;
-        margin: 10px;
-    }
 
-    .lead {
+<style>
+    #offerpanel {
         padding: 0px;
         margin: 0px;
     }
+
+    #offerspaid {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .panel-heading {
+        padding: 3px 3px 3px 3px;
+    }
+
+    .panel-body {
+        padding: 7px 7px 7px 7px;
+    }
+
+    .alert{
+        margin: 0px 0px 0px 0px;
+        padding: 15px 0px 0px 0px;
+        font-size: 15px;
+    }        
 </style>
+<script type="text/javascript">
+    $(DocumentIsReady);
+    function DocumentIsReady() {
 
-<div class="row">
-    <div class="col-md-6">
-        <p class="lead">We pay the most for your used or new iPhone <em>Guarenteed!</em></p>
-    </div>
-    <div class="col-md-6">
-        <a href="http://asp.net" class="btn btn-info">Get a Quote &raquo;</a>
-    </div>
-</div>
+        var c = $('#carousel');
+        c.carousel();
 
-<div class="row">
-    <div class="col-md-9">
-        <img src="~/Images/Carousel/c1.jpg" class="img-responsive" />
-        <h2>3 Easy Steps</h2>
-        <hr />
-        <div class="col-md-4">
-            <h2>Get an Offer</h2>
-            <p>
-                Get an offer on your phone quickly that is guarenteed to beat our competitors.
-            </p>
-            <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        c.on('slid', function () {
+            var index = $(this).find('.active').index();
+            var caption = "";
+            var captiondesc = "";
+
+            if (index == 0) {
+                caption = "Get an Offer";
+                captiondesc = "Get an offer on your phone quickly that is guarenteed to beat our competitors.";
+            }
+
+            if (index == 1) {
+                caption = "Ship It";
+                captiondesc = "Request a free shipping label and ship your phone quickly and easily using Fedex or the USPS.";
+            }
+
+            if (index == 2) {
+                caption = "Get Paid";
+                captiondesc = "Once your iPhone is received and processed you will receive payment via PayPal or a check.";
+            }
+
+            $('#carouselCaption').text(caption);
+            $('#carouselCaptionDesc').text(captiondesc);
+        });
+    }
+</script>
+<section class="row">
+    <div class="col-lg-12 col-md-12 visible-lg visible-md">
+        <div style="float: left; padding-right: 20px">
+            <h2 id="carouselCaption">Get an Offer</h2>
         </div>
-        <div class="col-md-5">
-            <h2>Ship it </h2>
-            <p>Request a free shipping label and ship your phone quickly and easily using Fedex or the USPS.</p>
-            <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Get Paid</h2>
-            <p>As soon as your iPhone is received and processed you will receive payment via PayPal or a check.</p>
-            <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <div id="carouselCaptionDesc" class="alert" style="float: left; margin-top: 0px">
+            Get an offer on your phone quickly that is guarenteed to beat our competitors.
         </div>
     </div>
-    <div class="col-md-3">
-        <div class="panel panel-info">
+</section>
+<section class="row">
+    <section class="col-lg-9 col-md-8">
+        <div style="margin-bottom: 10px" class="carousel slide visible-lg visible-md" data-interval="5000" id="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel" data-slide-to="1"></li>
+                <li data-target="#carousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="~/Images/Carousel/c1.jpg" class="img-responsive" alt="1" />
+
+                </div>
+                <div class="item">
+                    <img src="~/Images/Carousel/c2.jpg" class="img-responsive" alt="2" />
+
+                </div>
+                <div class="item">
+                    <img src="~/Images/Carousel/c3.jpg" class="img-responsive" alt="3" />
+
+                </div>
+            </div>
+            <a href="#carousel" class="carousel-control left" data-slide="prev"><span class="icon-prev"></span></a>
+            <a href="#carousel" class="carousel-control right" data-slide="next"><span class="icon-next"></span></a>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12">                
+                <h2>3 Easy Steps</h2>
+                <hr />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Get an Offer</h2>
+                <p>
+                    Get an offer on your phone quickly that is guarenteed to beat our competitors.
+                </p>
+                <p><a class="btn btn-primary" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn More &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Ship It</h2>
+                <p>Request a free shipping label and ship your phone quickly and easily using Fedex or the USPS.</p>
+                <p><a class="btn btn-primary" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn More &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Get Paid</h2>
+                <p>Once your iPhone is received and processed you will receive payment via PayPal or a check.</p>
+                <p><a class="btn btn-primary" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+            </div>
+        </div>
+    </section>
+    <aside class="col-lg-3 col-md-4 col-sm-5 col-xs-8">
+        <div style="padding-bottom: 10px">
+            <a href="http://asp.net" class="btn btn-success">Sell Your iPhone &raquo;</a>
+        </div>
+        <div id="offerpanel" class="panel panel-footer" style="margin: 0px; padding: 0px;">
             <div class="panel-heading">
-                Top iPhone 5S Offers Paid
+                <div>
+                    <h4 id="offerspaid">Offers Paid For iPhone 5</h4>
+                </div>
             </div>
             <div class="panel-body">
-                16GB Verizon
-                <br/>
-                Flawless Condition
-                <br/>
-                $390
-                <br/>
-                <br />
-                iPhone<br />
-                16GB Verizon<br />
-                Good Condition<br />
-                $365<br /><br />
-
-                iPhone<br />
-                16GB Sprint<br />
-                Flawless Condition<br />
-                $370<br /><br />
+                <div>
+                    16GB Verizon
+                    <br />
+                    Flawless Condition
+                    <br />
+                    <span class="lead">$390</span>
+                </div>
+                <hr />
+                <div>
+                    16GB Verizon
+                    <br />
+                    Flawless Condition
+                    <br />
+                    <span class="lead">$390</span>
+                </div>
+                <hr />
+                <div>
+                    16GB Verizon
+                    <br />
+                    Flawless Condition
+                    <br />
+                    <span class="lead">$390</span>
+                </div>
             </div>
         </div>
-        
-    </div>
-</div>   
+    </aside>
+</section>
+
+
+
+
