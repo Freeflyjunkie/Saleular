@@ -6,14 +6,37 @@
 
 
 <style>
+    .thin-gray-border {
+        border: 1px solid #cbcbcb;
+    }
+
+    .box-shadow-dgray {
+        box-shadow: 5px 5px 5px #888888;
+    }
+
+    .box-shadow-green {
+        box-shadow: 5px 5px 5px #43ac6a;
+    }
+
     #offerpanel {
         padding: 0px;
         margin: 0px;
+        width: 240px;
     }
 
     #offerspaid {
         padding: 0px;
         margin: 0px;
+    }
+
+    .offerspaid-label {
+        font-size: 13px;
+        width: 70px;
+    }
+
+    .offerspaid-value {
+        font-size: 13px;
+        font-weight: 600;
     }
 
     .panel-heading {
@@ -24,15 +47,12 @@
         padding: 7px 7px 7px 7px;
     }
 
-    .phone-price {
+    .offerspaid-price {
         font-weight: 500;
+        text-align: right;
         color: #43ac6a;
     }
 
-    #carousel {
-        border: 1px solid #cbcbcb;
-        box-shadow: 5px 5px 5px #888888;
-    }
 </style>
 <script type="text/javascript">
     $(DocumentIsReady);
@@ -80,7 +100,7 @@
 </section>
 <section class="row">
     <section class="col-lg-9 col-md-8">
-        <div style="margin-bottom: 10px" class="carousel slide visible-lg visible-md" data-interval="6000" id="carousel">
+        <div style="margin-bottom: 10px" class="carousel slide visible-lg visible-md thin-gray-border box-shadow-dgray" data-interval="6000" id="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carousel" data-slide-to="0" class="active"></li>
                 <li data-target="#carousel" data-slide-to="1"></li>
@@ -141,54 +161,7 @@
         <div style="padding-bottom: 10px">
             <a href="/Phone/Offer" class="btn btn-success">Get An Offer &raquo;</a>
         </div>
-        <div id="offerpanel" class="panel panel-title" style="margin: 0px; padding: 0px;">
-            <div class="panel-heading">
-                <div>
-                    <h4 id="offerspaid">Offers Paid For iPhone 5C</h4>
-                </div>
-            </div>
-            <div class="panel-body">
-                @{
-                    int index = 0;
-                    int count = Model.iPhone5Cs.Count();
-                    foreach (var item in Model.iPhone5Cs)
-                    {
-                        <div class="pull-left" style="width: 80px; padding-right: 10px; text-align: center;">
-                            @{
-                        string imagePath = item.ImageUrl + ".png";
-                        //switch (item.Condition)
-                        //{
-                        //    case "Flawless":
-                        //        imagePath = "/" + item.ImageUrl + ".png";
-                        //        break;
-
-                        //    case "Good":
-                        //        imagePath = "/" + item.ImageUrl + "_Good.jpg";
-                        //        break;
-
-                        //    case "Bad":
-                        //        imagePath = "/" + item.ImageUrl + "_Bad.jpg";
-                        //        break;
-                        //}
-                            }
-                            <img src="@imagePath" alt="iPhone" style="height: 90px" />
-                        </div>
-                        <div style="font-size: 14px" class="pull-left">
-                            @Html.DisplayFor(modelItem => item.Capacity)
-                            <br />
-                            Carrier: @Html.DisplayFor(modelItem => item.Carrier)
-                            <br />
-                            Condition: @Html.DisplayFor(modelItem => item.Condition)
-                            <br />
-                            <span class="lead phone-price">@Html.DisplayFor(modelItem => item.Price) </span>
-                        </div>
-                        <div style="clear: both">
-                            <br />
-                        </div>
-                        index++;
-                    }
-                }
-            </div>
+        <div id="offerpanel" class="panel panel-success" style="margin: 0px; padding: 0px;">
             <div class="panel-heading">
                 <div>
                     <h4 id="offerspaid">Offers Paid For iPhone 5S</h4>
@@ -196,41 +169,40 @@
             </div>
             <div class="panel-body">
                 @{
-                    index = 0;
-                    count = Model.iPhone5Ss.Count();
+                    int index = 0;
+                    int count = Model.iPhone5Ss.Count();
                     foreach (var item in Model.iPhone5Ss)
                     {
-                        <div class="pull-left" style="width: 80px; padding-right: 10px; text-align: center;">
+                        <div class="pull-left" style="width: 70px; text-align: center;">
                             @{
                         string imagePath = item.ImageUrl + ".png";
-                        //switch (item.Condition)
-                        //{
-                        //    case "Flawless":
-                        //        imagePath = "/" + item.ImageUrl + ".png";
-                        //        break;
+                        switch (item.Condition)
+                        {
+                            case "Flawless":
+                                imagePath = item.ImageUrl + ".png";
+                                break;
 
-                        //    case "Good":
-                        //        imagePath = "/" + item.ImageUrl + "_Good.jpg";
-                        //        break;
+                            case "Good":
+                                imagePath = item.ImageUrl + "_Good.jpg";
+                                break;
 
-                        //    case "Bad":
-                        //        imagePath = "/" + item.ImageUrl + "_Bad.jpg";
-                        //        break;
-                        //}
+                            case "Bad":
+                                imagePath = item.ImageUrl + "_Bad.jpg";
+                                break;
+                        }
                             }
                             <img src="@imagePath" alt="iPhone" style="height: 90px" />
                         </div>
-                        <div style="font-size: 14px" class="pull-left">
-                            @Html.DisplayFor(modelItem => item.Capacity)
+                        <div class="pull-left">
+                            <label class="offerspaid-label">Capacity</label> <label class="offerspaid-value">@item.Capacity</label>
                             <br />
-                            Carrier: @Html.DisplayFor(modelItem => item.Carrier)
+                            <label class="offerspaid-label">Carrier</label> <label class="offerspaid-value">@item.Carrier</label>
                             <br />
-                            Condition: @Html.DisplayFor(modelItem => item.Condition)
+                            <label class="offerspaid-label">Condition</label> <label class="offerspaid-value">@item.Condition</label>
                             <br />
-                            <span class="lead phone-price">@Html.DisplayFor(modelItem => item.Price) </span>
+                            <div class="lead offerspaid-price">@Html.DisplayFor(modelItem => item.Price) </div>
                         </div>
                         <div style="clear: both">
-                            <br />
                         </div>
                         index++;
                     }
@@ -283,6 +255,5 @@
 
 
 </section>
-
 
 

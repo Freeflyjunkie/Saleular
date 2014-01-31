@@ -202,6 +202,7 @@
     <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\bootstrap\img\glyphicons-halflings-white.png" />
     <Content Include="Content\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="DAL\saleular.xml" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -229,6 +230,8 @@
     <Content Include="Images\iPhones\iPhone5.png" />
     <Content Include="Images\iPhones\iPhone5C.png" />
     <Content Include="Images\iPhones\iPhone5S.png" />
+    <Content Include="Images\iPhones\iPhone5S_Bad.jpg" />
+    <Content Include="Images\iPhones\iPhone5S_Good.jpg" />
     <Content Include="Images\iPhones\iPhone5_Bad.jpg" />
     <Content Include="Images\iPhones\iPhone5_Good1.jpg" />
     <Content Include="Images\iPhones\iPhone5_Good2.jpg" />
