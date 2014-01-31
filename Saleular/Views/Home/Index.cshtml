@@ -1,4 +1,6 @@
-﻿@{
+﻿@model Saleular.ViewModels.OffersPaid
+
+@{
     ViewBag.Title = "Sell Your iPhone";
 }
 
@@ -22,10 +24,14 @@
         padding: 7px 7px 7px 7px;
     }
 
-    .alert {
-        margin: 0px 0px 0px 0px;
-        padding: 15px 0px 0px 0px;
-        font-size: 15px;
+    .phone-price {
+        font-weight: 500;
+        color: #43ac6a;
+    }
+
+    #carousel {
+        border: 1px solid #cbcbcb;
+        box-shadow: 5px 5px 5px #888888;
     }
 </style>
 <script type="text/javascript">
@@ -41,13 +47,13 @@
 
             cdiv.animate({
                 opacity: 0
-            }, 100, 'swing', function () {
-                $('#carouselCaption').text(GetCarouselCaption(index));                
+            }, 10, 'swing', function () {
+                $('#carouselCaption').text(GetCarouselCaption(index));
             });
 
             cdiv.animate({
                 opacity: 1
-            }, 250);
+            }, 1000, 'swing');
         });
     }
 
@@ -64,29 +70,12 @@
             return "Step 3: Get Paid Fast!";
         }
     }
-
-    function GetCarouselCaptionDesc(index) {
-        if (index == 0) {
-            return "Get an offer on your phone quickly that is guaranteed to beat our competitors.";
-        }
-
-        if (index == 1) {
-            return "Request a free shipping label and ship your phone quickly and easily using Fedex or the USPS.";
-        }
-
-        if (index == 2) {
-            return "Once your iPhone is received and processed you will receive payment via PayPal or a check.";
-        }
-    }
 </script>
 <section class="row">
     <div id="carouselDiv" class="col-lg-12 col-md-12 visible-lg visible-md">
         <div style="float: left; padding-right: 20px">
             <h2 id="carouselCaption">Step 1: Get a Quick Offer For Your iPhone</h2>
         </div>
-        @*<div id="carouselCaptionDesc" class="alert" style="float: left; margin-top: 0px">
-                Get an offer on your phone quickly that is guaranteed to beat our competitors.
-            </div>*@
     </div>
 </section>
 <section class="row">
@@ -111,8 +100,8 @@
 
                 </div>
             </div>
-            <a href="#carousel" class="carousel-control left" data-slide="prev"><span class="icon-prev"></span></a>
-            <a href="#carousel" class="carousel-control right" data-slide="next"><span class="icon-next"></span></a>
+            <a id="carousel-left-arrow" href="#carousel" class="carousel-control left" data-slide="prev"><span class="icon-prev"></span></a>
+            <a id="carousel-right-arrow" href="#carousel" class="carousel-control right" data-slide="next"><span class="icon-next"></span></a>
         </div>
         <div class="row">
             <div class="col-lg-12 col-md-12">
@@ -139,45 +128,160 @@
                 <p><a class="btn btn-primary" href="/Phone/Paid">Learn more &raquo;</a></p>
             </div>
         </div>
+        <div class="row visible-sm visible-xs">
+            <div class="col-sm-12 col-xs-12">
+                <br />
+                <br />
+                <h2>Get Started</h2>
+                <hr />
+            </div>
+        </div>
     </section>
-    <aside class="col-lg-3 col-md-4 col-sm-5 col-xs-8">
+    <aside class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
         <div style="padding-bottom: 10px">
-            @*@Html.ActionLink("Get An Offer", "GetOffer", "Phone", new { @class = "btn btn-success" })*@
             <a href="/Phone/Offer" class="btn btn-success">Get An Offer &raquo;</a>
         </div>
-        <div id="offerpanel" class="panel panel-footer" style="margin: 0px; padding: 0px;">
+        <div id="offerpanel" class="panel panel-title" style="margin: 0px; padding: 0px;">
             <div class="panel-heading">
                 <div>
-                    <h4 id="offerspaid">Offers Paid For iPhone 5</h4>
+                    <h4 id="offerspaid">Offers Paid For iPhone 5C</h4>
                 </div>
             </div>
             <div class="panel-body">
+                @{
+                    int index = 0;
+                    int count = Model.iPhone5Cs.Count();
+                    foreach (var item in Model.iPhone5Cs)
+                    {
+                        <div class="pull-left" style="width: 80px; padding-right: 10px; text-align: center;">
+                            @{
+                        string imagePath = item.ImageUrl + ".png";
+                        //switch (item.Condition)
+                        //{
+                        //    case "Flawless":
+                        //        imagePath = "/" + item.ImageUrl + ".png";
+                        //        break;
+
+                        //    case "Good":
+                        //        imagePath = "/" + item.ImageUrl + "_Good.jpg";
+                        //        break;
+
+                        //    case "Bad":
+                        //        imagePath = "/" + item.ImageUrl + "_Bad.jpg";
+                        //        break;
+                        //}
+                            }
+                            <img src="@imagePath" alt="iPhone" style="height: 90px" />
+                        </div>
+                        <div style="font-size: 14px" class="pull-left">
+                            @Html.DisplayFor(modelItem => item.Capacity)
+                            <br />
+                            Carrier: @Html.DisplayFor(modelItem => item.Carrier)
+                            <br />
+                            Condition: @Html.DisplayFor(modelItem => item.Condition)
+                            <br />
+                            <span class="lead phone-price">@Html.DisplayFor(modelItem => item.Price) </span>
+                        </div>
+                        <div style="clear: both">
+                            <br />
+                        </div>
+                        index++;
+                    }
+                }
+            </div>
+            <div class="panel-heading">
                 <div>
-                    16GB Verizon
-                    <br />
-                    Flawless Condition
-                    <br />
-                    <span class="lead">$390</span>
-                </div>
-                <hr />
-                <div>
-                    16GB Verizon
-                    <br />
-                    Flawless Condition
-                    <br />
-                    <span class="lead">$390</span>
-                </div>
-                <hr />
-                <div>
-                    16GB Verizon
-                    <br />
-                    Flawless Condition
-                    <br />
-                    <span class="lead">$390</span>
+                    <h4 id="offerspaid">Offers Paid For iPhone 5S</h4>
                 </div>
             </div>
+            <div class="panel-body">
+                @{
+                    index = 0;
+                    count = Model.iPhone5Ss.Count();
+                    foreach (var item in Model.iPhone5Ss)
+                    {
+                        <div class="pull-left" style="width: 80px; padding-right: 10px; text-align: center;">
+                            @{
+                        string imagePath = item.ImageUrl + ".png";
+                        //switch (item.Condition)
+                        //{
+                        //    case "Flawless":
+                        //        imagePath = "/" + item.ImageUrl + ".png";
+                        //        break;
+
+                        //    case "Good":
+                        //        imagePath = "/" + item.ImageUrl + "_Good.jpg";
+                        //        break;
+
+                        //    case "Bad":
+                        //        imagePath = "/" + item.ImageUrl + "_Bad.jpg";
+                        //        break;
+                        //}
+                            }
+                            <img src="@imagePath" alt="iPhone" style="height: 90px" />
+                        </div>
+                        <div style="font-size: 14px" class="pull-left">
+                            @Html.DisplayFor(modelItem => item.Capacity)
+                            <br />
+                            Carrier: @Html.DisplayFor(modelItem => item.Carrier)
+                            <br />
+                            Condition: @Html.DisplayFor(modelItem => item.Condition)
+                            <br />
+                            <span class="lead phone-price">@Html.DisplayFor(modelItem => item.Price) </span>
+                        </div>
+                        <div style="clear: both">
+                            <br />
+                        </div>
+                        index++;
+                    }
+                }
+            </div>
+
         </div>
     </aside>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </section>
 
 

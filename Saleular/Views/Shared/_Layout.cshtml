@@ -17,7 +17,15 @@
             margin: 0px 0px 10px 0px;
         }
 
+        h1 {
+            margin: 0px 0px 0px 0px;
+            font-size: 50px;
+            font-weight: 300;
+        }
+
         h4 {
+            -webkit-text-shadow: 2px 2px 2px #888888;
+            text-shadow: 2px 2px 2px #888888;
             font-weight: 400;
         }
 
@@ -33,11 +41,11 @@
             margin-bottom: 0px;
         }*/
 
-        #logo-text {
+        /*#logo-text {
             margin: 0px 0px 0px 0px;
             font-size: 50px;
             font-family: Cambria, 'Times New Roman', 'Nimbus Roman No9 L', 'Freeserif', Times, serif;
-        }
+        }*/
 
         #guarenteed-text {
             margin: 20px 0px 0px 0px;
@@ -45,27 +53,15 @@
     </style>
 
 
-    <script>
-        $(function () {
+    <script>   
+        $(document).ready(function () {
 
-
-            $('#nav1').on('click', function () {
-                //$(this).parent().parent().find('.active').removeClass('active');
-                //$(this).parent().addClass('active').css('font-weight', 'bold');
-                alert($(this).attr('class'));
-                $(this).addClass('.active');
-            });
-
-            //var index = $('#navmenu > li');
-
-
-            //$('#navmenu li').on('click', function () {
-
-            //    var index = $('#navmenu > li');
-
-            //    $(index[1]).addClass('bor');
-            //});
-        });
+            // set nav-bar li active
+            var url = window.location;                        
+            $('ul.nav a').filter(function () {
+                return this.href == url;
+            }).parent().addClass('active');
+        });   
     </script>
 
 </head>
@@ -77,7 +73,7 @@
                     <div class="pull-left" style="padding-top: 2px">
                         <img src="../../Images/Logos/saleular_sm.png" height="50" alt="" />
                     </div>
-                    <div class="pull-left"><h1 id="logo-text">Saleular</h1></div>
+                    <div class="pull-left"><h1>Saleular</h1></div>
                 </div>
                 <div id="guarenteed-text" class="col-lg-9 col-md-8 visible-lg visible-md text-right lead">
                     <span>Get the most for your used or new iPhone <strong><em>Guaranteed!</em></strong></span>
@@ -100,10 +96,11 @@
                         </div>
                         <div class="navbar-collapse collapse">
                             <ul id="navmenu" class="nav navbar-nav navbar-right">
-                                <li id="nav1" class="nav"><a href="/Home/Index">Home</a></li>
+                                <li class="nav">@Html.ActionLink("Home", "Index", "Home")</li>
                                 <li class="nav">@Html.ActionLink("Get An Offer", "Offer", "Phone")</li>
                                 <li class="nav">@Html.ActionLink("Ask A Questions", "Questions", "Home")</li>
                                 <li class="nav">@Html.ActionLink("Testimonials", "Testimonials", "Home")</li>
+                                <li class="nav">@Html.ActionLink("Contact", "Contact", "Home")</li>
                                 <li class="nav">@Html.ActionLink("About Us", "About", "Home")</li>
                             </ul>
                         </div>

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Saleular.DAL;
+using Saleular.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,36 +10,35 @@ namespace Saleular.Controllers
 {
     public class HomeController : Controller
     {
+        SaleularContext db = new SaleularContext();
+
         public ActionResult Index()
         {
-            return View();
+            OffersPaid offers = new OffersPaid();            
+            offers.iPhone5Ss  = db.Phones.Where(phone => phone.Type == "iPhone" && phone.Model == "5S");
+            offers.iPhone5Cs = db.Phones.Where(phone => phone.Type == "iPhone" && phone.Model == "5C");
+            offers.iPhone5s = db.Phones.Where(phone => phone.Type == "iPhone" && phone.Model == "5");
+            offers.iPhone4Ss = db.Phones.Where(phone => phone.Type == "iPhone" && phone.Model == "4S");         
+            return View(offers);
         }
 
         public ActionResult About()
-        {
-            ViewBag.Message = "Saleular About Us";
-
+        {            
             return View();
         }
 
         public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
+        {            
             return View();
         }
 
         public ActionResult Questions()
-        {
-            ViewBag.Message = "Your questions page.";
-
+        {            
             return View("Questions");
         }
 
         public ActionResult Testimonials()
-        {
-            ViewBag.Message = "Your testimonials page.";
-
+        {            
             return View("Testimonials");
         }
     }

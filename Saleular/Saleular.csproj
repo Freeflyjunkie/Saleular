@@ -179,12 +179,17 @@
     <Compile Include="Migrations\201401290325181_Migration3.Designer.cs">
       <DependentUpon>201401290325181_Migration3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201401311733245_Migration4.cs" />
+    <Compile Include="Migrations\201401311733245_Migration4.Designer.cs">
+      <DependentUpon>201401311733245_Migration4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Phone.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\OffersPaid.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\Saleular.mdf" />
@@ -204,6 +209,31 @@
     <Content Include="Images\Carousel\c1.jpg" />
     <Content Include="Images\Carousel\c2.jpg" />
     <Content Include="Images\Carousel\c3.jpg" />
+    <Content Include="Images\iPhones\iPhone3G.png" />
+    <Content Include="Images\iPhones\iPhone3GS.png" />
+    <Content Include="Images\iPhones\iPhone4.png" />
+    <Content Include="Images\iPhones\iPhone4S.png" />
+    <Content Include="Images\iPhones\iPhone4S_Bad.jpg" />
+    <Content Include="Images\iPhones\iPhone4S_Good1.jpg" />
+    <Content Include="Images\iPhones\iPhone4S_Good2.jpg" />
+    <Content Include="Images\iPhones\iPhone4S_Good3.png" />
+    <Content Include="Images\iPhones\iPhone4S_Good4.png" />
+    <Content Include="Images\iPhones\iPhone4S_Good5.jpg" />
+    <Content Include="Images\iPhones\iPhone4S_Good6.jpg" />
+    <Content Include="Images\iPhones\iPhone4_Bad.jpg" />
+    <Content Include="Images\iPhones\iPhone4_Good1.png" />
+    <Content Include="Images\iPhones\iPhone4_Good2.jpg" />
+    <Content Include="Images\iPhones\iPhone4_Good3.jpg" />
+    <Content Include="Images\iPhones\iPhone4_Good4.jpg" />
+    <Content Include="Images\iPhones\iPhone4_Good5.jpg" />
+    <Content Include="Images\iPhones\iPhone5.png" />
+    <Content Include="Images\iPhones\iPhone5C.png" />
+    <Content Include="Images\iPhones\iPhone5S.png" />
+    <Content Include="Images\iPhones\iPhone5_Bad.jpg" />
+    <Content Include="Images\iPhones\iPhone5_Good1.jpg" />
+    <Content Include="Images\iPhones\iPhone5_Good2.jpg" />
+    <Content Include="Images\iPhones\iPhone5_Good3.jpg" />
+    <Content Include="Images\iPhones\iPhone5_Good.jpg" />
     <Content Include="Images\Logos\saleular_sm.png" />
     <Content Include="Scripts\bootstrap\bootstrap.js" />
     <Content Include="Scripts\bootstrap\bootstrap.min.js" />
@@ -275,6 +305,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201401290325181_Migration3.resx">
       <DependentUpon>201401290325181_Migration3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201401311733245_Migration4.resx">
+      <DependentUpon>201401311733245_Migration4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
