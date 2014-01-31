@@ -36,13 +36,37 @@
         #logo-text {
             margin: 0px 0px 0px 0px;
             font-size: 50px;
-            font-family: Cambria, 'Times New Roman', 'Nimbus Roman No9 L', 'Freeserif', Times, serif;       
+            font-family: Cambria, 'Times New Roman', 'Nimbus Roman No9 L', 'Freeserif', Times, serif;
         }
 
         #guarenteed-text {
             margin: 20px 0px 0px 0px;
-        }            
+        }
     </style>
+
+
+    <script>
+        $(function () {
+
+
+            $('#nav1').on('click', function () {
+                //$(this).parent().parent().find('.active').removeClass('active');
+                //$(this).parent().addClass('active').css('font-weight', 'bold');
+                alert($(this).attr('class'));
+                $(this).addClass('.active');
+            });
+
+            //var index = $('#navmenu > li');
+
+
+            //$('#navmenu li').on('click', function () {
+
+            //    var index = $('#navmenu > li');
+
+            //    $(index[1]).addClass('bor');
+            //});
+        });
+    </script>
 
 </head>
 <body>
@@ -56,12 +80,12 @@
                     <div class="pull-left"><h1 id="logo-text">Saleular</h1></div>
                 </div>
                 <div id="guarenteed-text" class="col-lg-9 col-md-8 visible-lg visible-md text-right lead">
-                    <span>Get the most for your used or new iPhone <strong><em>Guarenteed!</em></strong></span>
+                    <span>Get the most for your used or new iPhone <strong><em>Guaranteed!</em></strong></span>
                 </div>
             </div>
             <div class="row visible-sm visible-xs text-left">
                 <div class="col-sm-12 col-xs-12">
-                    We pay the most for your used or new iPhone <strong><em>Guarenteed!</em></strong>
+                    We pay the most for your used or new iPhone <strong><em>Guaranteed!</em></strong>
                 </div>
             </div>
             <div class="row">
@@ -75,11 +99,11 @@
                             </button>
                         </div>
                         <div class="navbar-collapse collapse">
-                            <ul class="nav navbar-nav navbar-right">
-                                <li class="nav active">@Html.ActionLink("Home", "Index", "Home")</li>
-                                <li class="nav">@Html.ActionLink("Get An Offer", "Index", "Home")</li>
-                                <li class="nav">@Html.ActionLink("Ask A Questions", "Index", "Home")</li>
-                                <li class="nav">@Html.ActionLink("Testimonials", "Index", "Home")</li>
+                            <ul id="navmenu" class="nav navbar-nav navbar-right">
+                                <li id="nav1" class="nav"><a href="/Home/Index">Home</a></li>
+                                <li class="nav">@Html.ActionLink("Get An Offer", "Offer", "Phone")</li>
+                                <li class="nav">@Html.ActionLink("Ask A Questions", "Questions", "Home")</li>
+                                <li class="nav">@Html.ActionLink("Testimonials", "Testimonials", "Home")</li>
                                 <li class="nav">@Html.ActionLink("About Us", "About", "Home")</li>
                             </ul>
                         </div>
@@ -97,5 +121,6 @@
 
 
     @RenderSection("scripts", required: false)
+
 </body>
 </html>

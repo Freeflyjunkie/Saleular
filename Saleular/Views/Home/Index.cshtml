@@ -22,11 +22,11 @@
         padding: 7px 7px 7px 7px;
     }
 
-    .alert{
+    .alert {
         margin: 0px 0px 0px 0px;
         padding: 15px 0px 0px 0px;
         font-size: 15px;
-    }        
+    }
 </style>
 <script type="text/javascript">
     $(DocumentIsReady);
@@ -37,42 +37,61 @@
 
         c.on('slid', function () {
             var index = $(this).find('.active').index();
-            var caption = "";
-            var captiondesc = "";
+            var cdiv = $('#carouselDiv');
 
-            if (index == 0) {
-                caption = "Get an Offer";
-                captiondesc = "Get an offer on your phone quickly that is guarenteed to beat our competitors.";
-            }
+            cdiv.animate({
+                opacity: 0
+            }, 100, 'swing', function () {
+                $('#carouselCaption').text(GetCarouselCaption(index));                
+            });
 
-            if (index == 1) {
-                caption = "Ship It";
-                captiondesc = "Request a free shipping label and ship your phone quickly and easily using Fedex or the USPS.";
-            }
-
-            if (index == 2) {
-                caption = "Get Paid";
-                captiondesc = "Once your iPhone is received and processed you will receive payment via PayPal or a check.";
-            }
-
-            $('#carouselCaption').text(caption);
-            $('#carouselCaptionDesc').text(captiondesc);
+            cdiv.animate({
+                opacity: 1
+            }, 250);
         });
+    }
+
+    function GetCarouselCaption(index) {
+        if (index == 0) {
+            return "Step 1: Get a Quick Offer For Your iPhone";
+        }
+
+        if (index == 1) {
+            return "Step 2: Get a Free Shipping Label";
+        }
+
+        if (index == 2) {
+            return "Step 3: Get Paid Fast!";
+        }
+    }
+
+    function GetCarouselCaptionDesc(index) {
+        if (index == 0) {
+            return "Get an offer on your phone quickly that is guaranteed to beat our competitors.";
+        }
+
+        if (index == 1) {
+            return "Request a free shipping label and ship your phone quickly and easily using Fedex or the USPS.";
+        }
+
+        if (index == 2) {
+            return "Once your iPhone is received and processed you will receive payment via PayPal or a check.";
+        }
     }
 </script>
 <section class="row">
-    <div class="col-lg-12 col-md-12 visible-lg visible-md">
+    <div id="carouselDiv" class="col-lg-12 col-md-12 visible-lg visible-md">
         <div style="float: left; padding-right: 20px">
-            <h2 id="carouselCaption">Get an Offer</h2>
+            <h2 id="carouselCaption">Step 1: Get a Quick Offer For Your iPhone</h2>
         </div>
-        <div id="carouselCaptionDesc" class="alert" style="float: left; margin-top: 0px">
-            Get an offer on your phone quickly that is guarenteed to beat our competitors.
-        </div>
+        @*<div id="carouselCaptionDesc" class="alert" style="float: left; margin-top: 0px">
+                Get an offer on your phone quickly that is guaranteed to beat our competitors.
+            </div>*@
     </div>
 </section>
 <section class="row">
     <section class="col-lg-9 col-md-8">
-        <div style="margin-bottom: 10px" class="carousel slide visible-lg visible-md" data-interval="5000" id="carousel">
+        <div style="margin-bottom: 10px" class="carousel slide visible-lg visible-md" data-interval="6000" id="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carousel" data-slide-to="0" class="active"></li>
                 <li data-target="#carousel" data-slide-to="1"></li>
@@ -96,34 +115,35 @@
             <a href="#carousel" class="carousel-control right" data-slide="next"><span class="icon-next"></span></a>
         </div>
         <div class="row">
-            <div class="col-lg-12 col-md-12">                
+            <div class="col-lg-12 col-md-12">
                 <h2>3 Easy Steps</h2>
                 <hr />
             </div>
         </div>
         <div class="row">
             <div class="col-md-4">
-                <h2>Get an Offer</h2>
+                <h2>Get An Offer</h2>
                 <p>
                     Get an offer on your phone quickly that is guarenteed to beat our competitors.
                 </p>
-                <p><a class="btn btn-primary" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn More &raquo;</a></p>
+                <p><a class="btn btn-primary" href="/Phone/Offer">Learn More &raquo;</a></p>
             </div>
             <div class="col-md-4">
                 <h2>Ship It</h2>
                 <p>Request a free shipping label and ship your phone quickly and easily using Fedex or the USPS.</p>
-                <p><a class="btn btn-primary" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn More &raquo;</a></p>
+                <p><a class="btn btn-primary" href="/Phone/Ship">Learn More &raquo;</a></p>
             </div>
             <div class="col-md-4">
                 <h2>Get Paid</h2>
                 <p>Once your iPhone is received and processed you will receive payment via PayPal or a check.</p>
-                <p><a class="btn btn-primary" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+                <p><a class="btn btn-primary" href="/Phone/Paid">Learn more &raquo;</a></p>
             </div>
         </div>
     </section>
     <aside class="col-lg-3 col-md-4 col-sm-5 col-xs-8">
         <div style="padding-bottom: 10px">
-            <a href="http://asp.net" class="btn btn-success">Sell Your iPhone &raquo;</a>
+            @*@Html.ActionLink("Get An Offer", "GetOffer", "Phone", new { @class = "btn btn-success" })*@
+            <a href="/Phone/Offer" class="btn btn-success">Get An Offer &raquo;</a>
         </div>
         <div id="offerpanel" class="panel panel-footer" style="margin: 0px; padding: 0px;">
             <div class="panel-heading">
@@ -159,7 +179,6 @@
         </div>
     </aside>
 </section>
-
 
 
 

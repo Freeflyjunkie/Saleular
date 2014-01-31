@@ -252,6 +252,11 @@
     <Content Include="Views\Phone\Details.cshtml" />
     <Content Include="Views\Phone\Edit.cshtml" />
     <Content Include="Views\Phone\Index.cshtml" />
+    <Content Include="Views\Home\Questions.cshtml" />
+    <Content Include="Views\Home\Testimonials.cshtml" />
+    <Content Include="Views\Phone\Offer.cshtml" />
+    <Content Include="Views\Phone\Ship.cshtml" />
+    <Content Include="Views\Phone\Paid.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

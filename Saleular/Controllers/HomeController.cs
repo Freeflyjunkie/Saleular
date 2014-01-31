@@ -26,5 +26,19 @@ namespace Saleular.Controllers
 
             return View();
         }
+
+        public ActionResult Questions()
+        {
+            ViewBag.Message = "Your questions page.";
+
+            return View("Questions");
+        }
+
+        public ActionResult Testimonials()
+        {
+            ViewBag.Message = "Your testimonials page.";
+
+            return View("Testimonials");
+        }
     }
 }

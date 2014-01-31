@@ -15,6 +15,21 @@ namespace Saleular.Controllers
     {
         private SaleularContext db = new SaleularContext();
 
+        public ActionResult Offer()
+        {
+            return View("Offer");
+        }
+
+        public ActionResult Ship()
+        {
+            return View("Ship");
+        }
+
+        public ActionResult Paid()
+        {
+            return View("Paid");
+        }
+
         // GET: /Phone/
         public ActionResult Index()
         {
