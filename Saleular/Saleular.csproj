@@ -206,6 +206,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\Logos\BusinessCardLogo.png" />
     <Content Include="Images\Carousel\c1.jpg" />
     <Content Include="Images\Carousel\c2.jpg" />
     <Content Include="Images\Carousel\c3.jpg" />
@@ -237,6 +238,10 @@
     <Content Include="Images\iPhones\iPhone5_Good3.jpg" />
     <Content Include="Images\iPhones\iPhone5_Good.jpg" />
     <Content Include="Images\Logos\saleular_sm.png" />
+    <Content Include="Images\Testimonials\amy.jpg" />
+    <Content Include="Images\Testimonials\eric.jpg" />
+    <Content Include="Images\Testimonials\robert.png" />
+    <Content Include="Images\Testimonials\tomer.png" />
     <Content Include="Scripts\bootstrap\bootstrap.js" />
     <Content Include="Scripts\bootstrap\bootstrap.min.js" />
     <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.eot" />

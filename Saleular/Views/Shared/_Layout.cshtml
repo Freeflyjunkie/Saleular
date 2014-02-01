@@ -23,10 +23,20 @@
             font-weight: 300;
         }
 
-        h4 {            
+        h4 {
             /*-webkit-text-shadow: 2px 2px 2px #888888;
             text-shadow: 2px 2px 2px #888888;
             font-weight: 400;*/
+        }
+
+        footer {
+            text-align: right;
+            padding: 1px 20px 1px 1px;
+            background-color: #222222;
+            border-color: #0079a1;
+            font-weight: 600;
+            color: #ffffff;
+            border-radius: 8px;
         }
 
         .bor {
@@ -45,25 +55,25 @@
             border-radius: 5px;
         }
 
-        .nav a:hover {
+        .nav a:hover, .nav a {
             border-radius: 5px;
         }
-        
+
         #guarenteed-text {
             margin: 20px 0px 0px 0px;
         }
     </style>
 
 
-    <script>   
+    <script>
         $(document).ready(function () {
 
             // set nav-bar li active
-            var url = window.location;                        
+            var url = window.location;
             $('ul.nav a').filter(function () {
                 return this.href == url;
             }).parent().addClass('active');
-        });   
+        });
     </script>
 
 </head>
@@ -72,7 +82,7 @@
         <header class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 text-left">
-                    <div class="pull-left" style="padding-top: 2px">
+                    <div class="pull-left hidden-xs" style="padding-top: 2px">
                         <img src="../../Images/Logos/saleular_sm.png" height="50" alt="" />
                     </div>
                     <div class="pull-left"><h1>Saleular</h1></div>
@@ -102,7 +112,6 @@
                                 <li class="nav">@Html.ActionLink("Get An Offer", "Offer", "Phone")</li>
                                 <li class="nav">@Html.ActionLink("Ask A Questions", "Questions", "Home")</li>
                                 <li class="nav">@Html.ActionLink("Testimonials", "Testimonials", "Home")</li>
-                                <li class="nav">@Html.ActionLink("Contact", "Contact", "Home")</li>
                                 <li class="nav">@Html.ActionLink("About Us", "About", "Home")</li>
                             </ul>
                         </div>
@@ -114,7 +123,7 @@
     <div class="container body-content">
         @RenderBody()
         <footer>
-            <p>&copy; @DateTime.Now.Year - Saleular</p>
+            <h4>&copy; @DateTime.Now.Year - Saleular</h4>
         </footer>
     </div>
 
