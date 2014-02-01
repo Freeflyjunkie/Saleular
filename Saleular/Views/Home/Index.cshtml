@@ -21,12 +21,23 @@
     #offerpanel {
         padding: 0px;
         margin: 0px;
-        width: 240px;
+        width: 240px;      
+    }
+
+    .panel-heading {
+        border-radius: 8px;
+        padding: 3px 3px 3px 3px;
+    }
+
+    .panel {
+        border: none;
+        border-radius: 8px;
     }
 
     #offerspaid {
         padding: 0px;
         margin: 0px;
+        font-weight: 500;
     }
 
     .offerspaid-label {
@@ -37,15 +48,7 @@
     .offerspaid-value {
         font-size: 13px;
         font-weight: 600;
-    }
-
-    .panel-heading {
-        padding: 3px 3px 3px 3px;
-    }
-
-    .panel-body {
-        padding: 7px 7px 7px 7px;
-    }
+    } 
 
     .offerspaid-price {
         font-weight: 500;
@@ -159,10 +162,10 @@
     </section>
     <aside class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
         <div style="padding-bottom: 10px">
-            <a href="/Phone/Offer" class="btn btn-success">Get An Offer &raquo;</a>
+            <a href="/Phone/Offer" id="getoffer" class="btn btn-success" style="width: 240px; font-size: 25px">Get An Offer &raquo;</a>
         </div>
-        <div id="offerpanel" class="panel panel-success" style="margin: 0px; padding: 0px;">
-            <div class="panel-heading">
+        <div id="offerpanel" class="panel panel-success">
+            <div class="panel-heading box-shadow-green">
                 <div>
                     <h4 id="offerspaid">Offers Paid For iPhone 5S</h4>
                 </div>

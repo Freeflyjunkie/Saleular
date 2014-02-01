@@ -95,120 +95,120 @@
   <Phone model="iPhone 4S" carrier="Verizon" capacity="64 GB" condition="Bad">70</Phone>
   <Phone model="iPhone 4S" carrier="Verizon" capacity="64 GB" condition="Good">165</Phone>
   <Phone model="iPhone 4S" carrier="Verizon" capacity="64 GB" condition="Flawless">175</Phone>
-  <Phone model="iPhone 4S" carrier="Other" capacity="16 GB" condition="Bad">65</Phone>
+  <!--<Phone model="iPhone 4S" carrier="Other" capacity="16 GB" condition="Bad">65</Phone>
   <Phone model="iPhone 4S" carrier="Other" capacity="16 GB" condition="Good">135</Phone>
-  <Phone model="iPhone 4S" carrier="Other" capacity="16 GB" condition="Flawless">145</Phone>
-  <Phone model="iPhone 4S" carrier="Other" capacity="32 GB" condition="Bad">65</Phone>
+  <Phone model="iPhone 4S" carrier="Other" capacity="16 GB" condition="Flawless">145</Phone>-->
+  <!--<Phone model="iPhone 4S" carrier="Other" capacity="32 GB" condition="Bad">65</Phone>
   <Phone model="iPhone 4S" carrier="Other" capacity="32 GB" condition="Good">135</Phone>
-  <Phone model="iPhone 4S" carrier="Other" capacity="32 GB" condition="Flawless">145</Phone>
-  <Phone model="iPhone 4S" carrier="Other" capacity="64 GB" condition="Bad">65</Phone>
+  <Phone model="iPhone 4S" carrier="Other" capacity="32 GB" condition="Flawless">145</Phone>-->
+  <!--<Phone model="iPhone 4S" carrier="Other" capacity="64 GB" condition="Bad">65</Phone>
   <Phone model="iPhone 4S" carrier="Other" capacity="64 GB" condition="Good">135</Phone>
-  <Phone model="iPhone 4S" carrier="Other" capacity="64 GB" condition="Flawless">145</Phone>
-  <Phone model="iPhone 4S" carrier="Factory" capacity="16 GB" condition="Bad">90</Phone>
+  <Phone model="iPhone 4S" carrier="Other" capacity="64 GB" condition="Flawless">145</Phone>-->
+  <!--<Phone model="iPhone 4S" carrier="Factory" capacity="16 GB" condition="Bad">90</Phone>
   <Phone model="iPhone 4S" carrier="Factory" capacity="16 GB" condition="Good">175</Phone>
-  <Phone model="iPhone 4S" carrier="Factory" capacity="16 GB" condition="Flawless">185</Phone>
-  <Phone model="iPhone 4S" carrier="Factory" capacity="32 GB" condition="Bad">90</Phone>
+  <Phone model="iPhone 4S" carrier="Factory" capacity="16 GB" condition="Flawless">185</Phone>-->
+  <!--<Phone model="iPhone 4S" carrier="Factory" capacity="32 GB" condition="Bad">90</Phone>
   <Phone model="iPhone 4S" carrier="Factory" capacity="32 GB" condition="Good">180</Phone>
-  <Phone model="iPhone 4S" carrier="Factory" capacity="32 GB" condition="Flawless">190</Phone>
-  <Phone model="iPhone 4S" carrier="Factory" capacity="64 GB" condition="Bad">90</Phone>
+  <Phone model="iPhone 4S" carrier="Factory" capacity="32 GB" condition="Flawless">190</Phone>-->
+  <!--<Phone model="iPhone 4S" carrier="Factory" capacity="64 GB" condition="Bad">90</Phone>
   <Phone model="iPhone 4S" carrier="Factory" capacity="64 GB" condition="Good">185</Phone>
-  <Phone model="iPhone 4S" carrier="Factory" capacity="64 GB" condition="Flawless">195</Phone>
-  <Phone model="iPhone 4S" carrier="TMobile" capacity="8 GB" condition="Bad">90</Phone>
+  <Phone model="iPhone 4S" carrier="Factory" capacity="64 GB" condition="Flawless">195</Phone>-->
+  <!--<Phone model="iPhone 4S" carrier="TMobile" capacity="8 GB" condition="Bad">90</Phone>
   <Phone model="iPhone 4S" carrier="TMobile" capacity="8 GB" condition="Good">185</Phone>
-  <Phone model="iPhone 4S" carrier="TMobile" capacity="8 GB" condition="Flawless">195</Phone>
-  <Phone model="iPhone 4S" carrier="TMobile" capacity="16 GB" condition="Bad">90</Phone>
+  <Phone model="iPhone 4S" carrier="TMobile" capacity="8 GB" condition="Flawless">195</Phone>-->
+  <!--<Phone model="iPhone 4S" carrier="TMobile" capacity="16 GB" condition="Bad">90</Phone>
   <Phone model="iPhone 4S" carrier="TMobile" capacity="16 GB" condition="Good">185</Phone>
-  <Phone model="iPhone 4S" carrier="TMobile" capacity="16 GB" condition="Flawless">195</Phone>
-  <Phone model="iPhone 5" carrier="ATT" capacity="16 GB" condition="Bad">120</Phone>
+  <Phone model="iPhone 4S" carrier="TMobile" capacity="16 GB" condition="Flawless">195</Phone>-->
+  <!--<Phone model="iPhone 5" carrier="ATT" capacity="16 GB" condition="Bad">120</Phone>
   <Phone model="iPhone 5" carrier="ATT" capacity="16 GB" condition="Good">280</Phone>
-  <Phone model="iPhone 5" carrier="ATT" capacity="16 GB" condition="Flawless">290</Phone>
-  <Phone model="iPhone 5" carrier="ATT" capacity="32 GB" condition="Bad">120</Phone>
+  <Phone model="iPhone 5" carrier="ATT" capacity="16 GB" condition="Flawless">290</Phone>-->
+  <!--<Phone model="iPhone 5" carrier="ATT" capacity="32 GB" condition="Bad">120</Phone>
   <Phone model="iPhone 5" carrier="ATT" capacity="32 GB" condition="Good">285</Phone>
-  <Phone model="iPhone 5" carrier="ATT" capacity="32 GB" condition="Flawless">295</Phone>
-  <Phone model="iPhone 5" carrier="ATT" capacity="64 GB" condition="Bad">120</Phone>
+  <Phone model="iPhone 5" carrier="ATT" capacity="32 GB" condition="Flawless">295</Phone>-->
+  <!--<Phone model="iPhone 5" carrier="ATT" capacity="64 GB" condition="Bad">120</Phone>
   <Phone model="iPhone 5" carrier="ATT" capacity="64 GB" condition="Good">290</Phone>
-  <Phone model="iPhone 5" carrier="ATT" capacity="64 GB" condition="Flawless">300</Phone>
-  <Phone model="iPhone 5" carrier="Sprint" capacity="16 GB" condition="Bad">90</Phone>
+  <Phone model="iPhone 5" carrier="ATT" capacity="64 GB" condition="Flawless">300</Phone>-->
+  <!--<Phone model="iPhone 5" carrier="Sprint" capacity="16 GB" condition="Bad">90</Phone>
   <Phone model="iPhone 5" carrier="Sprint" capacity="16 GB" condition="Good">210</Phone>
-  <Phone model="iPhone 5" carrier="Sprint" capacity="16 GB" condition="Flawless">220</Phone>
-  <Phone model="iPhone 5" carrier="Sprint" capacity="32 GB" condition="Bad">90</Phone>
+  <Phone model="iPhone 5" carrier="Sprint" capacity="16 GB" condition="Flawless">220</Phone>-->
+  <!--<Phone model="iPhone 5" carrier="Sprint" capacity="32 GB" condition="Bad">90</Phone>
   <Phone model="iPhone 5" carrier="Sprint" capacity="32 GB" condition="Good">215</Phone>
-  <Phone model="iPhone 5" carrier="Sprint" capacity="32 GB" condition="Flawless">225</Phone>
-  <Phone model="iPhone 5" carrier="Sprint" capacity="64 GB" condition="Bad">90</Phone>
+  <Phone model="iPhone 5" carrier="Sprint" capacity="32 GB" condition="Flawless">225</Phone>-->
+  <!--<Phone model="iPhone 5" carrier="Sprint" capacity="64 GB" condition="Bad">90</Phone>
   <Phone model="iPhone 5" carrier="Sprint" capacity="64 GB" condition="Good">220</Phone>
-  <Phone model="iPhone 5" carrier="Sprint" capacity="64 GB" condition="Flawless">230</Phone>
-  <Phone model="iPhone 5" carrier="TMobile" capacity="16 GB" condition="Bad">90</Phone>
+  <Phone model="iPhone 5" carrier="Sprint" capacity="64 GB" condition="Flawless">230</Phone>-->
+  <!--<Phone model="iPhone 5" carrier="TMobile" capacity="16 GB" condition="Bad">90</Phone>
   <Phone model="iPhone 5" carrier="TMobile" capacity="16 GB" condition="Good">250</Phone>
-  <Phone model="iPhone 5" carrier="TMobile" capacity="16 GB" condition="Flawless">260</Phone>
-  <Phone model="iPhone 5" carrier="TMobile" capacity="32 GB" condition="Bad">90</Phone>
+  <Phone model="iPhone 5" carrier="TMobile" capacity="16 GB" condition="Flawless">260</Phone>-->
+  <!--<Phone model="iPhone 5" carrier="TMobile" capacity="32 GB" condition="Bad">90</Phone>
   <Phone model="iPhone 5" carrier="TMobile" capacity="32 GB" condition="Good">260</Phone>
-  <Phone model="iPhone 5" carrier="TMobile" capacity="32 GB" condition="Flawless">270</Phone>
-  <Phone model="iPhone 5" carrier="TMobile" capacity="64 GB" condition="Bad">90</Phone>
+  <Phone model="iPhone 5" carrier="TMobile" capacity="32 GB" condition="Flawless">270</Phone>-->
+  <!--<Phone model="iPhone 5" carrier="TMobile" capacity="64 GB" condition="Bad">90</Phone>
   <Phone model="iPhone 5" carrier="TMobile" capacity="64 GB" condition="Good">270</Phone>
-  <Phone model="iPhone 5" carrier="TMobile" capacity="64 GB" condition="Flawless">280</Phone>
-  <Phone model="iPhone 5" carrier="Verizon" capacity="16 GB" condition="Bad">120</Phone>
+  <Phone model="iPhone 5" carrier="TMobile" capacity="64 GB" condition="Flawless">280</Phone>-->
+  <!--<Phone model="iPhone 5" carrier="Verizon" capacity="16 GB" condition="Bad">120</Phone>
   <Phone model="iPhone 5" carrier="Verizon" capacity="16 GB" condition="Good">290</Phone>
-  <Phone model="iPhone 5" carrier="Verizon" capacity="16 GB" condition="Flawless">300</Phone>
-  <Phone model="iPhone 5" carrier="Verizon" capacity="32 GB" condition="Bad">120</Phone>
+  <Phone model="iPhone 5" carrier="Verizon" capacity="16 GB" condition="Flawless">300</Phone>-->
+  <!--<Phone model="iPhone 5" carrier="Verizon" capacity="32 GB" condition="Bad">120</Phone>
   <Phone model="iPhone 5" carrier="Verizon" capacity="32 GB" condition="Good">295</Phone>
-  <Phone model="iPhone 5" carrier="Verizon" capacity="32 GB" condition="Flawless">305</Phone>
-  <Phone model="iPhone 5" carrier="Verizon" capacity="64 GB" condition="Bad">120</Phone>
+  <Phone model="iPhone 5" carrier="Verizon" capacity="32 GB" condition="Flawless">305</Phone>-->
+  <!--<Phone model="iPhone 5" carrier="Verizon" capacity="64 GB" condition="Bad">120</Phone>
   <Phone model="iPhone 5" carrier="Verizon" capacity="64 GB" condition="Good">300</Phone>
-  <Phone model="iPhone 5" carrier="Verizon" capacity="64 GB" condition="Flawless">310</Phone>
-  <Phone model="iPhone 5" carrier="Other" capacity="16 GB" condition="Bad">90</Phone>
+  <Phone model="iPhone 5" carrier="Verizon" capacity="64 GB" condition="Flawless">310</Phone>-->
+  <!--<Phone model="iPhone 5" carrier="Other" capacity="16 GB" condition="Bad">90</Phone>
   <Phone model="iPhone 5" carrier="Other" capacity="16 GB" condition="Good">210</Phone>
-  <Phone model="iPhone 5" carrier="Other" capacity="16 GB" condition="Flawless">220</Phone>
-  <Phone model="iPhone 5" carrier="Other" capacity="32 GB" condition="Bad">90</Phone>
+  <Phone model="iPhone 5" carrier="Other" capacity="16 GB" condition="Flawless">220</Phone>-->
+  <!--<Phone model="iPhone 5" carrier="Other" capacity="32 GB" condition="Bad">90</Phone>
   <Phone model="iPhone 5" carrier="Other" capacity="32 GB" condition="Good">215</Phone>
-  <Phone model="iPhone 5" carrier="Other" capacity="32 GB" condition="Flawless">225</Phone>
-  <Phone model="iPhone 5" carrier="Other" capacity="64 GB" condition="Bad">90</Phone>
+  <Phone model="iPhone 5" carrier="Other" capacity="32 GB" condition="Flawless">225</Phone>-->
+  <!--<Phone model="iPhone 5" carrier="Other" capacity="64 GB" condition="Bad">90</Phone>
   <Phone model="iPhone 5" carrier="Other" capacity="64 GB" condition="Good">220</Phone>
-  <Phone model="iPhone 5" carrier="Other" capacity="64 GB" condition="Flawless">230</Phone>
-  <Phone model="iPhone 5" carrier="Factory" capacity="16 GB" condition="Bad">120</Phone>
+  <Phone model="iPhone 5" carrier="Other" capacity="64 GB" condition="Flawless">230</Phone>-->
+  <!--<Phone model="iPhone 5" carrier="Factory" capacity="16 GB" condition="Bad">120</Phone>
   <Phone model="iPhone 5" carrier="Factory" capacity="16 GB" condition="Good">280</Phone>
-  <Phone model="iPhone 5" carrier="Factory" capacity="16 GB" condition="Flawless">290</Phone>
-  <Phone model="iPhone 5" carrier="Factory" capacity="32 GB" condition="Bad">120</Phone>
+  <Phone model="iPhone 5" carrier="Factory" capacity="16 GB" condition="Flawless">290</Phone>-->
+  <!--<Phone model="iPhone 5" carrier="Factory" capacity="32 GB" condition="Bad">120</Phone>
   <Phone model="iPhone 5" carrier="Factory" capacity="32 GB" condition="Good">285</Phone>
-  <Phone model="iPhone 5" carrier="Factory" capacity="32 GB" condition="Flawless">295</Phone>
-  <Phone model="iPhone 5" carrier="Factory" capacity="64 GB" condition="Bad">120</Phone>
+  <Phone model="iPhone 5" carrier="Factory" capacity="32 GB" condition="Flawless">295</Phone>-->
+  <!--<Phone model="iPhone 5" carrier="Factory" capacity="64 GB" condition="Bad">120</Phone>
   <Phone model="iPhone 5" carrier="Factory" capacity="64 GB" condition="Good">290</Phone>
-  <Phone model="iPhone 5" carrier="Factory" capacity="64 GB" condition="Flawless">300</Phone>
-  <Phone model="iPhone 5C" carrier="ATT" capacity="16 GB" condition="Bad">135</Phone>
+  <Phone model="iPhone 5" carrier="Factory" capacity="64 GB" condition="Flawless">300</Phone>-->
+  <!--<Phone model="iPhone 5C" carrier="ATT" capacity="16 GB" condition="Bad">135</Phone>
   <Phone model="iPhone 5C" carrier="ATT" capacity="16 GB" condition="Good">310</Phone>
-  <Phone model="iPhone 5C" carrier="ATT" capacity="16 GB" condition="Flawless">325</Phone>
-  <Phone model="iPhone 5C" carrier="ATT" capacity="32 GB" condition="Bad">135</Phone>
+  <Phone model="iPhone 5C" carrier="ATT" capacity="16 GB" condition="Flawless">325</Phone>-->
+  <!--<Phone model="iPhone 5C" carrier="ATT" capacity="32 GB" condition="Bad">135</Phone>
   <Phone model="iPhone 5C" carrier="ATT" capacity="32 GB" condition="Good">340</Phone>
-  <Phone model="iPhone 5C" carrier="ATT" capacity="32 GB" condition="Flawless">355</Phone>
-  <Phone model="iPhone 5C" carrier="Sprint" capacity="16 GB" condition="Bad">135</Phone>
+  <Phone model="iPhone 5C" carrier="ATT" capacity="32 GB" condition="Flawless">355</Phone>-->
+  <!--<Phone model="iPhone 5C" carrier="Sprint" capacity="16 GB" condition="Bad">135</Phone>
   <Phone model="iPhone 5C" carrier="Sprint" capacity="16 GB" condition="Good">290</Phone>
-  <Phone model="iPhone 5C" carrier="Sprint" capacity="16 GB" condition="Flawless">305</Phone>
-  <Phone model="iPhone 5C" carrier="Sprint" capacity="32 GB" condition="Bad">135</Phone>
+  <Phone model="iPhone 5C" carrier="Sprint" capacity="16 GB" condition="Flawless">305</Phone>-->
+  <!--<Phone model="iPhone 5C" carrier="Sprint" capacity="32 GB" condition="Bad">135</Phone>
   <Phone model="iPhone 5C" carrier="Sprint" capacity="32 GB" condition="Good">320</Phone>
-  <Phone model="iPhone 5C" carrier="Sprint" capacity="32 GB" condition="Flawless">335</Phone>
-  <Phone model="iPhone 5C" carrier="TMobile" capacity="16 GB" condition="Bad">135</Phone>
+  <Phone model="iPhone 5C" carrier="Sprint" capacity="32 GB" condition="Flawless">335</Phone>-->
+  <!--<Phone model="iPhone 5C" carrier="TMobile" capacity="16 GB" condition="Bad">135</Phone>
   <Phone model="iPhone 5C" carrier="TMobile" capacity="16 GB" condition="Good">310</Phone>
-  <Phone model="iPhone 5C" carrier="TMobile" capacity="16 GB" condition="Flawless">325</Phone>
-  <Phone model="iPhone 5C" carrier="TMobile" capacity="32 GB" condition="Bad">135</Phone>
+  <Phone model="iPhone 5C" carrier="TMobile" capacity="16 GB" condition="Flawless">325</Phone>-->
+  <!--<Phone model="iPhone 5C" carrier="TMobile" capacity="32 GB" condition="Bad">135</Phone>
   <Phone model="iPhone 5C" carrier="TMobile" capacity="32 GB" condition="Good">340</Phone>
-  <Phone model="iPhone 5C" carrier="TMobile" capacity="32 GB" condition="Flawless">355</Phone>
-  <Phone model="iPhone 5C" carrier="Verizon" capacity="16 GB" condition="Bad">135</Phone>
+  <Phone model="iPhone 5C" carrier="TMobile" capacity="32 GB" condition="Flawless">355</Phone>-->
+  <!--<Phone model="iPhone 5C" carrier="Verizon" capacity="16 GB" condition="Bad">135</Phone>
   <Phone model="iPhone 5C" carrier="Verizon" capacity="16 GB" condition="Good">310</Phone>
-  <Phone model="iPhone 5C" carrier="Verizon" capacity="16 GB" condition="Flawless">325</Phone>
-  <Phone model="iPhone 5C" carrier="Verizon" capacity="32 GB" condition="Bad">135</Phone>
+  <Phone model="iPhone 5C" carrier="Verizon" capacity="16 GB" condition="Flawless">325</Phone>-->
+  <!--<Phone model="iPhone 5C" carrier="Verizon" capacity="32 GB" condition="Bad">135</Phone>
   <Phone model="iPhone 5C" carrier="Verizon" capacity="32 GB" condition="Good">340</Phone>
-  <Phone model="iPhone 5C" carrier="Verizon" capacity="32 GB" condition="Flawless">355</Phone>
-  <Phone model="iPhone 5C" carrier="Other" capacity="16 GB" condition="Bad">135</Phone>
+  <Phone model="iPhone 5C" carrier="Verizon" capacity="32 GB" condition="Flawless">355</Phone>-->
+  <!--<Phone model="iPhone 5C" carrier="Other" capacity="16 GB" condition="Bad">135</Phone>
   <Phone model="iPhone 5C" carrier="Other" capacity="16 GB" condition="Good">290</Phone>
-  <Phone model="iPhone 5C" carrier="Other" capacity="16 GB" condition="Flawless">308</Phone>
-  <Phone model="iPhone 5C" carrier="Other" capacity="32 GB" condition="Bad">135</Phone>
+  <Phone model="iPhone 5C" carrier="Other" capacity="16 GB" condition="Flawless">308</Phone>-->
+  <!--<Phone model="iPhone 5C" carrier="Other" capacity="32 GB" condition="Bad">135</Phone>
   <Phone model="iPhone 5C" carrier="Other" capacity="32 GB" condition="Good">320</Phone>
-  <Phone model="iPhone 5C" carrier="Other" capacity="32 GB" condition="Flawless">335</Phone>
-  <Phone model="iPhone 5C" carrier="Factory" capacity="16 GB" condition="Bad">135</Phone>
+  <Phone model="iPhone 5C" carrier="Other" capacity="32 GB" condition="Flawless">335</Phone>-->
+  <!--<Phone model="iPhone 5C" carrier="Factory" capacity="16 GB" condition="Bad">135</Phone>
   <Phone model="iPhone 5C" carrier="Factory" capacity="16 GB" condition="Good">320</Phone>
-  <Phone model="iPhone 5C" carrier="Factory" capacity="16 GB" condition="Flawless">335</Phone>
-  <Phone model="iPhone 5C" carrier="Factory" capacity="32 GB" condition="Bad">135</Phone>
+  <Phone model="iPhone 5C" carrier="Factory" capacity="16 GB" condition="Flawless">335</Phone>-->
+  <!--<Phone model="iPhone 5C" carrier="Factory" capacity="32 GB" condition="Bad">135</Phone>
   <Phone model="iPhone 5C" carrier="Factory" capacity="32 GB" condition="Good">320</Phone>
-  <Phone model="iPhone 5C" carrier="Factory" capacity="32 GB" condition="Flawless">335</Phone>
+  <Phone model="iPhone 5C" carrier="Factory" capacity="32 GB" condition="Flawless">335</Phone>-->
   <!--<Phone model="iPhone 5S" carrier="ATT" capacity="16 GB" condition="Bad">165</Phone>
   <Phone model="iPhone 5S" carrier="ATT" capacity="16 GB" condition="Good">365</Phone>
   <Phone model="iPhone 5S" carrier="ATT" capacity="16 GB" condition="Flawless">390</Phone>-->
