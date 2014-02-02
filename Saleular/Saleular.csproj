@@ -272,7 +272,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
@@ -284,16 +283,15 @@
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Phone\Create.cshtml" />
-    <Content Include="Views\Phone\Delete.cshtml" />
-    <Content Include="Views\Phone\Details.cshtml" />
-    <Content Include="Views\Phone\Edit.cshtml" />
-    <Content Include="Views\Phone\Index.cshtml" />
     <Content Include="Views\Home\Questions.cshtml" />
     <Content Include="Views\Home\Testimonials.cshtml" />
     <Content Include="Views\Phone\Offer.cshtml" />
     <Content Include="Views\Phone\Ship.cshtml" />
     <Content Include="Views\Phone\Paid.cshtml" />
+    <Content Include="Views\Phone\SelectModel.cshtml" />
+    <Content Include="Views\Phone\SelectCarrier.cshtml" />
+    <Content Include="Views\Phone\SelectCapacity.cshtml" />
+    <Content Include="Views\Phone\SelectCondition.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

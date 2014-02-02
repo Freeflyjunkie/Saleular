@@ -8,11 +8,7 @@
 <style>
     .thin-gray-border {
         border: 1px solid #cbcbcb;
-    }
-
-    .box-shadow-dgray {
-        box-shadow: 5px 5px 5px #888888;
-    }
+    }    
 
     .box-shadow-primary {
         box-shadow: 5px 5px 5px #008cba;
@@ -22,10 +18,20 @@
         box-shadow: 5px 5px 5px #43ac6a;
     }
 
+    #getoffer {
+        width: 240px;
+    }
+
+    #getoffer h2
+    {        
+        padding: 0px;
+        margin: 0px;
+    } 
+    
     #offerpanel {
         padding: 0px;
         margin: 0px;
-        width: 240px;      
+        width: 240px;
     }
 
     .panel-heading {
@@ -142,17 +148,17 @@
                 <p>
                     Get an offer on your phone quickly that is guarenteed to beat our competitors.
                 </p>
-                <p><a class="btn btn-primary" href="/Phone/Offer">Learn More &raquo;</a></p>
+                <p><a class="btn btn-info" href="/Phone/Offer">Learn More &raquo;</a></p>
             </div>
             <div class="col-md-4">
                 <h2>Ship It</h2>
                 <p>Request a free shipping label and ship your phone quickly and easily using Fedex or the USPS.</p>
-                <p><a class="btn btn-primary" href="/Phone/Ship">Learn More &raquo;</a></p>
+                <p><a class="btn btn-info" href="/Phone/Ship">Learn More &raquo;</a></p>
             </div>
             <div class="col-md-4">
                 <h2>Get Paid</h2>
                 <p>Once your iPhone is received and processed you will receive payment via PayPal or a check.</p>
-                <p><a class="btn btn-primary" href="/Phone/Paid">Learn more &raquo;</a></p>
+                <p><a class="btn btn-info" href="/Phone/Paid">Learn more &raquo;</a></p>
             </div>
         </div>
         <div class="row visible-sm visible-xs">
@@ -165,15 +171,19 @@
         </div>
     </section>
     <aside class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
-        <div style="padding-bottom: 10px">
-            <a href="/Phone/Offer" id="getoffer" class="btn btn-primary" style="width: 240px; font-size: 25px">Get An Offer &raquo;</a>
+        @*<div style="padding-bottom: 10px">
+            <a href="/Phone/Model" id="getoffer" class="btn btn-info"><h2>Get An Offer</h2></a>
+        </div>
+        <br/>*@
+        <div>
+            <h2>Top Offers Paid</h2>            
         </div>
         <div id="offerpanel" class="panel panel-primary">
-            <div class="panel-heading box-shadow-dgray">
+            @*<div class="panel-heading box-shadow-dgray">
                 <div>
                     <h4 id="offerspaid">Offers Paid For iPhone 5S</h4>
                 </div>
-            </div>
+            </div>*@
             <div class="panel-body">
                 @{
                     int index = 0;

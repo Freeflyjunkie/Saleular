@@ -16,18 +16,13 @@ namespace Saleular.Controllers
         {
             OffersPaid offers = new OffersPaid();            
             offers.iPhone5Ss  = db.Phones.Where(phone => phone.Type == "iPhone" && phone.Model == "5S").OrderBy(phone => phone.PhoneID).Take(5);
-            offers.iPhone5Cs = db.Phones.Where(phone => phone.Type == "iPhone" && phone.Model == "5C");
-            offers.iPhone5s = db.Phones.Where(phone => phone.Type == "iPhone" && phone.Model == "5");
-            offers.iPhone4Ss = db.Phones.Where(phone => phone.Type == "iPhone" && phone.Model == "4S");         
+            //offers.iPhone5Cs = db.Phones.Where(phone => phone.Type == "iPhone" && phone.Model == "5C");
+            //offers.iPhone5s = db.Phones.Where(phone => phone.Type == "iPhone" && phone.Model == "5");
+            //offers.iPhone4Ss = db.Phones.Where(phone => phone.Type == "iPhone" && phone.Model == "4S");         
             return View(offers);
         }
 
         public ActionResult About()
-        {            
-            return View();
-        }
-
-        public ActionResult Contact()
         {            
             return View();
         }

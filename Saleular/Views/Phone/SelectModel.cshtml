@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "SelectModel";
+}
+
+<style>
+    button.btn {
+        border-radius: 0px;
+    }
+
+    .selected-value {
+        height: 35px;
+        width: 175px;
+        padding: 5px 5px 5px 5px;
+        border: 1px solid gray;
+    }
+</style>
+<script>
+    $(document).ready(function () {
+        var select = $('#modelSelect');
+        var dropdown = $('#modelDropdown li a');
+        WireSelectButton(select, dropdown);     
+    });
+
+    function WireSelectButton(select, dropdown) {
+        dropdown.on('click', function () {
+            var iphone = $(this).text();
+            select.text(iphone);
+        });
+    }
+
+</script>
+
+<div class="col-lg-12 col-md-12">
+    <h2>Get an Offer on your iPhone</h2>
+    <p>
+        Start by selecting your device model, carrier, capacity and condition in order to get an offer.
+        Once you have selected your iPhone you will see that our offer price beats the other sites.
+    </p>
+    <hr />
+</div>
+<div class="col-lg-12 col-md-12">
+    <form class="form-horizontal">
+        <div class="form-group">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <div class="dropdown">
+                        <div class="selected-value box-shadow-dgray" style="float: left" id="modelSelect">Select Model...</div>
+                        <button class="btn btn-primary box-shadow-dgray" data-toggle="dropdown"><span class="caret"></span></button>
+                        <ul class="dropdown-menu" id="modelDropdown">
+                            <li><a href="/Phone/Carrier" tabindex="-1">iPhone 5S</a></li>
+                            <li><a href="/Phone/Carrier" tabindex="-1">iPhone 5C</a></li>
+                            <li><a href="/Phone/Carrier" tabindex="-1">iPhone 5</a></li>
+                            <li><a href="/Phone/Carrier" tabindex="-1">iPhone 4S</a></li>
+                            <li><a href="/Phone/Carrier" tabindex="-1">iPhone 4</a></li>
+                            <li><a href="/Phone/Carrier" tabindex="-1">iPhone 3GS</a></li>
+                            <li><a href="/Phone/Carrier" tabindex="-1">iPhone 3G</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
