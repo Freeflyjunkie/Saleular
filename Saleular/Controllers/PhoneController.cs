@@ -15,22 +15,22 @@ namespace Saleular.Controllers
     {
         private SaleularContext db = new SaleularContext();
 
-        public ActionResult Model()
+        public ActionResult SelectModel()
         {
             return View("SelectModel");
         }
 
-        public ActionResult Carrier()
+        public ActionResult SelectCarrier()
         {
             return View("SelectCarrier");
         }
 
-        public ActionResult Capacity()
+        public ActionResult SelectCapacity()
         {
             return View("SelectCapacity");
         }
 
-        public ActionResult Condition()
+        public ActionResult SelectCondition()
         {
             return View("SelectCondition");
         }

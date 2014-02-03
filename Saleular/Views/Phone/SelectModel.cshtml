@@ -8,10 +8,16 @@
     }
 
     .selected-value {
-        height: 35px;
-        width: 175px;
-        padding: 5px 5px 5px 5px;
+        height: 60px;
+        width: 250px;
+        font-size: 19px;
+        padding: 10px 15px 15px 15px;
         border: 1px solid gray;
+    } 
+     
+    .selector {
+        width: 175px;
+        font-size: 19px;       
     }
 </style>
 <script>
@@ -44,16 +50,16 @@
             <div class="col-md-6">
                 <div class="input-group">
                     <div class="dropdown">
-                        <div class="selected-value box-shadow-dgray" style="float: left" id="modelSelect">Select Model...</div>
-                        <button class="btn btn-primary box-shadow-dgray" data-toggle="dropdown"><span class="caret"></span></button>
-                        <ul class="dropdown-menu" id="modelDropdown">
-                            <li><a href="/Phone/Carrier" tabindex="-1">iPhone 5S</a></li>
-                            <li><a href="/Phone/Carrier" tabindex="-1">iPhone 5C</a></li>
-                            <li><a href="/Phone/Carrier" tabindex="-1">iPhone 5</a></li>
-                            <li><a href="/Phone/Carrier" tabindex="-1">iPhone 4S</a></li>
-                            <li><a href="/Phone/Carrier" tabindex="-1">iPhone 4</a></li>
-                            <li><a href="/Phone/Carrier" tabindex="-1">iPhone 3GS</a></li>
-                            <li><a href="/Phone/Carrier" tabindex="-1">iPhone 3G</a></li>
+                        <div class="selected-value box-shadow-dgray" style="float: left"><h2 id="modelSelect">Select Model...</h2></div>
+                        <button class="btn-lg btn-primary box-shadow-dgray" data-toggle="dropdown"><span class="caret"></span></button>
+                        <ul class="dropdown-menu selector" id="modelDropdown">
+                            <li><a href="/Phone/SelectCarrier" tabindex="-1">iPhone 5S</a></li>
+                            <li><a href="/Phone/SelectCarrier" tabindex="-1">iPhone 5C</a></li>
+                            <li><a href="/Phone/SelectCarrier" tabindex="-1">iPhone 5</a></li>
+                            <li><a href="/Phone/SelectCarrier" tabindex="-1">iPhone 4S</a></li>
+                            <li><a href="/Phone/SelectCarrier" tabindex="-1">iPhone 4</a></li>
+                            <li><a href="/Phone/SelectCarrier" tabindex="-1">iPhone 3GS</a></li>
+                            <li><a href="/Phone/SelectCarrier" tabindex="-1">iPhone 3G</a></li>
                         </ul>
                     </div>
                 </div>
