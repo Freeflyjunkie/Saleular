@@ -8,36 +8,54 @@ using System.Web;
 using System.Web.Mvc;
 using Saleular.Models;
 using Saleular.DAL;
+using Saleular.ViewModels;
 
 namespace Saleular.Controllers
 {
     public class PhoneController : Controller
     {
-        private SaleularContext db = new SaleularContext();
-
-        public ActionResult SelectModel()
-        {
-            return View("SelectModel");
-        }
-
-        public ActionResult SelectCarrier()
-        {
-            return View("SelectCarrier");
-        }
-
-        public ActionResult SelectCapacity()
-        {
-            return View("SelectCapacity");
-        }
-
-        public ActionResult SelectCondition()
-        {
-            return View("SelectCondition");
-        }
-
         public ActionResult Offer()
         {
-            return View("Offer");
+            SelectediPhone selectedIPhone = new SelectediPhone();
+
+            using (SaleularContext db = new SaleularContext())
+            {
+                selectedIPhone.Models = db.Phones.Select(p => p.Model).Distinct().ToList();
+            }
+            Session["SelectIPhone"] = selectedIPhone;
+            return View(selectedIPhone);
+        }
+
+        public ActionResult SelectModel(string model)
+        {
+            SelectediPhone selectedIPhone = (SelectediPhone)Session["SelectIPhone"];
+            selectedIPhone.SelectedModel = "iPhone " + model;
+
+            using (SaleularContext db = new SaleularContext())
+            {
+                selectedIPhone.Carriers = db.Phones
+                    .Where(p => p.Model == model)
+                    .Select(c => c.Carrier).Distinct().ToList();
+            }
+            Session["SelectIPhone"] = selectedIPhone;
+
+            return View("Offer", selectedIPhone);
+        }
+
+        public ActionResult SelectCarrier(string carrier)
+        {
+            SelectediPhone selectedIPhone = (SelectediPhone)Session["SelectIPhone"];
+            selectedIPhone.SelectedCarrier = carrier;
+
+            using (SaleularContext db = new SaleularContext())
+            {
+                selectedIPhone.Capacities = db.Phones
+                    .Where(p => p.Model == selectedIPhone.SelectedModel && p.Carrier == selectedIPhone.SelectedCarrier)
+                    .Select(c => c.Capacity).Distinct().ToList();
+            }
+            Session["SelectIPhone"] = selectedIPhone;
+
+            return View("Offer", selectedIPhone);
         }
 
         public ActionResult Ship()
@@ -48,15 +66,7 @@ namespace Saleular.Controllers
         public ActionResult Paid()
         {
             return View("Paid");
-        }               
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
         }
+
     }
 }

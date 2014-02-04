@@ -1,6 +1,71 @@
-﻿@{
+﻿@model Saleular.ViewModels.SelectediPhone
+
+@{
     ViewBag.Title = "Offer";
 }
+
+<style>
+    button.btn {
+        border-radius: 0px;
+    }
+
+    .input-group {
+        margin-bottom: 20px;
+    }
+
+    .selected-value {
+        height: 35px;
+        width: 165px;
+        padding: 5px 5px 5px 5px;
+        border: 1px solid gray;
+    }
+
+    .dropdown-menu {
+        width: 165px;
+        border: 1px solid gray;
+    }
+
+    .form-horizontal .form-group {
+        margin: 0px;
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        var select = $('#modelSelect');
+        var dropdown = $('#modelDropdown li a');
+        WireSelectButton(select, dropdown);
+
+        select = $('#carrierSelect');
+        dropdown = $('#carrierDropdown li a');
+        WireSelectButton(select, dropdown);
+
+        select = $('#capacitySelect');
+        dropdown = $('#capacityDropdown li a');
+        WireSelectButton(select, dropdown);
+
+        select = $('#conditionSelect');
+        dropdown = $('#conditionDropdown li a');
+        WireSelectButton(select, dropdown);
+
+        WireEvents();
+    });
+
+    function WireSelectButton(select, dropdown) {
+        dropdown.on('click', function () {
+            var iphone = $(this).text();
+            select.text(iphone);
+        });
+
+    }
+
+    function WireEvents() {
+        $('.dropdown').on('hidden.bs.dropdown', function () {
+            //alert('here');
+        });
+    }
+
+</script>
 
 <div class="col-lg-12 col-md-12">
     <h2>Get an Offer on your iPhone</h2>
@@ -9,13 +74,81 @@
         Once you have selected your iPhone you will see that our offer price beats the other sites.
     </p>
     <hr />
+    <form class="form-horizontal">
+        <div class="form-group">
+            @{
+            <div class="input-group">
+                <div class="dropdown">
+                    <div class="selected-value box-shadow-dgray" style="float: left" id="modelSelect">@Model.SelectedModel</div>
+                    <button class="btn btn-primary box-shadow-dgray" data-toggle="dropdown"><span class="caret"></span></button>
+                    <ul class="dropdown-menu" id="modelDropdown">
+                        @foreach (var phoneModel in Model.Models)
+                        {
+                            if (Model.SelectedModel == phoneModel)
+                            {
+
+                            }
+                            <li><a href="/Phone/SelectModel?model=@phoneModel" tabindex="-1">iPhone @phoneModel</a></li>
+                        }
+
+                    </ul>
+
+                </div>
+            </div>
+            }
+            @{if (Model.Carriers.Count() > 0)
+            {
+                <div class="input-group">
+                    <div class="dropdown">
+                        <div class="selected-value box-shadow-dgray" style="float: left" id="carrierSelect">@Model.SelectedCarrier</div>
+                        <button class="btn btn-primary box-shadow-dgray" data-toggle="dropdown"><span class="caret"></span></button>
+                        <ul class="dropdown-menu" id="carrierDropdown">
+                            @{
+                                foreach (var phoneCarrier in Model.Carriers)
+                                {
+                                        <li><a href="/Phone/SelectCarrier?carrier=@phoneCarrier" tabindex="-1">@phoneCarrier</a></li>
+                                }
+                            }
+                            @*<li><a href="#" tabindex="-1">ATT</a></li>
+                            <li><a href="#" tabindex="-1">Sprint</a></li>
+                            <li><a href="#" tabindex="-1">T-Mobile</a></li>
+                            <li><a href="#" tabindex="-1">Verizon</a></li>
+                            <li><a href="#" tabindex="-1">Other</a></li>
+                            <li><a href="#" tabindex="-1">Factory</a></li>*@
+                        </ul>
+                    </div>
+                </div>
+            }
+            }
+            @{if (Model.Capacities.Count() > 0)
+            {
+                <div class="input-group">
+                    <div class="dropdown">
+                        <div class="selected-value box-shadow-dgray" style="float: left" id="capacitySelect">@Model.SelectedCapacity</div>
+                        <button class="btn btn-primary box-shadow-dgray" data-toggle="dropdown"><span class="caret"></span></button>
+                        <ul class="dropdown-menu" id="capacityDropdown">
+                            <li><a href="#" tabindex="-1">64 GB</a></li>
+                            <li><a href="#" tabindex="-1">32 GB</a></li>
+                            <li><a href="#" tabindex="-1">16 GB</a></li>
+                            <li><a href="#" tabindex="-1">8 GB</a></li>
+                        </ul>
+                    </div>
+                </div>
+            }}
+            @{if (Model.Conditions.Count() > 0)
+            {
+                <div class="input-group">
+                    <div class="dropdown">
+                        <div class="selected-value box-shadow-dgray" style="float: left" id="conditionSelect">Select Condition...</div>
+                        <button class="btn btn-primary box-shadow-dgray" data-toggle="dropdown"><span class="caret"></span></button>
+                        <ul class="dropdown-menu" id="conditionDropdown">
+                            <li><a href="#" tabindex="-1">Flawless</a></li>
+                            <li><a href="#" tabindex="-1">Good</a></li>
+                            <li><a href="#" tabindex="-1">Bad</a></li>
+                        </ul>
+                    </div>
+                </div>
+            }}
+        </div>
+    </form>
 </div>
-
-<div class="col-lg-12 col-md-12">
-    <input type="submit" class="btn btn-primary" value="Accept Offer" />
-</div>
-
-
-
-
-

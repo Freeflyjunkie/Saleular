@@ -8,23 +8,28 @@
     }
 
     .selected-value {
-        height: 60px;
-        width: 250px;
+        height: 49px;
+        width: 240px;
         font-size: 19px;
-        padding: 10px 15px 15px 15px;
+        padding: 5px 5px 5px 5px;
         border: 1px solid gray;
-    } 
-     
+    }
+
     .selector {
-        width: 175px;
-        font-size: 19px;       
+        width: 240px;
+        /*font-size: 19px;*/
+    }
+
+    .btn-lg {
+        padding: 10px 20px 10px 20px;
     }
 </style>
 <script>
     $(document).ready(function () {
         var select = $('#modelSelect');
         var dropdown = $('#modelDropdown li a');
-        WireSelectButton(select, dropdown);     
+        WireSelectButton(select, dropdown);
+        WireEvents();
     });
 
     function WireSelectButton(select, dropdown) {
@@ -32,8 +37,15 @@
             var iphone = $(this).text();
             select.text(iphone);
         });
+
     }
 
+    function WireEvents() {
+            $('.dropdown').on('hidden.bs.dropdown', function () {
+                alert('here');
+            });
+        }
+    
 </script>
 
 <div class="col-lg-12 col-md-12">
@@ -44,29 +56,26 @@
     </p>
     <hr />
 </div>
-<div class="col-lg-12 col-md-12">
-    <form class="form-horizontal">
-        <div class="form-group">
-            <div class="col-md-6">
-                <div class="input-group">
-                    <div class="dropdown">
-                        <div class="selected-value box-shadow-dgray" style="float: left"><h2 id="modelSelect">Select Model...</h2></div>
-                        <button class="btn-lg btn-primary box-shadow-dgray" data-toggle="dropdown"><span class="caret"></span></button>
-                        <ul class="dropdown-menu selector" id="modelDropdown">
-                            <li><a href="/Phone/SelectCarrier" tabindex="-1">iPhone 5S</a></li>
-                            <li><a href="/Phone/SelectCarrier" tabindex="-1">iPhone 5C</a></li>
-                            <li><a href="/Phone/SelectCarrier" tabindex="-1">iPhone 5</a></li>
-                            <li><a href="/Phone/SelectCarrier" tabindex="-1">iPhone 4S</a></li>
-                            <li><a href="/Phone/SelectCarrier" tabindex="-1">iPhone 4</a></li>
-                            <li><a href="/Phone/SelectCarrier" tabindex="-1">iPhone 3GS</a></li>
-                            <li><a href="/Phone/SelectCarrier" tabindex="-1">iPhone 3G</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+<div class="col-md-6">
+    <div class="input-group">
+        <div id="modelChosen" class="dropdown">
+            <div class="selected-value box-shadow-dgray" style="float: left"><h2 id="modelSelect">Select Model...</h2></div>
+            <button class="btn-lg btn-primary box-shadow-dgray" data-toggle="dropdown"><span class="caret"></span></button>
+            <ul class="dropdown-menu selector" id="modelDropdown">
+                <li><a href="/Phone/SelectCarrier" tabindex="-1" class="h2">iPhone 5S</a></li>
+                <li><a href="/Phone/SelectCarrier" tabindex="-1" class="h2">iPhone 5C</a></li>
+                <li><a href="/Phone/SelectCarrier" tabindex="-1" class="h2">iPhone 5</a></li>
+                <li><a href="/Phone/SelectCarrier" tabindex="-1" class="h2">iPhone 4S</a></li>
+                <li><a href="/Phone/SelectCarrier" tabindex="-1" class="h2">iPhone 4</a></li>
+                <li><a href="/Phone/SelectCarrier" tabindex="-1" class="h2">iPhone 3GS</a></li>
+                <li><a href="/Phone/SelectCarrier" tabindex="-1" class="h2">iPhone 3G</a></li>
+            </ul>
         </div>
-    </form>
+    </div>
+    <br />
 </div>
+
+
 
 
 
