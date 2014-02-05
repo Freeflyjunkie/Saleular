@@ -19,7 +19,7 @@ namespace Saleular
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+            bundles.Add(new ScriptBundle("~/bundles/js").Include(
                       "~/Scripts/bootstrap/bootstrap.js",
                       "~/Scripts/respond.js"));
 
