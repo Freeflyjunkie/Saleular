@@ -68,95 +68,90 @@
 </script>
 
 <div class="col-lg-12 col-md-12">
-    <h2>Get an Offer on your iPhone</h2>
+    <h2>Get an Offer</h2>
     <p>
-        Start by selecting your device model, carrier, capacity and condition in order to get an offer.
+        Start by selecting your device model, carrier, capacity and condition in order to get an offer.<br />
         Once you have selected your iPhone you will see that our offer price beats the other sites.
     </p>
     <hr />
-    <div class="pull-left" style="padding-right: 50px">
-        <form class="form-horizontal">
-            <div class="form-group">
-                @{
-                    <div class="input-group">
-                        <div class="dropdown">
-                            <div class="selected-value box-shadow-dgray" style="float: left" id="modelSelect">@Model.SelectedTypeAndModel</div>
-                            <button class="btn btn-primary box-shadow-dgray" data-toggle="dropdown"><span class="caret"></span></button>
-                            <ul class="dropdown-menu" id="modelDropdown">
-                                @foreach (var phoneModel in Model.Models)
-                                {
-                                    <li><a href="/Phone/SelectModel?model=@phoneModel" tabindex="-1">iPhone @phoneModel</a></li>
-                                }
-
-                            </ul>
-
-                        </div>
-                    </div>
-                }
-                @{if (Model.Carriers.Count() > 0)
-                {
-                    <div class="input-group">
-                        <div class="dropdown">
-                            <div class="selected-value box-shadow-dgray" style="float: left" id="carrierSelect">@Model.SelectedCarrier</div>
-                            <button class="btn btn-primary box-shadow-dgray" data-toggle="dropdown"><span class="caret"></span></button>
-                            <ul class="dropdown-menu" id="carrierDropdown">
-                                @{
-                    foreach (var phoneCarrier in Model.Carriers)
-                    {
-                        <li><a href="/Phone/SelectCarrier?carrier=@phoneCarrier" tabindex="-1">@phoneCarrier</a></li>
-                    }
-                                }
-                            </ul>
-                        </div>
-                    </div>
-                }
-                }
-                @{if (Model.Capacities.Count() > 0)
-                {
-                    <div class="input-group">
-                        <div class="dropdown">
-                            <div class="selected-value box-shadow-dgray" style="float: left" id="capacitySelect">@Model.SelectedCapacity</div>
-                            <button class="btn btn-primary box-shadow-dgray" data-toggle="dropdown"><span class="caret"></span></button>
-                            <ul class="dropdown-menu" id="capacityDropdown">
-                                @{
-                    foreach (var phoneCapacity in Model.Capacities)
-                    {
-                        <li><a href="/Phone/SelectCapacity?capacity=@phoneCapacity" tabindex="-1">@phoneCapacity</a></li>
-                    }
-                                }
-                            </ul>
-                        </div>
-                    </div>
-                }}
-                @{if (Model.Conditions.Count() > 0)
-                {
-                    <div class="input-group">
-                        <div class="dropdown">
-                            <div class="selected-value box-shadow-dgray" style="float: left" id="conditionSelect">@Model.SelectedCondition</div>
-                            <button class="btn btn-primary box-shadow-dgray" data-toggle="dropdown"><span class="caret"></span></button>
-                            <ul class="dropdown-menu" id="conditionDropdown">
-                                @{
-                    foreach (var phoneCondition in Model.Conditions)
-                    {
-                        <li><a href="/Phone/SelectCondition?condition=@phoneCondition" tabindex="-1">@phoneCondition</a></li>
-                    }
-                                }
-                            </ul>
-                        </div>
-                    </div>
-                }}
-            </div>
-        </form>
-    </div>
-    <div class="pull-left">
-        <h2>Our Offer</h2>
-        <div class="pull-left" style="padding: 0px 10px 0px 0px">
-            <div class="lead offerspaid-price">@Html.DisplayFor(modelItem => modelItem.Price)</div>
-        </div>
-        <div class="pull-left">
-            <a href="" class="btn btn-sm btn-primary">Accept</a>
-        </div>
-
-    </div>
-    
 </div>
+<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+    <form class="form-horizontal">
+        <div class="form-group">
+            <div class="input-group">
+                <div class="dropdown">
+                    <div class="selected-value box-shadow-dgray" style="float: left" id="modelSelect">@Model.SelectedTypeAndModel</div>
+                    <button class="btn btn-primary box-shadow-dgray" data-toggle="dropdown"><span class="caret"></span></button>
+                    <ul class="dropdown-menu" id="modelDropdown">
+                        @foreach (var phoneModel in Model.Models)
+                        {
+                            <li><a href="@Url.Action("ChangeSelection", "Phone", new { model = @phoneModel, carrier = @Model.SelectedCarrier, capacity = @Model.SelectedCapacity, condition = @Model.SelectedCondition })">iPhone @phoneModel</a></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="dropdown">
+                    <div class="selected-value box-shadow-dgray" style="float: left" id="carrierSelect">@Model.SelectedCarrier</div>
+                    <button class="btn btn-primary box-shadow-dgray" data-toggle="dropdown"><span class="caret"></span></button>
+                    <ul class="dropdown-menu" id="carrierDropdown">
+                        @{
+                            foreach (var phoneCarrier in Model.Carriers)
+                            {
+                                <li><a href="@Url.Action("ChangeSelection", "Phone", new { model = @Model.SelectedModel, carrier = @phoneCarrier, capacity = @Model.SelectedCapacity, condition = @Model.SelectedCondition })">@phoneCarrier</a></li>
+                            }
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="dropdown">
+                    <div class="selected-value box-shadow-dgray" style="float: left" id="capacitySelect">@Model.SelectedCapacity</div>
+                    <button class="btn btn-primary box-shadow-dgray" data-toggle="dropdown"><span class="caret"></span></button>
+                    <ul class="dropdown-menu" id="capacityDropdown">
+                        @{
+                            foreach (var phoneCapacity in Model.Capacities)
+                            {
+                                <li><a href="@Url.Action("ChangeSelection", "Phone", new { model = @Model.SelectedModel, carrier = @Model.SelectedCarrier, capacity = @phoneCapacity, condition = @Model.SelectedCondition })">@phoneCapacity</a></li>
+                            }
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="dropdown">
+                    <div class="selected-value box-shadow-dgray" style="float: left" id="conditionSelect">@Model.SelectedCondition</div>
+                    <button class="btn btn-primary box-shadow-dgray" data-toggle="dropdown"><span class="caret"></span></button>
+                    <ul class="dropdown-menu" id="conditionDropdown">
+                        @{
+                            foreach (var phoneCondition in Model.Conditions)
+                            {
+                                <li><a href="@Url.Action("ChangeSelection", "Phone", new { model = @Model.SelectedModel, carrier = @Model.SelectedCarrier, capacity = @Model.SelectedCapacity, condition = @phoneCondition })">@phoneCondition</a></li>
+                            }
+                        }
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>
+@{
+    if (Model.Price > 0)
+    {
+        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+            <div style="float: left; padding-right: 20px;">
+                <h2>Our Offer</h2>
+            </div>
+            <div style="float: left; padding-right: 20px; color: #008cba;">
+                <h2>@Html.DisplayFor(modelItem => modelItem.Price)</h2>
+            </div>
+            <div style="float: left">
+                <a href="/Phone/Ship" class="btn btn-sm btn-primary pull-left">Accept</a>
+            </div>
+            <div style="clear: both">
+                We pay the most for your used or new iPhone <strong><em>Guaranteed!</em></strong>
+            </div>
+        </div>
+    }
+}

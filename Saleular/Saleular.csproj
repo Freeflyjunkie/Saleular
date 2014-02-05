@@ -160,6 +160,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Classes\EmailMessenger.cs" />
+    <Compile Include="Classes\PhoneSelectionManager.cs" />
+    <Compile Include="Classes\PhoneSQLLoader.cs" />
+    <Compile Include="Classes\PhoneXMLLoader.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PhoneController.cs" />
@@ -167,6 +171,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IMessenger.cs" />
+    <Compile Include="Interfaces\IPhoneLoader.cs" />
     <Compile Include="Migrations\201401290303075_Migration1.cs" />
     <Compile Include="Migrations\201401290303075_Migration1.Designer.cs">
       <DependentUpon>201401290303075_Migration1.cs</DependentUpon>
@@ -289,12 +295,10 @@
     <Content Include="Views\Phone\Offer.cshtml" />
     <Content Include="Views\Phone\Ship.cshtml" />
     <Content Include="Views\Phone\Paid.cshtml" />
-    <Content Include="Views\Phone\SelectModel.cshtml" />
-    <Content Include="Views\Phone\SelectCarrier.cshtml" />
-    <Content Include="Views\Phone\SelectCapacity.cshtml" />
-    <Content Include="Views\Phone\SelectCondition.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Code\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />

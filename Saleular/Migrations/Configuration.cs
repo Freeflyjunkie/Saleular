@@ -24,8 +24,8 @@ namespace Saleular.Migrations
                 new Phone { Type = "iPhone",   
                             Model = "5S", 
                             Carrier = "Factory", 
-                            Capacity="64 GB", 
-                            Condition="Flawless", 
+                            Capacity = "64 GB", 
+                            Condition = "Flawless", 
                             Price = 455.00M,
                             ImageUrl="/Images/iPhones/iPhone5S" },
 
