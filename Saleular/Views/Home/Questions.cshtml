@@ -27,14 +27,14 @@
     <hr />
 </div>
 <div class="col-lg-12 col-md-12">
-    <form class="form-horizontal">
+    <form class="form-horizontal" method="post">
         <div class="form-group">
             <label for="nameInput" class="control-label col-lg-1 col-md-1">Name</label>
             <div class="col-md-6">
                 <div class="input-group">
                     <span id="nameAddon" data-toggle="tooltip" title="Tell us who you are!" class="input-group-addon box-shadow-dgray"><span class="glyphicon glyphicon-user"></span></span>
                     <input type="text"
-                           name="nameInput"
+                           name="name"
                            class="form-control box-shadow-dgray"
                            placeholder="e.g. Brad Pitt" />
                 </div>
@@ -46,7 +46,7 @@
                 <div class="input-group">
                     <span id="emailAddon" data-toggle="tooltip" title="This email address will be used for later correspondence" class="input-group-addon box-shadow-dgray">&#64;</span>
                     <input type="email"
-                           name="emailInput"
+                           name="email"
                            class="form-control box-shadow-dgray"
                            placeholder="e.g. bpitt@gmail.com" />
                 </div>
@@ -55,7 +55,7 @@
         <div class="form-group">
             <label for="questionInput" class="control-label col-lg-1 col-md-1">Questions</label>
             <div class="col-md-6">
-                <textarea name="questionInput"
+                <textarea name="question"
                           rows="6"
                           cols="40"
                           class="form-control box-shadow-dgray"

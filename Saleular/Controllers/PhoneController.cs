@@ -34,10 +34,20 @@ namespace Saleular.Controllers
 
 
         public ActionResult Ship()
-        {
-            // Send Message using IMessenger
-            return View("Ship");
+        {            
+            return View();
         }
+
+        [HttpPost]
+        public ActionResult Ship(string name, string address, string city, string state, string zip, string email, string comments)
+        {
+            IMessenger messenger = new EmailMessenger();
+            string body = messenger.ConstructMessage(address, city, state, zip, email, comments);
+            //messenger.SendMessage(email, "Cash For My Phone", body);
+            return View("ShipLabelRequestSent");
+        }
+
+
 
         public ActionResult Paid()
         {

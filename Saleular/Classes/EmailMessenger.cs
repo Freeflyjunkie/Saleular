@@ -46,15 +46,17 @@ namespace Saleular.Classes
             }
             emailtext.AppendLine("This user would like to ship you the following iPhones:");
             SelectediPhone phone = (SelectediPhone)HttpContext.Current.Session["SelectedIPhone"];
-            emailtext.AppendLine(phone.SelectedModel);
-            emailtext.AppendLine(phone.SelectedCarrier);
-            emailtext.AppendLine(phone.SelectedCapacity);
-            emailtext.AppendLine(phone.SelectedCondition);
-            emailtext.AppendLine(phone.Price.ToString());
-            emailtext.AppendLine("");
-            
+            if (phone != null)
+            {
+                emailtext.AppendLine(phone.SelectedModel);
+                emailtext.AppendLine(phone.SelectedCarrier);
+                emailtext.AppendLine(phone.SelectedCapacity);
+                emailtext.AppendLine(phone.SelectedCondition);
+                emailtext.AppendLine(phone.Price.ToString());
+                emailtext.AppendLine("");
+            }
 
             return emailtext.ToString();
         }
     }
-} 
+}

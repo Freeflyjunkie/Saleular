@@ -9,14 +9,34 @@
 </style>
 <script>
     $(document).ready(function () {
-        var nameAddon = $('#nameAddon')
-        nameAddon.tooltip();
-        nameAddon.css('cursor', 'pointer');
 
-        var emailAddon = $('#emailAddon');
-        emailAddon.tooltip();
-        emailAddon.css('cursor', 'pointer');
+        SetTooltip($('#nameAddon'));
+        SetTooltip($('#emailAddon'));
+        SetTooltip($('#addressAddon'));
+        SetTooltip($('#cityAddon'));
+        SetTooltip($('#stateAddon'));
+        SetTooltip($('#zipAddon'));
+
+        $('input[name=zip]').on('blur', function () {            
+            var url = 'http://zip.elevenbasetwo.com/v2/US/' + $(this).val();            
+            $.ajax({
+                url: url,
+                type: 'GET',
+                dataType: 'json',
+                success: function (data, status, xhr)
+                {                    
+                    $('input[name=state]').val(data["state"]);
+                    $('input[name=city]').val(data["city"]);                    
+                }
+            })                       
+        });        
     });
+
+    function SetTooltip(addon)
+    {
+        addon.tooltip();
+        addon.css('cursor', 'pointer');
+    }
 </script>
 <div class="col-lg-12 col-md-12">
     <h2>Now Ship It</h2>
@@ -26,37 +46,93 @@
     <hr />
 </div>
 <div class="col-lg-12 col-md-12">
-    <form class="form-horizontal">
+    <form class="form-horizontal" method="post">
         <div class="form-group">
-            <label for="nameInput" class="control-label col-lg-1 col-md-1">Name</label>
+            <label for="name" class="control-label col-lg-1 col-md-1">Name</label>
             <div class="col-md-6">
                 <div class="input-group">
                     <span id="nameAddon" data-toggle="tooltip" title="Tell us who you are!" class="input-group-addon box-shadow-dgray"><span class="glyphicon glyphicon-user"></span></span>
                     <input type="text"
-                           name="nameInput"
+                           name="name"
+                           tabindex="1"
                            class="form-control box-shadow-dgray"
                            placeholder="e.g. Brad Pitt" />
                 </div>
             </div>
         </div>
         <div class="form-group">
-            <label for="emailInput" class="control-label col-lg-1 col-md-1">Email</label>
+            <label for="address" class="control-label col-lg-1 col-md-1">Address</label>
+            <div class="col-md-6">
+                <div class="input-group">
+                    <span id="addressAddon" data-toggle="tooltip" title="What street do you live on?" class="input-group-addon box-shadow-dgray"><span class="glyphicon glyphicon-user"></span></span>
+                    <input type="text"
+                           name="address"
+                           tabindex="2"
+                           class="form-control box-shadow-dgray"
+                           placeholder="e.g. 123 Main Street" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="zip" class="control-label col-lg-1 col-md-1">Zip</label>
+            <div class="col-md-6">
+                <div class="input-group">
+                    <span id="zipAddon" data-toggle="tooltip" title="What zipcode do you live in?" class="input-group-addon box-shadow-dgray"><span class="glyphicon glyphicon-user"></span></span>
+                    <input type="text"
+                           name="zip"
+                           id="zip"
+                           tabindex="3"
+                           class="form-control box-shadow-dgray"
+                           placeholder="e.g. 12345" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="city" class="control-label col-lg-1 col-md-1">City</label>
+            <div class="col-md-6">
+                <div class="input-group">
+                    <span id="cityAddon" data-toggle="tooltip" title="What city do you live in?" class="input-group-addon box-shadow-dgray"><span class="glyphicon glyphicon-user"></span></span>
+                    <input type="text"
+                           name="city"
+                           tabindex="-1"
+                           class="form-control box-shadow-dgray"
+                           placeholder="e.g. Anytown" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="state" class="control-label col-lg-1 col-md-1">State</label>
+            <div class="col-md-6">
+                <div class="input-group">
+                    <span id="stateAddon" data-toggle="tooltip" title="What state do you live in?" class="input-group-addon box-shadow-dgray"><span class="glyphicon glyphicon-user"></span></span>
+                    <input type="text"
+                           name="state"
+                           tabindex="-1"
+                           class="form-control box-shadow-dgray"
+                           placeholder="e.g. Anystate" />
+                </div>
+            </div>
+        </div>        
+        <div class="form-group">
+            <label for="email" class="control-label col-lg-1 col-md-1">Email</label>
             <div class="col-md-6">
                 <div class="input-group">
                     <span id="emailAddon" data-toggle="tooltip" title="This email address will be used for later correspondence" class="input-group-addon box-shadow-dgray">&#64;</span>
                     <input type="email"
-                           name="emailInput"
+                           name="email"
+                           tabindex="4"
                            class="form-control box-shadow-dgray"
                            placeholder="e.g. bpitt@gmail.com" />
                 </div>
             </div>
         </div>
         <div class="form-group">
-            <label for="questionInput" class="control-label col-lg-1 col-md-1">Coments</label>
+            <label for="comments" class="control-label col-lg-1 col-md-1">Comments</label>
             <div class="col-md-6">
-                <textarea name="questionInput"
+                <textarea name="comments"
                           rows="6"
                           cols="40"
+                          tabindex="5"
                           class="form-control box-shadow-dgray"
                           placeholder="e.g. Send me my shipping label!"></textarea>
 

@@ -1,4 +1,6 @@
-﻿using Saleular.DAL;
+﻿using Saleular.Classes;
+using Saleular.DAL;
+using Saleular.Interfaces;
 using Saleular.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -30,6 +32,16 @@ namespace Saleular.Controllers
         public ActionResult Questions()
         {            
             return View("Questions");
+        }
+
+        [HttpPost]
+        public ActionResult Questions(string name, string email, string question)
+        {
+            IMessenger messenger = new EmailMessenger();
+            string unknown = "Unknown";
+            string body = messenger.ConstructMessage(unknown, unknown, unknown, unknown, email, question);
+            //messenger.SendMessage(email, "Cash For My Phone", body);
+            return View("QuestionSent");
         }
 
         public ActionResult Testimonials()

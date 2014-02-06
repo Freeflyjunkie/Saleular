@@ -8,8 +8,8 @@ namespace Saleular.Interfaces
 {
     interface IMessenger
     {
-        public void SendMessage(string from, string subject, string body);
+        void SendMessage(string from, string subject, string body);
 
-        public string ConstructMessage(string address, string city, string state, string zip, string useremail, string additionalcomments);
+        string ConstructMessage(string address, string city, string state, string zip, string useremail, string additionalcomments);
     }
 }

@@ -245,6 +245,7 @@
     <Content Include="Images\iPhones\iPhone5_Good3.jpg" />
     <Content Include="Images\iPhones\iPhone5_Good.jpg" />
     <Content Include="Images\Logos\saleular_sm.png" />
+    <Content Include="Images\Questions\customer-service.png" />
     <Content Include="Images\Testimonials\amy.jpg" />
     <Content Include="Images\Testimonials\eric.jpg" />
     <Content Include="Images\Testimonials\robert.png" />
@@ -295,6 +296,8 @@
     <Content Include="Views\Phone\Offer.cshtml" />
     <Content Include="Views\Phone\Ship.cshtml" />
     <Content Include="Views\Phone\Paid.cshtml" />
+    <Content Include="Views\Home\QuestionSent.cshtml" />
+    <Content Include="Views\Phone\ShipLabelRequestSent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
