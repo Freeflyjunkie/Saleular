@@ -43,7 +43,7 @@ namespace Saleular.Controllers
         {
             IMessenger messenger = new EmailMessenger();
             string body = messenger.ConstructMessage(address, city, state, zip, email, comments);
-            //messenger.SendMessage(email, "Cash For My Phone", body);
+            messenger.SendMessage(email, "Cash For My Phone", body);
             return View("ShipLabelRequestSent");
         }
 

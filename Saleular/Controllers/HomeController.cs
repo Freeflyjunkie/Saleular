@@ -16,7 +16,7 @@ namespace Saleular.Controllers
 
         public ActionResult Index()
         {
-            OffersPaid offers = new OffersPaid();            
+            TopOffers offers = new TopOffers();            
             offers.iPhone5Ss  = db.Phones.Where(phone => phone.Type == "iPhone" && phone.Model == "5S").OrderBy(phone => phone.PhoneID).Take(5);
             //offers.iPhone5Cs = db.Phones.Where(phone => phone.Type == "iPhone" && phone.Model == "5C");
             //offers.iPhone5s = db.Phones.Where(phone => phone.Type == "iPhone" && phone.Model == "5");
@@ -40,7 +40,7 @@ namespace Saleular.Controllers
             IMessenger messenger = new EmailMessenger();
             string unknown = "Unknown";
             string body = messenger.ConstructMessage(unknown, unknown, unknown, unknown, email, question);
-            //messenger.SendMessage(email, "Cash For My Phone", body);
+            messenger.SendMessage(email, "Cash For My Phone", body);
             return View("QuestionSent");
         }
 
