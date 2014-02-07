@@ -10,14 +10,14 @@
 <script>
     $(document).ready(function ()
     {
-        var nameAddon = $('#nameAddon')
-        nameAddon.tooltip();
-        nameAddon.css('cursor', 'pointer');
-
-        var emailAddon = $('#emailAddon');
-        emailAddon.tooltip();
-        emailAddon.css('cursor', 'pointer');
+        SetTooltip($('#nameAddon'));
+        SetTooltip($('#emailAddon'));      
     });
+
+    function SetTooltip(addon) {
+        addon.tooltip();
+        addon.css('cursor', 'pointer');
+    }
 </script>
 <div class="col-lg-12 col-md-12">
     <h2>Ask Saleular!</h2>

@@ -23,12 +23,11 @@
                 url: url,
                 type: 'GET',
                 dataType: 'json',
-                success: function (data, status, xhr)
-                {                    
+                success: function (data, status, xhr) {
                     $('input[name=state]').val(data["state"]);
-                    $('input[name=city]').val(data["city"]);                    
+                    $('input[name=city]').val(data["city"]);
                 }
-            })                       
+            });
         });        
     });
 

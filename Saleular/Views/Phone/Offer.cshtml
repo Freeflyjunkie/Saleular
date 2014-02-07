@@ -1,7 +1,7 @@
 ﻿@model Saleular.ViewModels.SelectediPhone
 
 @{
-    ViewBag.Title = "Offer";
+    ViewBag.Title = "Get An Offer";
 }
 
 <style>
@@ -48,7 +48,18 @@
         dropdown = $('#conditionDropdown li a');
         WireSelectButton(select, dropdown);
 
-        WireEvents();
+        var modelselected = '@Model.SelectedTypeAndModel';          
+        var pos = modelselected.indexOf('Select', 0);        
+        if (pos != -1)
+        {
+            var buttons = $('.dropdown');
+            for (var i = 0; i < buttons.length; i++) {
+                if (i > 0)
+                {
+                    $(buttons[i]).hide();
+                }
+            } 
+        }     
     });
 
     function WireSelectButton(select, dropdown) {
@@ -57,13 +68,7 @@
             select.text(iphone);
         });
 
-    }
-
-    function WireEvents() {
-        $('.dropdown').on('hidden.bs.dropdown', function () {
-            //alert('here');
-        });
-    }
+    }   
 
 </script>
 
@@ -75,8 +80,8 @@
     </p>
     <hr />
 </div>
-<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-    <form class="form-horizontal">
+<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" id="wholething">
+    <form id="selectionForm" class="form-horizontal">
         <div class="form-group">
             <div class="input-group">
                 <div class="dropdown">
@@ -85,14 +90,14 @@
                     <ul class="dropdown-menu" id="modelDropdown">
                         @foreach (var phoneModel in Model.Models)
                         {
-                            <li><a href="@Url.Action("ChangeSelection", "Phone", new { model = @phoneModel, carrier = @Model.SelectedCarrier, capacity = @Model.SelectedCapacity, condition = @Model.SelectedCondition })">iPhone @phoneModel</a></li>
+                            <li><a href="@Url.Action("ChangeSelection", "Phone", new { model = @phoneModel, carrier = @Model.SelectedCarrier, capacity = @Model.SelectedCapacity, condition = @Model.SelectedCondition })">iPhone @phoneModel</a></li>                            
                         }
                     </ul>
                 </div>
             </div>
             <div class="input-group">
                 <div class="dropdown">
-                    <div class="selected-value box-shadow-dgray" style="float: left" id="carrierSelect">@Model.SelectedCarrier</div>
+                    <div class=" selected-value box-shadow-dgray" style="float: left" id="carrierSelect">@Model.SelectedCarrier</div>
                     <button class="btn btn-primary box-shadow-dgray" data-toggle="dropdown"><span class="caret"></span></button>
                     <ul class="dropdown-menu" id="carrierDropdown">
                         @{
@@ -132,7 +137,6 @@
                     </ul>
                 </div>
             </div>
-
         </div>
     </form>
 </div>

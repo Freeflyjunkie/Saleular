@@ -25,13 +25,7 @@ namespace Saleular.Controllers
         public ActionResult ChangeSelection(string model, string carrier, string capacity, string condition){
             SelectediPhone selectedIPhone = PhoneSelectionManager.SelectionChanged(model, carrier, capacity, condition);
             return View("Offer",selectedIPhone);
-        }
-
-        public ActionResult Accept()
-        {
-            return View("Accept");
-        }
-
+        }      
 
         public ActionResult Ship()
         {            
@@ -46,13 +40,5 @@ namespace Saleular.Controllers
             messenger.SendMessage(email, "Cash For My Phone", body);
             return View("ShipLabelRequestSent");
         }
-
-
-
-        public ActionResult Paid()
-        {
-            return View("Paid");
-        }
-
     }
 }

@@ -256,6 +256,8 @@
     <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <None Include="Scripts\jquery\jquery-2.1.0.intellisense.js" />
+    <Content Include="Scripts\jquery\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery\jquery-2.1.0.js" />
     <Content Include="Scripts\jquery\jquery-2.1.0.min.js" />
     <Content Include="Scripts\jquery\jquery-2.1.0.min.map" />
@@ -295,7 +297,6 @@
     <Content Include="Views\Home\Testimonials.cshtml" />
     <Content Include="Views\Phone\Offer.cshtml" />
     <Content Include="Views\Phone\Ship.cshtml" />
-    <Content Include="Views\Phone\Paid.cshtml" />
     <Content Include="Views\Home\QuestionSent.cshtml" />
     <Content Include="Views\Phone\ShipLabelRequestSent.cshtml" />
   </ItemGroup>
