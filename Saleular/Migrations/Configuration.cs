@@ -477,7 +477,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Flawless", 
                             Price = 335.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5C" },
 
                new Phone { Type = "iPhone",   
                             Model = "5C", 
@@ -485,7 +485,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Good",
                             Price = 320.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5C" },
 
                new Phone { Type = "iPhone",   
                             Model = "5C", 
@@ -493,7 +493,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Bad", 
                             Price = 135.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5C" },
 
                 // iPhone 5C 16 GB Factory
                 new Phone { Type = "iPhone",   
@@ -502,7 +502,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Flawless", 
                             Price = 335.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5C" },
 
                new Phone { Type = "iPhone",   
                             Model = "5C", 
@@ -510,7 +510,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Good",
                             Price = 320.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5C" },
 
                new Phone { Type = "iPhone",   
                             Model = "5C", 
@@ -518,7 +518,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Bad", 
                             Price = 135.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5C" },
 
                 // iPhone 5C 32 GB Other
                 new Phone { Type = "iPhone",   
@@ -527,7 +527,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Flawless", 
                             Price = 335.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5C" },
 
                new Phone { Type = "iPhone",   
                             Model = "5C", 
@@ -535,7 +535,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Good",
                             Price = 320.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5C" },
 
                new Phone { Type = "iPhone",   
                             Model = "5C", 
@@ -543,7 +543,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Bad", 
                             Price = 135.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5C" },
 
                 // iPhone 5C 16 GB Other
                 new Phone { Type = "iPhone",   
@@ -552,7 +552,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Flawless", 
                             Price = 308.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5C" },
 
                new Phone { Type = "iPhone",   
                             Model = "5C", 
@@ -560,7 +560,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Good",
                             Price = 290.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5C" },
 
                new Phone { Type = "iPhone",   
                             Model = "5C", 
@@ -568,7 +568,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Bad", 
                             Price = 135.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5C" },
 
                 // iPhone 5C 32 GB Verizon
                 new Phone { Type = "iPhone",   
@@ -577,7 +577,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Flawless", 
                             Price = 335.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5C" },
 
                new Phone { Type = "iPhone",   
                             Model = "5C", 
@@ -585,7 +585,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Good",
                             Price = 340.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5C" },
 
                new Phone { Type = "iPhone",   
                             Model = "5C", 
@@ -593,7 +593,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Bad", 
                             Price = 135.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5C" },
 
                 // iPhone 5C 16 GB Verizon
                 new Phone { Type = "iPhone",   
@@ -602,7 +602,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Flawless", 
                             Price = 325.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5C" },
 
                new Phone { Type = "iPhone",   
                             Model = "5C", 
@@ -610,7 +610,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Good",
                             Price = 310.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5C" },
 
                new Phone { Type = "iPhone",   
                             Model = "5C", 
@@ -618,7 +618,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Bad", 
                             Price = 135.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5C" },
 
                 // iPhone 5C 32 GB TMobile
                 new Phone { Type = "iPhone",   
@@ -627,7 +627,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Flawless", 
                             Price = 355.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5C" },
 
                new Phone { Type = "iPhone",   
                             Model = "5C", 
@@ -635,7 +635,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Good",
                             Price = 340.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5C" },
 
                new Phone { Type = "iPhone",   
                             Model = "5C", 
@@ -643,7 +643,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Bad", 
                             Price = 135.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5C" },
 
                 // iPhone 5C 16 GB TMobile
                 new Phone { Type = "iPhone",   
@@ -652,7 +652,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Flawless", 
                             Price = 325.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5C" },
 
                new Phone { Type = "iPhone",   
                             Model = "5C", 
@@ -660,7 +660,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Good",
                             Price = 310.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5C" },
 
                new Phone { Type = "iPhone",   
                             Model = "5C", 
@@ -668,7 +668,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Bad", 
                             Price = 135.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5C" },
 
                 // iPhone 5C 32 GB Sprint
                 new Phone { Type = "iPhone",   
@@ -677,7 +677,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Flawless", 
                             Price = 335.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5C" },
 
                new Phone { Type = "iPhone",   
                             Model = "5C", 
@@ -685,7 +685,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Good",
                             Price = 320.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5C" },
 
                new Phone { Type = "iPhone",   
                             Model = "5C", 
@@ -693,7 +693,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Bad", 
                             Price = 135.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5C" },
 
                 // iPhone 5C 16 GB Sprint
                 new Phone { Type = "iPhone",   
@@ -702,7 +702,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Flawless", 
                             Price = 305.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5C" },
 
                new Phone { Type = "iPhone",   
                             Model = "5C", 
@@ -710,7 +710,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Good",
                             Price = 290.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5C" },
 
                new Phone { Type = "iPhone",   
                             Model = "5C", 
@@ -718,7 +718,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Bad", 
                             Price = 135.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5C" },
 
                 // iPhone 5C 32 GB ATT
                 new Phone { Type = "iPhone",   
@@ -727,7 +727,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Flawless", 
                             Price = 355.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5C" },
 
                new Phone { Type = "iPhone",   
                             Model = "5C", 
@@ -735,7 +735,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Good",
                             Price = 340.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5C" },
 
                new Phone { Type = "iPhone",   
                             Model = "5C", 
@@ -743,7 +743,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Bad", 
                             Price = 135.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5C" },
 
                 // iPhone 5C 32 GB ATT
                 new Phone { Type = "iPhone",   
@@ -752,7 +752,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Flawless", 
                             Price = 325.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5C" },
 
                new Phone { Type = "iPhone",   
                             Model = "5C", 
@@ -760,7 +760,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Good",
                             Price = 310.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5C" },
 
                new Phone { Type = "iPhone",   
                             Model = "5C", 
@@ -768,7 +768,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Bad", 
                             Price = 135.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5C" },
 
                 // iPhone 5 64 GB Factory
                 new Phone { Type = "iPhone",   
@@ -777,7 +777,7 @@ namespace Saleular.Migrations
                             Capacity="64 GB", 
                             Condition="Flawless", 
                             Price = 300.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                new Phone { Type = "iPhone",   
                             Model = "5", 
@@ -785,7 +785,7 @@ namespace Saleular.Migrations
                             Capacity="64 GB", 
                             Condition="Good",
                             Price = 290.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                new Phone { Type = "iPhone",   
                             Model = "5", 
@@ -793,7 +793,7 @@ namespace Saleular.Migrations
                             Capacity="64 GB", 
                             Condition="Bad", 
                             Price = 120.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                 // iPhone 5 32 GB Factory
                 new Phone { Type = "iPhone",   
@@ -802,7 +802,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Flawless", 
                             Price = 295.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                new Phone { Type = "iPhone",   
                             Model = "5", 
@@ -810,7 +810,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Good",
                             Price = 285.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                new Phone { Type = "iPhone",   
                             Model = "5", 
@@ -818,7 +818,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Bad", 
                             Price = 120.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                 // iPhone 5 16 GB Factory
                 new Phone { Type = "iPhone",   
@@ -827,7 +827,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Flawless", 
                             Price = 290.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                new Phone { Type = "iPhone",   
                             Model = "5", 
@@ -835,7 +835,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Good",
                             Price = 280.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                new Phone { Type = "iPhone",   
                             Model = "5", 
@@ -843,7 +843,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Bad", 
                             Price = 120.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                 // iPhone 5 64 GB Other
                 new Phone { Type = "iPhone",   
@@ -852,7 +852,7 @@ namespace Saleular.Migrations
                             Capacity="64 GB", 
                             Condition="Flawless", 
                             Price = 230.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                new Phone { Type = "iPhone",   
                             Model = "5", 
@@ -860,7 +860,7 @@ namespace Saleular.Migrations
                             Capacity="64 GB", 
                             Condition="Good",
                             Price = 220.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                new Phone { Type = "iPhone",   
                             Model = "5", 
@@ -868,7 +868,7 @@ namespace Saleular.Migrations
                             Capacity="64 GB", 
                             Condition="Bad", 
                             Price = 90.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                 // iPhone 5 32 GB Other
                 new Phone { Type = "iPhone",   
@@ -877,7 +877,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Flawless", 
                             Price = 225.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                new Phone { Type = "iPhone",   
                             Model = "5", 
@@ -885,7 +885,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Good",
                             Price = 215.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                new Phone { Type = "iPhone",   
                             Model = "5", 
@@ -893,7 +893,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Bad", 
                             Price = 90.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                 // iPhone 5 16 GB Other
                 new Phone { Type = "iPhone",   
@@ -902,7 +902,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Flawless", 
                             Price = 220.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                new Phone { Type = "iPhone",   
                             Model = "5", 
@@ -910,7 +910,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Good",
                             Price = 210.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                new Phone { Type = "iPhone",   
                             Model = "5", 
@@ -918,7 +918,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Bad", 
                             Price = 90.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                 // iPhone 5 64 GB Verizon
                 new Phone { Type = "iPhone",   
@@ -927,7 +927,7 @@ namespace Saleular.Migrations
                             Capacity="64 GB", 
                             Condition="Flawless", 
                             Price = 310.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                new Phone { Type = "iPhone",   
                             Model = "5", 
@@ -935,7 +935,7 @@ namespace Saleular.Migrations
                             Capacity="64 GB", 
                             Condition="Good",
                             Price = 300.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                new Phone { Type = "iPhone",   
                             Model = "5", 
@@ -943,7 +943,7 @@ namespace Saleular.Migrations
                             Capacity="64 GB", 
                             Condition="Bad", 
                             Price = 120.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                 // iPhone 5 32 GB Verizon
                 new Phone { Type = "iPhone",   
@@ -952,7 +952,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Flawless", 
                             Price = 305.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                new Phone { Type = "iPhone",   
                             Model = "5", 
@@ -960,7 +960,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Good",
                             Price = 295.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                new Phone { Type = "iPhone",   
                             Model = "5", 
@@ -968,7 +968,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Bad", 
                             Price = 120.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                 // iPhone 5 16 GB Verizon
                 new Phone { Type = "iPhone",   
@@ -977,7 +977,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Flawless", 
                             Price = 300.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                new Phone { Type = "iPhone",   
                             Model = "5", 
@@ -985,7 +985,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Good",
                             Price = 290.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                new Phone { Type = "iPhone",   
                             Model = "5", 
@@ -993,7 +993,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Bad", 
                             Price = 120.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                 // iPhone 5 64 GB TMobile
                 new Phone { Type = "iPhone",   
@@ -1002,7 +1002,7 @@ namespace Saleular.Migrations
                             Capacity="64 GB", 
                             Condition="Flawless", 
                             Price = 280.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                new Phone { Type = "iPhone",   
                             Model = "5", 
@@ -1010,7 +1010,7 @@ namespace Saleular.Migrations
                             Capacity="64 GB", 
                             Condition="Good",
                             Price = 270.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                new Phone { Type = "iPhone",   
                             Model = "5", 
@@ -1018,7 +1018,7 @@ namespace Saleular.Migrations
                             Capacity="64 GB", 
                             Condition="Bad", 
                             Price = 90.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                 // iPhone 5 32 GB TMobile
                 new Phone { Type = "iPhone",   
@@ -1027,7 +1027,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Flawless", 
                             Price = 270.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                new Phone { Type = "iPhone",   
                             Model = "5", 
@@ -1035,7 +1035,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Good",
                             Price = 260.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                new Phone { Type = "iPhone",   
                             Model = "5", 
@@ -1043,7 +1043,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Bad", 
                             Price = 90.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                 // iPhone 5 16 GB TMobile
                 new Phone { Type = "iPhone",   
@@ -1052,7 +1052,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Flawless", 
                             Price = 260.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                new Phone { Type = "iPhone",   
                             Model = "5", 
@@ -1060,7 +1060,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Good",
                             Price = 250.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                new Phone { Type = "iPhone",   
                             Model = "5", 
@@ -1068,7 +1068,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Bad", 
                             Price = 90.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                 // iPhone 5 64 GB Sprint
                 new Phone { Type = "iPhone",   
@@ -1077,7 +1077,7 @@ namespace Saleular.Migrations
                             Capacity="64 GB", 
                             Condition="Flawless", 
                             Price = 230.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                new Phone { Type = "iPhone",   
                             Model = "5", 
@@ -1085,7 +1085,7 @@ namespace Saleular.Migrations
                             Capacity="64 GB", 
                             Condition="Good",
                             Price = 220.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                new Phone { Type = "iPhone",   
                             Model = "5", 
@@ -1093,7 +1093,7 @@ namespace Saleular.Migrations
                             Capacity="64 GB", 
                             Condition="Bad", 
                             Price = 90.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                 // iPhone 5 16 GB Sprint
                 new Phone { Type = "iPhone",   
@@ -1102,7 +1102,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Flawless", 
                             Price = 225.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                new Phone { Type = "iPhone",   
                             Model = "5", 
@@ -1110,7 +1110,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Good",
                             Price = 215.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                new Phone { Type = "iPhone",   
                             Model = "5", 
@@ -1118,7 +1118,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Bad", 
                             Price = 90.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                 // iPhone 5 16 GB Sprint
                 new Phone { Type = "iPhone",   
@@ -1127,7 +1127,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Flawless", 
                             Price = 220.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                new Phone { Type = "iPhone",   
                             Model = "5", 
@@ -1135,7 +1135,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Good",
                             Price = 210.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                new Phone { Type = "iPhone",   
                             Model = "5", 
@@ -1143,7 +1143,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Bad", 
                             Price = 90.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                 // iPhone 5 64 GB ATT
                 new Phone { Type = "iPhone",   
@@ -1152,7 +1152,7 @@ namespace Saleular.Migrations
                             Capacity="64 GB", 
                             Condition="Flawless", 
                             Price = 300.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                new Phone { Type = "iPhone",   
                             Model = "5", 
@@ -1160,7 +1160,7 @@ namespace Saleular.Migrations
                             Capacity="64 GB", 
                             Condition="Good",
                             Price = 290.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                new Phone { Type = "iPhone",   
                             Model = "5", 
@@ -1168,7 +1168,7 @@ namespace Saleular.Migrations
                             Capacity="64 GB", 
                             Condition="Bad", 
                             Price = 120.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                 // iPhone 5 32 GB ATT
                 new Phone { Type = "iPhone",   
@@ -1177,7 +1177,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Flawless", 
                             Price = 295.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                new Phone { Type = "iPhone",   
                             Model = "5", 
@@ -1185,7 +1185,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Good",
                             Price = 285.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                new Phone { Type = "iPhone",   
                             Model = "5", 
@@ -1193,7 +1193,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Bad", 
                             Price = 120.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                 // iPhone 5 16 GB ATT
                 new Phone { Type = "iPhone",   
@@ -1202,7 +1202,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Flawless", 
                             Price = 290.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                new Phone { Type = "iPhone",   
                             Model = "5", 
@@ -1210,7 +1210,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Good",
                             Price = 280.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                new Phone { Type = "iPhone",   
                             Model = "5", 
@@ -1218,7 +1218,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Bad", 
                             Price = 120.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone5" },
 
                 // iPhone 4S 16 GB TMobile
                 new Phone { Type = "iPhone",   
@@ -1227,7 +1227,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Flawless", 
                             Price = 195.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone4S" },
 
                new Phone { Type = "iPhone",   
                             Model = "4S", 
@@ -1235,7 +1235,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Good",
                             Price = 185.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone4S" },
 
                new Phone { Type = "iPhone",   
                             Model = "4S", 
@@ -1243,7 +1243,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Bad", 
                             Price = 90.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone4S" },
 
                 // iPhone 4S 8 GB TMobile
                 new Phone { Type = "iPhone",   
@@ -1252,7 +1252,7 @@ namespace Saleular.Migrations
                             Capacity="8 GB", 
                             Condition="Flawless", 
                             Price = 195.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone4S" },
 
                new Phone { Type = "iPhone",   
                             Model = "4S", 
@@ -1260,7 +1260,7 @@ namespace Saleular.Migrations
                             Capacity="8 GB", 
                             Condition="Good",
                             Price = 185.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone4S" },
 
                new Phone { Type = "iPhone",   
                             Model = "4S", 
@@ -1268,7 +1268,7 @@ namespace Saleular.Migrations
                             Capacity="8 GB", 
                             Condition="Bad", 
                             Price = 90.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone4S" },
 
                 // iPhone 4S 64 GB Factory
                 new Phone { Type = "iPhone",   
@@ -1277,7 +1277,7 @@ namespace Saleular.Migrations
                             Capacity="64 GB", 
                             Condition="Flawless", 
                             Price = 195.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone4S" },
 
                new Phone { Type = "iPhone",   
                             Model = "4S", 
@@ -1285,7 +1285,7 @@ namespace Saleular.Migrations
                             Capacity="64 GB", 
                             Condition="Good",
                             Price = 185.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone4S" },
 
                new Phone { Type = "iPhone",   
                             Model = "4S", 
@@ -1293,7 +1293,7 @@ namespace Saleular.Migrations
                             Capacity="64 GB", 
                             Condition="Bad", 
                             Price = 90.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone4S" },
 
                 // iPhone 4S 32 GB Factory
                 new Phone { Type = "iPhone",   
@@ -1302,7 +1302,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Flawless", 
                             Price = 190.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone4S" },
 
                new Phone { Type = "iPhone",   
                             Model = "4S", 
@@ -1310,7 +1310,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Good",
                             Price = 180.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone4S" },
 
                new Phone { Type = "iPhone",   
                             Model = "4S", 
@@ -1318,7 +1318,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Bad", 
                             Price = 90.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone4S" },
 
                 // iPhone 4S 16 GB Factory
                 new Phone { Type = "iPhone",   
@@ -1327,7 +1327,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Flawless", 
                             Price = 185.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone4S" },
 
                new Phone { Type = "iPhone",   
                             Model = "4S", 
@@ -1335,7 +1335,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Good",
                             Price = 175.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone4S" },
 
                new Phone { Type = "iPhone",   
                             Model = "4S", 
@@ -1343,7 +1343,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Bad", 
                             Price = 90.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone4S" },
 
                 // iPhone 4S 64 GB Other
                 new Phone { Type = "iPhone",   
@@ -1352,7 +1352,7 @@ namespace Saleular.Migrations
                             Capacity="64 GB", 
                             Condition="Flawless", 
                             Price = 145.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone4S" },
 
                new Phone { Type = "iPhone",   
                             Model = "4S", 
@@ -1360,7 +1360,7 @@ namespace Saleular.Migrations
                             Capacity="64 GB", 
                             Condition="Good",
                             Price = 135.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone4S" },
 
                new Phone { Type = "iPhone",   
                             Model = "4S", 
@@ -1368,7 +1368,7 @@ namespace Saleular.Migrations
                             Capacity="64 GB", 
                             Condition="Bad", 
                             Price = 65.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone4S" },
 
                 // iPhone 4S 32 GB Other
                 new Phone { Type = "iPhone",   
@@ -1377,7 +1377,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Flawless", 
                             Price = 145.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone4S" },
 
                new Phone { Type = "iPhone",   
                             Model = "4S", 
@@ -1385,7 +1385,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Good",
                             Price = 135.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone4S" },
 
                new Phone { Type = "iPhone",   
                             Model = "4S", 
@@ -1393,7 +1393,7 @@ namespace Saleular.Migrations
                             Capacity="32 GB", 
                             Condition="Bad", 
                             Price = 65.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone4S" },
 
                 // iPhone 4S 16 GB Other
                 new Phone { Type = "iPhone",   
@@ -1402,7 +1402,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Flawless", 
                             Price = 145.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone4S" },
 
                new Phone { Type = "iPhone",   
                             Model = "4S", 
@@ -1410,7 +1410,7 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Good",
                             Price = 135.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+                            ImageUrl="/Images/iPhones/iPhone4S" },
 
                new Phone { Type = "iPhone",   
                             Model = "4S", 
@@ -1418,7 +1418,807 @@ namespace Saleular.Migrations
                             Capacity="16 GB", 
                             Condition="Bad", 
                             Price = 65.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" }
+                            ImageUrl="/Images/iPhones/iPhone4S" },
+
+                // iPhone 4S 64 GB Version
+                new Phone { Type = "iPhone",   
+                            Model = "4S", 
+                            Carrier = "Version", 
+                            Capacity="64 GB", 
+                            Condition="Flawless", 
+                            Price = 175.00M,
+                            ImageUrl="/Images/iPhones/iPhone4S" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4S", 
+                            Carrier = "Version", 
+                            Capacity="64 GB", 
+                            Condition="Good",
+                            Price = 155.00M,
+                            ImageUrl="/Images/iPhones/iPhone4S" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4S", 
+                            Carrier = "Version", 
+                            Capacity="64 GB", 
+                            Condition="Bad", 
+                            Price = 70.00M,
+                            ImageUrl="/Images/iPhones/iPhone4S" },
+
+                // iPhone 4S 32 GB Version
+                new Phone { Type = "iPhone",   
+                            Model = "4S", 
+                            Carrier = "Version", 
+                            Capacity="32 GB", 
+                            Condition="Flawless", 
+                            Price = 170.00M,
+                            ImageUrl="/Images/iPhones/iPhone4S" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4S", 
+                            Carrier = "Version", 
+                            Capacity="32 GB", 
+                            Condition="Good",
+                            Price = 160.00M,
+                            ImageUrl="/Images/iPhones/iPhone4S" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4S", 
+                            Carrier = "Version", 
+                            Capacity="32 GB", 
+                            Condition="Bad", 
+                            Price = 70.00M,
+                            ImageUrl="/Images/iPhones/iPhone4S" },
+
+                // iPhone 4S 16 GB Version
+                new Phone { Type = "iPhone",   
+                            Model = "4S", 
+                            Carrier = "Version", 
+                            Capacity="16 GB", 
+                            Condition="Flawless", 
+                            Price = 165.00M,
+                            ImageUrl="/Images/iPhones/iPhone4S" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4S", 
+                            Carrier = "Version", 
+                            Capacity="16 GB", 
+                            Condition="Good",
+                            Price = 155.00M,
+                            ImageUrl="/Images/iPhones/iPhone4S" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4S", 
+                            Carrier = "Version", 
+                            Capacity="16 GB", 
+                            Condition="Bad", 
+                            Price = 70.00M,
+                            ImageUrl="/Images/iPhones/iPhone4S" },
+
+                // iPhone 4S 64 GB Version
+                new Phone { Type = "iPhone",   
+                            Model = "4S", 
+                            Carrier = "Sprint", 
+                            Capacity="64 GB", 
+                            Condition="Flawless", 
+                            Price = 175.00M,
+                            ImageUrl="/Images/iPhones/iPhone4S" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4S", 
+                            Carrier = "Sprint", 
+                            Capacity="64 GB", 
+                            Condition="Good",
+                            Price = 165.00M,
+                            ImageUrl="/Images/iPhones/iPhone4S" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4S", 
+                            Carrier = "Sprint", 
+                            Capacity="64 GB", 
+                            Condition="Bad", 
+                            Price = 70.00M,
+                            ImageUrl="/Images/iPhones/iPhone4S" },
+
+                // iPhone 4S 32 GB Version
+                new Phone { Type = "iPhone",   
+                            Model = "4S", 
+                            Carrier = "Sprint", 
+                            Capacity="32 GB", 
+                            Condition="Flawless", 
+                            Price = 170.00M,
+                            ImageUrl="/Images/iPhones/iPhone4S" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4S", 
+                            Carrier = "Sprint", 
+                            Capacity="32 GB", 
+                            Condition="Good",
+                            Price = 160.00M,
+                            ImageUrl="/Images/iPhones/iPhone4S" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4S", 
+                            Carrier = "Sprint", 
+                            Capacity="32 GB", 
+                            Condition="Bad", 
+                            Price = 70.00M,
+                            ImageUrl="/Images/iPhones/iPhone4S" },
+
+                // iPhone 4S 16 GB Version
+                new Phone { Type = "iPhone",   
+                            Model = "4S", 
+                            Carrier = "Sprint", 
+                            Capacity="16 GB", 
+                            Condition="Flawless", 
+                            Price = 165.00M,
+                            ImageUrl="/Images/iPhones/iPhone4S" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4S", 
+                            Carrier = "Sprint", 
+                            Capacity="16 GB", 
+                            Condition="Good",
+                            Price = 155.00M,
+                            ImageUrl="/Images/iPhones/iPhone4S" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4S", 
+                            Carrier = "Sprint", 
+                            Capacity="16 GB", 
+                            Condition="Bad", 
+                            Price = 75.00M,
+                            ImageUrl="/Images/iPhones/iPhone4S" },
+
+                // iPhone 4S 64 GB ATT
+                new Phone { Type = "iPhone",   
+                            Model = "4S", 
+                            Carrier = "ATT", 
+                            Capacity="64 GB", 
+                            Condition="Flawless", 
+                            Price = 195.00M,
+                            ImageUrl="/Images/iPhones/iPhone4S" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4S", 
+                            Carrier = "ATT", 
+                            Capacity="64 GB", 
+                            Condition="Good",
+                            Price = 185.00M,
+                            ImageUrl="/Images/iPhones/iPhone4S" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4S", 
+                            Carrier = "ATT", 
+                            Capacity="64 GB", 
+                            Condition="Bad", 
+                            Price = 90.00M,
+                            ImageUrl="/Images/iPhones/iPhone4S" },
+
+                // iPhone 4S 32 GB ATT
+                new Phone { Type = "iPhone",   
+                            Model = "4S", 
+                            Carrier = "ATT", 
+                            Capacity="32 GB", 
+                            Condition="Flawless", 
+                            Price = 190.00M,
+                            ImageUrl="/Images/iPhones/iPhone4S" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4S", 
+                            Carrier = "ATT", 
+                            Capacity="32 GB", 
+                            Condition="Good",
+                            Price = 180.00M,
+                            ImageUrl="/Images/iPhones/iPhone4S" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4S", 
+                            Carrier = "ATT", 
+                            Capacity="32 GB", 
+                            Condition="Bad", 
+                            Price = 90.00M,
+                            ImageUrl="/Images/iPhones/iPhone4S" },
+
+                // iPhone 4S 16 GB ATT
+                new Phone { Type = "iPhone",   
+                            Model = "4S", 
+                            Carrier = "ATT", 
+                            Capacity="16 GB", 
+                            Condition="Flawless", 
+                            Price = 185.00M,
+                            ImageUrl="/Images/iPhones/iPhone4S" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4S", 
+                            Carrier = "ATT", 
+                            Capacity="16 GB", 
+                            Condition="Good",
+                            Price = 175.00M,
+                            ImageUrl="/Images/iPhones/iPhone4S" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4S", 
+                            Carrier = "ATT", 
+                            Capacity="16 GB", 
+                            Condition="Bad", 
+                            Price = 90.00M,
+                            ImageUrl="/Images/iPhones/iPhone4S" },
+
+                // iPhone 4S 8 GB ATT
+                new Phone { Type = "iPhone",   
+                            Model = "4S", 
+                            Carrier = "ATT", 
+                            Capacity="8 GB", 
+                            Condition="Flawless", 
+                            Price = 180.00M,
+                            ImageUrl="/Images/iPhones/iPhone4S" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4S", 
+                            Carrier = "ATT", 
+                            Capacity="8 GB", 
+                            Condition="Good",
+                            Price = 170.00M,
+                            ImageUrl="/Images/iPhones/iPhone4S" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4S", 
+                            Carrier = "ATT", 
+                            Capacity="8 GB", 
+                            Condition="Bad", 
+                            Price = 80.00M,
+                            ImageUrl="/Images/iPhones/iPhone4S" },
+
+                // iPhone 4 8 GB TMobile
+                new Phone { Type = "iPhone",   
+                            Model = "4", 
+                            Carrier = "TMobile", 
+                            Capacity="8 GB", 
+                            Condition="Flawless", 
+                            Price = 115.00M,
+                            ImageUrl="/Images/iPhones/iPhone4" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4", 
+                            Carrier = "TMobile", 
+                            Capacity="8 GB", 
+                            Condition="Good",
+                            Price = 110.00M,
+                            ImageUrl="/Images/iPhones/iPhone4" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4", 
+                            Carrier = "TMobile", 
+                            Capacity="8 GB", 
+                            Condition="Bad", 
+                            Price = 55.00M,
+                            ImageUrl="/Images/iPhones/iPhone4" },
+
+                // iPhone 4 32 GB ATT
+                new Phone { Type = "iPhone",   
+                            Model = "4", 
+                            Carrier = "ATT", 
+                            Capacity="32 GB", 
+                            Condition="Flawless", 
+                            Price = 115.00M,
+                            ImageUrl="/Images/iPhones/iPhone4" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4", 
+                            Carrier = "ATT", 
+                            Capacity="32 GB", 
+                            Condition="Good",
+                            Price = 110.00M,
+                            ImageUrl="/Images/iPhones/iPhone4" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4", 
+                            Carrier = "ATT", 
+                            Capacity="32 GB", 
+                            Condition="Bad", 
+                            Price = 55.00M,
+                            ImageUrl="/Images/iPhones/iPhone4" },
+
+                // iPhone 4 16 GB ATT
+                new Phone { Type = "iPhone",   
+                            Model = "4", 
+                            Carrier = "ATT", 
+                            Capacity="16 GB", 
+                            Condition="Flawless", 
+                            Price = 115.00M,
+                            ImageUrl="/Images/iPhones/iPhone4" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4", 
+                            Carrier = "ATT", 
+                            Capacity="16 GB", 
+                            Condition="Good",
+                            Price = 110.00M,
+                            ImageUrl="/Images/iPhones/iPhone4" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4", 
+                            Carrier = "ATT", 
+                            Capacity="16 GB", 
+                            Condition="Bad", 
+                            Price = 55.00M,
+                            ImageUrl="/Images/iPhones/iPhone4" },
+
+                // iPhone 4 8 GB ATT
+                new Phone { Type = "iPhone",   
+                            Model = "4", 
+                            Carrier = "ATT", 
+                            Capacity="8 GB", 
+                            Condition="Flawless", 
+                            Price = 105.00M,
+                            ImageUrl="/Images/iPhones/iPhone4" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4", 
+                            Carrier = "ATT", 
+                            Capacity="8 GB", 
+                            Condition="Good",
+                            Price = 100.00M,
+                            ImageUrl="/Images/iPhones/iPhone4" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4", 
+                            Carrier = "ATT", 
+                            Capacity="8 GB", 
+                            Condition="Bad", 
+                            Price = 55.00M,
+                            ImageUrl="/Images/iPhones/iPhone4" },
+
+                // iPhone 4 8 GB Sprint
+                new Phone { Type = "iPhone",   
+                            Model = "4", 
+                            Carrier = "Sprint", 
+                            Capacity="8 GB", 
+                            Condition="Flawless", 
+                            Price = 70.00M,
+                            ImageUrl="/Images/iPhones/iPhone4" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4", 
+                            Carrier = "Sprint", 
+                            Capacity="8 GB", 
+                            Condition="Good",
+                            Price = 65.00M,
+                            ImageUrl="/Images/iPhones/iPhone4" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4", 
+                            Carrier = "Sprint", 
+                            Capacity="8 GB", 
+                            Condition="Bad", 
+                            Price = 25.00M,
+                            ImageUrl="/Images/iPhones/iPhone4" },
+
+                // iPhone 4 32 GB Verizon
+                new Phone { Type = "iPhone",   
+                            Model = "4", 
+                            Carrier = "Verizon", 
+                            Capacity="32 GB", 
+                            Condition="Flawless", 
+                            Price = 87.00M,
+                            ImageUrl="/Images/iPhones/iPhone4" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4", 
+                            Carrier = "Verizon", 
+                            Capacity="32 GB", 
+                            Condition="Good",
+                            Price = 82.00M,
+                            ImageUrl="/Images/iPhones/iPhone4" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4", 
+                            Carrier = "Verizon", 
+                            Capacity="32 GB", 
+                            Condition="Bad", 
+                            Price = 35.00M,
+                            ImageUrl="/Images/iPhones/iPhone4" },
+
+                // iPhone 4 16 GB Verizon
+                new Phone { Type = "iPhone",   
+                            Model = "4", 
+                            Carrier = "Verizon", 
+                            Capacity="16 GB", 
+                            Condition="Flawless", 
+                            Price = 90.00M,
+                            ImageUrl="/Images/iPhones/iPhone4" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4", 
+                            Carrier = "Verizon", 
+                            Capacity="16 GB", 
+                            Condition="Good",
+                            Price = 85.00M,
+                            ImageUrl="/Images/iPhones/iPhone4" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4", 
+                            Carrier = "Verizon", 
+                            Capacity="16 GB", 
+                            Condition="Bad", 
+                            Price = 40.00M,
+                            ImageUrl="/Images/iPhones/iPhone4" },
+
+                // iPhone 4 8 GB Verizon
+                new Phone { Type = "iPhone",   
+                            Model = "4", 
+                            Carrier = "Verizon", 
+                            Capacity="8 GB", 
+                            Condition="Flawless", 
+                            Price = 70.00M,
+                            ImageUrl="/Images/iPhones/iPhone4" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4", 
+                            Carrier = "Verizon", 
+                            Capacity="8 GB", 
+                            Condition="Good",
+                            Price = 65.00M,
+                            ImageUrl="/Images/iPhones/iPhone4" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4", 
+                            Carrier = "Verizon", 
+                            Capacity="8 GB", 
+                            Condition="Bad", 
+                            Price = 25.00M,
+                            ImageUrl="/Images/iPhones/iPhone4" },
+
+                // iPhone 4 8 GB Other
+                new Phone { Type = "iPhone",   
+                            Model = "4", 
+                            Carrier = "Other", 
+                            Capacity="8 GB", 
+                            Condition="Flawless", 
+                            Price = 60.00M,
+                            ImageUrl="/Images/iPhones/iPhone4" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4", 
+                            Carrier = "Other", 
+                            Capacity="8 GB", 
+                            Condition="Good",
+                            Price = 55.00M,
+                            ImageUrl="/Images/iPhones/iPhone4" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4", 
+                            Carrier = "Other", 
+                            Capacity="8 GB", 
+                            Condition="Bad", 
+                            Price = 25.00M,
+                            ImageUrl="/Images/iPhones/iPhone4" },
+
+                // iPhone 4 32 GB Factory
+                new Phone { Type = "iPhone",   
+                            Model = "4", 
+                            Carrier = "Factory", 
+                            Capacity="32 GB", 
+                            Condition="Flawless", 
+                            Price = 105.00M,
+                            ImageUrl="/Images/iPhones/iPhone4" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4", 
+                            Carrier = "Factory", 
+                            Capacity="32 GB", 
+                            Condition="Good",
+                            Price = 100.00M,
+                            ImageUrl="/Images/iPhones/iPhone4" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4", 
+                            Carrier = "Factory", 
+                            Capacity="32 GB", 
+                            Condition="Bad", 
+                            Price = 55.00M,
+                            ImageUrl="/Images/iPhones/iPhone4" },
+
+                // iPhone 4 16 GB Factory
+                new Phone { Type = "iPhone",   
+                            Model = "4", 
+                            Carrier = "Factory", 
+                            Capacity="16 GB", 
+                            Condition="Flawless", 
+                            Price = 105.00M,
+                            ImageUrl="/Images/iPhones/iPhone4" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4", 
+                            Carrier = "Factory", 
+                            Capacity="16 GB", 
+                            Condition="Good",
+                            Price = 100.00M,
+                            ImageUrl="/Images/iPhones/iPhone4" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4", 
+                            Carrier = "Factory", 
+                            Capacity="16 GB", 
+                            Condition="Bad", 
+                            Price = 55.00M,
+                            ImageUrl="/Images/iPhones/iPhone4" },
+
+                // iPhone 4 8 GB Factory
+                new Phone { Type = "iPhone",   
+                            Model = "4", 
+                            Carrier = "Factory", 
+                            Capacity="8 GB", 
+                            Condition="Flawless", 
+                            Price = 105.00M,
+                            ImageUrl="/Images/iPhones/iPhone4" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4", 
+                            Carrier = "Factory", 
+                            Capacity="8 GB", 
+                            Condition="Good",
+                            Price = 100.00M,
+                            ImageUrl="/Images/iPhones/iPhone4" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "4", 
+                            Carrier = "Factory", 
+                            Capacity="8 GB", 
+                            Condition="Bad", 
+                            Price = 55.00M,
+                            ImageUrl="/Images/iPhones/iPhone4" },
+
+                // iPhone 3GS 32 GB ATT
+                new Phone { Type = "iPhone",   
+                            Model = "3GS", 
+                            Carrier = "ATT", 
+                            Capacity="32 GB", 
+                            Condition="Flawless", 
+                            Price = 15.00M,
+                            ImageUrl="/Images/iPhones/iPhone3GS" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "3GS", 
+                            Carrier = "ATT", 
+                            Capacity="32 GB", 
+                            Condition="Good",
+                            Price = 12.00M,
+                            ImageUrl="/Images/iPhones/iPhone3GS" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "3GS", 
+                            Carrier = "ATT", 
+                            Capacity="32 GB", 
+                            Condition="Bad", 
+                            Price = 8.00M,
+                            ImageUrl="/Images/iPhones/iPhone3GS" },
+
+                // iPhone 3GS 16 GB ATT
+                new Phone { Type = "iPhone",   
+                            Model = "3GS", 
+                            Carrier = "ATT", 
+                            Capacity="16 GB", 
+                            Condition="Flawless", 
+                            Price = 15.00M,
+                            ImageUrl="/Images/iPhones/iPhone3GS" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "3GS", 
+                            Carrier = "ATT", 
+                            Capacity="16 GB", 
+                            Condition="Good",
+                            Price = 12.00M,
+                            ImageUrl="/Images/iPhones/iPhone3GS" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "3GS", 
+                            Carrier = "ATT", 
+                            Capacity="16 GB", 
+                            Condition="Bad", 
+                            Price = 8.00M,
+                            ImageUrl="/Images/iPhones/iPhone3GS" }, 
+              
+                // iPhone 3GS 8 GB ATT
+                new Phone { Type = "iPhone",   
+                            Model = "3GS", 
+                            Carrier = "ATT", 
+                            Capacity="8 GB", 
+                            Condition="Flawless", 
+                            Price = 15.00M,
+                            ImageUrl="/Images/iPhones/iPhone3GS" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "3GS", 
+                            Carrier = "ATT", 
+                            Capacity="8 GB", 
+                            Condition="Good",
+                            Price = 12.00M,
+                            ImageUrl="/Images/iPhones/iPhone3GS" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "3GS", 
+                            Carrier = "ATT", 
+                            Capacity="8 GB", 
+                            Condition="Bad", 
+                            Price = 8.00M,
+                            ImageUrl="/Images/iPhones/iPhone3GS" }, 
+
+                // iPhone 3GS 32 GB Factory
+                new Phone { Type = "iPhone",   
+                            Model = "3GS", 
+                            Carrier = "Factory", 
+                            Capacity="32 GB", 
+                            Condition="Flawless", 
+                            Price = 15.00M,
+                            ImageUrl="/Images/iPhones/iPhone3GS" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "3GS", 
+                            Carrier = "Factory", 
+                            Capacity="32 GB", 
+                            Condition="Good",
+                            Price = 12.00M,
+                            ImageUrl="/Images/iPhones/iPhone3GS" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "3GS", 
+                            Carrier = "Factory", 
+                            Capacity="32 GB", 
+                            Condition="Bad", 
+                            Price = 8.00M,
+                            ImageUrl="/Images/iPhones/iPhone3GS" }, 
+
+                // iPhone 3GS 16 GB Factory
+                new Phone { Type = "iPhone",   
+                            Model = "3GS", 
+                            Carrier = "Factory", 
+                            Capacity="16 GB", 
+                            Condition="Flawless", 
+                            Price = 15.00M,
+                            ImageUrl="/Images/iPhones/iPhone3GS" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "3GS", 
+                            Carrier = "Factory", 
+                            Capacity="16 GB", 
+                            Condition="Good",
+                            Price = 12.00M,
+                            ImageUrl="/Images/iPhones/iPhone3GS" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "3GS", 
+                            Carrier = "Factory", 
+                            Capacity="16 GB", 
+                            Condition="Bad", 
+                            Price = 8.00M,
+                            ImageUrl="/Images/iPhones/iPhone3GS" }, 
+
+                // iPhone 3GS 8 GB Factory
+                new Phone { Type = "iPhone",   
+                            Model = "3GS", 
+                            Carrier = "Factory", 
+                            Capacity="8 GB", 
+                            Condition="Flawless", 
+                            Price = 15.00M,
+                            ImageUrl="/Images/iPhones/iPhone3GS" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "3GS", 
+                            Carrier = "Factory", 
+                            Capacity="8 GB", 
+                            Condition="Good",
+                            Price = 12.00M,
+                            ImageUrl="/Images/iPhones/iPhone3GS" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "3GS", 
+                            Carrier = "Factory", 
+                            Capacity="8 GB", 
+                            Condition="Bad", 
+                            Price = 8.00M,
+                            ImageUrl="/Images/iPhones/iPhone3GS" }, 
+
+                // iPhone 3G 16 GB ATT
+                new Phone { Type = "iPhone",   
+                            Model = "3G", 
+                            Carrier = "ATT", 
+                            Capacity="16 GB", 
+                            Condition="Flawless", 
+                            Price = 15.00M,
+                            ImageUrl="/Images/iPhones/iPhone3G" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "3G", 
+                            Carrier = "ATT", 
+                            Capacity="16 GB", 
+                            Condition="Good",
+                            Price = 10.00M,
+                            ImageUrl="/Images/iPhones/iPhone3G" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "3G", 
+                            Carrier = "ATT", 
+                            Capacity="16 GB", 
+                            Condition="Bad", 
+                            Price = 1.00M,
+                            ImageUrl="/Images/iPhones/iPhone3G" }, 
+
+                // iPhone 3G 8 GB ATT
+                new Phone { Type = "iPhone",   
+                            Model = "3G", 
+                            Carrier = "ATT", 
+                            Capacity="8 GB", 
+                            Condition="Flawless", 
+                            Price = 15.00M,
+                            ImageUrl="/Images/iPhones/iPhone3G" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "3G", 
+                            Carrier = "ATT", 
+                            Capacity="8 GB", 
+                            Condition="Good",
+                            Price = 10.00M,
+                            ImageUrl="/Images/iPhones/iPhone3G" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "3G", 
+                            Carrier = "ATT", 
+                            Capacity="8 GB", 
+                            Condition="Bad", 
+                            Price = 1.00M,
+                            ImageUrl="/Images/iPhones/iPhone3G" }, 
+
+                // iPhone 3G 16 GB Factory
+                new Phone { Type = "iPhone",   
+                            Model = "3G", 
+                            Carrier = "Factory", 
+                            Capacity="16 GB", 
+                            Condition="Flawless", 
+                            Price = 15.00M,
+                            ImageUrl="/Images/iPhones/iPhone3G" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "3G", 
+                            Carrier = "Factory", 
+                            Capacity="16 GB", 
+                            Condition="Good",
+                            Price = 10.00M,
+                            ImageUrl="/Images/iPhones/iPhone3G" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "3G", 
+                            Carrier = "Factory", 
+                            Capacity="16 GB", 
+                            Condition="Bad", 
+                            Price = 1.00M,
+                            ImageUrl="/Images/iPhones/iPhone3G" }, 
+
+                // iPhone 3G 8 GB Factory
+                new Phone { Type = "iPhone",   
+                            Model = "3G", 
+                            Carrier = "Factory", 
+                            Capacity="8 GB", 
+                            Condition="Flawless", 
+                            Price = 15.00M,
+                            ImageUrl="/Images/iPhones/iPhone3G" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "3G", 
+                            Carrier = "Factory", 
+                            Capacity="8 GB", 
+                            Condition="Good",
+                            Price = 10.00M,
+                            ImageUrl="/Images/iPhones/iPhone3G" },
+
+               new Phone { Type = "iPhone",   
+                            Model = "3G", 
+                            Carrier = "Factory", 
+                            Capacity="8 GB", 
+                            Condition="Bad", 
+                            Price = 1.00M,
+                            ImageUrl="/Images/iPhones/iPhone3G" }
               
             };
             phones.ForEach(s => context.Phones.AddOrUpdate(p => p.PhoneID, s));
