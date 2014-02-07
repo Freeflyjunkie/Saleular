@@ -15,7 +15,26 @@ using Saleular.Interfaces;
 namespace Saleular.Controllers
 {
     public class PhoneController : Controller
-    {
+    {    
+        [HttpPost]
+        public ActionResult GetCarriers()
+        {
+            using (SaleularContext db = new SaleularContext())
+            {
+                var carriers = db.Phones.Where(m => m.Model == "4" && m.Carrier == "Factory").ToList();
+                return View("FindCarriers", carriers);
+            }
+        }
+
+        public ActionResult FindCarriers()
+        {
+            using (SaleularContext db = new SaleularContext())
+            {
+                var phones = db.Phones;
+                return View(phones.ToList());                
+            }
+        }
+
         public ActionResult Offer()
         {
             SelectediPhone selectedIPhone = PhoneSelectionManager.InitializeSelection();

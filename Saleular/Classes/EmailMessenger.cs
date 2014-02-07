@@ -13,15 +13,19 @@ namespace Saleular.Classes
     {
         public void SendMessage(string from, string subject, string body)
         {
-            MailMessage message = new MailMessage();
-            message.From = new MailAddress(from);
-            message.To.Add(new MailAddress("iphone@saleular.com"));
-            message.Subject = subject;
-            message.Body = body;
+            try
+            {
+                MailMessage message = new MailMessage();
+                message.From = new MailAddress(from);
+                message.To.Add(new MailAddress("iphone@saleular.com"));
+                message.Subject = subject;
+                message.Body = body;
 
-            SmtpClient smtpClient = new SmtpClient("smtp.secureserver.net");
-            smtpClient.Host = "relay-hosting.secureserver.net";
-            smtpClient.Send(message);
+                SmtpClient smtpClient = new SmtpClient("smtp.secureserver.net");
+                smtpClient.Host = "relay-hosting.secureserver.net";
+                smtpClient.Send(message);
+            }
+            catch { }
         }
 
         public string ConstructMessage(string address, string city, string state, string zip, string useremail, string additionalcomments)
