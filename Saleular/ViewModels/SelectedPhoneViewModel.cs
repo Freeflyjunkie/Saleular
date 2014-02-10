@@ -6,10 +6,10 @@ using System.Web;
 
 namespace Saleular.ViewModels
 {
-    public class SelectediPhone
+    public class SelectedPhoneViewModel
     {
 
-        public SelectediPhone()
+        public SelectedPhoneViewModel()
         {
             SelectedTypeAndModel = "Select Model...";
             Models = new List<String>();
@@ -42,6 +42,5 @@ namespace Saleular.ViewModels
 
         [DataType(DataType.Currency)]        
         public decimal Price { get; set; }
-
     }
 }

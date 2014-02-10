@@ -10,23 +10,23 @@ namespace Saleular.Classes
     public class PhoneSelectionManager
     {
 
-        public static SelectediPhone InitializeSelection()
+        public static SelectedPhoneViewModel InitializeSelection()
         {
-            SelectediPhone selectedIPhone = new SelectediPhone();
+            SelectedPhoneViewModel selectedIPhone = new SelectedPhoneViewModel();
             IPhoneLoader loader = new PhoneSQLLoader();            
-            selectedIPhone.Models = loader.LoadModels("iPhone");            
-            HttpContext.Current.Session["SelectedIPhone"] = selectedIPhone;
+            selectedIPhone.Models = loader.LoadModels("iPhone");
+            HttpContext.Current.Session["SelectedPhoneViewModel"] = selectedIPhone;
             return selectedIPhone;
         }
 
-        public static SelectediPhone SelectionChanged(string model, string carrier, string capacity, string condition)
+        public static SelectedPhoneViewModel SelectionChanged(string model, string carrier, string capacity, string condition)
         {
             // Get Selection
             IPhoneLoader loader = new PhoneSQLLoader();
-            SelectediPhone selectedIPhone = (SelectediPhone)HttpContext.Current.Session["SelectedIPhone"];
+            SelectedPhoneViewModel selectedIPhone = (SelectedPhoneViewModel)HttpContext.Current.Session["SelectedPhoneViewModel"];
             if (selectedIPhone == null)
             {
-                selectedIPhone = new SelectediPhone();
+                selectedIPhone = new SelectedPhoneViewModel();
             }
 
             selectedIPhone.SelectedModel = model;
@@ -60,7 +60,7 @@ namespace Saleular.Classes
                                                     selectedIPhone.SelectedCapacity,
                                                     selectedIPhone.SelectedCondition);
 
-            HttpContext.Current.Session["SelectedIPhone"] = selectedIPhone;
+            HttpContext.Current.Session["SelectedPhoneViewModel"] = selectedIPhone;
             return selectedIPhone;
         }      
     }

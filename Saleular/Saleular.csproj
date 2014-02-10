@@ -195,8 +195,8 @@
     <Compile Include="Models\Phone.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="ViewModels\SelectediPhone.cs" />
-    <Compile Include="ViewModels\TopOffers.cs" />
+    <Compile Include="ViewModels\SelectedPhoneViewModel.cs" />
+    <Compile Include="ViewModels\TopOffersViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\Saleular.mdf" />
@@ -300,7 +300,6 @@
     <Content Include="Views\Phone\Ship.cshtml" />
     <Content Include="Views\Home\QuestionSent.cshtml" />
     <Content Include="Views\Phone\ShipLabelRequestSent.cshtml" />
-    <Content Include="Views\Phone\FindCarriers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />

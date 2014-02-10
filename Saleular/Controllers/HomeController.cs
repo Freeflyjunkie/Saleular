@@ -16,7 +16,7 @@ namespace Saleular.Controllers
 
         public ActionResult Index()
         {
-            TopOffers offers = new TopOffers();            
+            TopOffersViewModel offers = new TopOffersViewModel();            
             offers.iPhone5Ss  = db.Phones.Where(phone => phone.Type == "iPhone" && phone.Model == "5S").OrderBy(phone => phone.PhoneID).Take(5);
             //offers.iPhone5Cs = db.Phones.Where(phone => phone.Type == "iPhone" && phone.Model == "5C");
             //offers.iPhone5s = db.Phones.Where(phone => phone.Type == "iPhone" && phone.Model == "5");

@@ -7,7 +7,7 @@ using Saleular.Models;
 
 namespace Saleular.ViewModels
 {
-    public class TopOffers
+    public class TopOffersViewModel
     {
         public IEnumerable<Phone> iPhone5Ss { get; set; }
 

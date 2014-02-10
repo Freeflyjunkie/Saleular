@@ -13,19 +13,15 @@ namespace Saleular.Classes
     {
         public void SendMessage(string from, string subject, string body)
         {
-            try
-            {
-                MailMessage message = new MailMessage();
-                message.From = new MailAddress(from);
-                message.To.Add(new MailAddress("iphone@saleular.com"));
-                message.Subject = subject;
-                message.Body = body;
+            MailMessage message = new MailMessage();
+            message.From = new MailAddress(from);
+            message.To.Add(new MailAddress("iphone@saleular.com"));
+            message.Subject = subject;
+            message.Body = body;
 
-                SmtpClient smtpClient = new SmtpClient("smtp.secureserver.net");
-                smtpClient.Host = "relay-hosting.secureserver.net";
-                smtpClient.Send(message);
-            }
-            catch { }
+            SmtpClient smtpClient = new SmtpClient("smtp.secureserver.net");
+            smtpClient.Host = "relay-hosting.secureserver.net";
+            smtpClient.Send(message);
         }
 
         public string ConstructMessage(string address, string city, string state, string zip, string useremail, string additionalcomments)
@@ -49,7 +45,7 @@ namespace Saleular.Classes
                 emailtext.AppendLine("");
             }
             emailtext.AppendLine("This user would like to ship you the following iPhones:");
-            SelectediPhone phone = (SelectediPhone)HttpContext.Current.Session["SelectedIPhone"];
+            SelectedPhoneViewModel phone = (SelectedPhoneViewModel)HttpContext.Current.Session["SelectedPhoneViewModel"];
             if (phone != null)
             {
                 emailtext.AppendLine(phone.SelectedModel);
