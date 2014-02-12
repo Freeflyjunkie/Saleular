@@ -298,7 +298,6 @@
     <Content Include="Views\Phone\Offer.cshtml" />
     <Content Include="Views\Phone\Ship.cshtml" />
     <Content Include="Views\Home\QuestionSent.cshtml" />
-    <Content Include="Views\Phone\ShipLabelRequestSent.cshtml" />
     <Content Include="Views\Shared\_TopOffersPaidPartial.cshtml" />
     <Content Include="Views\Phone\ShipSent.cshtml" />
   </ItemGroup>
