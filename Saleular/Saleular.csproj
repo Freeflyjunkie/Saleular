@@ -167,12 +167,14 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PhoneController.cs" />
+    <Compile Include="DAL\PhoneRepository.cs" />
     <Compile Include="DAL\SaleularContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IMessenger.cs" />
     <Compile Include="Interfaces\IPhoneLoader.cs" />
+    <Compile Include="Interfaces\IPhoneRepository.cs" />
     <Compile Include="Migrations\201401290303075_Migration1.cs" />
     <Compile Include="Migrations\201401290303075_Migration1.Designer.cs">
       <DependentUpon>201401290303075_Migration1.cs</DependentUpon>
@@ -306,7 +308,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201401290303075_Migration1.resx">

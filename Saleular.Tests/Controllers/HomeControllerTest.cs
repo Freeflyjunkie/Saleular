@@ -6,22 +6,48 @@ using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Saleular;
 using Saleular.Controllers;
+using Saleular.Interfaces;
+using Saleular.Classes;
+using Saleular.DAL;
+using Moq;
+using Saleular.Models;
 
 namespace Saleular.Tests.Controllers
 {
     [TestClass]
     public class HomeControllerTest
     {
+        public IPhoneRepository MockPhoneRepository;
+
         [TestMethod]
         public void Index()
         {
-            // Arrange
-            HomeController controller = new HomeController();
+            Mock<IPhoneRepository> phone = new Mock<IPhoneRepository>();
+            phone.Setup(p => p.GetTopOffersPaid()).Returns(() => new Phone[] 
+            { 
+                 new Phone { Type = "iPhone",   
+                            Model = "5S", 
+                            Carrier = "Factory", 
+                            Capacity = "64 GB", 
+                            Condition = "Flawless", 
+                            Price = 455.00M,
+                            ImageUrl="/Images/iPhones/iPhone5S" },
 
-            // Act
-            ViewResult result = controller.Index() as ViewResult;
+               new Phone { Type = "iPhone",   
+                            Model = "5S", 
+                            Carrier = "Factory", 
+                            Capacity="64 GB", 
+                            Condition="Good",
+                            Price = 430.00M,
+                            ImageUrl="/Images/iPhones/iPhone5S" }
+            });
 
-            // Assert
+            this.MockPhoneRepository = phone.Object;
+            var result = MockPhoneRepository.GetTopOffersPaid();
+
+            //HomeController home = new HomeController(phone.Object);
+            //ActionResult result = home.Index();
+
             Assert.IsNotNull(result);
         }
 

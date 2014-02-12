@@ -12,15 +12,13 @@ namespace Saleular.Controllers
 {
     public class HomeController : Controller
     {
-        SaleularContext db = new SaleularContext();
+        //SaleularContext db = new SaleularContext();
+        IPhoneRepository iphone = new PhoneRepository(new SaleularContext());
 
         public ActionResult Index()
         {
-            TopOffersViewModel offers = new TopOffersViewModel();            
-            offers.iPhone5Ss  = db.Phones.Where(phone => phone.Type == "iPhone" && phone.Model == "5S").OrderBy(phone => phone.PhoneID).Take(5);
-            //offers.iPhone5Cs = db.Phones.Where(phone => phone.Type == "iPhone" && phone.Model == "5C");
-            //offers.iPhone5s = db.Phones.Where(phone => phone.Type == "iPhone" && phone.Model == "5");
-            //offers.iPhone4Ss = db.Phones.Where(phone => phone.Type == "iPhone" && phone.Model == "4S");         
+            TopOffersViewModel offers = new TopOffersViewModel();
+            offers.iPhone5Ss = iphone.GetTopOffersPaid();                           
             return View(offers);
         }
 
