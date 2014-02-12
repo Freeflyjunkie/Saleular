@@ -11,8 +11,8 @@ namespace Saleular
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery/jquery-{version}.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/jquery/jquery.validate.min.js"));
+            //bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
+            //            "~/Scripts/jquery/jquery.validate.min.js"));
                         //"~/Scripts/jquery/jquery.unobtrusive*"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
@@ -21,8 +21,8 @@ namespace Saleular
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/js").Include(
-                      "~/Scripts/bootstrap/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/bootstrap/bootstrap.min.js",
+                      "~/Scripts/respond.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap/css/bootstrap-yeti.css",

@@ -40,7 +40,7 @@
         $('#offerSection').hide();
 
         // hide selection text
-        var buttons = $('.dropdown');
+        var buttons = $('.input-group');
         for (var i = 0; i < buttons.length; i++) {
             if (i > 0) {
                 $(buttons[i]).hide();
@@ -55,7 +55,7 @@
 
             // set selection text
             var selection = $(this).text();
-            selectControl.text(selection);                                    
+            selectControl.text(selection);
 
             // is this the model dropdown?
             if ($(selectControl).attr('id') == 'modelSelection' || IsPriceReady()) {
@@ -66,16 +66,16 @@
                     carrier: $('#carrierSelection').text(),
                     capacity: $('#capacitySelection').text(),
                     condition: $('#conditionSelection').text()
-                }                                
+                }
 
                 // POST to RefreshSelection
                 $.ajax({
                     type: "POST",
-                    url: '/Phone/RefreshSelection',
+                    url: '/Phone/GetSelectedPhoneViewModel',
                     data: selectedPhone,
                     dataType: 'json',
                     success: function (data, status, xhr) {
-                        var buttons = $('.dropdown');
+                        var buttons = $('.input-group');
                         buttons.show();
 
                         // Populate dropdowns based on Model selection text
@@ -86,12 +86,13 @@
                         // Wire dropdowns
                         WireSelectButton($('#carrierDropdown li a'), $('#carrierSelection'));
                         WireSelectButton($('#capacityDropdown li a'), $('#capacitySelection'));
-                        WireSelectButton($('#conditionDropdown li a'), $('#conditionSelection'));                        
+                        WireSelectButton($('#conditionDropdown li a'), $('#conditionSelection'));
 
-                        if (IsPriceReady())
-                        {
+                        // Show Offer and scroll to the bottom
+                        if (IsPriceReady()) {
                             $('#offerSection').show();
                             $('#price h2').html('$' + data.Price + '.00');
+                            $(document).scrollTop(1000);
                         }
                     },
                     error: function (xhr, status, error) {
@@ -118,18 +119,14 @@
     }
 
     function IsPriceReady() {
-        var selection = $('#modelSelection').text();        
-        if (selection.indexOf('Select', 0) == -1)
-        {
-            selection = $('#carrierSelection').text();            
-            if (selection.indexOf('Select', 0) == -1)
-            {
-                selection = $('#capacitySelection').text();                
-                if (selection.indexOf('Select', 0) == -1)
-                {
-                    selection = $('#conditionSelection').text();                    
-                    if (selection.indexOf('Select', 0) == -1)
-                    {
+        var selection = $('#modelSelection').text();
+        if (selection.indexOf('Select', 0) == -1) {
+            selection = $('#carrierSelection').text();
+            if (selection.indexOf('Select', 0) == -1) {
+                selection = $('#capacitySelection').text();
+                if (selection.indexOf('Select', 0) == -1) {
+                    selection = $('#conditionSelection').text();
+                    if (selection.indexOf('Select', 0) == -1) {
                         return true;
                     }
                 }
@@ -140,15 +137,17 @@
     }
 
 </script>
-
-<div class="col-lg-12 col-md-12">
-    <h2>Get an Offer</h2>
-    <p>
-        Start by selecting your device model, carrier, capacity and condition in order to get an offer.<br />
-        Once you have selected your iPhone you will see that our offer price beats the other sites.
-    </p>
-    <hr />
-</div>
+@section header
+{
+    <div class="col-lg-12 col-md-12">
+        <h2>Get an Offer</h2>
+        <p>
+            Start by selecting your device model, carrier, capacity and condition in order to get an offer.<br />
+            Once you have selected your iPhone you will see that our offer price beats the other sites.
+        </p>
+        <hr />
+    </div>
+}
 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" id="wholething">
     <form id="selectionForm" class="form-horizontal">
         <div class="form-group">

@@ -20,15 +20,10 @@ namespace Saleular.Controllers
         {
             SelectedPhoneViewModel selectedIPhone = PhoneSelectionManager.InitializeSelection();
             return View(selectedIPhone);
-        }
-       
-        //public ActionResult ChangeSelection(string model, string carrier, string capacity, string condition){
-        //    SelectedPhoneViewModel selectedIPhone = PhoneSelectionManager.SelectionChanged(model, carrier, capacity, condition);
-        //    return View("Offer",selectedIPhone);
-        //}
+        }      
 
         [HttpPost]
-        public JsonResult RefreshSelection(string model, string carrier, string capacity, string condition)
+        public JsonResult GetSelectedPhoneViewModel(string model, string carrier, string capacity, string condition)
         {
             SelectedPhoneViewModel selectedIPhone = PhoneSelectionManager.SelectionChanged(model, carrier, capacity, condition);            
             return Json(selectedIPhone, JsonRequestBehavior.AllowGet);
@@ -41,16 +36,14 @@ namespace Saleular.Controllers
 
         [HttpPost]
         public ActionResult Ship(string name, string address, string city, string state, string zip, string email, string comments)
-        {
-            //return View("Vaildate");
-            //IMessenger messenger = new EmailMessenger();
-            //string body = messenger.ConstructMessage(address, city, state, zip, email, comments);
-            //messenger.SendMessage(email, "Cash For My Phone", body);
-            //RedirectToAction("ShipLabelRequestSent");
-            return View("ShipLabelRequestSent");
+        {            
+            IMessenger messenger = new EmailMessenger();
+            string body = messenger.ConstructMessage(address, city, state, zip, email, comments);
+            messenger.SendMessage(email, "Cash For My Phone", body);
+            return RedirectToAction("ShipSent");            
         }
 
-        public ActionResult ShipLabelRequestSent()
+        public ActionResult ShipSent()
         {
             return View();
         }

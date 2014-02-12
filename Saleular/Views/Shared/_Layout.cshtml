@@ -6,7 +6,7 @@
     <title>Saleular - @ViewBag.Title</title>
     @Styles.Render("~/Content/css")    
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/jqueryval")
+    @*@Scripts.Render("~/bundles/jqueryval")*@
     @Scripts.Render("~/bundles/js")
     @Scripts.Render("~/bundles/modernizr")
     <style>
@@ -71,7 +71,11 @@
             font-weight: 500;
             text-align: left;
             color: #008cba;
-        }        
+        }      
+        
+        #footer{
+            padding: 0px;
+        }  
     </style>
 
 
@@ -130,12 +134,15 @@
             </div>
         </header>
     </div>
+    <div class="container">
+        @RenderSection("header", false)
+    </div>
     <div class="container body-content">
         @RenderBody()                
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <br/>
         </div>
-        <footer class="col-lg-12 col-md-12 col-sm-12 col-xs-12 alert alert-info">
+        <footer id="footer" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 alert alert-info">
             <h4>&copy; @DateTime.Now.Year - Saleular</h4>
         </footer>
     </div>

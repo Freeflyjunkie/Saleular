@@ -1,17 +1,17 @@
 ﻿@{
     ViewBag.Title = "Questions";
 }
-
+<script src="~/Scripts/jquery/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery/jquery.validate.unobtrusive.min.js"></script>
 <style>
     .form-horizontal .control-label {
         text-align: left;
     }
 </style>
 <script>
-    $(document).ready(function ()
-    {
+    $(document).ready(function () {
         SetTooltip($('#nameAddon'));
-        SetTooltip($('#emailAddon'));      
+        SetTooltip($('#emailAddon'));
     });
 
     function SetTooltip(addon) {
@@ -19,13 +19,16 @@
         addon.css('cursor', 'pointer');
     }
 </script>
-<div class="col-lg-12 col-md-12">
-    <h2>Ask Saleular!</h2>
-    <p>
-        Ask about the status of your shipped iPhone or any other general questions reguarding our process.
-    </p>
-    <hr />
-</div>
+@section header
+{
+    <div class="col-lg-12 col-md-12">
+        <h2>Ask Saleular!</h2>
+        <p>
+            Ask about the status of your shipped iPhone or any other general questions reguarding our process.
+        </p>
+        <hr />
+    </div>
+}
 <div class="col-lg-12 col-md-12">
     <form class="form-horizontal" method="post">
         <div class="form-group">
@@ -33,11 +36,18 @@
             <div class="col-md-6">
                 <div class="input-group">
                     <span id="nameAddon" data-toggle="tooltip" title="Tell us who you are!" class="input-group-addon box-shadow-dgray"><span class="glyphicon glyphicon-user"></span></span>
-                    <input type="text"
+                    <input id="name"
+                           type="text"
                            name="name"
                            class="form-control box-shadow-dgray"
-                           placeholder="e.g. Brad Pitt" />
+                           placeholder="e.g. Brad Pitt"
+                           data-val="true"                           
+                           data-val-required="Your name is required" />
                 </div>
+            </div>
+            <div class="col-md-2">
+                <span class="control-label field-validation-valid" data-valmsg-for="name" data-valmsg-replace="true">
+                </span>
             </div>
         </div>
         <div class="form-group">
@@ -45,22 +55,36 @@
             <div class="col-md-6">
                 <div class="input-group">
                     <span id="emailAddon" data-toggle="tooltip" title="This email address will be used for later correspondence" class="input-group-addon box-shadow-dgray">&#64;</span>
-                    <input type="email"
+                    <input id="email"
+                           type="email"
                            name="email"
                            class="form-control box-shadow-dgray"
-                           placeholder="e.g. bpitt@gmail.com" />
+                           placeholder="e.g. bpitt@gmail.com"
+                           data-val="true"
+                           data-val-required="Your email is required" />
                 </div>
+            </div>
+            <div class="col-md-2">
+                <span class="control-label field-validation-valid" data-valmsg-for="email" data-valmsg-replace="true">
+                </span>
             </div>
         </div>
         <div class="form-group">
             <label for="questionInput" class="control-label col-lg-1 col-md-1">Questions</label>
             <div class="col-md-6">
-                <textarea name="question"
+                <textarea id="question"
+                          name="question"
                           rows="6"
                           cols="40"
                           class="form-control box-shadow-dgray"
-                          placeholder="e.g. When will I get paid!"></textarea>
+                          placeholder="e.g. When will I get paid!"
+                          data-val="true"
+                          data-val-required="Your question is required"></textarea>
 
+            </div>
+            <div class="col-md-2">
+                <span class="control-label field-validation-valid" data-valmsg-for="question" data-valmsg-replace="true">
+                </span>
             </div>
         </div>
         <div class="form-group">

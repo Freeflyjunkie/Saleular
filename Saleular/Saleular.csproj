@@ -213,7 +213,8 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Images\ajax-loader.gif" />
+    <Content Include="Images\About\broken.jpg" />
+    <Content Include="Images\Loaders\ajax-loader.gif" />
     <Content Include="Images\Logos\BusinessCardLogo.png" />
     <Content Include="Images\Carousel\c1.jpg" />
     <Content Include="Images\Carousel\c2.jpg" />
@@ -298,7 +299,8 @@
     <Content Include="Views\Phone\Ship.cshtml" />
     <Content Include="Views\Home\QuestionSent.cshtml" />
     <Content Include="Views\Phone\ShipLabelRequestSent.cshtml" />
-    <Content Include="Views\Phone\Vaildate.cshtml" />
+    <Content Include="Views\Shared\_TopOffersPaidPartial.cshtml" />
+    <Content Include="Views\Phone\ShipSent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />

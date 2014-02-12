@@ -1,0 +1,50 @@
+﻿
+@model Saleular.ViewModels.TopOffersViewModel
+
+<div>
+    <h2>Top Offers Paid</h2>
+</div>
+<div id="offerpanel" class="panel panel-primary">
+    <div class="panel-body">
+        @{
+            int index = 0;
+            int count = Model.iPhone5Ss.Count();
+            foreach (var item in Model.iPhone5Ss)
+            {
+                <div class="pull-left" style="width: 70px; text-align: center;">
+                    @{
+                string imagePath = item.ImageUrl + ".png";
+                switch (item.Condition)
+                {
+                    case "Flawless":
+                        imagePath = item.ImageUrl + ".png";
+                        break;
+
+                    case "Good":
+                        imagePath = item.ImageUrl + "_Good.jpg";
+                        break;
+
+                    case "Bad":
+                        imagePath = item.ImageUrl + "_Bad.jpg";
+                        break;
+                }
+                    }
+                    <img src="@imagePath" alt="iPhone" style="height: 90px" />
+                </div>
+                <div class="pull-left">
+                    <label class="offerspaid-label">Capacity</label> <label class="offerspaid-value">@item.Capacity</label>
+                    <br />
+                    <label class="offerspaid-label">Carrier</label> <label class="offerspaid-value">@item.Carrier</label>
+                    <br />
+                    <label class="offerspaid-label">Condition</label> <label class="offerspaid-value">@item.Condition</label>
+                    <br />
+                    <div class="lead offerspaid-price">@Html.DisplayFor(modelItem => item.Price) </div>
+                </div>
+                <div style="clear: both">
+                </div>
+                index++;
+            }
+        }
+    </div>
+</div>
+
