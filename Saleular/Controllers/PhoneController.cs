@@ -42,10 +42,17 @@ namespace Saleular.Controllers
         [HttpPost]
         public ActionResult Ship(string name, string address, string city, string state, string zip, string email, string comments)
         {
-            IMessenger messenger = new EmailMessenger();
-            string body = messenger.ConstructMessage(address, city, state, zip, email, comments);
-            messenger.SendMessage(email, "Cash For My Phone", body);
+            //return View("Vaildate");
+            //IMessenger messenger = new EmailMessenger();
+            //string body = messenger.ConstructMessage(address, city, state, zip, email, comments);
+            //messenger.SendMessage(email, "Cash For My Phone", body);
+            //RedirectToAction("ShipLabelRequestSent");
             return View("ShipLabelRequestSent");
+        }
+
+        public ActionResult ShipLabelRequestSent()
+        {
+            return View();
         }
     }
 }
