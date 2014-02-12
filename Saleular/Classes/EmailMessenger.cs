@@ -3,6 +3,7 @@ using Saleular.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Web;
@@ -19,8 +20,12 @@ namespace Saleular.Classes
             message.Subject = subject;
             message.Body = body;
 
-            SmtpClient smtpClient = new SmtpClient("smtp.secureserver.net");
-            smtpClient.Host = "relay-hosting.secureserver.net";
+            SmtpClient smtpClient = new SmtpClient("smtpout.secureserver.net");
+            smtpClient.Host = "relay-hosting.secureserver.net";            
+            smtpClient.UseDefaultCredentials = false;
+            smtpClient.Credentials = new NetworkCredential("iphone@saleular.com", "Roybitran123");
+            smtpClient.EnableSsl = true;
+            smtpClient.Port = 25;
             smtpClient.Send(message);
         }
 
