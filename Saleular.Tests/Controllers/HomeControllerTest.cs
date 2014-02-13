@@ -42,12 +42,10 @@ namespace Saleular.Tests.Controllers
                             ImageUrl="/Images/iPhones/iPhone5S" }
             });
 
-            this.MockPhoneRepository = phone.Object;
-            var result = MockPhoneRepository.GetTopOffersPaid();
+            HomeController home = new HomeController { PhoneRepository = phone.Object };
 
-            //HomeController home = new HomeController(phone.Object);
-            //ActionResult result = home.Index();
-
+            //HomeController home = new HomeController();
+            ActionResult result = home.Index();
             Assert.IsNotNull(result);
         }
 
@@ -61,8 +59,55 @@ namespace Saleular.Tests.Controllers
             ViewResult result = controller.About() as ViewResult;
 
             // Assert
-            Assert.AreEqual("Your application description page.", result.ViewBag.Message);
+            Assert.IsNotNull(result);
         }
-       
+
+        [TestMethod]
+        public void Questions()
+        {
+            // Arrange
+            HomeController controller = new HomeController();
+
+            // Act
+            ViewResult result = controller.Questions() as ViewResult;
+
+            // Assert
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void Questions_Submit()
+        {
+            Mock<IMessenger> messenger = new Mock<IMessenger>();
+            messenger.Setup(m => m.SendMessage(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()));
+
+            Mock<IPhoneSelectionManager> phoneSelectionManager = new Mock<IPhoneSelectionManager>();
+            phoneSelectionManager.Setup(p => p.GetSelectedPhoneViewModel()).Returns(new ViewModels.SelectedPhoneViewModel());
+
+            // Arrange
+            HomeController controller = new HomeController { 
+                Messenger = messenger.Object, 
+                PhoneSelectionManager = phoneSelectionManager.Object };
+
+            // Act
+            ViewResult result = controller.Questions("Eric Torres", "erictorres56@gmail.com", "I have a question") as ViewResult;
+
+            // Assert
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void Testimonials()
+        {
+            // Arrange
+            HomeController controller = new HomeController();
+
+            // Act
+            ViewResult result = controller.Questions() as ViewResult;
+
+            // Assert
+            Assert.IsNotNull(result);
+        }
+
     }
 }

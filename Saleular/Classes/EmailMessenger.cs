@@ -29,7 +29,7 @@ namespace Saleular.Classes
             smtpClient.Send(message);
         }
 
-        public string ConstructMessage(string address, string city, string state, string zip, string useremail, string additionalcomments)
+        public string ConstructMessage(string address, string city, string state, string zip, string useremail, string additionalcomments, IPhoneSelectionManager phoneSelectionManager)
         {
             StringBuilder emailtext = new StringBuilder();
 
@@ -50,7 +50,8 @@ namespace Saleular.Classes
                 emailtext.AppendLine("");
             }
             emailtext.AppendLine("This user would like to ship you the following iPhones:");
-            SelectedPhoneViewModel phone = (SelectedPhoneViewModel)HttpContext.Current.Session["SelectedPhoneViewModel"];
+            
+            SelectedPhoneViewModel phone = phoneSelectionManager.GetSelectedPhoneViewModel();
             if (phone != null)
             {
                 emailtext.AppendLine(phone.SelectedModel);

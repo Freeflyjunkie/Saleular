@@ -175,6 +175,7 @@
     <Compile Include="Interfaces\IMessenger.cs" />
     <Compile Include="Interfaces\IPhoneLoader.cs" />
     <Compile Include="Interfaces\IPhoneRepository.cs" />
+    <Compile Include="Interfaces\IPhoneSelectionManager.cs" />
     <Compile Include="Migrations\201401290303075_Migration1.cs" />
     <Compile Include="Migrations\201401290303075_Migration1.Designer.cs">
       <DependentUpon>201401290303075_Migration1.cs</DependentUpon>

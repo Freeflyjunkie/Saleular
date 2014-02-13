@@ -16,22 +16,28 @@ namespace Saleular.Tests.Controllers
     [TestClass]
     public class PhoneControllerTest
     {
-        [TestMethod]
-        public void Index()
-        {            
-            ////ViewResult result = controller.Offer() as ViewResult;
-            //Mock<SaleularContext> phone = new Mock<SaleularContext>();
-            //phone.Setup(r => r.Phones.ToList()).Returns(() => new Phone[] 
-            //{ 
-            //    new Phone { Type = "iPhone", Model = "A", Carrier = "B" },
-            //    new Phone { Type = "iPhone", Model = "B", Carrier = "C" }
-            //});
+         [TestMethod]
+        public void Offer()
+        {
+            
+        }
 
+         [TestMethod]
+         public void GetSelectedPhoneViewModel()
+        {
+            
+        }
 
-            //PhoneController controller = new PhoneController();            
+         [TestMethod]
+         public void Ship()
+        {
+            
+        }        
 
-         
-            //Assert.IsNotNull(phone);
+         [TestMethod]
+         public void ShipSent()
+        {
+            
         }
     }
 }

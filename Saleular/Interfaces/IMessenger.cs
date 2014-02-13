@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Saleular.Interfaces
 {
-    interface IMessenger
+    public interface IMessenger
     {
         void SendMessage(string from, string subject, string body);
 
-        string ConstructMessage(string address, string city, string state, string zip, string useremail, string additionalcomments);
+        string ConstructMessage(string address, string city, string state, string zip, string useremail, string additionalcomments, IPhoneSelectionManager phoneSelectionManager);
     }
 }

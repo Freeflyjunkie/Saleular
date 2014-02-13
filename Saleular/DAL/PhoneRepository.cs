@@ -53,10 +53,51 @@ namespace Saleular.DAL
         public void Save()
         {
             context.SaveChanges();
+        }      
+
+        public IEnumerable<string> GetTypesAndModels()
+        {
+            return context.Phones.Select(p => p.Type);
+        }
+
+        public IEnumerable<string> GetDistinctModels(string type)
+        {
+            return context.Phones
+                         .Where(p => p.Type == type)
+                         .Select(p => p.Model).Distinct().ToList();
+        }
+
+        public IEnumerable<string> GetDistinctCarriers(string model)
+        {
+            return context.Phones
+                       .Where(p => p.Model == model)
+                       .Select(c => c.Carrier).Distinct().ToList();
+        }
+
+        public IEnumerable<string> GetDistinctCapacities(string model)
+        {
+            return context.Phones
+                    .Where(p => p.Model == model)
+                    .Select(c => c.Capacity).Distinct().ToList();
+        }
+
+        public IEnumerable<string> GetConditions()
+        {
+            return context.Phones
+                    .Select(p => p.Condition).Distinct().ToList();
+        }
+
+        public decimal GetPrice(string model, string carrier, string capacity, string condition)
+        {
+            return context.Phones
+                    .Where(p => p.Model == model
+                        && p.Carrier == carrier
+                        && p.Capacity == capacity
+                        && p.Condition == condition)
+                    .Select(c => c.Price).SingleOrDefault();
         }
 
         private bool disposed = false;
-
         protected virtual void Dispose(bool disposing)
         {
             if (!this.disposed)

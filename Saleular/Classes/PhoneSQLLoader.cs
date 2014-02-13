@@ -11,60 +11,36 @@ namespace Saleular.Classes
 {
     public class PhoneSQLLoader : IPhoneLoader
     {
+        IPhoneRepository _phoneRepository = new PhoneRepository(new SaleularContext());
+
         public IEnumerable<string> LoadTypesAndModels()
         {
-            using (SaleularContext db = new SaleularContext())
-            {
-                return new List<string>();
-            }
+            return _phoneRepository.GetTypesAndModels();
         }
 
         public IEnumerable<string> LoadModels(string type)
         {
-            using (SaleularContext db = new SaleularContext())
-            {
-                return db.Phones
-                         .Where(p => p.Type == type)
-                         .Select(p => p.Model).Distinct().ToList();
-            }
+            return _phoneRepository.GetDistinctModels(type);
         }
 
         public IEnumerable<string> LoadCarriers(string model)
         {
-            using (SaleularContext db = new SaleularContext())
-            {
-                return db.Phones
-                       .Where(p => p.Model == model)
-                       .Select(c => c.Carrier).Distinct().ToList();
-            }
+            return _phoneRepository.GetDistinctCarriers(model);
         }
 
         public IEnumerable<string> LoadCapacities(string model)
         {
-            using (SaleularContext db = new SaleularContext())
-            {
-                return db.Phones
-                    .Where(p => p.Model == model)
-                    .Select(c => c.Capacity).Distinct().ToList();
-            }
+            return _phoneRepository.GetDistinctCapacities(model);
         }
 
         public IEnumerable<string> LoadConditions()
         {
-            return new List<string> { "Flawless", "Good", "Bad" };
+            return _phoneRepository.GetConditions();
         }
 
         public decimal LoadPrice(string model, string carrier, string capacity, string condition)
         {
-            using (SaleularContext db = new SaleularContext())
-            {
-                return db.Phones
-                    .Where(p => p.Model == model
-                        && p.Carrier == carrier
-                        && p.Capacity == capacity
-                        && p.Condition == condition)
-                    .Select(c => c.Price).SingleOrDefault();
-            }
+            return _phoneRepository.GetPrice(model, carrier, capacity, condition);
         }
     }
 }
