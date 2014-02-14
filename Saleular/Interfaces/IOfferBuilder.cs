@@ -1,0 +1,15 @@
+﻿using Saleular.ViewModels;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Saleular.Interfaces
+{
+    public interface IOfferBuilder
+    {
+        SelectedGadgetViewModel InitializeSelectedGadgetViewModel();
+        SelectedGadgetViewModel SelectionChanged(SelectedGadgetViewModel selections);    
+    }
+}
