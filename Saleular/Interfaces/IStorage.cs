@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Saleular.Interfaces
 {
-    interface ITabletRepository
+    public interface IStorage
     {
+        void Save(string key, object value);        
+        object Retrieve(string key);
     }
 }

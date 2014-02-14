@@ -10,16 +10,16 @@ namespace Saleular.Interfaces
     public interface IGadgetRepository : IDisposable
     {
         IEnumerable<Gadget> GetGadgets();
-        IEnumerable<Gadget> GetTopOffersPaid();
+        IEnumerable<Gadget> GetTopOffersPaid(string type, string model);
         Gadget GetGadgetByID(int gadgetID);
         void InsertGadget(Gadget gadget);
         void DeleteGadget(int gadgetID);
         void UpdateGadget(Gadget gadget);
-        IEnumerable<string> GetTypesAndModels();
+        IEnumerable<string> GetDistinctTypes();
         IEnumerable<string> GetDistinctModels(string type);
         IEnumerable<string> GetDistinctCarriers(string model);
         IEnumerable<string> GetDistinctCapacities(string model);
-        IEnumerable<string> GetConditions();
+        IEnumerable<string> GetDistinctConditions(string type);
         decimal GetPrice(string model, string carrier, string capacity, string condition);
         void Save();
     }

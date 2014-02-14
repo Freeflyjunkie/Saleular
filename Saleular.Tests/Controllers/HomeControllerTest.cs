@@ -17,46 +17,52 @@ namespace Saleular.Tests.Controllers
     [TestClass]
     public class HomeControllerTest
     {
-        //public IPhoneRepository MockPhoneRepository;
+        protected Mock<IGadgetRepository> _gadgets;
+        protected Mock<IMessenger> _messenger;
+
+        public HomeControllerTest()
+        {
+            _gadgets = new Mock<IGadgetRepository>();
+            _gadgets.Setup(g => g.GetTopOffersPaid(It.IsAny<string>(), It.IsAny<string>())).Returns(() => new Gadget[] 
+            { 
+                 new Gadget { Type = "iPhone",   
+                            Model = "5S", 
+                            Carrier = "Factory", 
+                            Capacity = "64 GB", 
+                            Condition = "Flawless", 
+                            Price = 455.00M,
+                            ImageUrl="/Images/iPhones/iPhone5S" },
+
+               new Gadget { Type = "iPhone",   
+                            Model = "5S", 
+                            Carrier = "Factory", 
+                            Capacity="64 GB", 
+                            Condition="Good",
+                            Price = 430.00M,
+                            ImageUrl="/Images/iPhones/iPhone5S" }
+            });
+
+            _messenger = new Mock<IMessenger>();
+            _messenger.Setup(m => m.ConstructMessage(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>())).Returns("Question Message Body");
+            _messenger.Setup(m => m.SendMessage(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()));
+        }
 
         [TestMethod]
         public void Index()
         {
-            //Mock<IPhoneRepository> phone = new Mock<IPhoneRepository>();
-            //phone.Setup(p => p.GetTopOffersPaid()).Returns(() => new Phone[] 
-            //{ 
-            //     new Phone { Type = "iPhone",   
-            //                Model = "5S", 
-            //                Carrier = "Factory", 
-            //                Capacity = "64 GB", 
-            //                Condition = "Flawless", 
-            //                Price = 455.00M,
-            //                ImageUrl="/Images/iPhones/iPhone5S" },
-
-            //   new Phone { Type = "iPhone",   
-            //                Model = "5S", 
-            //                Carrier = "Factory", 
-            //                Capacity="64 GB", 
-            //                Condition="Good",
-            //                Price = 430.00M,
-            //                ImageUrl="/Images/iPhones/iPhone5S" }
-            //});
-
-            //HomeController home = new HomeController { PhoneRepository = phone.Object };
-
-            ////HomeController home = new HomeController();
-            //ActionResult result = home.Index();
-            //Assert.IsNotNull(result);
+            HomeController home = new HomeController(_gadgets.Object, _messenger.Object);
+            ActionResult result = home.Index();
+            Assert.IsNotNull(result);
         }
 
         [TestMethod]
         public void About()
-        {
+        {            
             // Arrange
-            HomeController controller = new HomeController();
+            HomeController home = new HomeController(_gadgets.Object, _messenger.Object);
 
             // Act
-            ViewResult result = controller.About() as ViewResult;
+            ViewResult result = home.About() as ViewResult;
 
             // Assert
             Assert.IsNotNull(result);
@@ -65,11 +71,10 @@ namespace Saleular.Tests.Controllers
         [TestMethod]
         public void Questions()
         {
-            // Arrange
-            HomeController controller = new HomeController();
+            HomeController home = new HomeController(_gadgets.Object, _messenger.Object);
 
             // Act
-            ViewResult result = controller.Questions() as ViewResult;
+            ViewResult result = home.Questions() as ViewResult;
 
             // Assert
             Assert.IsNotNull(result);
@@ -78,32 +83,22 @@ namespace Saleular.Tests.Controllers
         [TestMethod]
         public void Questions_Submit()
         {
-            //Mock<IMessenger> messenger = new Mock<IMessenger>();
-            //messenger.Setup(m => m.SendMessage(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()));
+            HomeController home = new HomeController(_gadgets.Object, _messenger.Object);
 
-            //Mock<IPhoneSelectionManager> phoneSelectionManager = new Mock<IPhoneSelectionManager>();
-            //phoneSelectionManager.Setup(p => p.GetSelectedPhoneViewModel()).Returns(new ViewModels.SelectedPhoneViewModel());
+            // Act
+            ViewResult result = home.Questions("Eric Torres", "erictorres56@gmail.com", "I have a question") as ViewResult;
 
-            //// Arrange
-            //HomeController controller = new HomeController { 
-            //    Messenger = messenger.Object, 
-            //    PhoneSelectionManager = phoneSelectionManager.Object };
-
-            //// Act
-            //ViewResult result = controller.Questions("Eric Torres", "erictorres56@gmail.com", "I have a question") as ViewResult;
-
-            //// Assert
-            //Assert.IsNotNull(result);
+            // Assert
+            Assert.IsNotNull(result);
         }
 
         [TestMethod]
         public void Testimonials()
         {
-            // Arrange
-            HomeController controller = new HomeController();
+            HomeController home = new HomeController(_gadgets.Object, _messenger.Object);
 
             // Act
-            ViewResult result = controller.Questions() as ViewResult;
+            ViewResult result = home.Questions() as ViewResult;
 
             // Assert
             Assert.IsNotNull(result);

@@ -17,10 +17,10 @@ namespace Saleular.DAL
             return _context.Gadgets.ToList();
         }
 
-        public IEnumerable<Gadget> GetTopOffersPaid()
+        public IEnumerable<Gadget> GetTopOffersPaid(string type, string model)
         {
             return _context.Gadgets
-                .Where(g => g.Type == "iPhone" && g.Model == "5S")
+                .Where(g => g.Type == type && g.Model == model)
                 .OrderBy(g => g.GadgetID).Take(5);
         }
 
@@ -45,9 +45,10 @@ namespace Saleular.DAL
             _context.Entry(gadget).State = EntityState.Modified;
         }
 
-        public IEnumerable<string> GetTypesAndModels()
+        public IEnumerable<string> GetDistinctTypes()
         {
-            throw new NotImplementedException();
+            return _context.Gadgets                          
+                          .Select(p => p.Type).Distinct().ToList();
         }
 
         public IEnumerable<string> GetDistinctModels(string type)
@@ -71,9 +72,10 @@ namespace Saleular.DAL
                    .Select(c => c.Capacity).Distinct().ToList();
         }
 
-        public IEnumerable<string> GetConditions()
+        public IEnumerable<string> GetDistinctConditions(string type)
         {
             return _context.Gadgets
+                    .Where(g => g.Type == type)
                     .Select(p => p.Condition).Distinct().ToList();
         }
 

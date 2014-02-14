@@ -29,11 +29,13 @@ namespace Saleular.Classes
             smtpClient.Send(message);
         }
 
-        public string ConstructMessage(string address, string city, string state, string zip, string userEmail, string additionalComments)
+        public string ConstructMessage(string name, string address, string city, string state, string zip,
+            string userEmail, string additionalComments, SelectedGadgetViewModel selectedGadget)
         {
             StringBuilder emailtext = new StringBuilder();
 
             emailtext.AppendLine("This is a 'Sell My IPhone Request' from Saleular.com");
+            emailtext.AppendLine(name);
             emailtext.AppendLine("The Email Address is:");
             emailtext.AppendLine(userEmail);
             emailtext.AppendLine("");
@@ -50,18 +52,31 @@ namespace Saleular.Classes
                 emailtext.AppendLine("");
             }
             emailtext.AppendLine("This user would like to ship you the following iPhones:");
-            
-            //SelectedPhoneViewModel phone = phoneSelectionManager.GetSelectedPhoneViewModel();
-            //if (phone != null)
-            //{
-            //    emailtext.AppendLine(phone.SelectedModel);
-            //    emailtext.AppendLine(phone.SelectedCarrier);
-            //    emailtext.AppendLine(phone.SelectedCapacity);
-            //    emailtext.AppendLine(phone.SelectedCondition);
-            //    emailtext.AppendLine(phone.Price.ToString());
-            //    emailtext.AppendLine("");
-            //}
+                        
+            if (selectedGadget != null)
+            {
+                emailtext.AppendLine(selectedGadget.SelectedModel);
+                emailtext.AppendLine(selectedGadget.SelectedCarrier);
+                emailtext.AppendLine(selectedGadget.SelectedCapacity);
+                emailtext.AppendLine(selectedGadget.SelectedCondition);
+                emailtext.AppendLine(selectedGadget.Price.ToString());
+                emailtext.AppendLine("");
+            }
 
+            return emailtext.ToString();
+        }
+
+        public string ConstructMessage(string name, string userEmail, string question)
+        {
+            StringBuilder emailtext = new StringBuilder();
+
+            emailtext.AppendLine("This is a 'Sell My IPhone Request' from Saleular.com");
+            emailtext.AppendLine(name);
+            emailtext.AppendLine("The Email Address is:");
+            emailtext.AppendLine(userEmail);            
+            emailtext.AppendLine("");
+            emailtext.AppendLine("User Question:");
+            emailtext.AppendLine(question);            
             return emailtext.ToString();
         }
     }

@@ -11,45 +11,21 @@ using System.Web.Mvc;
 namespace Saleular.Controllers
 {
     public class HomeController : Controller
-    {        
-        private IGadgetRepository _gadget;
-        public IGadgetRepository GadgetRepository
-        {
-            get
-            {
-                if (_gadget == null)
-                {
-                    _gadget = new GadgetRepository(new SaleularContext());
-                }
-                return _gadget;
-            }
-            set
-            {
-                _gadget = value;
-            }
-        }       
+    {
+        protected IGadgetRepository _gadget;       
+        protected IMessenger _messenger;        
+        protected const string UNKNOWN = "Unknown";
 
-        private IMessenger _messenger;
-        public IMessenger Messenger
+        public HomeController(IGadgetRepository gadget, IMessenger messenger)
         {
-            get
-            {
-                if (_messenger == null)
-                {
-                    _messenger = new EmailMessenger();
-                }
-                return _messenger;
-            }
-            set
-            {
-                _messenger = value;
-            }
+            _gadget = gadget;
+            _messenger = messenger;
         }
 
         public ActionResult Index()
         {
             TopOffersViewModel offers = new TopOffersViewModel();
-            offers.Gadgets = GadgetRepository.GetTopOffersPaid();
+            offers.Gadgets = _gadget.GetTopOffersPaid("iPhone", "5S");
             return View(offers);
         }
 
@@ -65,10 +41,9 @@ namespace Saleular.Controllers
 
         [HttpPost]
         public ActionResult Questions(string name, string email, string question)
-        {            
-            string unknown = "Unknown";
-            string body = Messenger.ConstructMessage(unknown, unknown, unknown, unknown, email, question);
-            Messenger.SendMessage(email, "Cash For My Phone", body);
+        {
+            string body = _messenger.ConstructMessage(name, email, question);
+            _messenger.SendMessage(email, "Cash For My Phone", body);
             return View("QuestionSent");
         }
 

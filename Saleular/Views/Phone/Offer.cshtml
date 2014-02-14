@@ -1,4 +1,4 @@
-﻿@model Saleular.ViewModels.SelectedPhoneViewModel
+﻿@model Saleular.ViewModels.SelectedGadgetViewModel
 
 @{
     ViewBag.Title = "Get An Offer";
@@ -34,7 +34,7 @@
     $(document).ready(function () {
 
         // wire Model dropdown
-        WireSelectButton($('#modelDropdown li a'), $('#modelSelection'));
+        WireSelectButton($('#typeDropdown li a'), $('#typeSelection'));
 
         // hide offer section
         $('#offerSection').hide();
@@ -58,32 +58,43 @@
             selectControl.text(selection);
 
             // is this the model dropdown?
-            if ($(selectControl).attr('id') == 'modelSelection' || IsPriceReady()) {
+            if ($(selectControl).attr('id') == 'typeSelection'
+                || $(selectControl).attr('id') == 'modelSelection'
+                || IsPriceReady()) {               
 
                 // create json for POST
-                var selectedPhone = {
-                    model: $('#modelSelection').text().replace('iPhone', ''),
-                    carrier: $('#carrierSelection').text(),
-                    capacity: $('#capacitySelection').text(),
-                    condition: $('#conditionSelection').text()
+                var selectedgadget = {                   
+                    SelectedType: $('#typeSelection').text(),
+                    SelectedModel: $('#modelSelection').text(),
+                    SelectedCarrier: $('#carrierSelection').text(),
+                    SelectedCapacity: $('#capacitySelection').text(),
+                    SelectedCondition: $('#conditionSelection').text()
                 }
 
                 // POST to RefreshSelection
                 $.ajax({
                     type: "POST",
-                    url: '/Phone/GetSelectedPhoneViewModel',
-                    data: selectedPhone,
+                    url: '/Phone/GetSelectedGadgetViewModel',
+                    data: selectedgadget,
                     dataType: 'json',
                     success: function (data, status, xhr) {
                         var buttons = $('.input-group');
                         buttons.show();
+                        
+                        // Reset selection text based type and model
+                        $('#modelSelection').text(data.SelectedModel);
+                        $('#carrierSelection').text(data.SelectedCarrier);
+                        $('#capacitySelection').text(data.SelectedCapacity);
+                        $('#conditionSelection').text(data.SelectedCondition);                        
 
-                        // Populate dropdowns based on Model selection text
+                        // Populate dropdowns based on Type selection text
+                        PopulatePhoneDropdowns(data.Models, $('#modelDropdown'));
                         PopulatePhoneDropdowns(data.Carriers, $('#carrierDropdown'));
                         PopulatePhoneDropdowns(data.Capacities, $('#capacityDropdown'));
                         PopulatePhoneDropdowns(data.Conditions, $('#conditionDropdown'));
 
                         // Wire dropdowns
+                        WireSelectButton($('#modelDropdown li a'), $('#modelSelection'));
                         WireSelectButton($('#carrierDropdown li a'), $('#carrierSelection'));
                         WireSelectButton($('#capacityDropdown li a'), $('#capacitySelection'));
                         WireSelectButton($('#conditionDropdown li a'), $('#conditionSelection'));
@@ -93,6 +104,9 @@
                             $('#offerSection').show();
                             $('#price h2').html('$' + data.Price + '.00');
                             $(document).scrollTop(1000);
+                        }
+                        else {
+                            $('#offerSection').hide();
                         }
                     },
                     error: function (xhr, status, error) {
@@ -116,18 +130,26 @@
             html = html + liBegin + liText + liEnd;
         }
         $(dropdown).html(html);
-    }
+    }    
 
     function IsPriceReady() {
-        var selection = $('#modelSelection').text();
+        var selection = $('#typeSelection').text();
+
         if (selection.indexOf('Select', 0) == -1) {
-            selection = $('#carrierSelection').text();
+            selection = $('#modelSelection').text();
+
             if (selection.indexOf('Select', 0) == -1) {
-                selection = $('#capacitySelection').text();
+                selection = $('#carrierSelection').text();
+
                 if (selection.indexOf('Select', 0) == -1) {
-                    selection = $('#conditionSelection').text();
+                    selection = $('#capacitySelection').text();
+
                     if (selection.indexOf('Select', 0) == -1) {
-                        return true;
+                        selection = $('#conditionSelection').text();
+
+                        if (selection.indexOf('Select', 0) == -1) {
+                            return true;
+                        }
                     }
                 }
             }
@@ -153,14 +175,13 @@
         <div class="form-group">
             <div class="input-group">
                 <div class="dropdown">
-                    <div class="selected-value box-shadow-dgray" style="float: left" id="modelSelection">@Model.SelectedTypeAndModel</div>
+                    <div class="selected-value box-shadow-dgray" style="float: left" id="typeSelection">@Model.SelectedType</div>
                     <button class="btn btn-primary box-shadow-dgray" data-toggle="dropdown"><span class="caret"></span></button>
-                    <ul class="dropdown-menu" id="modelDropdown">
-                        @foreach (var phoneModel in Model.Models)
+                    <ul class="dropdown-menu" id="typeDropdown">
+                        @foreach (var gadgetType in Model.Types)
                         {
-                            @*<li><a href="@Url.Action("ChangeSelection", "Phone", new { model = @phoneModel, carrier = @Model.SelectedCarrier, capacity = @Model.SelectedCapacity, condition = @Model.SelectedCondition })">iPhone @phoneModel</a></li>*@
                             <li>
-                                <a href="#">@phoneModel</a>
+                                <a href="#">@gadgetType</a>
                             </li>
                         }
                     </ul>
@@ -168,47 +189,30 @@
             </div>
             <div class="input-group">
                 <div class="dropdown">
+                    <div class="selected-value box-shadow-dgray" style="float: left" id="modelSelection">@Model.SelectedModel</div>
+                    <button class="btn btn-primary box-shadow-dgray" data-toggle="dropdown"><span class="caret"></span></button>
+                    <ul class="dropdown-menu" id="modelDropdown"></ul>
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="dropdown">
                     <div class=" selected-value box-shadow-dgray" style="float: left" id="carrierSelection">@Model.SelectedCarrier</div>
                     <button class="btn btn-primary box-shadow-dgray" data-toggle="dropdown"><span class="caret"></span></button>
-                    <ul class="dropdown-menu" id="carrierDropdown">
-                        @*@{
-                                foreach (var phoneCarrier in Model.Carriers)
-                                {
-                                    <li><a href="@Url.Action("ChangeSelection", "Phone", new { model = @Model.SelectedModel, carrier = @phoneCarrier, capacity = @Model.SelectedCapacity, condition = @Model.SelectedCondition })">@phoneCarrier</a></li>
-                                }
-                            }*@
-                    </ul>
+                    <ul class="dropdown-menu" id="carrierDropdown"></ul>
                 </div>
             </div>
             <div class="input-group">
                 <div class="dropdown">
                     <div class="selected-value box-shadow-dgray" style="float: left" id="capacitySelection">@Model.SelectedCapacity</div>
                     <button class="btn btn-primary box-shadow-dgray" data-toggle="dropdown"><span class="caret"></span></button>
-                    <ul class="dropdown-menu" id="capacityDropdown">
-                        @*@{
-                                foreach (var phoneCapacity in Model.Capacities)
-                                {
-                                    <li><a href="@Url.Action("ChangeSelection", "Phone", new { model = @Model.SelectedModel, carrier = @Model.SelectedCarrier, capacity = @phoneCapacity, condition = @Model.SelectedCondition })">@phoneCapacity</a></li>
-                                }
-                            }*@
-                    </ul>
+                    <ul class="dropdown-menu" id="capacityDropdown"></ul>
                 </div>
             </div>
             <div class="input-group">
                 <div class="dropdown">
                     <div class="selected-value box-shadow-dgray" style="float: left" id="conditionSelection">@Model.SelectedCondition</div>
                     <button class="btn btn-primary box-shadow-dgray" data-toggle="dropdown"><span class="caret"></span></button>
-                    <ul class="dropdown-menu" id="conditionDropdown">
-                        @*@{
-                                foreach (var phoneCondition in Model.Conditions)
-                                {
-                                    <li><a href="@Url.Action("ChangeSelection", "Phone", new { model = @Model.SelectedModel, carrier = @Model.SelectedCarrier, capacity = @Model.SelectedCapacity, condition = @phoneCondition })">@phoneCondition</a></li>
-                                    <li>
-                                        <a href="#">@phoneCondition</a>
-                                    </li>
-                                }
-                            }*@
-                    </ul>
+                    <ul class="dropdown-menu" id="conditionDropdown"></ul>
                 </div>
             </div>
         </div>
@@ -223,7 +227,7 @@
         <h2></h2>
     </div>
     <div style="float: left">
-        <a href="/Phone/Ship" class="btn btn-sm btn-primary pull-left">Accept</a>
+        @Html.ActionLink("Accept", "Ship", "Phone", new { @class = "btn btn-sm btn-primary pull-left" })        
     </div>
     <div style="clear: both">
         We pay the most for your used or new iPhone <strong><em>Guaranteed!</em></strong>
