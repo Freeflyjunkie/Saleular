@@ -10,11 +10,11 @@ namespace Saleular.DAL
 {
     public class SaleularContext : DbContext
     {
-        public DbSet<Phone> Phones { get; set; }
+        public DbSet<Gadget> Gadgets { get; set; }      
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();      
         }
     }
 }

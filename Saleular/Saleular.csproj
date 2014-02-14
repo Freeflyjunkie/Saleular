@@ -161,43 +161,41 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Classes\EmailMessenger.cs" />
+    <Compile Include="Classes\PhoneOfferBuilder.cs" />
     <Compile Include="Classes\PhoneSelectionManager.cs" />
-    <Compile Include="Classes\PhoneSQLLoader.cs" />
-    <Compile Include="Classes\PhoneXMLLoader.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PhoneController.cs" />
-    <Compile Include="DAL\PhoneRepository.cs" />
+    <Compile Include="DAL\GadgetRepository.cs" />
     <Compile Include="DAL\SaleularContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IGadgetRepository.cs" />
     <Compile Include="Interfaces\IMessenger.cs" />
-    <Compile Include="Interfaces\IPhoneLoader.cs" />
+    <Compile Include="Interfaces\IOfferBuilder.cs" />
     <Compile Include="Interfaces\IPhoneRepository.cs" />
-    <Compile Include="Interfaces\IPhoneSelectionManager.cs" />
-    <Compile Include="Migrations\201401290303075_Migration1.cs" />
-    <Compile Include="Migrations\201401290303075_Migration1.Designer.cs">
-      <DependentUpon>201401290303075_Migration1.cs</DependentUpon>
+    <Compile Include="Interfaces\ITabletRepository.cs" />
+    <Compile Include="Migrations\201402140303385_TPT.cs" />
+    <Compile Include="Migrations\201402140306156_migration1.cs" />
+    <Compile Include="Migrations\201402140306156_migration1.Designer.cs">
+      <DependentUpon>201402140306156_migration1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201401290319139_Migration2.cs" />
-    <Compile Include="Migrations\201401290319139_Migration2.Designer.cs">
-      <DependentUpon>201401290319139_Migration2.cs</DependentUpon>
+    <Compile Include="Migrations\201402140330062_migration2.cs" />
+    <Compile Include="Migrations\201402140330062_migration2.Designer.cs">
+      <DependentUpon>201402140330062_migration2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201401290325181_Migration3.cs" />
-    <Compile Include="Migrations\201401290325181_Migration3.Designer.cs">
-      <DependentUpon>201401290325181_Migration3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201401311733245_Migration4.cs" />
-    <Compile Include="Migrations\201401311733245_Migration4.Designer.cs">
-      <DependentUpon>201401311733245_Migration4.cs</DependentUpon>
+    <Compile Include="Migrations\201402140411518_migration3.cs" />
+    <Compile Include="Migrations\201402140411518_migration3.Designer.cs">
+      <DependentUpon>201402140411518_migration3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Gadget.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\Phone.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\SelectedGadgetViewModel.cs" />
     <Compile Include="ViewModels\SelectedPhoneViewModel.cs" />
     <Compile Include="ViewModels\TopOffersViewModel.cs" />
   </ItemGroup>
@@ -311,17 +309,14 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201401290303075_Migration1.resx">
-      <DependentUpon>201401290303075_Migration1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201402140306156_migration1.resx">
+      <DependentUpon>201402140306156_migration1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201401290319139_Migration2.resx">
-      <DependentUpon>201401290319139_Migration2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201402140330062_migration2.resx">
+      <DependentUpon>201402140330062_migration2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201401290325181_Migration3.resx">
-      <DependentUpon>201401290325181_Migration3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201401311733245_Migration4.resx">
-      <DependentUpon>201401311733245_Migration4.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201402140411518_migration3.resx">
+      <DependentUpon>201402140411518_migration3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

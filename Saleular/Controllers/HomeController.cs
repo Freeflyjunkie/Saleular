@@ -12,39 +12,22 @@ namespace Saleular.Controllers
 {
     public class HomeController : Controller
     {        
-        private IPhoneRepository _phone;
-        public IPhoneRepository PhoneRepository
+        private IGadgetRepository _gadget;
+        public IGadgetRepository GadgetRepository
         {
             get
             {
-                if (_phone == null)
+                if (_gadget == null)
                 {
-                    _phone = new PhoneRepository(new SaleularContext());
+                    _gadget = new GadgetRepository(new SaleularContext());
                 }
-                return _phone;
+                return _gadget;
             }
             set
             {
-                _phone = value;
+                _gadget = value;
             }
-        }
-
-        private IPhoneSelectionManager _phoneSelectionManager;
-        public IPhoneSelectionManager PhoneSelectionManager
-        {
-            get
-            {
-                if (_phoneSelectionManager == null)
-                {
-                    _phoneSelectionManager = new PhoneSelectionManager();
-                }
-                return _phoneSelectionManager;
-            }
-            set
-            {
-                _phoneSelectionManager = value;
-            }
-        }
+        }       
 
         private IMessenger _messenger;
         public IMessenger Messenger
@@ -66,7 +49,7 @@ namespace Saleular.Controllers
         public ActionResult Index()
         {
             TopOffersViewModel offers = new TopOffersViewModel();
-            offers.iPhone5Ss = PhoneRepository.GetTopOffersPaid();
+            offers.Gadgets = GadgetRepository.GetTopOffersPaid();
             return View(offers);
         }
 
@@ -84,7 +67,7 @@ namespace Saleular.Controllers
         public ActionResult Questions(string name, string email, string question)
         {            
             string unknown = "Unknown";
-            string body = Messenger.ConstructMessage(unknown, unknown, unknown, unknown, email, question, PhoneSelectionManager);
+            string body = Messenger.ConstructMessage(unknown, unknown, unknown, unknown, email, question);
             Messenger.SendMessage(email, "Cash For My Phone", body);
             return View("QuestionSent");
         }

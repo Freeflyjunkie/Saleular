@@ -7,13 +7,13 @@ namespace Saleular.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.0.2-21211")]
-    public sealed partial class Migration4 : IMigrationMetadata
+    public sealed partial class migration3 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Migration4));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(migration3));
         
         string IMigrationMetadata.Id
         {
-            get { return "201401311733245_Migration4"; }
+            get { return "201402140411518_migration3"; }
         }
         
         string IMigrationMetadata.Source

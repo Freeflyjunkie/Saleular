@@ -16,35 +16,40 @@ namespace Saleular.Controllers
 {
     public class PhoneController : Controller
     {
-        private IPhoneSelectionManager _phoneSelectionManager;
-        public IPhoneSelectionManager PhoneSelectionManager
+        private IOfferBuilder _offerBuilder;
+        public IOfferBuilder PhoneOfferBuilder
         {
             get
             {
-                if (_phoneSelectionManager == null)
+                if (_offerBuilder == null)
                 {
-                    _phoneSelectionManager = new PhoneSelectionManager();
+                    _offerBuilder = new PhoneOfferBuilder(new GadgetRepository());
                 }
-                return _phoneSelectionManager;
+                return _offerBuilder;
             }
             set
             {
-                _phoneSelectionManager = value;
+                _offerBuilder = value;
             }
         }
 
         public ActionResult Offer()
         {
-
-            SelectedPhoneViewModel selectedIPhone = PhoneSelectionManager.InitializeSelectedPhoneViewModel();
+            SelectedPhoneViewModel selectedIPhone = (SelectedPhoneViewModel)PhoneOfferBuilder.InitializeSelectedGadgetViewModel();
             return View(selectedIPhone);
         }      
 
         [HttpPost]
         public JsonResult GetSelectedPhoneViewModel(string model, string carrier, string capacity, string condition)
         {
-            SelectedPhoneViewModel selectedIPhone = PhoneSelectionManager.SelectionChanged(model, carrier, capacity, condition);            
-            return Json(selectedIPhone, JsonRequestBehavior.AllowGet);
+            SelectedPhoneViewModel selection = new SelectedPhoneViewModel();
+            selection.SelectedModel = model;
+            selection.SelectedCarrier = carrier;
+            selection.SelectedCapacity = capacity;
+            selection.SelectedCondition = condition;
+
+            selection = (SelectedPhoneViewModel)PhoneOfferBuilder.SelectionChanged(selection);
+            return Json(selection, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult Ship()
@@ -56,7 +61,7 @@ namespace Saleular.Controllers
         public ActionResult Ship(string name, string address, string city, string state, string zip, string email, string comments)
         {            
             IMessenger messenger = new EmailMessenger();
-            string body = messenger.ConstructMessage(address, city, state, zip, email, comments, PhoneSelectionManager);
+            string body = messenger.ConstructMessage(address, city, state, zip, email, comments);
             messenger.SendMessage(email, "Cash For My Phone", body);
             return RedirectToAction("ShipSent");            
         }

@@ -8,12 +8,6 @@ namespace Saleular.ViewModels
 {
     public class TopOffersViewModel
     {
-        public IEnumerable<Phone> iPhone5Ss { get; set; }
-
-        public IEnumerable<Phone> iPhone5Cs { get; set; }
-
-        public IEnumerable<Phone> iPhone5s { get; set; }
-
-        public IEnumerable<Phone> iPhone4Ss { get; set; }
+        public IEnumerable<Gadget> Gadgets { get; set; }        
     }
 }

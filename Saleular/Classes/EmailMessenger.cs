@@ -29,13 +29,13 @@ namespace Saleular.Classes
             smtpClient.Send(message);
         }
 
-        public string ConstructMessage(string address, string city, string state, string zip, string useremail, string additionalcomments, IPhoneSelectionManager phoneSelectionManager)
+        public string ConstructMessage(string address, string city, string state, string zip, string userEmail, string additionalComments)
         {
             StringBuilder emailtext = new StringBuilder();
 
             emailtext.AppendLine("This is a 'Sell My IPhone Request' from Saleular.com");
             emailtext.AppendLine("The Email Address is:");
-            emailtext.AppendLine(useremail);
+            emailtext.AppendLine(userEmail);
             emailtext.AppendLine("");
             emailtext.AppendLine("The Address Information is:");
             emailtext.AppendLine(address);
@@ -43,24 +43,24 @@ namespace Saleular.Classes
             emailtext.AppendLine(state);
             emailtext.AppendLine(zip);
             emailtext.AppendLine("");
-            if (additionalcomments != string.Empty)
+            if (additionalComments != string.Empty)
             {
                 emailtext.AppendLine("User Additional Comments:");
-                emailtext.AppendLine(additionalcomments);
+                emailtext.AppendLine(additionalComments);
                 emailtext.AppendLine("");
             }
             emailtext.AppendLine("This user would like to ship you the following iPhones:");
             
-            SelectedPhoneViewModel phone = phoneSelectionManager.GetSelectedPhoneViewModel();
-            if (phone != null)
-            {
-                emailtext.AppendLine(phone.SelectedModel);
-                emailtext.AppendLine(phone.SelectedCarrier);
-                emailtext.AppendLine(phone.SelectedCapacity);
-                emailtext.AppendLine(phone.SelectedCondition);
-                emailtext.AppendLine(phone.Price.ToString());
-                emailtext.AppendLine("");
-            }
+            //SelectedPhoneViewModel phone = phoneSelectionManager.GetSelectedPhoneViewModel();
+            //if (phone != null)
+            //{
+            //    emailtext.AppendLine(phone.SelectedModel);
+            //    emailtext.AppendLine(phone.SelectedCarrier);
+            //    emailtext.AppendLine(phone.SelectedCapacity);
+            //    emailtext.AppendLine(phone.SelectedCondition);
+            //    emailtext.AppendLine(phone.Price.ToString());
+            //    emailtext.AppendLine("");
+            //}
 
             return emailtext.ToString();
         }

@@ -9,7 +9,6 @@ namespace Saleular.Interfaces
     public interface IMessenger
     {
         void SendMessage(string from, string subject, string body);
-
-        string ConstructMessage(string address, string city, string state, string zip, string useremail, string additionalcomments, IPhoneSelectionManager phoneSelectionManager);
+        string ConstructMessage(string address, string city, string state, string zip, string userEmail, string additionalComments);
     }
 }
