@@ -12,6 +12,12 @@ namespace Saleular.Classes
 {
     public class EmailMessenger : IMessenger
     {
+
+        public EmailMessenger()
+        {
+
+        }
+
         public void SendMessage(string from, string subject, string body)
         {
             MailMessage message = new MailMessage();

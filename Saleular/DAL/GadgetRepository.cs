@@ -10,78 +10,78 @@ namespace Saleular.DAL
 {
     public class GadgetRepository : IGadgetRepository
     {
-        protected SaleularContext _context = new SaleularContext();
+        protected SaleularContext Context = new SaleularContext();
 
         public IEnumerable<Gadget> GetGadgets()
         {
-            return _context.Gadgets.ToList();
+            return Context.Gadgets.ToList();
         }
 
         public IEnumerable<Gadget> GetTopOffersPaid(string type, string model)
         {
-            return _context.Gadgets
+            return Context.Gadgets
                 .Where(g => g.Type == type && g.Model == model)
                 .OrderBy(g => g.GadgetID).Take(5);
         }
 
-        public Gadget GetGadgetByID(int gadgetID)
+        public Gadget GetGadgetById(int gadgetId)
         {
-            return _context.Gadgets.Find(gadgetID);
+            return Context.Gadgets.Find(gadgetId);
         }
 
         public void InsertGadget(Gadget gadget)
         {
-            _context.Gadgets.Add(gadget);
+            Context.Gadgets.Add(gadget);
         }
 
-        public void DeleteGadget(int gadgetID)
+        public void DeleteGadget(int gadgetId)
         {
-            Gadget gadget = _context.Gadgets.Find(gadgetID);
-            _context.Gadgets.Remove(gadget);
+            Gadget gadget = Context.Gadgets.Find(gadgetId);
+            Context.Gadgets.Remove(gadget);
         }
 
         public void UpdateGadget(Gadget gadget)
         {
-            _context.Entry(gadget).State = EntityState.Modified;
+            Context.Entry(gadget).State = EntityState.Modified;
         }
 
         public IEnumerable<string> GetDistinctTypes()
         {
-            return _context.Gadgets                          
+            return Context.Gadgets                          
                           .Select(p => p.Type).Distinct().ToList();
         }
 
         public IEnumerable<string> GetDistinctModels(string type)
         {
-            return _context.Gadgets
+            return Context.Gadgets
                           .Where(p => p.Type == type)
                           .Select(p => p.Model).Distinct().ToList();
         }
 
         public IEnumerable<string> GetDistinctCarriers(string model)
         {
-            return _context.Gadgets
+            return Context.Gadgets
                        .Where(p => p.Model == model)
                        .Select(c => c.Carrier).Distinct().ToList();
         }
 
         public IEnumerable<string> GetDistinctCapacities(string model)
         {
-            return _context.Gadgets
+            return Context.Gadgets
                    .Where(p => p.Model == model)
                    .Select(c => c.Capacity).Distinct().ToList();
         }
 
         public IEnumerable<string> GetDistinctConditions(string type)
         {
-            return _context.Gadgets
+            return Context.Gadgets
                     .Where(g => g.Type == type)
                     .Select(p => p.Condition).Distinct().ToList();
         }
 
         public decimal GetPrice(string model, string carrier, string capacity, string condition)
         {
-            return _context.Gadgets
+            return Context.Gadgets
                     .Where(p => p.Model == model
                         && p.Carrier == carrier
                         && p.Capacity == capacity
@@ -91,7 +91,7 @@ namespace Saleular.DAL
 
         public void Save()
         {
-            _context.SaveChanges();
+            Context.SaveChanges();
         }
 
         public void Dispose()
@@ -107,7 +107,7 @@ namespace Saleular.DAL
             {
                 if (disposing)
                 {
-                    _context.Dispose();
+                    Context.Dispose();
                 }
             }
             this.disposed = true;

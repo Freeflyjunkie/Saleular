@@ -1,5 +1,6 @@
 ﻿using Saleular.Classes;
 using Saleular.DAL;
+using Saleular.Forms;
 using Saleular.Interfaces;
 using Saleular.ViewModels;
 using System;
@@ -12,21 +13,25 @@ namespace Saleular.Controllers
 {
     public class HomeController : Controller
     {
-        protected IGadgetRepository _gadget;       
-        protected IMessenger _messenger;        
-        protected const string UNKNOWN = "Unknown";
+        protected IGadgetRepository Gadget;       
+        protected IMessenger Messenger;
+        private readonly TopOffersViewModel _offers = new TopOffersViewModel();
 
         public HomeController(IGadgetRepository gadget, IMessenger messenger)
         {
-            _gadget = gadget;
-            _messenger = messenger;
+            Gadget = gadget;
+            Messenger = messenger;
+            _offers = new TopOffersViewModel();
         }
 
         public ActionResult Index()
         {
-            TopOffersViewModel offers = new TopOffersViewModel();
-            offers.Gadgets = _gadget.GetTopOffersPaid("iPhone", "5S");
-            return View(offers);
+            //IFormFactory factory = new PAFormFactory();
+            //var formlist = factory.GetForms("mls");
+            //List<string> forms = formlist.GetForms();
+
+            _offers.Gadgets = Gadget.GetTopOffersPaid("iPhone", "5S");
+            return View(_offers);
         }
 
         public ActionResult About()
@@ -42,8 +47,8 @@ namespace Saleular.Controllers
         [HttpPost]
         public ActionResult Questions(string name, string email, string question)
         {
-            string body = _messenger.ConstructMessage(name, email, question);
-            _messenger.SendMessage(email, "Cash For My Phone", body);
+            var body = Messenger.ConstructMessage(name, email, question);
+            Messenger.SendMessage(email, "Cash For My Phone", body);
             return View("QuestionSent");
         }
 

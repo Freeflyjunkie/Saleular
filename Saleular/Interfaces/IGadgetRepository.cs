@@ -11,9 +11,9 @@ namespace Saleular.Interfaces
     {
         IEnumerable<Gadget> GetGadgets();
         IEnumerable<Gadget> GetTopOffersPaid(string type, string model);
-        Gadget GetGadgetByID(int gadgetID);
+        Gadget GetGadgetById(int gadgetId);
         void InsertGadget(Gadget gadget);
-        void DeleteGadget(int gadgetID);
+        void DeleteGadget(int gadgetId);
         void UpdateGadget(Gadget gadget);
         IEnumerable<string> GetDistinctTypes();
         IEnumerable<string> GetDistinctModels(string type);

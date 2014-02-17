@@ -174,9 +174,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Classes\EmailMessenger.cs" />
+    <Compile Include="Classes\Factories\GadgetFactory.cs" />
+    <Compile Include="Classes\Factories\StorageFactory.cs" />
     <Compile Include="Classes\GadgetOfferBuilder.cs" />
+    <Compile Include="Classes\Factories\MessageFactory.cs" />
     <Compile Include="Classes\SessionStorage.cs" />
-    <Compile Include="Classes\SMSMessenger.cs" />
+    <Compile Include="Classes\SmsMessenger.cs" />
     <Compile Include="Classes\SQLStorage.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -184,10 +187,19 @@
     <Compile Include="DAL\GadgetRepository.cs" />
     <Compile Include="DAL\GedgetXmlRepository.cs" />
     <Compile Include="DAL\SaleularContext.cs" />
+    <Compile Include="Forms\IForm.cs" />
+    <Compile Include="Forms\IFormFactory.cs" />
+    <Compile Include="Forms\MlsForm.cs" />
+    <Compile Include="Forms\NJFormFactory.cs" />
+    <Compile Include="Forms\PAFormFactory.cs" />
+    <Compile Include="Forms\WeichertForm.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Factories\IGadgetFactory.cs" />
+    <Compile Include="Interfaces\Factories\IStorageFactory.cs" />
     <Compile Include="Interfaces\IGadgetRepository.cs" />
+    <Compile Include="Interfaces\Factories\IMessageFactory.cs" />
     <Compile Include="Interfaces\IMessenger.cs" />
     <Compile Include="Interfaces\IOfferBuilder.cs" />
     <Compile Include="Interfaces\IStorage.cs" />

@@ -18,7 +18,7 @@ namespace Saleular.DAL
             throw new NotImplementedException();
         }
 
-        public Models.Gadget GetGadgetByID(int gadgetID)
+        public Models.Gadget GetGadgetById(int gadgetId)
         {
             throw new NotImplementedException();
         }
@@ -28,7 +28,7 @@ namespace Saleular.DAL
             throw new NotImplementedException();
         }
 
-        public void DeleteGadget(int gadgetID)
+        public void DeleteGadget(int gadgetId)
         {
             throw new NotImplementedException();
         }
