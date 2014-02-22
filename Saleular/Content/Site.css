@@ -1,12 +1,72 @@
 ﻿body {    
-    padding-bottom: 20px;
-    /*background-color: #f2f2f2*/
+    padding-bottom: 20px;    
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+}
+
+h2 {
+    -webkit-text-shadow: 2px 2px 2px #888888;
+    text-shadow: 2px 2px 2px #888888;
+    padding: 0px;
+    margin: 0px 0px 10px 0px;
+}
+
+h1 {
+    margin: 0px 0px 0px 0px;
+    font-size: 50px;
+    font-weight: 300;
+}
+
+footer {
+    text-align: right;
+}
+
+footer h4 {
+    margin: 2px 2px 2px 2px;
+}
+
+.bor {
+    border: 1px solid red;
+}
+
+.box-shadow-dgray {
+    box-shadow: 5px 5px 5px #888888;
+}
+
+.btn {
+    border-radius: 5px;
+}
+
+#menu {
+    border-radius: 5px;
+}
+
+.nav a:hover, .nav a {
+    border-radius: 5px;
+}
+
+#guarenteed-text {
+    margin: 20px 0px 0px 0px;
+}
+
+.offerspaid-price {
+    font-weight: 500;
+    text-align: right;
+    color: #008cba;
+}
+
+.offer-ouroffer {
+    font-weight: 500;
+    text-align: left;
+    color: #008cba;
+}
+
+#footer {
+    padding: 0px;
 }
 
 /* styles for validation helpers */

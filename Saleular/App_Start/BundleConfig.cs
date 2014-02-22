@@ -8,25 +8,24 @@ namespace Saleular
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery/jquery-{version}.js"));
+            // Styles
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                    "~/Content/bootstrap/css/bootstrap-yeti.css",
+                    "~/Content/site.css"));
 
-            //bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-            //            "~/Scripts/jquery/jquery.validate.min.js"));
-                        //"~/Scripts/jquery/jquery.unobtrusive*"));
-
+            // Scripts
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
-            bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/modernizr-*"));
+            bundles.Add(new ScriptBundle("~/Scripts/modernizr").Include(
+                    "~/Scripts/modernizr-*"));
 
-            bundles.Add(new ScriptBundle("~/bundles/js").Include(
-                      "~/Scripts/bootstrap/bootstrap.min.js",
-                      "~/Scripts/respond.min.js"));
+            bundles.Add(new ScriptBundle("~/Scripts/js").Include(
+                    "~/Scripts/jquery/jquery-{version}.js",
+                    "~/Scripts/bootstrap/bootstrap.js",
+                    "~/Scripts/respond.js",
+                    "~/Scripts/site.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap/css/bootstrap-yeti.css",
-                      "~/Content/site.css"));
+            BundleTable.EnableOptimizations = true;
         }
     }
 }

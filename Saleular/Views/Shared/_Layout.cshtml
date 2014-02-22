@@ -4,92 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saleular - @ViewBag.Title</title>
-    @Styles.Render("~/Content/css")    
-    @Scripts.Render("~/bundles/jquery")
-    @*@Scripts.Render("~/bundles/jqueryval")*@
-    @Scripts.Render("~/bundles/js")
-    @Scripts.Render("~/bundles/modernizr")
-    <style>
-        h2 {
-            -webkit-text-shadow: 2px 2px 2px #888888;
-            text-shadow: 2px 2px 2px #888888;
-            padding: 0px;
-            margin: 0px 0px 10px 0px;
-        }
-
-        h1 {
-            margin: 0px 0px 0px 0px;
-            font-size: 50px;
-            font-weight: 300;
-        }
-
-        footer {
-            text-align: right;
-            /*padding: 1px 20px 1px 1px;
-            background-color: #222222;
-            border-color: #0079a1;
-            font-weight: 600;
-            color: #ffffff;
-            border-radius: 8px;*/
-        }
-
-        footer h4{
-            margin: 2px 2px 2px 2px;
-        }
-
-        .bor {
-            border: 1px solid red;
-        }
-
-        .box-shadow-dgray {
-            box-shadow: 5px 5px 5px #888888;
-        }
-       
-        .btn {
-            border-radius: 5px;
-        }
-
-        #menu {
-            border-radius: 5px;
-        }
-
-        .nav a:hover, .nav a {
-            border-radius: 5px;
-        }
-
-        #guarenteed-text {
-            margin: 20px 0px 0px 0px;
-        }
-
-        .offerspaid-price {
-            font-weight: 500;
-            text-align: right;
-            color: #008cba;
-        }
-
-        .offer-ouroffer {
-            font-weight: 500;
-            text-align: left;
-            color: #008cba;
-        }      
-        
-        #footer{
-            padding: 0px;
-        }  
-    </style>
-
-
-    <script>
-        $(document).ready(function () {
-
-            // set nav-bar li active
-            var url = window.location;
-            $('ul.nav a').filter(function () {
-                return this.href == url;
-            }).parent().addClass('active');
-        });
-    </script>
-
+    @Styles.Render("~/Content/css")        
+    @Scripts.Render("~/Scripts/modernizr","~/Scripts/js")    
 </head>
 <body>
     <div id="page">                                        
@@ -145,7 +61,6 @@
         <footer id="footer" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 alert alert-info">
             <h4>&copy; @DateTime.Now.Year - Saleular</h4>
         </footer>
-    </div>
-    @RenderSection("scripts", required: false)
+    </div>           
 </body>
 </html>
