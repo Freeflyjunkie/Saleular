@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Ninject.Infrastructure.Language;
 using Saleular.Classes;
 using Saleular.DAL;
 using Saleular.Forms;
@@ -26,14 +27,14 @@ namespace Saleular.Controllers
             _offers = new TopOffersViewModel();
         }
 
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
             //IFormFactory factory = new PAFormFactory();
             //var formlist = factory.GetForms("mls");
-            //List<string> forms = formlist.GetForms();
+            //List<string> forms = formlist.GetForms();    
+            //_offers.Gadgets = Gadget.GetTopOffersPaid("iPhone", "5S");                        
 
-            _offers.Gadgets = Gadget.GetTopOffersPaid("iPhone", "5S");
-            //var task = Task.Factory.StartNew(PerformGetTopOffersViewModel);            
+            _offers.Gadgets = await GetTopOffersAsync();            
             return View(_offers);
         }
 
@@ -60,9 +61,9 @@ namespace Saleular.Controllers
             return View();
         }
 
-        private void PerformGetTopOffersViewModel()
+        private async Task<IEnumerable<Gadget>> GetTopOffersAsync()
         {
-            _offers.Gadgets = Gadget.GetTopOffersPaid("iPhone", "5S");            
+            return await Gadget.GetTopOffersPaid("iPhone", "5S");
         }
     }
 }

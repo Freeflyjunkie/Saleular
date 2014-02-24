@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 
 namespace Saleular.DAL
@@ -13,7 +14,7 @@ namespace Saleular.DAL
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Models.Gadget> GetTopOffersPaid(string type, string model)
+        public Task<IEnumerable<Models.Gadget>> GetTopOffersPaid(string type, string model)
         {
             throw new NotImplementedException();
         }

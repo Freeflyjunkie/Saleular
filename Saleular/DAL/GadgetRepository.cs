@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using Saleular.Models;
 using System.Data.Entity;
+using System.Threading.Tasks;
 
 namespace Saleular.DAL
 {
@@ -17,11 +18,11 @@ namespace Saleular.DAL
             return Context.Gadgets.ToList();
         }
 
-        public IEnumerable<Gadget> GetTopOffersPaid(string type, string model)
+        public async Task<IEnumerable<Gadget>> GetTopOffersPaid(string type, string model)
         {
-            return Context.Gadgets
+            return await Context.Gadgets
                 .Where(g => g.Type == type && g.Model == model)
-                .OrderBy(g => g.GadgetID).Take(5);
+                .OrderBy(g => g.GadgetID).Take(5).ToListAsync();
         }
 
         public Gadget GetGadgetById(int gadgetId)
