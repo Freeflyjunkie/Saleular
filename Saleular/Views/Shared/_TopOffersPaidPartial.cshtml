@@ -1,11 +1,10 @@
-﻿
-@model Saleular.ViewModels.TopOffersViewModel
+﻿@model Saleular.ViewModels.TopOffersViewModel
 
-<div>
+<section>
     <h2>Top Offers Paid</h2>
-</div>
-<div id="offerpanel" class="panel panel-primary">
-    <div class="panel-body">
+</section>
+<section id="offerpanel" class="panel panel-primary">
+    <article class="panel-body">
         @{
             int index = 0;
             int count = Model.Gadgets.Count();
@@ -45,6 +44,6 @@
                 index++;
             }
         }
-    </div>
-</div>
+    </article>
+</section>
 

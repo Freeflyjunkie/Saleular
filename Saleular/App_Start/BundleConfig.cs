@@ -10,8 +10,20 @@ namespace Saleular
         {
             // Styles
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                    "~/Content/bootstrap/css/bootstrap-yeti.css",
+                    "~/Content/bootstrap-yeti.css",
                     "~/Content/site.css"));
+
+            bundles.Add(new StyleBundle("~/Content/home_index").Include(
+                    "~/Content/custom/home_index.css"));
+
+            bundles.Add(new StyleBundle("~/Content/home_questions").Include(
+                    "~/Content/custom/home_questions.css"));
+
+            bundles.Add(new StyleBundle("~/Content/phone_offer").Include(
+                    "~/Content/custom/phone_offer.css"));
+
+            bundles.Add(new StyleBundle("~/Content/phone_ship").Include(
+                    "~/Content/custom/phone_ship.css"));
 
             // Scripts
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
@@ -24,6 +36,22 @@ namespace Saleular
                     "~/Scripts/bootstrap/bootstrap.js",
                     "~/Scripts/respond.js",
                     "~/Scripts/site.js"));
+
+            bundles.Add(new ScriptBundle("~/Scripts/validate").Include(
+                        "~/Scripts/jquery/jquery.validate.js"));
+
+            bundles.Add(new ScriptBundle("~/Scripts/validation").Include(                    
+                    "~/Scripts/jquery/jquery.validate.js",
+                    "~/Scripts/jquery/jquery.validate.unobtrusive.js"));
+
+            bundles.Add(new ScriptBundle("~/Scripts/home_questions").Include(
+                    "~/Scripts/custom/home_questions.js"));
+
+            bundles.Add(new ScriptBundle("~/Scripts/phone_offer").Include(
+                    "~/Scripts/custom/phone_offer.js"));
+
+            bundles.Add(new ScriptBundle("~/Scripts/phone_ship").Include(
+                   "~/Scripts/custom/phone_ship.js"));
 
             BundleTable.EnableOptimizations = true;
         }

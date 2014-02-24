@@ -1,0 +1,8 @@
+﻿    .form-horizontal .control-label {
+        text-align: left;
+    }
+
+    .validation-error {
+        color: red;
+        padding-top: 10px;
+    }

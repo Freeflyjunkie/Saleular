@@ -230,12 +230,16 @@
     <Content Include="App_Data\Saleular_log.ldf" />
     <Content Include="Content\bootstrap\css\bootstrap-cosmo.css" />
     <Content Include="Content\bootstrap\css\bootstrap-cyborg.css" />
-    <Content Include="Content\bootstrap\css\bootstrap-yeti.css" />
+    <Content Include="Content\bootstrap-yeti.css" />
     <Content Include="Content\bootstrap\css\bootstrap.css" />
     <Content Include="Content\bootstrap\css\bootstrap.min.css" />
-    <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Content\bootstrap\img\glyphicons-halflings-white.png" />
-    <Content Include="Content\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="Content\custom\phone_offer.css" />
+    <Content Include="Content\custom\phone_ship.css" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\img\glyphicons-halflings.png" />
+    <Content Include="Content\custom\home_index.css" />
+    <Content Include="Content\custom\home_questions.css" />
     <Content Include="DAL\saleular.xml" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -281,10 +285,13 @@
     <Content Include="Images\Testimonials\tomer.png" />
     <Content Include="Scripts\bootstrap\bootstrap.js" />
     <Content Include="Scripts\bootstrap\bootstrap.min.js" />
-    <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <None Include="Scripts\jquery\jquery-2.1.0.intellisense.js" />
+    <Content Include="Scripts\custom\home_questions.js" />
+    <Content Include="Scripts\custom\phone_offer.js" />
+    <Content Include="Scripts\custom\phone_ship.js" />
     <Content Include="Scripts\jquery\jquery-2.1.0.js" />
     <Content Include="Scripts\jquery\jquery-2.1.0.min.js" />
     <Content Include="Scripts\jquery\jquery-2.1.0.min.map" />
@@ -331,8 +338,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
-    <Folder Include="Content\custom\" />
-    <Folder Include="Scripts\custom\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
