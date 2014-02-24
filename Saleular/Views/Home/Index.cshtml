@@ -1,9 +1,12 @@
-﻿@Styles.Render("~/Content/home_index")
-
-@model Saleular.ViewModels.TopOffersViewModel
+﻿@model Saleular.ViewModels.TopOffersViewModel
 
 @{
     ViewBag.Title = "Sell Your iPhone";
+}
+
+@section styles
+{
+    @Styles.Render("~/Content/home_index")
 }
 
 <section class="row">

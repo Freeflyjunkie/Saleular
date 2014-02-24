@@ -1,8 +1,4 @@
-﻿@Styles.Render("~/Content/home_questions")
-@Scripts.Render("~/Scripts/validation")
-@Scripts.Render("~/Scripts/home_questions")
-
-@{
+﻿@{
     ViewBag.Title = "Questions";
 }
 
@@ -16,6 +12,18 @@
         <hr />
     </div>
 }
+
+@section scripts
+{
+    @Scripts.Render("~/Scripts/validation")
+    @Scripts.Render("~/Scripts/home_questions") 
+}
+
+@section styles
+{
+    @Styles.Render("~/Content/home_questions")
+}
+
 <div class="col-lg-12 col-md-12">
     <form class="form-horizontal" method="post">
         <div class="form-group">

@@ -17,13 +17,13 @@ namespace Saleular.Tests.Controllers
     [TestClass]
     public class HomeControllerTest
     {
-        protected Mock<IGadgetRepository> _gadgets;
-        protected Mock<IMessenger> _messenger;
+        protected Mock<IGadgetRepository> Gadgets;
+        protected Mock<IMessenger> Messenger;
 
         public HomeControllerTest()
         {
-            _gadgets = new Mock<IGadgetRepository>();
-            _gadgets.Setup(g => g.GetTopOffersPaid(It.IsAny<string>(), It.IsAny<string>())).Returns(() => new Gadget[] 
+            Gadgets = new Mock<IGadgetRepository>();
+            Gadgets.Setup(g => g.GetTopOffersPaid(It.IsAny<string>(), It.IsAny<string>())).Returns(() => new Gadget[] 
             { 
                  new Gadget { Type = "iPhone",   
                             Model = "5S", 
@@ -42,15 +42,15 @@ namespace Saleular.Tests.Controllers
                             ImageUrl="/Images/iPhones/iPhone5S" }
             });
 
-            _messenger = new Mock<IMessenger>();
-            _messenger.Setup(m => m.ConstructMessage(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>())).Returns("Question Message Body");
-            _messenger.Setup(m => m.SendMessage(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()));
+            Messenger = new Mock<IMessenger>();
+            Messenger.Setup(m => m.ConstructMessage(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>())).Returns("Question Message Body");
+            Messenger.Setup(m => m.SendMessage(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()));
         }
 
         [TestMethod]
         public void Index()
         {
-            HomeController home = new HomeController(_gadgets.Object, _messenger.Object);
+            HomeController home = new HomeController(Gadgets.Object, Messenger.Object);
             ActionResult result = home.Index();
             Assert.IsNotNull(result);
         }
@@ -59,7 +59,7 @@ namespace Saleular.Tests.Controllers
         public void About()
         {            
             // Arrange
-            HomeController home = new HomeController(_gadgets.Object, _messenger.Object);
+            HomeController home = new HomeController(Gadgets.Object, Messenger.Object);
 
             // Act
             ViewResult result = home.About() as ViewResult;
@@ -71,7 +71,7 @@ namespace Saleular.Tests.Controllers
         [TestMethod]
         public void Questions()
         {
-            HomeController home = new HomeController(_gadgets.Object, _messenger.Object);
+            HomeController home = new HomeController(Gadgets.Object, Messenger.Object);
 
             // Act
             ViewResult result = home.Questions() as ViewResult;
@@ -83,7 +83,7 @@ namespace Saleular.Tests.Controllers
         [TestMethod]
         public void Questions_Submit()
         {
-            HomeController home = new HomeController(_gadgets.Object, _messenger.Object);
+            HomeController home = new HomeController(Gadgets.Object, Messenger.Object);
 
             // Act
             ViewResult result = home.Questions("Eric Torres", "erictorres56@gmail.com", "I have a question") as ViewResult;
@@ -95,7 +95,7 @@ namespace Saleular.Tests.Controllers
         [TestMethod]
         public void Testimonials()
         {
-            HomeController home = new HomeController(_gadgets.Object, _messenger.Object);
+            HomeController home = new HomeController(Gadgets.Object, Messenger.Object);
 
             // Act
             ViewResult result = home.Questions() as ViewResult;

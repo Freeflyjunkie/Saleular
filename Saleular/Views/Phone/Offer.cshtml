@@ -1,7 +1,4 @@
-﻿@Styles.Render("~/Content/phone_offer")
-@Scripts.Render("~/Scripts/phone_offer")
-
-@model Saleular.ViewModels.SelectedGadgetViewModel
+﻿@model Saleular.ViewModels.SelectedGadgetViewModel
 
 @{
     ViewBag.Title = "Get An Offer";
@@ -18,6 +15,17 @@
         <hr />
     </div>
 }
+
+@section scripts
+{
+    @Scripts.Render("~/Scripts/phone_offer")
+}
+
+@section styles
+{
+    @Styles.Render("~/Content/phone_offer")
+}
+
 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" id="wholething">
     <form id="selectionForm" class="form-horizontal">
         <div class="form-group">

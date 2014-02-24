@@ -1,9 +1,16 @@
-﻿@Styles.Render("~/Content/phone_ship")
-@Scripts.Render("~/Scripts/validate")
-@Scripts.Render("~/Scripts/phone_ship")
-
-@{
+﻿@{
     ViewBag.Title = "Ship It";
+}
+
+@section scripts
+{
+    @Scripts.Render("~/Scripts/validate")
+    @Scripts.Render("~/Scripts/phone_ship")
+}
+
+@section styles
+{
+    @Styles.Render("~/Content/phone_ship")
 }
 
 <div class="col-lg-12 col-md-12">
