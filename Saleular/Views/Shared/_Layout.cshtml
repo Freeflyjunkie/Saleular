@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saleular - @ViewBag.Title</title>
-    @Styles.Render("~/Content/css")    
+    @Styles.Render("~/Content/css")
     @RenderSection("styles", required: false)
     @Scripts.Render("~/Scripts/modernizr")
 </head>
@@ -51,11 +51,8 @@
             </div>
         </header>
     </div>
-    <div class="container">
-        @RenderSection("header", false)
-    </div>
-    <div class="container body-content">
-        @RenderBody()
+    <div class="container">@RenderSection("header", false)</div>
+    <div class="container body-content">@RenderBody()
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <br />
         </div>

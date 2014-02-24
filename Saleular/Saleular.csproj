@@ -303,6 +303,7 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <None Include="Scripts\jquery\jquery-2.1.0.intellisense.js" />
+    <Content Include="Scripts\custom\home_index.js" />
     <Content Include="Scripts\custom\home_questions.js" />
     <Content Include="Scripts\custom\phone_offer.js" />
     <Content Include="Scripts\custom\phone_ship.js" />

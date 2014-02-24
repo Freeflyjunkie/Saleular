@@ -1,7 +1,9 @@
-﻿using Saleular.Classes;
+﻿using System.Threading.Tasks;
+using Saleular.Classes;
 using Saleular.DAL;
 using Saleular.Forms;
 using Saleular.Interfaces;
+using Saleular.Models;
 using Saleular.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -31,6 +33,7 @@ namespace Saleular.Controllers
             //List<string> forms = formlist.GetForms();
 
             _offers.Gadgets = Gadget.GetTopOffersPaid("iPhone", "5S");
+            //var task = Task.Factory.StartNew(PerformGetTopOffersViewModel);            
             return View(_offers);
         }
 
@@ -55,6 +58,11 @@ namespace Saleular.Controllers
         public ActionResult Testimonials()
         {
             return View();
+        }
+
+        private void PerformGetTopOffersViewModel()
+        {
+            _offers.Gadgets = Gadget.GetTopOffersPaid("iPhone", "5S");            
         }
     }
 }

@@ -44,6 +44,9 @@ namespace Saleular
                     "~/Scripts/jquery/jquery.validate.js",
                     "~/Scripts/jquery/jquery.validate.unobtrusive.js"));
 
+            bundles.Add(new ScriptBundle("~/Scripts/home_index").Include(
+                    "~/Scripts/custom/home_index.js"));
+
             bundles.Add(new ScriptBundle("~/Scripts/home_questions").Include(
                     "~/Scripts/custom/home_questions.js"));
 
