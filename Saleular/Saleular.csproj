@@ -233,13 +233,13 @@
     <Content Include="Content\bootstrap-yeti.css" />
     <Content Include="Content\bootstrap\css\bootstrap.css" />
     <Content Include="Content\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\custom\home_index.css" />
+    <Content Include="Content\custom\home_questions.css" />
     <Content Include="Content\custom\phone_offer.css" />
     <Content Include="Content\custom\phone_ship.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\img\glyphicons-halflings-white.png" />
     <Content Include="Content\img\glyphicons-halflings.png" />
-    <Content Include="Content\custom\home_index.css" />
-    <Content Include="Content\custom\home_questions.css" />
     <Content Include="DAL\saleular.xml" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
