@@ -1,4 +1,5 @@
-﻿using Saleular.Models;
+﻿using Saleular.DAL;
+using Saleular.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,9 @@ namespace Saleular.Interfaces
 {
     public interface IGadgetRepository : IDisposable
     {
+        void SetContext(SaleularContext context);
         IEnumerable<Gadget> GetGadgets();
-        Task<IEnumerable<Gadget>> GetTopOffersPaidAsync(string type, string model);
+        Task<IEnumerable<Gadget>> GetTopOffersPaidAsync(string type, string model, int take);
         Gadget GetGadgetById(int gadgetId);
         void InsertGadget(Gadget gadget);
         void DeleteGadget(int gadgetId);

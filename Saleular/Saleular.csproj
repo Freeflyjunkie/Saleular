@@ -251,6 +251,7 @@
     <Content Include="Content\custom\home_questions.css" />
     <Content Include="Content\custom\phone_offer.css" />
     <Content Include="Content\custom\phone_ship.css" />
+    <Content Include="Content\custom\top_offers_paid.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\img\glyphicons-halflings-white.png" />
     <Content Include="Content\img\glyphicons-halflings.png" />
@@ -259,6 +260,8 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\About\broken.jpg" />
+    <Content Include="Images\iPhones\iPhone4S_Good.jpg" />
+    <Content Include="Images\iPhones\iPhone4_Good.png" />
     <Content Include="Images\Loaders\ajax-loader.gif" />
     <Content Include="Images\Logos\BusinessCardLogo.png" />
     <Content Include="Images\Carousel\c1.jpg" />

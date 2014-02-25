@@ -13,16 +13,22 @@ namespace Saleular.DAL
     {
         protected SaleularContext Context = new SaleularContext();
 
+        public void SetContext(SaleularContext context)
+        {
+            Context = context;
+        }
+
         public IEnumerable<Gadget> GetGadgets()
         {
             return Context.Gadgets.ToList();
         }
 
-        public async Task<IEnumerable<Gadget>> GetTopOffersPaidAsync(string type, string model)
+        public async Task<IEnumerable<Gadget>> GetTopOffersPaidAsync(string type, string model, int take)
         {
+            // select random
             return await Context.Gadgets
-                .Where(g => g.Type == type && g.Model == model)
-                .OrderBy(g => g.GadgetID).Take(5).ToListAsync();
+                .Where(g => g.Type == type && g.Model == model)                
+                .OrderBy(g => Guid.NewGuid()).Take(take).ToListAsync();
         }
 
         public Gadget GetGadgetById(int gadgetId)
@@ -112,7 +118,6 @@ namespace Saleular.DAL
                 }
             }
             this.disposed = true;
-        }
-
+        }      
     }
 }

@@ -43,7 +43,7 @@ namespace Saleular.Tests.Controllers
                                 Price = 430.00M,
                                 ImageUrl="/Images/iPhones/iPhone5S" }
             };
-            Gadgets.Setup(g => g.GetTopOffersPaidAsync(It.IsAny<string>(), It.IsAny<string>())).Returns(Task.FromResult(fakeGadgets));           
+            Gadgets.Setup(g => g.GetTopOffersPaidAsync(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<int>())).Returns(Task.FromResult(fakeGadgets));           
 
             Messenger = new Mock<IMessenger>();
             Messenger.Setup(m => m.ConstructMessage(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>())).Returns("Question Message Body");

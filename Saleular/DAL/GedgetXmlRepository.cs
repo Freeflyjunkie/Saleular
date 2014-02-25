@@ -9,12 +9,17 @@ namespace Saleular.DAL
 {
     public class GedgetXmlRepository : IGadgetRepository
     {
+        public void SetContext(SaleularContext context)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<Models.Gadget> GetGadgets()
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Models.Gadget>> GetTopOffersPaidAsync(string type, string model)
+        public Task<IEnumerable<Models.Gadget>> GetTopOffersPaidAsync(string type, string model, int take)
         {
             throw new NotImplementedException();
         }

@@ -27,21 +27,19 @@
                         break;
                 }
                     }
-                    <img src="@imagePath" alt="iPhone" style="height: 90px" />
+                    <img src="@imagePath" alt="iPhone" style="height: 85px" />
                 </div>
                 <div class="pull-left">
-                    <label class="offerspaid-label">Capacity</label> <label class="offerspaid-value">@item.Capacity</label>
-                    <br />
-                    <label class="offerspaid-label">Carrier</label> <label class="offerspaid-value">@item.Carrier</label>
-                    <br />
-                    <label class="offerspaid-label">Condition</label> <label class="offerspaid-value">@item.Condition</label>
-                    <br />
-                    <div class="lead offerspaid-price">@Html.DisplayFor(modelItem => item.Price) </div>
-                </div>
-                <div style="clear: both">
+                    <div><label class="offerspaid-label">Phone</label> <label class="offerspaid-value">@item.Type @item.Model</label></div>
+                    <div><label class="offerspaid-label">Capacity</label> <label class="offerspaid-value">@item.Capacity</label></div>
+                    <div><label class="offerspaid-label">Carrier</label> <label class="offerspaid-value">@item.Carrier</label></div>
+                    <div><label class="offerspaid-label">Condition</label> <label class="offerspaid-value">@item.Condition</label></div>
+                    <div class="lead offerspaid-price">@Html.DisplayFor(modelItem => item.Price)</div>
+                    <div style="clear: both"></div>
                 </div>
                 index++;
             }
         }
+
     </article>
 </section>

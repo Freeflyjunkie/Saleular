@@ -31,13 +31,12 @@ namespace Saleular.Controllers
         [AsyncTimeout(5000)]
         [HandleError(ExceptionType=typeof(TimeoutException), View="Timeout")]
         public async Task<ActionResult> Index(CancellationToken ctk)
-        {
-            //IFormFactory factory = new PAFormFactory();
-            //var formlist = factory.GetForms("mls");
-            //List<string> forms = formlist.GetForms();    
-            //_offers.Gadgets = Gadget.GetTopOffersPaid("iPhone", "5S");                        
+        {                    
+            var topIPhone5STask = GetTopOffersAsync("iPhone", "5S", 2);
+            var topIPhone4STask = GetTopOffersAsync("iPhone", "4S", 2);
 
-            _offers.Gadgets = await GetTopOffersAsync();            
+            await Task.WhenAll(topIPhone5STask, topIPhone4STask);
+
             return View(_offers);
         }
 
@@ -64,9 +63,15 @@ namespace Saleular.Controllers
             return View();
         }
 
-        private async Task<IEnumerable<Gadget>> GetTopOffersAsync()
+        async Task GetTopOffersAsync(string type, string model, int take)
         {
-            return await Gadget.GetTopOffersPaidAsync("iPhone", "5S");
+            // A second operation started on this context before a previous asynchronous operation completed. 
+            // Use 'await' to ensure that any asynchronous operations have completed before calling another method on this context. 
+            // Any instance members are not guaranteed to be thread safe.
+            // Cannot send 2 asynchronous on the same context at the same time...
+            Gadget.SetContext(new SaleularContext());            
+            var topIPhones = await Gadget.GetTopOffersPaidAsync(type, model, take);
+            _offers.Gadgets = _offers.Gadgets.Concat(topIPhones);
         }
     }
 }
