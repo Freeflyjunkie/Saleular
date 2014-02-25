@@ -10,7 +10,7 @@ namespace Saleular.Interfaces
     public interface IGadgetRepository : IDisposable
     {
         IEnumerable<Gadget> GetGadgets();
-        Task<IEnumerable<Gadget>> GetTopOffersPaid(string type, string model);
+        Task<IEnumerable<Gadget>> GetTopOffersPaidAsync(string type, string model);
         Gadget GetGadgetById(int gadgetId);
         void InsertGadget(Gadget gadget);
         void DeleteGadget(int gadgetId);

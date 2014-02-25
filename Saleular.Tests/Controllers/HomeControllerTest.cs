@@ -12,6 +12,7 @@ using Saleular.DAL;
 using Moq;
 using Saleular.Models;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Saleular.Tests.Controllers
 {
@@ -23,25 +24,26 @@ namespace Saleular.Tests.Controllers
 
         public HomeControllerTest()
         {
-            //Gadgets = new Mock<IGadgetRepository>();
-            //Gadgets.Setup(g => g.GetTopOffersPaid(It.IsAny<string>(), It.IsAny<string>())).Returns(() => new Gadget[] 
-            //{ 
-            //     new Gadget { Type = "iPhone",   
-            //                Model = "5S", 
-            //                Carrier = "Factory", 
-            //                Capacity = "64 GB", 
-            //                Condition = "Flawless", 
-            //                Price = 455.00M,
-            //                ImageUrl="/Images/iPhones/iPhone5S" },
+            Gadgets = new Mock<IGadgetRepository>();
+            IEnumerable<Gadget> fakeGadgets = new List<Gadget>
+            {
+                     new Gadget { Type = "iPhone",   
+                                Model = "5S", 
+                                Carrier = "Factory", 
+                                Capacity = "64 GB", 
+                                Condition = "Flawless", 
+                                Price = 455.00M,
+                                ImageUrl="/Images/iPhones/iPhone5S" },
 
-            //   new Gadget { Type = "iPhone",   
-            //                Model = "5S", 
-            //                Carrier = "Factory", 
-            //                Capacity="64 GB", 
-            //                Condition="Good",
-            //                Price = 430.00M,
-            //                ImageUrl="/Images/iPhones/iPhone5S" }
-            //});
+                   new Gadget { Type = "iPhone",   
+                                Model = "5S", 
+                                Carrier = "Factory", 
+                                Capacity="64 GB", 
+                                Condition="Good",
+                                Price = 430.00M,
+                                ImageUrl="/Images/iPhones/iPhone5S" }
+            };
+            Gadgets.Setup(g => g.GetTopOffersPaidAsync(It.IsAny<string>(), It.IsAny<string>())).Returns(Task.FromResult(fakeGadgets));           
 
             Messenger = new Mock<IMessenger>();
             Messenger.Setup(m => m.ConstructMessage(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>())).Returns("Question Message Body");
@@ -49,10 +51,10 @@ namespace Saleular.Tests.Controllers
         }
 
         [TestMethod]
-        public void Index()
+        public async Task Index()
         {
             HomeController home = new HomeController(Gadgets.Object, Messenger.Object);
-            Task<ActionResult> result = home.Index();
+            ActionResult result = (ActionResult)await home.Index(new CancellationToken());
             Assert.IsNotNull(result);
         }
 

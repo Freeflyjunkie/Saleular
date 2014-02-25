@@ -350,6 +350,7 @@
     <Content Include="Views\Home\QuestionSent.cshtml" />
     <Content Include="Views\Shared\_TopOffersPaidPartial.cshtml" />
     <Content Include="Views\Phone\ShipSent.cshtml" />
+    <Content Include="Views\Shared\Timeout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />

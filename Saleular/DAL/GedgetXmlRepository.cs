@@ -14,7 +14,7 @@ namespace Saleular.DAL
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Models.Gadget>> GetTopOffersPaid(string type, string model)
+        public Task<IEnumerable<Models.Gadget>> GetTopOffersPaidAsync(string type, string model)
         {
             throw new NotImplementedException();
         }

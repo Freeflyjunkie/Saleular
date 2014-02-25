@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Threading;
 
 namespace Saleular.Controllers
 {
@@ -27,7 +28,9 @@ namespace Saleular.Controllers
             _offers = new TopOffersViewModel();
         }
 
-        public async Task<ActionResult> Index()
+        [AsyncTimeout(5000)]
+        [HandleError(ExceptionType=typeof(TimeoutException), View="Timeout")]
+        public async Task<ActionResult> Index(CancellationToken ctk)
         {
             //IFormFactory factory = new PAFormFactory();
             //var formlist = factory.GetForms("mls");
@@ -63,7 +66,7 @@ namespace Saleular.Controllers
 
         private async Task<IEnumerable<Gadget>> GetTopOffersAsync()
         {
-            return await Gadget.GetTopOffersPaid("iPhone", "5S");
+            return await Gadget.GetTopOffersPaidAsync("iPhone", "5S");
         }
     }
 }

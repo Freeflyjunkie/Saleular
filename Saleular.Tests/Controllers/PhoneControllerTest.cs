@@ -31,25 +31,26 @@ namespace Saleular.Tests.Controllers
             Storage.Setup(s => s.Save(It.IsAny<string>(), It.IsAny<string>()));
             Storage.Setup(s => s.Retrieve(It.IsAny<string>())).Returns(new SelectedGadgetViewModel());
 
-            //Gadgets = new Mock<IGadgetRepository>();
-            //Gadgets.Setup(g => g.GetTopOffersPaid(It.IsAny<string>(), It.IsAny<string>())).Returns(() => new Gadget[] 
-            //{ 
-            //     new Gadget { Type = "iPhone",   
-            //                Model = "5S", 
-            //                Carrier = "Factory", 
-            //                Capacity = "64 GB", 
-            //                Condition = "Flawless", 
-            //                Price = 455.00M,
-            //                ImageUrl="/Images/iPhones/iPhone5S" },
+            Gadgets = new Mock<IGadgetRepository>();
+            IEnumerable<Gadget> fakeGadgets = new List<Gadget>
+            {
+                     new Gadget { Type = "iPhone",   
+                                Model = "5S", 
+                                Carrier = "Factory", 
+                                Capacity = "64 GB", 
+                                Condition = "Flawless", 
+                                Price = 455.00M,
+                                ImageUrl="/Images/iPhones/iPhone5S" },
 
-            //   new Gadget { Type = "iPhone",   
-            //                Model = "5S", 
-            //                Carrier = "Factory", 
-            //                Capacity="64 GB", 
-            //                Condition="Good",
-            //                Price = 430.00M,
-            //                ImageUrl="/Images/iPhones/iPhone5S" }
-            //});
+                   new Gadget { Type = "iPhone",   
+                                Model = "5S", 
+                                Carrier = "Factory", 
+                                Capacity="64 GB", 
+                                Condition="Good",
+                                Price = 430.00M,
+                                ImageUrl="/Images/iPhones/iPhone5S" }
+            };
+            Gadgets.Setup(g => g.GetTopOffersPaidAsync(It.IsAny<string>(), It.IsAny<string>())).Returns(Task.FromResult(fakeGadgets));  
 
             OfferBuilder = new Mock<IOfferBuilder>();
             OfferBuilder.Setup(o => o.InitializeSelectedGadgetViewModel()).Returns(new SelectedGadgetViewModel());

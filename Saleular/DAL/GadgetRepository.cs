@@ -18,7 +18,7 @@ namespace Saleular.DAL
             return Context.Gadgets.ToList();
         }
 
-        public async Task<IEnumerable<Gadget>> GetTopOffersPaid(string type, string model)
+        public async Task<IEnumerable<Gadget>> GetTopOffersPaidAsync(string type, string model)
         {
             return await Context.Gadgets
                 .Where(g => g.Type == type && g.Model == model)
