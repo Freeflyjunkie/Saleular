@@ -1,29 +1,6 @@
 ﻿@{
     ViewBag.Title = "Questions";
 }
-
-@section header
-{
-    <div class="col-lg-12 col-md-12">
-        <h2>Ask Saleular!</h2>
-        <p>
-            Ask about the status of your shipped iPhone or any other general questions reguarding our process.
-        </p>
-        <hr />
-    </div>
-}
-
-@section scripts
-{
-    @Scripts.Render("~/Scripts/validation")
-    @Scripts.Render("~/Scripts/home_questions") 
-}
-
-@section styles
-{
-    @Styles.Render("~/Content/home_questions")
-}
-
 <div class="col-lg-12 col-md-12">
     <form class="form-horizontal" method="post">
         <div class="form-group">
@@ -36,7 +13,7 @@
                            name="name"
                            class="form-control box-shadow-dgray"
                            placeholder="e.g. Brad Pitt"
-                           data-val="true"                           
+                           data-val="true"
                            data-val-required="Your name is required" />
                 </div>
             </div>
@@ -89,5 +66,22 @@
         </div>
     </form>
 </div>
-
-
+@section header
+{
+    <div class="col-lg-12 col-md-12">
+        <h2>Ask Saleular!</h2>
+        <p>
+            Ask about the status of your shipped iPhone or any other general questions reguarding our process.
+        </p>
+        <hr />
+    </div>
+ }
+@section scripts
+{
+    @Scripts.Render("~/Scripts/validation")
+    @Scripts.Render("~/Scripts/home_questions")
+}
+@section styles
+{
+    @Styles.Render("~/Content/home_questions")
+}

@@ -1,31 +1,7 @@
 ﻿@model Saleular.ViewModels.SelectedGadgetViewModel
-
 @{
     ViewBag.Title = "Get An Offer";
 }
-
-@section header
-{
-    <div class="col-lg-12 col-md-12">
-        <h2>Get an Offer</h2>
-        <p>
-            Start by selecting your device model, carrier, capacity and condition in order to get an offer.<br />
-            Once you have selected your iPhone you will see that our offer price beats the other sites.
-        </p>
-        <hr />
-    </div>
-}
-
-@section scripts
-{
-    @Scripts.Render("~/Scripts/phone_offer")
-}
-
-@section styles
-{
-    @Styles.Render("~/Content/phone_offer")
-}
-
 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" id="wholething">
     <form id="selectionForm" class="form-horizontal">
         <div class="form-group">
@@ -74,7 +50,6 @@
         </div>
     </form>
 </div>
-
 <div id="offerSection" class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
     <div style="float: left; padding-right: 20px;">
         <h2>Our Offer</h2>
@@ -89,3 +64,22 @@
         We pay the most for your used or new iPhone <strong><em>Guaranteed!</em></strong>
     </div>
 </div>
+@section header
+{
+    <div class="col-lg-12 col-md-12">
+        <h2>Get an Offer</h2>
+        <p>
+            Start by selecting your device model, carrier, capacity and condition in order to get an offer.<br />
+            Once you have selected your iPhone you will see that our offer price beats the other sites.
+        </p>
+        <hr />
+    </div>
+}
+@section scripts
+{
+    @Scripts.Render("~/Scripts/phone_offer")
+}
+@section styles
+{
+    @Styles.Render("~/Content/phone_offer")
+}

@@ -1,18 +1,6 @@
 ﻿@{
     ViewBag.Title = "Ship It";
 }
-
-@section scripts
-{
-    @Scripts.Render("~/Scripts/validate")
-    @Scripts.Render("~/Scripts/phone_ship")
-}
-
-@section styles
-{
-    @Styles.Render("~/Content/phone_ship")
-}
-
 <div class="col-lg-12 col-md-12">
     <h2>Now Ship It</h2>
     <p>
@@ -140,3 +128,12 @@
         </div>
     </form>
 </div>
+@section scripts
+{
+    @Scripts.Render("~/Scripts/validate")
+    @Scripts.Render("~/Scripts/phone_ship")
+}
+@section styles
+{
+    @Styles.Render("~/Content/phone_ship")
+}
