@@ -12,6 +12,7 @@ using System.Data.Entity;
 using Saleular.Models;
 using Saleular.Interfaces;
 using Saleular.ViewModels;
+using System.Threading.Tasks;
 
 namespace Saleular.Tests.Controllers
 {
@@ -19,9 +20,9 @@ namespace Saleular.Tests.Controllers
     public class PhoneControllerTest
     {
         protected Mock<IStorage> Storage;
-        protected Mock<IGadgetRepository> Gadgets;        
+        protected Mock<IGadgetRepository> Gadgets;
         protected Mock<IOfferBuilder> OfferBuilder;
-        protected Mock<IMessenger> Messenger;        
+        protected Mock<IMessenger> Messenger;
 
         public PhoneControllerTest()
         {
@@ -30,25 +31,25 @@ namespace Saleular.Tests.Controllers
             Storage.Setup(s => s.Save(It.IsAny<string>(), It.IsAny<string>()));
             Storage.Setup(s => s.Retrieve(It.IsAny<string>())).Returns(new SelectedGadgetViewModel());
 
-            Gadgets = new Mock<IGadgetRepository>();
-            Gadgets.Setup(g => g.GetTopOffersPaid(It.IsAny<string>(), It.IsAny<string>())).Returns(() => new Gadget[] 
-            { 
-                 new Gadget { Type = "iPhone",   
-                            Model = "5S", 
-                            Carrier = "Factory", 
-                            Capacity = "64 GB", 
-                            Condition = "Flawless", 
-                            Price = 455.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" },
+            //Gadgets = new Mock<IGadgetRepository>();
+            //Gadgets.Setup(g => g.GetTopOffersPaid(It.IsAny<string>(), It.IsAny<string>())).Returns(() => new Gadget[] 
+            //{ 
+            //     new Gadget { Type = "iPhone",   
+            //                Model = "5S", 
+            //                Carrier = "Factory", 
+            //                Capacity = "64 GB", 
+            //                Condition = "Flawless", 
+            //                Price = 455.00M,
+            //                ImageUrl="/Images/iPhones/iPhone5S" },
 
-               new Gadget { Type = "iPhone",   
-                            Model = "5S", 
-                            Carrier = "Factory", 
-                            Capacity="64 GB", 
-                            Condition="Good",
-                            Price = 430.00M,
-                            ImageUrl="/Images/iPhones/iPhone5S" }
-            });
+            //   new Gadget { Type = "iPhone",   
+            //                Model = "5S", 
+            //                Carrier = "Factory", 
+            //                Capacity="64 GB", 
+            //                Condition="Good",
+            //                Price = 430.00M,
+            //                ImageUrl="/Images/iPhones/iPhone5S" }
+            //});
 
             OfferBuilder = new Mock<IOfferBuilder>();
             OfferBuilder.Setup(o => o.InitializeSelectedGadgetViewModel()).Returns(new SelectedGadgetViewModel());
@@ -59,7 +60,7 @@ namespace Saleular.Tests.Controllers
             Messenger.Setup(m => m.SendMessage(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()));
         }
 
-         [TestMethod]
+        [TestMethod]
         public void Offer()
         {
             PhoneController phone = new PhoneController(Storage.Object, Gadgets.Object, OfferBuilder.Object, Messenger.Object);
@@ -67,8 +68,8 @@ namespace Saleular.Tests.Controllers
             Assert.IsNotNull(result);
         }
 
-         [TestMethod]
-         public void GetSelectedPhoneViewModel()
+        [TestMethod]
+        public void GetSelectedPhoneViewModel()
         {
             PhoneController phone = new PhoneController(Storage.Object, Gadgets.Object, OfferBuilder.Object, Messenger.Object);
             SelectedGadgetViewModel selectedGadget = new SelectedGadgetViewModel();
@@ -77,16 +78,16 @@ namespace Saleular.Tests.Controllers
             Assert.IsNotNull(result);
         }
 
-         [TestMethod]
-         public void Ship()
+        [TestMethod]
+        public void Ship()
         {
             PhoneController phone = new PhoneController(Storage.Object, Gadgets.Object, OfferBuilder.Object, Messenger.Object);
             ActionResult result = phone.Ship();
             Assert.IsNotNull(result);
-        }        
+        }
 
-         [TestMethod]
-         public void ShippingLabelRequest()
+        [TestMethod]
+        public void ShippingLabelRequest()
         {
             PhoneController phone = new PhoneController(Storage.Object, Gadgets.Object, OfferBuilder.Object, Messenger.Object);
             ActionResult result = phone.Ship("Eric Torres", "32 Briar Court", "Hamburg", "New Jersey", "07419", "erictorres56@gmail.com", "My Comments");
@@ -94,11 +95,11 @@ namespace Saleular.Tests.Controllers
         }
 
         [TestMethod]
-         public void ShipSent()
-         {
-             PhoneController phone = new PhoneController(Storage.Object, Gadgets.Object, OfferBuilder.Object, Messenger.Object);
-             ActionResult result = phone.ShipSent();
-             Assert.IsNotNull(result);
-         }  
+        public void ShipSent()
+        {
+            PhoneController phone = new PhoneController(Storage.Object, Gadgets.Object, OfferBuilder.Object, Messenger.Object);
+            ActionResult result = phone.ShipSent();
+            Assert.IsNotNull(result);
+        }
     }
 }
