@@ -28,15 +28,14 @@ namespace Saleular.Controllers
             _offers = new TopOffersViewModel();
         }
 
-        [AsyncTimeout(5000)]
+        [AsyncTimeout(10000)]
         [HandleError(ExceptionType=typeof(TimeoutException), View="Timeout")]
         public async Task<ActionResult> Index(CancellationToken ctk)
         {                    
             var topIPhone5STask = GetTopOffersAsync("iPhone", "5S", 2);
             var topIPhone4STask = GetTopOffersAsync("iPhone", "4S", 2);
 
-            await Task.WhenAll(topIPhone5STask, topIPhone4STask);
-
+            await Task.WhenAll(topIPhone5STask, topIPhone4STask);            
             return View(_offers);
         }
 
