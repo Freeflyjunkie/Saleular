@@ -33,7 +33,7 @@ namespace Saleular
             //   appId: "805070692840093",
             //   appSecret: "b2219a99cda7c77e0aada423787fdbff");
 
-            app.UseGoogleAuthentication();
+            //app.UseGoogleAuthentication();
         }
     }
 }

@@ -15,6 +15,7 @@ using System.Threading;
 
 namespace Saleular.Controllers
 {
+    [AllowAnonymous]
     public class HomeController : Controller
     {
         protected IGadgetRepository Gadget;       

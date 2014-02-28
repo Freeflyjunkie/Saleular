@@ -14,6 +14,7 @@ using Saleular.Interfaces;
 
 namespace Saleular.Controllers
 {
+    [AllowAnonymous]
     public class PhoneController : Controller
     {
         protected IStorage Storage;        

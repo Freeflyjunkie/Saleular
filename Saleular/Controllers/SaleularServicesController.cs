@@ -11,6 +11,7 @@ using Saleular.Models;
 
 namespace Saleular.Controllers
 {
+    [AllowAnonymous]
     public class SaleularServicesController : ApiController
     {
         protected IGadgetRepository Gadget;
