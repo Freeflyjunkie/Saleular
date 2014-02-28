@@ -16,7 +16,8 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>
+    </IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -195,6 +196,7 @@
     <Compile Include="Classes\SmsMessenger.cs" />
     <Compile Include="Classes\SQLStorage.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\GadgetManagementController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PhoneController.cs" />
     <Compile Include="Controllers\SaleularServicesController.cs" />
@@ -263,6 +265,7 @@
     <Content Include="Images\iPhones\iPhone4S_Good.jpg" />
     <Content Include="Images\iPhones\iPhone4_Good.png" />
     <Content Include="Images\Loaders\ajax-loader.gif" />
+    <Content Include="Images\Login\googlelogin.jpg" />
     <Content Include="Images\Logos\BusinessCardLogo.png" />
     <Content Include="Images\Carousel\c1.jpg" />
     <Content Include="Images\Carousel\c2.jpg" />
@@ -323,7 +326,9 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\site.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -354,6 +359,11 @@
     <Content Include="Views\Shared\_TopOffersPaidPartial.cshtml" />
     <Content Include="Views\Phone\ShipSent.cshtml" />
     <Content Include="Views\Shared\Timeout.cshtml" />
+    <Content Include="Views\GadgetManagement\Create.cshtml" />
+    <Content Include="Views\GadgetManagement\Delete.cshtml" />
+    <Content Include="Views\GadgetManagement\Details.cshtml" />
+    <Content Include="Views\GadgetManagement\Edit.cshtml" />
+    <Content Include="Views\GadgetManagement\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
