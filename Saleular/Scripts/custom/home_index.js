@@ -1,7 +1,4 @@
-﻿$(document).ready(DocumentIsReady);
-
-function DocumentIsReady() {
-
+﻿$(document).ready(function () {
     var c = $('#carousel');
     c.carousel();
 
@@ -11,15 +8,14 @@ function DocumentIsReady() {
 
         cdiv.animate({
             opacity: 0
-        }, 10, 'swing', function () {
-            $('#carouselCaption').text(GetCarouselCaption(index));
-        });
+        }, 10, 'swing', function () { $('#carouselCaption').text(GetCarouselCaption(index)); });
 
         cdiv.animate({
             opacity: 1
         }, 1000, 'swing');
     });
 }
+);
 
 function GetCarouselCaption(index) {
     if (index == 0) {

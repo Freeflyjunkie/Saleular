@@ -11,32 +11,91 @@ using Saleular.Models;
 
 namespace Saleular.Controllers
 {
-    [AllowAnonymous]
+    /// <summary>
+    /// Saleluar APIs
+    /// </summary>
+    [Authorize]
+    [RoutePrefix("gadgets")]
     public class SaleularServicesController : ApiController
     {
         protected IGadgetRepository Gadget;
+        /// <summary>
+        /// Saleular APIs
+        /// </summary>
         public SaleularServicesController()
         {
-            Gadget = new GadgetRepository();            
+            Gadget = new GadgetRepository();
         }
 
-        [Route("saleularservices/gadgets")]
-        [HttpGet]        
-        public IEnumerable<Gadget> GetAllGadgets()
-        {            
+        /// <summary>
+        /// Returns all available gadgets
+        /// </summary>
+        /// <returns>List of gadgets</returns>        
+        [Route]
+        [HttpGet]
+        public IEnumerable<Gadget> Get()
+        {
             IGadgetRepository gadgetsRepository = new GadgetRepository();
             return gadgetsRepository.GetGadgets();
         }
-        
-        [Route("saleularservices/gadgets/{id}")]
-        [HttpGet]        
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="gadget"></param>
+        /// <returns></returns>
+        [Route]
+        [HttpPost]
+        // UPDATE
+        public Gadget Post(Gadget gadget)
+        {
+            Gadget.UpdateGadget(gadget);
+            return gadget;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="gadget"></param>
+        [Route]
+        [HttpPut]
+        // CREATE
+        public void Put(Gadget gadget)
+        {
+            Gadget.InsertGadget(gadget);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        [Route]
+        [HttpDelete]
+        // DELETE 
+        public void Delete(int id)
+        {
+            Gadget.DeleteGadget(id);
+        }
+
+        /// <summary>
+        /// Returns a single gadget by id
+        /// </summary>
+        /// <param name="id">Gadget id</param>
+        /// <returns>Gadget object</returns>
+        [Route("{id:int:min(1)}")]
+        [HttpGet]
         public Gadget GetGadget(int id)
         {
             IGadgetRepository gadgetsRepository = new GadgetRepository();
             return Gadget.GetGadgetById(id);
         }
 
-        [Route("saleularservices/gadgets/{type}/models")]
+        /// <summary>
+        /// Returns a list of gadget models for a given type
+        /// </summary>
+        /// <param name="type">Gadget type</param>
+        /// <returns>List of models</returns>
+        [Route("{type}/models")]
         [HttpGet]
         public IEnumerable<string> GetGadget(string type)
         {
@@ -44,7 +103,13 @@ namespace Saleular.Controllers
             return Gadget.GetDistinctModels(type);
         }
 
-        [Route("saleularservices/gadgets/{type}/{model}")]
+        /// <summary>
+        /// Returns a list of gadgets with a specific type and model
+        /// </summary>
+        /// <param name="type">Gadget type</param>
+        /// <param name="model">Gadget model</param>
+        /// <returns></returns>
+        [Route("{type}/{model}")]
         [HttpGet]
         public IEnumerable<Gadget> GetGadget(string type, string model)
         {
@@ -53,7 +118,14 @@ namespace Saleular.Controllers
                 && g.Model == model);
         }
 
-        [Route("saleularservices/gadgets/{type}/{model}/{carrier}")]
+        /// <summary>
+        /// Returns a list of gadgets with a specific type model and carrier
+        /// </summary>
+        /// <param name="type">Gadget type</param>
+        /// <param name="model">Gadget model</param>
+        /// <param name="carrier">Gadget carrier</param>
+        /// <returns></returns>
+        [Route("{type}/{model}/{carrier}")]
         [HttpGet]
         public IEnumerable<Gadget> GetGadget(string type, string model, string carrier)
         {
@@ -63,7 +135,15 @@ namespace Saleular.Controllers
                 && g.Carrier == carrier);
         }
 
-        [Route("saleularservices/gadgets/{type}/{model}/{carrier}/{capacity}")]
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="model"></param>
+        /// <param name="carrier"></param>
+        /// <param name="capacity"></param>
+        /// <returns></returns>
+        [Route("{type}/{model}/{carrier}/{capacity}")]
         [HttpGet]
         public IEnumerable<Gadget> GetGadget(string type, string model, string carrier, string capacity)
         {
@@ -72,29 +152,6 @@ namespace Saleular.Controllers
                 && g.Model == model
                 && g.Carrier == carrier
                 && g.Capacity == capacity);
-        }
-
-        [Route("saleularservices/gadgets")]
-        [HttpPost]
-        // UPDATE
-        public Gadget Post(Gadget gadget)
-        {
-            Gadget.UpdateGadget(gadget);
-            return gadget;
-        }
-
-        [HttpPut]
-        // CREATE
-        public void Put(Gadget gadget)
-        {
-            Gadget.InsertGadget(gadget);
-        }
-
-        [HttpDelete]
-        // DELETE 
-        public void Delete(int id)
-        {
-            Gadget.DeleteGadget(id);
-        }
+        }       
     }
 }

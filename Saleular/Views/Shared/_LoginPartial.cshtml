@@ -7,13 +7,16 @@
 
         <ul class="nav navbar-nav navbar-right">
             <li>
+                @Html.ActionLink("API Documentation", "Index", "Help", routeValues: null, htmlAttributes: new { title = "API Documentation" })
+            </li>
+            <li>
                 @Html.ActionLink("Manage Account", "Manage", "Account", routeValues: null, htmlAttributes: new { title = "Manage" })
             </li>
             <li>
                 @Html.ActionLink("Manage Admins", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })
             </li>
             <li>
-                @Html.ActionLink("Manage Gadgets", "Index", "GadgetManagement", routeValues: null, htmlAttributes: new { id = "registerLink" })
+                @Html.ActionLink("Manage Gadgets", "Index", "GadgetManagement", routeValues: null, htmlAttributes: new { id = "registerLink2" })
             </li>
             <li>
                 <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
