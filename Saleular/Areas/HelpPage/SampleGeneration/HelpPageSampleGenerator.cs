@@ -10,6 +10,7 @@ using System.Net.Http;
 using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
 using System.Web.Http.Description;
+using System.Web.Http.ModelBinding;
 using System.Xml.Linq;
 using Newtonsoft.Json;
 
@@ -112,7 +113,11 @@ namespace Saleular.Areas.HelpPage
             if (type != null && !typeof(HttpResponseMessage).IsAssignableFrom(type))
             {
                 object sampleObject = GetSampleObject(type);
-                foreach (var formatter in formatters)
+
+                // Added By Eric Torres
+                IEnumerable<MediaTypeFormatter> filteredFormatters = formatters.Where(frmtr => frmtr.GetType() != typeof(JQueryMvcFormUrlEncodedFormatter));                
+                //foreach (var formatter in formatters)
+                foreach (var formatter in filteredFormatters)                                    
                 {
                     foreach (MediaTypeHeaderValue mediaType in formatter.SupportedMediaTypes)
                     {

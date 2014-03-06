@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>    
+    <h1>CORS</h1>
+    <h5>Cross Origin Resource Sharing</h5>
+    <button id="getGadgets">Get Gadgets</button>
+    <pre id="output"></pre>
+    <script src="Scripts/jquery-2.1.0.js"></script>
+    <script>
+        $(document).ready(Ready);
+                
+        function Ready() {
+            $('#getGadgets').click(
+                   function () {
+                       var url = "http://localhost:52519/gadgets";                       
+                       $.get(url).always(showResponse);
+                       return false;
+                   });
+        }
+
+        function showResponse(object) {            
+            $('#output').text(JSON.stringify(object, null, 4));
+        }
+    </script>
+</body>
+</html>

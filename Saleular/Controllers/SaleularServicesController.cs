@@ -26,9 +26,9 @@ namespace Saleular.Controllers
         /// <summary>
         /// saleular api
         /// </summary>
-        public SaleularServicesController(IGadgetRepository gadget)
+        public SaleularServicesController()
         {
-            GadgetRepository = gadget;
+            GadgetRepository = new GadgetRepository();
         }
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace Saleular.Controllers
         /// </summary>
         /// <param name="id">gadget id</param>
         /// <returns>gadget object</returns>
-        [Route("{id:int:min(1)}")]
+        [Route("{id}")]
         [ResponseType(typeof(Gadget))]
         [HttpGet]
         public IHttpActionResult GetGadget(int id)
@@ -236,8 +236,7 @@ namespace Saleular.Controllers
         /// <param name="id">existing gadget id</param>
         /// <returns>Ok</returns>
         [Route]
-        [HttpDelete]
-        // DELETE 
+        [HttpDelete]        
         public IHttpActionResult Delete(int id)
         {
             Gadget gadget = GadgetRepository.GetGadgetById(id);
