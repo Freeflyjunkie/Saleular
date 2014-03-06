@@ -5,9 +5,13 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Results;
+using Microsoft.Owin.Security.Provider;
 using Saleular.DAL;
 using Saleular.Interfaces;
 using Saleular.Models;
+using System.Web.Http.Description;
+using System.Data.Entity.Infrastructure;
 
 namespace Saleular.Controllers
 {
@@ -18,140 +22,234 @@ namespace Saleular.Controllers
     [RoutePrefix("gadgets")]
     public class SaleularServicesController : ApiController
     {
-        protected IGadgetRepository Gadget;
+        protected IGadgetRepository GadgetRepository;
         /// <summary>
-        /// Saleular APIs
+        /// saleular api
         /// </summary>
-        public SaleularServicesController()
+        public SaleularServicesController(IGadgetRepository gadget)
         {
-            Gadget = new GadgetRepository();
+            GadgetRepository = gadget;
         }
 
         /// <summary>
-        /// Returns all available gadgets
+        /// returns all available gadgets
         /// </summary>
-        /// <returns>List of gadgets</returns>        
+        /// <returns>list of gadgets</returns>        
         [Route]
         [HttpGet]
-        public IEnumerable<Gadget> Get()
+        public IHttpActionResult Get()
+        {
+            IEnumerable<Gadget> gadgets = GadgetRepository.GetGadgets();
+
+            if (gadgets == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(gadgets);
+            }
+        }
+
+        /// <summary>
+        /// returns a single gadget by id
+        /// </summary>
+        /// <param name="id">gadget id</param>
+        /// <returns>gadget object</returns>
+        [Route("{id:int:min(1)}")]
+        [ResponseType(typeof(Gadget))]
+        [HttpGet]
+        public IHttpActionResult GetGadget(int id)
         {
             IGadgetRepository gadgetsRepository = new GadgetRepository();
-            return gadgetsRepository.GetGadgets();
+            Gadget gadget = GadgetRepository.GetGadgetById(id);
+
+            if (gadget == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(gadget);
+            }
         }
 
         /// <summary>
-        /// 
+        /// returns a list of gadget models for a given type
         /// </summary>
-        /// <param name="gadget"></param>
-        /// <returns></returns>
+        /// <param name="type">gadget type</param>
+        /// <returns>list of models</returns>
+        [Route("{type}/models")]
+        [ResponseType(typeof(IEnumerable<string>))]
+        [HttpGet]
+        public IHttpActionResult GetGadget(string type)
+        {
+            IGadgetRepository gadgetsRepository = new GadgetRepository();
+            IEnumerable<string> models = GadgetRepository.GetDistinctModels(type).ToList();
+
+            if (!models.Any())
+            {
+                return NotFound();
+            }
+
+            return Ok(models);
+        }
+
+        /// <summary>
+        /// returns a list of gadgets with a specific type and model
+        /// </summary>
+        /// <param name="type">gadget type</param>
+        /// <param name="model">gadget model</param>
+        /// <returns>list of gadgets</returns>
+        [Route("{type}/{model}")]
+        [ResponseType(typeof(IEnumerable<Gadget>))]
+        [HttpGet]
+        public IHttpActionResult GetGadget(string type, string model)
+        {
+            IGadgetRepository gadgetsRepository = new GadgetRepository();
+            IEnumerable<Gadget> gadgets = GadgetRepository.GetGadgets().Where(g => g.Type == type
+                && g.Model == model).ToList();
+
+            if (!gadgets.Any())
+            {
+                return NotFound();
+            }
+
+            return Ok(gadgets);
+        }
+
+        /// <summary>
+        /// returns a list of gadgets with a specific type model and carrier
+        /// </summary>
+        /// <param name="type">gadget type</param>
+        /// <param name="model">gadget model</param>
+        /// <param name="carrier">gadget carrier</param>
+        /// <returns>list of gadgets</returns>
+        [Route("{type}/{model}/{carrier}")]
+        [ResponseType(typeof(IEnumerable<Gadget>))]
+        [HttpGet]
+        public IHttpActionResult GetGadget(string type, string model, string carrier)
+        {
+            IGadgetRepository gadgetsRepository = new GadgetRepository();
+            IEnumerable<Gadget> gadgets = GadgetRepository.GetGadgets().Where(g => g.Type == type
+                && g.Model == model
+                && g.Carrier == carrier).ToList();
+
+            if (!gadgets.Any())
+            {
+                return NotFound();
+            }
+
+            return Ok(gadgets);
+        }
+
+        /// <summary>
+        /// returns a list of gadgets with a specific type model carrier and capacity
+        /// </summary>
+        /// <param name="type">gadget type</param>
+        /// <param name="model">gadget model</param>
+        /// <param name="carrier">gadget carrier</param>
+        /// <param name="capacity">gadget capacity</param>
+        /// <returns>list of gadgets</returns>
+        [Route("{type}/{model}/{carrier}/{capacity}")]
+        [ResponseType(typeof(IEnumerable<Gadget>))]
+        [HttpGet]
+        public IHttpActionResult GetGadget(string type, string model, string carrier, string capacity)
+        {
+            IGadgetRepository gadgetsRepository = new GadgetRepository();
+            IEnumerable<Gadget> gadgets = GadgetRepository.GetGadgets().Where(g => g.Type == type
+                && g.Model == model
+                && g.Carrier == carrier
+                && g.Capacity == capacity).ToList();
+
+            if (!gadgets.Any())
+            {
+                return NotFound();
+            }
+
+            return Ok(gadgets);
+        }
+
+        /// <summary>
+        /// create a new gadget
+        /// </summary>
+        /// <param name="gadget">gadget</param>
+        /// <returns>new gadget uri</returns>
         [Route]
         [HttpPost]
-        // UPDATE
-        public Gadget Post(Gadget gadget)
+        public IHttpActionResult Post(Gadget gadget)
         {
-            Gadget.UpdateGadget(gadget);
-            return gadget;
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            GadgetRepository.InsertGadget(gadget);
+            GadgetRepository.Save();
+
+            return CreatedAtRoute("SaleularServices", new { id = gadget.GadgetID }, gadget);
         }
 
         /// <summary>
-        /// 
+        /// update an existing gadget
         /// </summary>
-        /// <param name="gadget"></param>
+        /// <param name="id">existing gadget id</param>
+        /// <param name="gadget">gadget</param>
+        /// <returns>NoContent</returns>
         [Route]
         [HttpPut]
-        // CREATE
-        public void Put(Gadget gadget)
+        public IHttpActionResult Put(int id, Gadget gadget)
         {
-            Gadget.InsertGadget(gadget);
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            if (id != gadget.GadgetID)
+            {
+                return BadRequest();
+            }
+
+            try
+            {
+                GadgetRepository.UpdateGadget(gadget);
+                GadgetRepository.Save();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (GadgetRepository.GetGadgetById(id) == null)
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return StatusCode(HttpStatusCode.NoContent);
         }
 
         /// <summary>
-        /// 
+        /// delete a gadget
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">existing gadget id</param>
+        /// <returns>Ok</returns>
         [Route]
         [HttpDelete]
         // DELETE 
-        public void Delete(int id)
+        public IHttpActionResult Delete(int id)
         {
-            Gadget.DeleteGadget(id);
-        }
+            Gadget gadget = GadgetRepository.GetGadgetById(id);
+            if (gadget == null)
+            {
+                return NotFound();
+            }
 
-        /// <summary>
-        /// Returns a single gadget by id
-        /// </summary>
-        /// <param name="id">Gadget id</param>
-        /// <returns>Gadget object</returns>
-        [Route("{id:int:min(1)}")]
-        [HttpGet]
-        public Gadget GetGadget(int id)
-        {
-            IGadgetRepository gadgetsRepository = new GadgetRepository();
-            return Gadget.GetGadgetById(id);
-        }
+            GadgetRepository.DeleteGadget(id);
+            GadgetRepository.Save();
 
-        /// <summary>
-        /// Returns a list of gadget models for a given type
-        /// </summary>
-        /// <param name="type">Gadget type</param>
-        /// <returns>List of models</returns>
-        [Route("{type}/models")]
-        [HttpGet]
-        public IEnumerable<string> GetGadget(string type)
-        {
-            IGadgetRepository gadgetsRepository = new GadgetRepository();
-            return Gadget.GetDistinctModels(type);
+            return Ok(gadget);
         }
-
-        /// <summary>
-        /// Returns a list of gadgets with a specific type and model
-        /// </summary>
-        /// <param name="type">Gadget type</param>
-        /// <param name="model">Gadget model</param>
-        /// <returns></returns>
-        [Route("{type}/{model}")]
-        [HttpGet]
-        public IEnumerable<Gadget> GetGadget(string type, string model)
-        {
-            IGadgetRepository gadgetsRepository = new GadgetRepository();
-            return Gadget.GetGadgets().Where(g => g.Type == type
-                && g.Model == model);
-        }
-
-        /// <summary>
-        /// Returns a list of gadgets with a specific type model and carrier
-        /// </summary>
-        /// <param name="type">Gadget type</param>
-        /// <param name="model">Gadget model</param>
-        /// <param name="carrier">Gadget carrier</param>
-        /// <returns></returns>
-        [Route("{type}/{model}/{carrier}")]
-        [HttpGet]
-        public IEnumerable<Gadget> GetGadget(string type, string model, string carrier)
-        {
-            IGadgetRepository gadgetsRepository = new GadgetRepository();
-            return Gadget.GetGadgets().Where(g => g.Type == type
-                && g.Model == model
-                && g.Carrier == carrier);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="type"></param>
-        /// <param name="model"></param>
-        /// <param name="carrier"></param>
-        /// <param name="capacity"></param>
-        /// <returns></returns>
-        [Route("{type}/{model}/{carrier}/{capacity}")]
-        [HttpGet]
-        public IEnumerable<Gadget> GetGadget(string type, string model, string carrier, string capacity)
-        {
-            IGadgetRepository gadgetsRepository = new GadgetRepository();
-            return Gadget.GetGadgets().Where(g => g.Type == type
-                && g.Model == model
-                && g.Carrier == carrier
-                && g.Capacity == capacity);
-        }       
     }
 }
