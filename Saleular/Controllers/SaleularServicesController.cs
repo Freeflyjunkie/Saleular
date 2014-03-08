@@ -18,7 +18,7 @@ namespace Saleular.Controllers
     /// <summary>
     /// Saleluar APIs
     /// </summary>
-    [Authorize]
+    //[Authorize]
     [RoutePrefix("gadgets")]
     public class SaleularServicesController : ApiController
     {
