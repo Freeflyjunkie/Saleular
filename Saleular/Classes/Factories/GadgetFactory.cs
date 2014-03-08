@@ -23,7 +23,7 @@ namespace Saleular.Classes.Factories
                     return new GadgetRepository();
 
                 case GadgetType.Xml:
-                    return new GedgetXmlRepository();
+                    return new GadgetXmlRepository();
 
                 default:
                     return new GadgetRepository();

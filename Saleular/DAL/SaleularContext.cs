@@ -10,6 +10,11 @@ namespace Saleular.DAL
 {
     public class SaleularContext : DbContext
     {
+        public SaleularContext() : base("SaleularContext")
+        {
+                
+        }
+
         public DbSet<Gadget> Gadgets { get; set; }      
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

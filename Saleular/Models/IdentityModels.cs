@@ -8,13 +8,4 @@ namespace Saleular.Models
     {
         //public String WittyComment { get; set; }
     }
-
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
-    {
-        public ApplicationDbContext()
-            : base("SaleularContext")
-            //: base("DefaultConnection")
-        {
-        }
-    }
 }

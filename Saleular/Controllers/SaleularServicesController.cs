@@ -187,7 +187,7 @@ namespace Saleular.Controllers
             GadgetRepository.InsertGadget(gadget);
             GadgetRepository.Save();
 
-            return CreatedAtRoute("SaleularServices", new { id = gadget.GadgetID }, gadget);
+            return CreatedAtRoute("SaleularServices", new { id = gadget.GadgetId }, gadget);
         }
 
         /// <summary>
@@ -205,7 +205,7 @@ namespace Saleular.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != gadget.GadgetID)
+            if (id != gadget.GadgetId)
             {
                 return BadRequest();
             }

@@ -1,24 +1,23 @@
-using Saleular.DAL;
+using System.Collections.Generic;
+using Saleular.Models;
 
-namespace Saleular.Migrations
+namespace Saleular.DAL.SaleularMigrations
 {
-    using Saleular.Models;
     using System;
-    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<SaleularContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Saleular.DAL.SaleularContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            
+            MigrationsDirectory = @"DAL\SaleularMigrations";
         }
 
         protected override void Seed(SaleularContext context)
-        {            
+        {
             var phones = new List<Gadget>
             {
                 // iPhone 5S 64 GB Factory

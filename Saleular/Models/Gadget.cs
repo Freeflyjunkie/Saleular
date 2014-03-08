@@ -10,7 +10,7 @@ namespace Saleular.Models
     public class Gadget
     {
         [Key]
-        public Int32 GadgetID { get; set; }
+        public Int32 GadgetId { get; set; }
 
         [StringLength(25, MinimumLength = 1)]
         public String Type { get; set; }

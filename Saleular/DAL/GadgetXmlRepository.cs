@@ -8,7 +8,7 @@ using Saleular.Models;
 
 namespace Saleular.DAL
 {
-    public class GedgetXmlRepository : IGadgetRepository
+    public class GadgetXmlRepository : IGadgetRepository
     {
         public void SetContext(SaleularContext context)
         {

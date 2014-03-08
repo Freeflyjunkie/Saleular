@@ -232,8 +232,23 @@
     <Compile Include="Controllers\PhoneController.cs" />
     <Compile Include="Controllers\SaleularServicesController.cs" />
     <Compile Include="DAL\GadgetRepository.cs" />
-    <Compile Include="DAL\GedgetXmlRepository.cs" />
+    <Compile Include="DAL\GadgetXmlRepository.cs" />
+    <Compile Include="DAL\IdentityContext.cs" />
+    <Compile Include="DAL\IdentityMigrations\201403080319291_migration1.cs" />
+    <Compile Include="DAL\IdentityMigrations\201403080319291_migration1.Designer.cs">
+      <DependentUpon>201403080319291_migration1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\IdentityMigrations\Configuration.cs" />
     <Compile Include="DAL\SaleularContext.cs" />
+    <Compile Include="DAL\SaleularMigrations\201403080316116_migration1.cs" />
+    <Compile Include="DAL\SaleularMigrations\201403080316116_migration1.Designer.cs">
+      <DependentUpon>201403080316116_migration1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SaleularMigrations\201403080327485_migration2.cs" />
+    <Compile Include="DAL\SaleularMigrations\201403080327485_migration2.Designer.cs">
+      <DependentUpon>201403080327485_migration2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SaleularMigrations\Configuration.cs" />
     <Compile Include="Forms\IForm.cs" />
     <Compile Include="Forms\IFormFactory.cs" />
     <Compile Include="Forms\MlsForm.cs" />
@@ -250,19 +265,6 @@
     <Compile Include="Interfaces\IMessenger.cs" />
     <Compile Include="Interfaces\IOfferBuilder.cs" />
     <Compile Include="Interfaces\IStorage.cs" />
-    <Compile Include="Migrations\201402140303385_TPT.cs" />
-    <Compile Include="Migrations\201402140306156_migration1.cs" />
-    <Compile Include="Migrations\201402140306156_migration1.Designer.cs">
-      <DependentUpon>201402140306156_migration1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201402140330062_migration2.cs" />
-    <Compile Include="Migrations\201402140330062_migration2.Designer.cs">
-      <DependentUpon>201402140330062_migration2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201402140411518_migration3.cs" />
-    <Compile Include="Migrations\201402140411518_migration3.Designer.cs">
-      <DependentUpon>201402140411518_migration3.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Gadget.cs" />
@@ -417,14 +419,14 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201402140306156_migration1.resx">
-      <DependentUpon>201402140306156_migration1.cs</DependentUpon>
+    <EmbeddedResource Include="DAL\IdentityMigrations\201403080319291_migration1.resx">
+      <DependentUpon>201403080319291_migration1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201402140330062_migration2.resx">
-      <DependentUpon>201402140330062_migration2.cs</DependentUpon>
+    <EmbeddedResource Include="DAL\SaleularMigrations\201403080316116_migration1.resx">
+      <DependentUpon>201403080316116_migration1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201402140411518_migration3.resx">
-      <DependentUpon>201402140411518_migration3.cs</DependentUpon>
+    <EmbeddedResource Include="DAL\SaleularMigrations\201403080327485_migration2.resx">
+      <DependentUpon>201403080327485_migration2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
