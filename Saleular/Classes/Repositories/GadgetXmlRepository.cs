@@ -1,12 +1,11 @@
-﻿using Saleular.Interfaces;
+﻿using Saleular.DAL;
+using Saleular.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 using Saleular.Models;
 
-namespace Saleular.DAL
+namespace Saleular.Classes.Repositories
 {
     public class GadgetXmlRepository : IGadgetRepository
     {

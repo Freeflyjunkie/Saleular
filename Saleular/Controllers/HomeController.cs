@@ -1,15 +1,9 @@
 ﻿using System.Threading.Tasks;
-using Ninject.Infrastructure.Language;
-using Saleular.Classes;
 using Saleular.DAL;
-using Saleular.Forms;
 using Saleular.Interfaces;
-using Saleular.Models;
 using Saleular.ViewModels;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using System.Threading;
 
@@ -29,7 +23,7 @@ namespace Saleular.Controllers
             _topOffersViewModel = new TopOffersViewModel();
         }
 
-        [AsyncTimeout(10000)]
+        [AsyncTimeout(5000)]
         [HandleError(ExceptionType=typeof(TimeoutException), View="Timeout")]
         public async Task<ActionResult> Index(CancellationToken ctk)
         {                    

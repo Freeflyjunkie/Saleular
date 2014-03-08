@@ -1,13 +1,8 @@
-﻿using System;
-using System.CodeDom;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Web.Http;
-using System.Web.Http.Results;
-using Microsoft.Owin.Security.Provider;
-using Saleular.DAL;
+using Saleular.Classes.Repositories;
 using Saleular.Interfaces;
 using Saleular.Models;
 using System.Web.Http.Description;

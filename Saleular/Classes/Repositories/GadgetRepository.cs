@@ -1,14 +1,13 @@
-﻿using System.Net.Http.Headers;
+﻿using Saleular.DAL;
 using Saleular.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using Saleular.Models;
 using System.Data.Entity;
 using System.Threading.Tasks;
 
-namespace Saleular.DAL
+namespace Saleular.Classes.Repositories
 {
     public class GadgetRepository : IGadgetRepository
     {

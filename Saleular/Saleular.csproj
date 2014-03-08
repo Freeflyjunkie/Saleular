@@ -231,8 +231,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PhoneController.cs" />
     <Compile Include="Controllers\SaleularServicesController.cs" />
-    <Compile Include="DAL\GadgetRepository.cs" />
-    <Compile Include="DAL\GadgetXmlRepository.cs" />
+    <Compile Include="Classes\Repositories\GadgetRepository.cs" />
+    <Compile Include="Classes\Repositories\GadgetXmlRepository.cs" />
     <Compile Include="DAL\IdentityContext.cs" />
     <Compile Include="DAL\IdentityMigrations\201403080319291_migration1.cs" />
     <Compile Include="DAL\IdentityMigrations\201403080319291_migration1.Designer.cs">
@@ -292,7 +292,7 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\img\glyphicons-halflings-white.png" />
     <Content Include="Content\img\glyphicons-halflings.png" />
-    <Content Include="DAL\saleular.xml" />
+    <Content Include="DAL\Xml\saleular.xml" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />

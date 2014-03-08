@@ -1,3 +1,5 @@
+using Saleular.Classes.Repositories;
+
 [assembly: WebActivator.PreApplicationStartMethod(typeof(Saleular.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivator.ApplicationShutdownMethodAttribute(typeof(Saleular.App_Start.NinjectWebCommon), "Stop")]
 
@@ -7,8 +9,6 @@ namespace Saleular.App_Start
     using System.Web;
     using Saleular.Interfaces;
     using Saleular.Classes;
-    using Saleular.DAL;
-
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 
     using Ninject;
