@@ -10,8 +10,8 @@ namespace Saleular.ViewModels
     {
         public TopOffersViewModel()
         {
-            Gadgets = new List<Gadget>();
+            TopGadgetsOffers = new List<Gadget>();
         }
-        public IEnumerable<Gadget> Gadgets { get; set; }        
+        public IEnumerable<Gadget> TopGadgetsOffers { get; set; }        
     }
 }

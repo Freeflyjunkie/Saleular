@@ -13,6 +13,7 @@ namespace Saleular.Interfaces
         void SetContext(SaleularContext context);
         IEnumerable<Gadget> GetGadgets();
         Task<IEnumerable<Gadget>> GetTopOffersPaidAsync(string type, string model, int take);
+        Task<IEnumerable<Gadget>> GetTopOffersPaidRandomAsync(int take);
         Gadget GetGadgetById(int gadgetId);
         void InsertGadget(Gadget gadget);
         void DeleteGadget(int gadgetId);

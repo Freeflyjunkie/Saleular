@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
+using Saleular.Models;
 
 namespace Saleular.DAL
 {
@@ -14,12 +15,17 @@ namespace Saleular.DAL
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Models.Gadget> GetGadgets()
+        public IEnumerable<Gadget> GetGadgets()
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Models.Gadget>> GetTopOffersPaidAsync(string type, string model, int take)
+        public Task<IEnumerable<Gadget>> GetTopOffersPaidAsync(string type, string model, int take)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<Gadget>> GetTopOffersPaidRandomAsync(int take)
         {
             throw new NotImplementedException();
         }
@@ -29,7 +35,7 @@ namespace Saleular.DAL
             throw new NotImplementedException();
         }
 
-        public void InsertGadget(Models.Gadget gadget)
+        public void InsertGadget(Gadget gadget)
         {
             throw new NotImplementedException();
         }
@@ -39,7 +45,7 @@ namespace Saleular.DAL
             throw new NotImplementedException();
         }
 
-        public void UpdateGadget(Models.Gadget gadget)
+        public void UpdateGadget(Gadget gadget)
         {
             throw new NotImplementedException();
         }

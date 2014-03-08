@@ -1,4 +1,5 @@
-﻿using Saleular.Interfaces;
+﻿using System.Net.Http.Headers;
+using Saleular.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,13 @@ namespace Saleular.DAL
             // select random
             return await Context.Gadgets
                 .Where(g => g.Type == type && g.Model == model)                
+                .OrderBy(g => Guid.NewGuid()).Take(take).ToListAsync();
+        }
+
+        public async Task<IEnumerable<Gadget>> GetTopOffersPaidRandomAsync(int take)
+        {
+            return await Context.Gadgets
+                .Where(g => !g.Model.Contains("3G"))
                 .OrderBy(g => Guid.NewGuid()).Take(take).ToListAsync();
         }
 
@@ -118,6 +126,6 @@ namespace Saleular.DAL
                 }
             }
             this.disposed = true;
-        }      
+        }    
     }
 }

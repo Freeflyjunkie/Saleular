@@ -20,13 +20,13 @@ namespace Saleular.Controllers
     {
         protected IGadgetRepository Gadget;       
         protected IMessenger Messenger;
-        private readonly TopOffersViewModel _offers = new TopOffersViewModel();
+        private readonly TopOffersViewModel _topOffersViewModel = new TopOffersViewModel();
 
         public HomeController(IGadgetRepository gadget, IMessenger messenger)
         {
             Gadget = gadget;
             Messenger = messenger;
-            _offers = new TopOffersViewModel();
+            _topOffersViewModel = new TopOffersViewModel();
         }
 
         [AsyncTimeout(10000)]
@@ -35,10 +35,12 @@ namespace Saleular.Controllers
         {                    
             //var topIPhone5STask = GetTopOffersAsync("iPhone", "5S", 2);
             //var topIPhone4STask = GetTopOffersAsync("iPhone", "4S", 2);
+            //await Task.WhenAll(topIPhone5STask, topIPhone4STask);      
+      
+            //await GetTopOffersAsync("iPhone", "5", 5);
+            _topOffersViewModel.TopGadgetsOffers = await Gadget.GetTopOffersPaidRandomAsync(5);
 
-            //await Task.WhenAll(topIPhone5STask, topIPhone4STask);            
-            await GetTopOffersAsync("iPhone", "5", 5);
-            return View(_offers);
+            return View(_topOffersViewModel);
         }
 
         public ActionResult About()
@@ -72,7 +74,7 @@ namespace Saleular.Controllers
             // Cannot send 2 asynchronous on the same context at the same time...
             Gadget.SetContext(new SaleularContext());            
             var topIPhones = await Gadget.GetTopOffersPaidAsync(type, model, take);
-            _offers.Gadgets = _offers.Gadgets.Concat(topIPhones);
+            _topOffersViewModel.TopGadgetsOffers = _topOffersViewModel.TopGadgetsOffers.Concat(topIPhones);
         }
     }
 }

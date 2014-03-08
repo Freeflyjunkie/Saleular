@@ -6,10 +6,10 @@
     <article class="panel-body">
         @{
             int index = 0;
-            int count = Model.Gadgets.Count();
-            foreach (var item in Model.Gadgets)
+            int count = Model.TopGadgetsOffers.Count();
+            foreach (var item in Model.TopGadgetsOffers)
             {
-                <div class="pull-left" style="width: 70px; text-align: center;">
+                <div class="pull-left" style="width: 75px; text-align: center;">
                     @{
                 string imagePath = item.ImageUrl + ".png";
                 switch (item.Condition)
@@ -18,7 +18,7 @@
                         imagePath = item.ImageUrl + ".png";
                         break;
 
-                    case "Good":
+                    case "Good":                        
                         imagePath = item.ImageUrl + "_Good.jpg";
                         break;
 
@@ -36,7 +36,7 @@
                     <div><label class="offerspaid-label">Condition</label> <label class="offerspaid-value">@item.Condition</label></div>
                     <div class="lead offerspaid-price">@Html.DisplayFor(modelItem => item.Price)</div>
                     <div style="clear: both"></div>
-                </div>
+                </div>                
                 index++;
             }
         }
