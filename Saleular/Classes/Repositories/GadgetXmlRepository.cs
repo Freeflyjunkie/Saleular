@@ -29,7 +29,7 @@ namespace Saleular.Classes.Repositories
             throw new NotImplementedException();
         }
 
-        public Models.Gadget GetGadgetById(int gadgetId)
+        public Gadget GetGadgetById(int gadgetId)
         {
             throw new NotImplementedException();
         }
@@ -52,7 +52,7 @@ namespace Saleular.Classes.Repositories
         public IEnumerable<string> GetDistinctTypes()
         {
             throw new NotImplementedException();
-        }        
+        }
 
         public IEnumerable<string> GetDistinctModels(string type)
         {
@@ -75,6 +75,11 @@ namespace Saleular.Classes.Repositories
         }
 
         public decimal GetPrice(string model, string carrier, string capacity, string condition)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Gadget GetGadget(string type, string model, string carrier, string capacity, string condition)
         {
             throw new NotImplementedException();
         }

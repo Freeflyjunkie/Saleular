@@ -33,6 +33,7 @@ namespace Saleular.ViewModels
         public String SelectedCapacity { get; set; }
         public IEnumerable<String> Conditions { get; set; }
         public String SelectedCondition { get; set; }
+        public Int32 GadgetId { get; set; }
 
         [DataType(DataType.Currency)]
         public decimal Price { get; set; }

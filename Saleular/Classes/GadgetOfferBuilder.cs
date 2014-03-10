@@ -1,5 +1,6 @@
 ﻿using Saleular.DAL;
 using Saleular.Interfaces;
+using Saleular.Models;
 using Saleular.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -35,6 +36,10 @@ namespace Saleular.Classes
                 selections.Capacities = _gadgets.GetDistinctCapacities(selections.SelectedModel);
                 selections.Conditions = _gadgets.GetDistinctConditions(selections.SelectedType);
 
+                //var topIPhone5STask = GetTopOffersAsync("iPhone", "5S", 2);
+                //var topIPhone4STask = GetTopOffersAsync("iPhone", "4S", 2);
+                //await Task.WhenAll(topIPhone5STask, topIPhone4STask);      
+
                 if (!selections.Models.Contains(selections.SelectedModel))
                 {
                     selections.SelectedCarrier = "Select Model...";
@@ -55,10 +60,21 @@ namespace Saleular.Classes
                     selections.SelectedCapacity = "Select Condition...";
                 }
 
-                selections.Price = _gadgets.GetPrice(selections.SelectedModel,
-                                                        selections.SelectedCarrier,
-                                                        selections.SelectedCapacity,
-                                                        selections.SelectedCondition);
+
+                Gadget gadget = _gadgets.GetGadget(selections.SelectedType, 
+                    selections.SelectedModel, selections.SelectedCarrier,
+                    selections.SelectedCapacity, selections.SelectedCondition);
+
+                if (gadget != null)
+                {
+                    selections.GadgetId = gadget.GadgetId;
+                    selections.Price = gadget.Price;
+                }
+                //selections.Price = _gadgets.GetPrice(selections.SelectedModel,
+                //                                        selections.SelectedCarrier,
+                //                                        selections.SelectedCapacity,
+                //                                        selections.SelectedCondition);                
+
             }
 
             return selections;

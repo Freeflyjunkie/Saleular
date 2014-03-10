@@ -1,4 +1,6 @@
-﻿@{
+﻿@model Saleular.ViewModels.SelectedGadgetViewModel
+
+@{
     ViewBag.Title = "Ship It";
 }
 <div class="col-lg-12 col-md-12">
@@ -6,10 +8,11 @@
     <p>
         Request a free shipping label and ship your phone quickly and easily using Fedex or the USPS.
     </p>
-    <hr />
+    <hr />    
 </div>
 <div class="col-lg-12 col-md-12">
     <form id="shipForm" class="form-horizontal" method="post">
+        <input id="id" type="hidden" name="id" value="@Model.GadgetId" />
         <div class="form-group">
             <label for="name" class="control-label col-lg-1 col-md-1">Name</label>
             <div class="col-md-6">

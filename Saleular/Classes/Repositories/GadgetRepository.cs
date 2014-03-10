@@ -42,7 +42,7 @@ namespace Saleular.Classes.Repositories
         {
             return Context.Gadgets.Find(gadgetId);
         }
-
+     
         public void InsertGadget(Gadget gadget)
         {
             Context.Gadgets.Add(gadget);
@@ -103,6 +103,15 @@ namespace Saleular.Classes.Repositories
                     .Select(c => c.Price).SingleOrDefault();
         }
 
+        public Gadget GetGadget(string type, string model, string carrier, string capacity, string condition)
+        {
+            return Context.Gadgets.SingleOrDefault(g => g.Type == type
+                                                        && g.Model == model
+                                                        && g.Carrier == carrier
+                                                        && g.Capacity == capacity
+                                                        && g.Condition == condition);
+        }
+
         public void Save()
         {
             Context.SaveChanges();
@@ -114,17 +123,18 @@ namespace Saleular.Classes.Repositories
             GC.SuppressFinalize(this);
         }
 
-        private bool disposed = false;
+        private bool _disposed = false;
         protected virtual void Dispose(bool disposing)
         {
-            if (!this.disposed)
+            if (!this._disposed)
             {
                 if (disposing)
                 {
                     Context.Dispose();
                 }
             }
-            this.disposed = true;
-        }    
+            this._disposed = true;
+        }
+        
     }
 }

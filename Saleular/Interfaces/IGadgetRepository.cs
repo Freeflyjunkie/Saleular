@@ -17,13 +17,14 @@ namespace Saleular.Interfaces
         Gadget GetGadgetById(int gadgetId);
         void InsertGadget(Gadget gadget);
         void DeleteGadget(int gadgetId);
-        void UpdateGadget(Gadget gadget);
+        void UpdateGadget(Gadget gadget);        
         IEnumerable<string> GetDistinctTypes();
         IEnumerable<string> GetDistinctModels(string type);
         IEnumerable<string> GetDistinctCarriers(string model);
         IEnumerable<string> GetDistinctCapacities(string model);
         IEnumerable<string> GetDistinctConditions(string type);
         decimal GetPrice(string model, string carrier, string capacity, string condition);
+        Gadget GetGadget(string type, string model, string carrier, string capacity, string condition);
         void Save();
     }
 }

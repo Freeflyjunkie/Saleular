@@ -58,6 +58,7 @@ namespace Saleular.App_Start
         {
             kernel.Bind<IStorage>().To<SessionStorage>();
             kernel.Bind<IGadgetRepository>().To<GadgetRepository>();
+            kernel.Bind<IRequestRepository>().To<RequestRepository>();
             kernel.Bind<IOfferBuilder>().To<GadgetOfferBuilder>();
             kernel.Bind<IMessenger>().To<EmailMessenger>();
         }        
