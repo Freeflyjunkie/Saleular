@@ -26,14 +26,8 @@ namespace Saleular.Controllers
         [AsyncTimeout(5000)]
         [HandleError(ExceptionType=typeof(TimeoutException), View="Timeout")]
         public async Task<ActionResult> Index(CancellationToken ctk)
-        {                    
-            //var topIPhone5STask = GetTopOffersAsync("iPhone", "5S", 2);
-            //var topIPhone4STask = GetTopOffersAsync("iPhone", "4S", 2);
-            //await Task.WhenAll(topIPhone5STask, topIPhone4STask);      
-      
-            //await GetTopOffersAsync("iPhone", "5", 5);
+        {                                
             _topOffersViewModel.TopGadgetsOffers = await Gadget.GetTopOffersPaidRandomAsync(5);
-
             return View(_topOffersViewModel);
         }
 
@@ -66,7 +60,7 @@ namespace Saleular.Controllers
             // Use 'await' to ensure that any asynchronous operations have completed before calling another method on this context. 
             // Any instance members are not guaranteed to be thread safe.
             // Cannot send 2 asynchronous on the same context at the same time...
-            Gadget.SetContext(new SaleularContext());            
+            //Gadget.SetContext(new SaleularContext());            
             var topIPhones = await Gadget.GetTopOffersPaidAsync(type, model, take);
             _topOffersViewModel.TopGadgetsOffers = _topOffersViewModel.TopGadgetsOffers.Concat(topIPhones);
         }

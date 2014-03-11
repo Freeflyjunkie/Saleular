@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Saleular.Models;
@@ -39,9 +40,9 @@ namespace Saleular.Controllers
         }      
 
         [HttpPost]
-        public JsonResult GetSelectedGadgetViewModel(SelectedGadgetViewModel selectedGadget)
+        public async Task<JsonResult> GetSelectedGadgetViewModel(SelectedGadgetViewModel selectedGadget)
         {
-            selectedGadget = OfferBuilder.SelectionChanged(selectedGadget);
+            selectedGadget = await OfferBuilder.SelectionChangedAsync(selectedGadget);
             Storage.Save("SelectedGadgetViewModel", selectedGadget);
             return Json(selectedGadget, JsonRequestBehavior.AllowGet);
         }

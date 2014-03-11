@@ -93,5 +93,26 @@ namespace Saleular.Classes.Repositories
         {
             throw new NotImplementedException();
         }
+
+
+        public Task<IEnumerable<string>> GetDistinctModelsAsync(string type)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<string>> GetDistinctCarriersAsync(string model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<string>> GetDistinctCapacitiesAsync(string model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<string>> GetDistinctConditionsAsync(string type)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

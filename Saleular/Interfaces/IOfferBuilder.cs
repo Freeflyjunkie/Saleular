@@ -10,6 +10,7 @@ namespace Saleular.Interfaces
     public interface IOfferBuilder
     {
         SelectedGadgetViewModel InitializeSelectedGadgetViewModel();
-        SelectedGadgetViewModel SelectionChanged(SelectedGadgetViewModel selections);    
+        SelectedGadgetViewModel SelectionChanged(SelectedGadgetViewModel selections);
+        Task<SelectedGadgetViewModel> SelectionChangedAsync(SelectedGadgetViewModel selections);    
     }
 }

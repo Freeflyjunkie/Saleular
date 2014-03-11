@@ -21,22 +21,7 @@ namespace Saleular.Classes.Repositories
         public IEnumerable<Gadget> GetGadgets()
         {
             return Context.Gadgets.ToList();
-        }
-
-        public async Task<IEnumerable<Gadget>> GetTopOffersPaidAsync(string type, string model, int take)
-        {
-            // select random
-            return await Context.Gadgets
-                .Where(g => g.Type == type && g.Model == model)                
-                .OrderBy(g => Guid.NewGuid()).Take(take).ToListAsync();
-        }
-
-        public async Task<IEnumerable<Gadget>> GetTopOffersPaidRandomAsync(int take)
-        {
-            return await Context.Gadgets
-                .Where(g => !g.Model.Contains("3G"))
-                .OrderBy(g => Guid.NewGuid()).Take(take).ToListAsync();
-        }
+        }      
 
         public Gadget GetGadgetById(int gadgetId)
         {
@@ -112,6 +97,49 @@ namespace Saleular.Classes.Repositories
                                                         && g.Condition == condition);
         }
 
+        public async Task<IEnumerable<Gadget>> GetTopOffersPaidAsync(string type, string model, int take)
+        {
+            // select random
+            return await Context.Gadgets
+                .Where(g => g.Type == type && g.Model == model)
+                .OrderBy(g => Guid.NewGuid()).Take(take).ToListAsync();
+        }
+
+        public async Task<IEnumerable<Gadget>> GetTopOffersPaidRandomAsync(int take)
+        {
+            return await Context.Gadgets
+                .Where(g => !g.Model.Contains("3G"))
+                .OrderBy(g => Guid.NewGuid()).Take(take).ToListAsync();
+        }
+
+        public async Task<IEnumerable<string>> GetDistinctModelsAsync(string type)
+        {
+            return await Context.Gadgets
+                          .Where(p => p.Type == type)
+                          .Select(p => p.Model).Distinct().ToListAsync();
+        }
+
+        public async Task<IEnumerable<string>> GetDistinctCarriersAsync(string model)
+        {
+            return await Context.Gadgets
+                       .Where(p => p.Model == model)
+                       .Select(c => c.Carrier).Distinct().ToListAsync();
+        }
+
+        public async Task<IEnumerable<string>> GetDistinctCapacitiesAsync(string model)
+        {
+            return await Context.Gadgets
+                  .Where(p => p.Model == model)
+                  .Select(c => c.Capacity).Distinct().ToListAsync();
+        }
+
+        public async Task<IEnumerable<string>> GetDistinctConditionsAsync(string type)
+        {
+            return await Context.Gadgets
+                    .Where(g => g.Type == type)
+                    .Select(p => p.Condition).Distinct().ToListAsync();
+        }
+
         public void Save()
         {
             Context.SaveChanges();
@@ -134,7 +162,6 @@ namespace Saleular.Classes.Repositories
                 }
             }
             this._disposed = true;
-        }
-        
+        }        
     }
 }

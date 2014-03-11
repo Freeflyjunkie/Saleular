@@ -1,4 +1,5 @@
-﻿using Saleular.DAL;
+﻿using System.Threading.Tasks;
+using Saleular.DAL;
 using Saleular.Interfaces;
 using Saleular.Models;
 using Saleular.ViewModels;
@@ -11,17 +12,17 @@ namespace Saleular.Classes
 {
     public class GadgetOfferBuilder : IOfferBuilder
     {
-        protected IGadgetRepository _gadgets;
+        protected IGadgetRepository Gadgets;
 
         public GadgetOfferBuilder(IGadgetRepository gadgets)
         {
-            _gadgets = gadgets;
+            Gadgets = gadgets;
         }
 
         public SelectedGadgetViewModel InitializeSelectedGadgetViewModel()
         {
-            SelectedGadgetViewModel gadgetViewModel = new SelectedGadgetViewModel();
-            gadgetViewModel.Types = _gadgets.GetDistinctTypes();
+            var gadgetViewModel = new SelectedGadgetViewModel();
+            gadgetViewModel.Types = Gadgets.GetDistinctTypes();
 
             return gadgetViewModel;
         }
@@ -31,14 +32,56 @@ namespace Saleular.Classes
             if (selections != null)
             {                
                 // Reload List<String>             
-                selections.Models = _gadgets.GetDistinctModels(selections.SelectedType);                
-                selections.Carriers = _gadgets.GetDistinctCarriers(selections.SelectedModel);
-                selections.Capacities = _gadgets.GetDistinctCapacities(selections.SelectedModel);
-                selections.Conditions = _gadgets.GetDistinctConditions(selections.SelectedType);
+                selections.Models = Gadgets.GetDistinctModels(selections.SelectedType);                
+                selections.Carriers = Gadgets.GetDistinctCarriers(selections.SelectedModel);
+                selections.Capacities = Gadgets.GetDistinctCapacities(selections.SelectedModel);
+                selections.Conditions = Gadgets.GetDistinctConditions(selections.SelectedType);
+               
+                if (!selections.Models.Contains(selections.SelectedModel))
+                {
+                    selections.SelectedCarrier = "Select Model...";
+                }
 
-                //var topIPhone5STask = GetTopOffersAsync("iPhone", "5S", 2);
-                //var topIPhone4STask = GetTopOffersAsync("iPhone", "4S", 2);
-                //await Task.WhenAll(topIPhone5STask, topIPhone4STask);      
+                if (!selections.Carriers.Contains(selections.SelectedCarrier))
+                {
+                    selections.SelectedCarrier = "Select Carrier...";
+                }
+
+                if (!selections.Capacities.Contains(selections.SelectedCapacity))
+                {
+                    selections.SelectedCapacity = "Select Capacity...";
+                }
+
+                if (!selections.Conditions.Contains(selections.SelectedCondition))
+                {
+                    selections.SelectedCapacity = "Select Condition...";
+                }
+
+
+                Gadget gadget = Gadgets.GetGadget(selections.SelectedType, 
+                    selections.SelectedModel, selections.SelectedCarrier,
+                    selections.SelectedCapacity, selections.SelectedCondition);
+
+                if (gadget != null)
+                {
+                    selections.GadgetId = gadget.GadgetId;
+                    selections.Price = gadget.Price;
+                }              
+            }
+
+            return selections;
+        }
+
+        public async Task<SelectedGadgetViewModel> SelectionChangedAsync(SelectedGadgetViewModel selections)
+        {
+            if (selections != null)
+            {                
+                var modelsTask = GetDistinctModelsAsync(selections);
+                var carriersTask = GetDistinctCarriersAsync(selections);
+                var capacitiesTask = GetDistinctCapacitiesAsync(selections);
+                var conditionsTask = GetDistinctConditionsAsync(selections);
+
+                await Task.WhenAll(modelsTask, carriersTask, capacitiesTask, conditionsTask);
 
                 if (!selections.Models.Contains(selections.SelectedModel))
                 {
@@ -61,7 +104,7 @@ namespace Saleular.Classes
                 }
 
 
-                Gadget gadget = _gadgets.GetGadget(selections.SelectedType, 
+                Gadget gadget = Gadgets.GetGadget(selections.SelectedType,
                     selections.SelectedModel, selections.SelectedCarrier,
                     selections.SelectedCapacity, selections.SelectedCondition);
 
@@ -69,15 +112,34 @@ namespace Saleular.Classes
                 {
                     selections.GadgetId = gadget.GadgetId;
                     selections.Price = gadget.Price;
-                }
-                //selections.Price = _gadgets.GetPrice(selections.SelectedModel,
-                //                                        selections.SelectedCarrier,
-                //                                        selections.SelectedCapacity,
-                //                                        selections.SelectedCondition);                
-
+                }                
             }
 
             return selections;
+        }
+
+        private async Task GetDistinctModelsAsync(SelectedGadgetViewModel vwModel)
+        {
+            Gadgets.SetContext(new SaleularContext());            
+            vwModel.Models = await Gadgets.GetDistinctModelsAsync(vwModel.SelectedType);
+        }
+
+        private async Task GetDistinctCarriersAsync(SelectedGadgetViewModel vwModel)
+        {
+            Gadgets.SetContext(new SaleularContext());            
+            vwModel.Carriers = await Gadgets.GetDistinctCarriersAsync(vwModel.SelectedModel);
+        }
+
+        private async Task GetDistinctCapacitiesAsync(SelectedGadgetViewModel vwModel)
+        {
+            Gadgets.SetContext(new SaleularContext());            
+            vwModel.Capacities = await Gadgets.GetDistinctCapacitiesAsync(vwModel.SelectedModel);
+        }
+
+        private async Task GetDistinctConditionsAsync(SelectedGadgetViewModel vwModel)
+        {
+            Gadgets.SetContext(new SaleularContext());            
+            vwModel.Conditions = await Gadgets.GetDistinctConditionsAsync(vwModel.SelectedType);
         }
     }
 }
