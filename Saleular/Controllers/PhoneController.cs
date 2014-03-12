@@ -33,9 +33,9 @@ namespace Saleular.Controllers
             //Messenger = messenger;                     
         }
 
-        public ActionResult Offer()
+        public async Task<ActionResult> Offer()
         {            
-            var gadgetViewModel = OfferBuilder.InitializeSelectedGadgetViewModel();
+            var gadgetViewModel = await OfferBuilder.InitializeSelectedGadgetViewModelAsync();
             return View(gadgetViewModel);
         }      
 

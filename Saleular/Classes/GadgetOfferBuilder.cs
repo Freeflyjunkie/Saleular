@@ -27,6 +27,14 @@ namespace Saleular.Classes
             return gadgetViewModel;
         }
 
+        public async Task<SelectedGadgetViewModel> InitializeSelectedGadgetViewModelAsync()
+        {
+            var gadgetViewModel = new SelectedGadgetViewModel();
+            gadgetViewModel.Types = await Gadgets.GetDistinctTypesAsync();
+
+            return gadgetViewModel;
+        }
+
         public SelectedGadgetViewModel SelectionChanged(SelectedGadgetViewModel selections)
         {            
             if (selections != null)
@@ -104,9 +112,11 @@ namespace Saleular.Classes
                 }
 
 
-                Gadget gadget = Gadgets.GetGadget(selections.SelectedType,
-                    selections.SelectedModel, selections.SelectedCarrier,
-                    selections.SelectedCapacity, selections.SelectedCondition);
+                var gadget = await Gadgets.GetGadgetAsync(selections.SelectedType,
+                                                                selections.SelectedModel, 
+                                                                selections.SelectedCarrier,
+                                                                selections.SelectedCapacity, 
+                                                                selections.SelectedCondition);
 
                 if (gadget != null)
                 {
@@ -117,7 +127,7 @@ namespace Saleular.Classes
 
             return selections;
         }
-
+        
         private async Task GetDistinctModelsAsync(SelectedGadgetViewModel vwModel)
         {
             Gadgets.SetContext(new SaleularContext());            
@@ -140,6 +150,6 @@ namespace Saleular.Classes
         {
             Gadgets.SetContext(new SaleularContext());            
             vwModel.Conditions = await Gadgets.GetDistinctConditionsAsync(vwModel.SelectedType);
-        }
+        }       
     }
 }

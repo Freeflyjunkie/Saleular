@@ -114,5 +114,17 @@ namespace Saleular.Classes.Repositories
         {
             throw new NotImplementedException();
         }
+
+
+        public Task<Gadget> GetGadgetAsync(string type, string model, string carrier, string capacity, string condition)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        public Task<IEnumerable<string>> GetDistinctTypesAsync()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

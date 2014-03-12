@@ -1,4 +1,5 @@
-﻿using Saleular.Models;
+﻿using System.Diagnostics;
+using Saleular.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -12,7 +13,7 @@ namespace Saleular.DAL
     {
         public SaleularContext() : base("SaleularContext")
         {
-                
+            Database.Log = sql => Debug.Write(sql);
         }
 
         public DbSet<Gadget> Gadgets { get; set; }

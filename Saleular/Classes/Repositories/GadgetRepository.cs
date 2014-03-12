@@ -1,4 +1,5 @@
-﻿using Saleular.DAL;
+﻿using Microsoft.Ajax.Utilities;
+using Saleular.DAL;
 using Saleular.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -97,6 +98,15 @@ namespace Saleular.Classes.Repositories
                                                         && g.Condition == condition);
         }
 
+        public async Task<Gadget> GetGadgetAsync(string type, string model, string carrier, string capacity, string condition)
+        {
+            return await Context.Gadgets.SingleOrDefaultAsync(g => g.Type == type
+                                                                && g.Model == model
+                                                                && g.Carrier == carrier
+                                                                && g.Capacity == capacity
+                                                                && g.Condition == condition);
+        }
+
         public async Task<IEnumerable<Gadget>> GetTopOffersPaidAsync(string type, string model, int take)
         {
             // select random
@@ -111,7 +121,11 @@ namespace Saleular.Classes.Repositories
                 .Where(g => !g.Model.Contains("3G"))
                 .OrderBy(g => Guid.NewGuid()).Take(take).ToListAsync();
         }
-
+        public async Task<IEnumerable<string>> GetDistinctTypesAsync()
+        {
+            return await Context.Gadgets
+                          .Select(p => p.Type).Distinct().ToListAsync();
+        }
         public async Task<IEnumerable<string>> GetDistinctModelsAsync(string type)
         {
             return await Context.Gadgets

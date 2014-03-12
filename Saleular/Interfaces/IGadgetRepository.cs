@@ -23,8 +23,10 @@ namespace Saleular.Interfaces
         IEnumerable<string> GetDistinctConditions(string type);
         decimal GetPrice(string model, string carrier, string capacity, string condition);
         Gadget GetGadget(string type, string model, string carrier, string capacity, string condition);
+        Task<Gadget> GetGadgetAsync(string type, string model, string carrier, string capacity, string condition);
         Task<IEnumerable<Gadget>> GetTopOffersPaidAsync(string type, string model, int take);
         Task<IEnumerable<Gadget>> GetTopOffersPaidRandomAsync(int take);
+        Task<IEnumerable<string>> GetDistinctTypesAsync();      
         Task<IEnumerable<string>> GetDistinctModelsAsync(string type);
         Task<IEnumerable<string>> GetDistinctCarriersAsync(string model);
         Task<IEnumerable<string>> GetDistinctCapacitiesAsync(string model);

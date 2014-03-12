@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
+﻿using System.Diagnostics;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace Saleular.DAL
     {
         public IdentityContext() : base("SaleularContext")
         {
+            Database.Log = sql => Debug.Write(sql);
         }
     }
 }
