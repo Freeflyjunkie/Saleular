@@ -254,6 +254,10 @@
     <Compile Include="DAL\SaleularMigrations\201403100232249_AddRequests.Designer.cs">
       <DependentUpon>201403100232249_AddRequests.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAL\SaleularMigrations\201403210135171_migration3.cs" />
+    <Compile Include="DAL\SaleularMigrations\201403210135171_migration3.Designer.cs">
+      <DependentUpon>201403210135171_migration3.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAL\SaleularMigrations\Configuration.cs" />
     <Compile Include="Forms\IForm.cs" />
     <Compile Include="Forms\IFormFactory.cs" />
@@ -423,10 +427,10 @@
     <Content Include="Views\Request\Details.cshtml" />
     <Content Include="Views\Request\Edit.cshtml" />
     <Content Include="Views\Request\Index.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Decimal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
-    <Folder Include="Views\Shared\EditorTemplates\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -443,6 +447,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DAL\SaleularMigrations\201403100232249_AddRequests.resx">
       <DependentUpon>201403100232249_AddRequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAL\SaleularMigrations\201403210135171_migration3.resx">
+      <DependentUpon>201403210135171_migration3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

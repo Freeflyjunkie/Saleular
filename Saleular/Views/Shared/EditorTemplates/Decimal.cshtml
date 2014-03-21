@@ -1,0 +1,9 @@
+﻿@model decimal
+
+@{
+    IFormatProvider formatProvider =
+        new System.Globalization.CultureInfo("en-US");                
+
+        @Html.TextBoxFor(d => d, "", new { @class = "offer-ouroffer" })
+        @*<input class="currency">@Model.ToString("C", formatProvider)</input>*@
+}
