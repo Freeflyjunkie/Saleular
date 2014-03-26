@@ -14,12 +14,12 @@ namespace Saleular.Controllers
     [Authorize(Users = "etorres,rbitran")]
     public class GadgetManagementController : Controller
     {
-        private SaleularContext db = new SaleularContext();
+        private readonly SaleularContext _db = new SaleularContext();
 
         // GET: /GadgetManagement/
         public ActionResult Index()
         {
-            return View(db.Gadgets.ToList());
+            return View(_db.Gadgets.ToList());
         }
 
         // GET: /GadgetManagement/Details/5
@@ -29,7 +29,7 @@ namespace Saleular.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Gadget gadget = db.Gadgets.Find(id);
+            Gadget gadget = _db.Gadgets.Find(id);
             if (gadget == null)
             {
                 return HttpNotFound();
@@ -52,8 +52,8 @@ namespace Saleular.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Gadgets.Add(gadget);
-                db.SaveChanges();
+                _db.Gadgets.Add(gadget);
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -67,7 +67,7 @@ namespace Saleular.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Gadget gadget = db.Gadgets.Find(id);
+            Gadget gadget = _db.Gadgets.Find(id);
             if (gadget == null)
             {
                 return HttpNotFound();
@@ -84,8 +84,8 @@ namespace Saleular.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(gadget).State = EntityState.Modified;
-                db.SaveChanges();
+                _db.Entry(gadget).State = EntityState.Modified;
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(gadget);
@@ -98,7 +98,7 @@ namespace Saleular.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Gadget gadget = db.Gadgets.Find(id);
+            Gadget gadget = _db.Gadgets.Find(id);
             if (gadget == null)
             {
                 return HttpNotFound();
@@ -111,9 +111,9 @@ namespace Saleular.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Gadget gadget = db.Gadgets.Find(id);
-            db.Gadgets.Remove(gadget);
-            db.SaveChanges();
+            Gadget gadget = _db.Gadgets.Find(id);
+            _db.Gadgets.Remove(gadget);
+            _db.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -121,7 +121,7 @@ namespace Saleular.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                _db.Dispose();
             }
             base.Dispose(disposing);
         }
