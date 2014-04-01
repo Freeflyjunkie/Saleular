@@ -367,6 +367,7 @@
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
     <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
     <None Include="Scripts\jquery\jquery-2.1.0.intellisense.js" />
+    <Content Include="Scripts\custom\gadget_management_index.js" />
     <Content Include="Scripts\custom\home_index.js" />
     <Content Include="Scripts\custom\home_questions.js" />
     <Content Include="Scripts\custom\phone_offer.js" />
