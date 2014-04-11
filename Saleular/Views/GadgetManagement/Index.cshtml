@@ -13,7 +13,7 @@
     {
         <tr>
             <td>
-                <div class="row">
+                <div class="row">                    
                     <div class="col-lg-4 col-md-4">
                         @Html.DisplayFor(modelItem => item.Type)
                         <br />
@@ -31,7 +31,7 @@
                         <br />
                         @Html.DisplayFor(modelItem => item.Price)
                     </div>
-                </div>
+                </div>                
             </td>
             <td style="text-align: right">
                 @Html.ActionLink("Edit", "Edit", new { id = item.GadgetId }, new { @class = "btn btn-sm btn-info" })

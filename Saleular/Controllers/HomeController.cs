@@ -12,7 +12,7 @@ namespace Saleular.Controllers
     [AllowAnonymous]
     public class HomeController : Controller
     {
-        protected IGadgetRepository Gadget;       
+        protected IGadgetRepository Gadget;
         protected IMessenger Messenger;
         private readonly TopOffersViewModel _topOffersViewModel = new TopOffersViewModel();
 
@@ -21,12 +21,13 @@ namespace Saleular.Controllers
             Gadget = gadget;
             Messenger = messenger;
             _topOffersViewModel = new TopOffersViewModel();
+            //Func<int, int> square = (x) => x * x;
         }
 
         [AsyncTimeout(5000)]
-        [HandleError(ExceptionType=typeof(TimeoutException), View="Timeout")]
+        [HandleError(ExceptionType = typeof(TimeoutException), View = "Timeout")]
         public async Task<ActionResult> Index(CancellationToken ctk)
-        {                                
+        {
             _topOffersViewModel.TopGadgetsOffers = await Gadget.GetTopOffersPaidRandomAsync(5);
             return View(_topOffersViewModel);
         }
