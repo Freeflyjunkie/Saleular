@@ -14,6 +14,8 @@ namespace Saleular.DAL.IdentityMigrations
         {
             AutomaticMigrationsEnabled = false;
             MigrationsDirectory = @"DAL\IdentityMigrations";
+            //add-migration -ConfigurationTypeName Saleular.DAL.IdentityMigrations.Configuration "migration4"
+            //update-database -ConfigurationTypeName Saleular.DAL.IdentityMigrations.Configuration
         }
 
         protected override void Seed(IdentityContext context)

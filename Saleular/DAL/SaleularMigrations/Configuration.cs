@@ -14,6 +14,8 @@ namespace Saleular.DAL.SaleularMigrations
         {
             AutomaticMigrationsEnabled = false;
             MigrationsDirectory = @"DAL\SaleularMigrations";
+            //add-migration -ConfigurationTypeName Saleular.DAL.SaleularMigrations.Configuration "migrationX"
+            //update-database -ConfigurationTypeName Saleular.DAL.SaleularMigrations.Configuration
         }
 
         protected override void Seed(SaleularContext context)
