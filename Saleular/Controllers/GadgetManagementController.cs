@@ -11,6 +11,7 @@ using Saleular.DAL;
 
 namespace Saleular.Controllers
 {
+    // Only Roy and I
     [Authorize(Users = "etorres,rbitran")]
     public class GadgetManagementController : Controller
     {
