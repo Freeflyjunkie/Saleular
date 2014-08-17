@@ -56,6 +56,12 @@ namespace Saleular
             bundles.Add(new ScriptBundle("~/Scripts/phone_ship").Include(
                    "~/Scripts/custom/phone_ship.js"));
 
+            bundles.Add(new ScriptBundle("~/Scripts/request_gadgets").Include(
+                    "~/Scripts/custom/request_gadgets.js"));
+
+            bundles.Add(new ScriptBundle("~/Scripts/angularjs").Include(
+                    "~/Scripts/angular/angular.js"));
+
             BundleTable.EnableOptimizations = true;
         }
     }

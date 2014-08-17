@@ -13,8 +13,13 @@ namespace Saleular.Controllers
 {
     public class RequestController : Controller
     {
-        private SaleularContext db = new SaleularContext();
+        private readonly SaleularContext db = new SaleularContext();
 
+        public ActionResult Gadgets()
+        {
+            return View();
+        }
+        
         // GET: /Request/
         public ActionResult Index()
         {
