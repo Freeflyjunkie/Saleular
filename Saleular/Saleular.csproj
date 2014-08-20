@@ -314,8 +314,8 @@
     <Content Include="Content\custom\home_index.css" />
     <Content Include="Content\custom\home_questions.css" />
     <Content Include="Content\custom\phone_offer.css" />
+    <Content Include="Content\custom\phone_pricelist.css" />
     <Content Include="Content\custom\phone_ship.css" />
-    <Content Include="Content\custom\request_gadgets.css" />
     <Content Include="Content\custom\top_offers_paid.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\img\glyphicons-halflings-white.png" />
@@ -416,6 +416,7 @@
     <Content Include="Scripts\custom\home_index.js" />
     <Content Include="Scripts\custom\home_questions.js" />
     <Content Include="Scripts\custom\phone_offer.js" />
+    <Content Include="Scripts\custom\phone_pricelist.js" />
     <Content Include="Scripts\custom\phone_ship.js" />
     <Content Include="Scripts\angular\i18n\angular-locale_af-na.js" />
     <Content Include="Scripts\angular\i18n\angular-locale_af-za.js" />
@@ -696,7 +697,6 @@
     <Content Include="Scripts\angular\i18n\angular-locale_zh.js" />
     <Content Include="Scripts\angular\i18n\angular-locale_zu-za.js" />
     <Content Include="Scripts\angular\i18n\angular-locale_zu.js" />
-    <Content Include="Scripts\custom\request_gadgets.js" />
     <Content Include="Scripts\jquery\jquery-2.1.0.js" />
     <Content Include="Scripts\jquery\jquery-2.1.0.min.js" />
     <Content Include="Scripts\jquery\jquery-2.1.0.min.map" />
@@ -755,12 +755,12 @@
     <Content Include="Views\Request\Index.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Decimal.cshtml" />
     <Content Include="Scripts\angular\version.json" />
-    <Content Include="Views\Request\Gadgets.cshtml" />
     <Content Include="Views\PriceListRequests\Create.cshtml" />
     <Content Include="Views\PriceListRequests\Delete.cshtml" />
     <Content Include="Views\PriceListRequests\Details.cshtml" />
     <Content Include="Views\PriceListRequests\Edit.cshtml" />
     <Content Include="Views\PriceListRequests\Index.cshtml" />
+    <Content Include="Views\Phone\PriceList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />

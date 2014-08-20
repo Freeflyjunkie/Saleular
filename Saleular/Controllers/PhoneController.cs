@@ -21,16 +21,45 @@ namespace Saleular.Controllers
         protected IStorage Storage;        
         //protected IGadgetRepository GadgetRepository;
         protected IRequestRepository RequestRespository;
+        protected IPriceListRequestRepository PriceListRequestRepository;
         protected IOfferBuilder OfferBuilder;
         //protected IMessenger Messenger;
 
-        public PhoneController(IStorage storage, IRequestRepository request, IOfferBuilder offerBuilder)
+        public PhoneController(IStorage storage, IRequestRepository request, IPriceListRequestRepository priceListRequest, IOfferBuilder offerBuilder)
         {
-            Storage = storage;
-            //GadgetRepository = gadget;
+            Storage = storage;            
             RequestRespository = request;
-            OfferBuilder = offerBuilder;
-            //Messenger = messenger;                     
+            PriceListRequestRepository = priceListRequest;
+            OfferBuilder = offerBuilder;            
+        }
+        
+        public ActionResult PriceList()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult PriceList(string businessName, string name, string email, string phone, string address, string taxId, string businessAreaSelection)
+        {
+            //var factory = new MessageFactory();
+            //var messenger = factory.CreateMessenger(MessageFactory.MessengerType.Email);
+            //var emailBody = messenger.ConstructMessage(businessName, name, email, phone, address, taxId, businessAreaSelection);
+            //messenger.SendMessage("", "Price List Request", emailBody);
+
+            //var selectedGadget = (SelectedGadgetViewModel)Storage.Retrieve("SelectedGadgetViewModel");
+            var priceListRequest = new PriceListRequest
+            {
+                BusinessName = businessName,
+                Name = name,
+                Email = email,
+                Phone = phone,
+                Address = address,
+                TaxId = taxId,
+                BusinessAreaSelection = businessAreaSelection
+            };
+            PriceListRequestRepository.InsertRequest(priceListRequest);
+            PriceListRequestRepository.Save();
+            return View();
         }
 
         public async Task<ActionResult> Offer()

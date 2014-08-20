@@ -16,7 +16,7 @@
 });
 
 function WireSelectButton(dropdownElements, selectControl) {
-    dropdownElements.on('click', function(e) {
+    dropdownElements.on('click', function (e) {
         e.preventDefault();
 
         // set selection text

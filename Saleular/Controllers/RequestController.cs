@@ -16,44 +16,7 @@ namespace Saleular.Controllers
 {
     public class RequestController : Controller
     {
-        private readonly SaleularContext db = new SaleularContext();
-        protected IStorage Storage;
-        protected IPriceListRequestRepository PriceListRequestRepository;
-
-        public RequestController(IStorage storage, IPriceListRequestRepository request)
-        {
-            Storage = storage;
-            PriceListRequestRepository = request;
-        }
-
-        public ActionResult Gadgets()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult Gadgets(string businessName, string name, string email, string phone, string address, string taxId, string businessAreaSelection)
-        {
-            //var factory = new MessageFactory();
-            //var messenger = factory.CreateMessenger(MessageFactory.MessengerType.Email);
-            //var emailBody = messenger.ConstructMessage(businessName, name, email, phone, address, taxId, businessAreaSelection);
-            //messenger.SendMessage("", "Price List Request", emailBody);
-
-            //var selectedGadget = (SelectedGadgetViewModel)Storage.Retrieve("SelectedGadgetViewModel");
-            var priceListRequest = new PriceListRequest
-            {
-                BusinessName = businessName,                
-                Name = name,                
-                Email = email,
-                Phone = phone,
-                Address = address,
-                TaxId = taxId,
-                BusinessAreaSelection = businessAreaSelection
-            };
-            PriceListRequestRepository.InsertRequest(priceListRequest);
-            PriceListRequestRepository.Save();
-            return View();
-        }
+        private readonly SaleularContext db = new SaleularContext();               
 
         // GET: /Request/
         public ActionResult Index()
