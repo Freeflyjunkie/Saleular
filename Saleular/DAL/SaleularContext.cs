@@ -18,6 +18,7 @@ namespace Saleular.DAL
 
         public DbSet<Gadget> Gadgets { get; set; }
         public DbSet<Request> Requests { get; set; }
+        public DbSet<PriceListRequest> PriceListRequests { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

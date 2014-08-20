@@ -12,5 +12,6 @@ namespace Saleular.Interfaces
         void SendMessage(string from, string subject, string body);
         string ConstructMessage(string name, string address, string city, string state, string zip, string userEmail, string additionalComments, SelectedGadgetViewModel selectedGadget);
         string ConstructMessage(string name, string userEmail, string additionalComments);
+        string ConstructMessage(string businessName, string name, string email, string phone, string address, string taxId, string businessAreaSelection);
     }
 }

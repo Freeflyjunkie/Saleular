@@ -19,6 +19,12 @@
                 @Html.ActionLink("Manage Gadgets", "Index", "GadgetManagement", routeValues: null, htmlAttributes: new { id = "registerLink2" })
             </li>
             <li>
+                @Html.ActionLink("Requests", "Index", "Request", routeValues: null, htmlAttributes: new { id = "requests" })
+            </li>
+            <li>
+                @Html.ActionLink("Price List Requests", "Index", "PriceListRequests", routeValues: null, htmlAttributes: new { id = "priceListRequests" })
+            </li>
+            <li>
                 <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
             </li>
         </ul>
