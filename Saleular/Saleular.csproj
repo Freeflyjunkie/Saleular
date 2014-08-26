@@ -761,6 +761,7 @@
     <Content Include="Views\PriceListRequests\Edit.cshtml" />
     <Content Include="Views\PriceListRequests\Index.cshtml" />
     <Content Include="Views\Phone\PriceList.cshtml" />
+    <Content Include="Views\Phone\PriceListSent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />

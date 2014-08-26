@@ -59,7 +59,7 @@ namespace Saleular.Controllers
             };
             PriceListRequestRepository.InsertRequest(priceListRequest);
             PriceListRequestRepository.Save();
-            return View();
+            return View("PriceListSent");
         }
 
         public async Task<ActionResult> Offer()
