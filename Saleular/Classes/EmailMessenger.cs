@@ -20,19 +20,19 @@ namespace Saleular.Classes
 
         public void SendMessage(string from, string subject, string body)
         {
-            var message = new MailMessage();
-            message.From = new MailAddress(from);
-            message.To.Add(new MailAddress("iphone@saleular.com"));
-            message.Subject = subject;
-            message.Body = body;
+            //var message = new MailMessage();
+            //message.From = new MailAddress("sales@saleular.com");
+            //message.To.Add(new MailAddress("roy@saleular.com"));
+            //message.Subject = subject;
+            //message.Body = body;
 
-            var smtpClient = new SmtpClient("smtpout.secureserver.net");
-            smtpClient.Host = "relay-hosting.secureserver.net";            
-            smtpClient.UseDefaultCredentials = false;
-            smtpClient.Credentials = new NetworkCredential("iphone@saleular.com", "Roybitran123");
-            smtpClient.EnableSsl = true;
-            smtpClient.Port = 25;
-            smtpClient.Send(message);
+            //var smtpClient = new SmtpClient("smtpout.secureserver.net");
+            //smtpClient.Host = "relay-hosting.secureserver.net";            
+            //smtpClient.UseDefaultCredentials = false;
+            //smtpClient.Credentials = new NetworkCredential("sales@saleular.com", "Zion21378");
+            //smtpClient.EnableSsl = true;
+            //smtpClient.Port = 25;
+            //smtpClient.Send(message);
         }
 
         public string ConstructMessage(string name, string address, string city, string state, string zip,
