@@ -20,7 +20,28 @@ namespace Saleular.Classes
 
         public void SendMessage(string from, string subject, string body)
         {
-            //var message = new MailMessage();
+            var mailMessage = new MailMessage
+            {
+                IsBodyHtml = false,
+                From = new MailAddress("sales@saleular.com"),
+                Subject = subject,
+                Body = body
+            };
+            mailMessage.To.Add(new MailAddress("roy@saleular.com"));
+
+            var smtpClient = new SmtpClient("relay-hosting.secureserver.net", 25);
+            smtpClient.Credentials = CredentialCache.DefaultNetworkCredentials;
+            smtpClient.Host = "";
+            smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+            try
+            {
+                smtpClient.Send(mailMessage);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
             //message.From = new MailAddress("sales@saleular.com");
             //message.To.Add(new MailAddress("roy@saleular.com"));
             //message.Subject = subject;

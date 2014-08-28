@@ -7,6 +7,7 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Saleular.Classes.Factories;
 using Saleular.Models;
 using Saleular.DAL;
 using Saleular.ViewModels;
@@ -41,10 +42,10 @@ namespace Saleular.Controllers
         [HttpPost]
         public ActionResult PriceList(string businessName, string name, string email, string phone, string address, string taxId, string businessAreaSelection)
         {
-            //var factory = new MessageFactory();
-            //var messenger = factory.CreateMessenger(MessageFactory.MessengerType.Email);
-            //var emailBody = messenger.ConstructMessage(businessName, name, email, phone, address, taxId, businessAreaSelection);
-            //messenger.SendMessage("", "Price List Request", emailBody);
+            var factory = new MessageFactory();
+            var messenger = factory.CreateMessenger(MessageFactory.MessengerType.Email);
+            var emailBody = messenger.ConstructMessage(businessName, name, email, phone, address, taxId, businessAreaSelection);
+            messenger.SendMessage("", "Price List Request", emailBody);
 
             //var selectedGadget = (SelectedGadgetViewModel)Storage.Retrieve("SelectedGadgetViewModel");
             var priceListRequest = new PriceListRequest
@@ -59,6 +60,7 @@ namespace Saleular.Controllers
             };
             PriceListRequestRepository.InsertRequest(priceListRequest);
             PriceListRequestRepository.Save();
+
             return View("PriceListSent");
         }
 
