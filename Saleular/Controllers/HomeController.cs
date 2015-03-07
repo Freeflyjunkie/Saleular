@@ -24,7 +24,7 @@ namespace Saleular.Controllers
             //Func<int, int> square = (x) => x * x;
         }
 
-        [AsyncTimeout(5000)]
+        [AsyncTimeout(30000)]
         [HandleError(ExceptionType = typeof(TimeoutException), View = "Timeout")]
         public async Task<ActionResult> Index(CancellationToken ctk)
         {
