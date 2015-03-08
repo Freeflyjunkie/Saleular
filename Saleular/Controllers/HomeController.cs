@@ -37,6 +37,11 @@ namespace Saleular.Controllers
             return View();
         }
 
+        public ActionResult CompanyInfo()
+        {
+            return View();
+        }
+
         public ActionResult Questions()
         {
             return View();
