@@ -1,21 +1,30 @@
-﻿.company-info-img {
-    height: 250px;
-}
-
-#salesRep {
+﻿.sales-rep-img {
     cursor: pointer;
+    height: 250px;
 }
 
 .sales-rep-text {
     padding-top: 10px;
 }
 
-h3 {
-    -webkit-text-shadow: 2px 2px 2px #888888;
-    text-shadow: 2px 2px 2px #888888;
+.iphone-img-text {
+    background-image: url('/Images/About/iphonebanner2.jpg');
+    background-repeat: no-repeat;
+    height: 200px;
 }
 
-.iphones-text {
-    background-image: url('/Images/About/iphonebanner.jpg');
+#nl-img-text {
+    background-image: url('/Images/About/nlbanner.png');
+    background-repeat: no-repeat;
     height: 200px;
+}
+
+.nl-text {
+    padding-top: 40px;
+    text-align: right;
+    color: white;
+}
+
+.no-margin {
+    margin-top: 0px;
 }

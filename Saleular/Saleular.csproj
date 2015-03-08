@@ -331,6 +331,9 @@
     <Content Include="Images\About\broken.jpg" />
     <Content Include="Images\About\csbanner.jpg" />
     <Content Include="Images\About\iphonebanner.jpg" />
+    <Content Include="Images\About\iphonebanner2.jpg" />
+    <Content Include="Images\About\nlbanner.jpg" />
+    <Content Include="Images\About\nlbanner.png" />
     <Content Include="Images\About\servicerep.png" />
     <Content Include="Images\iPhones\iPhone3GS_Bad.jpg" />
     <Content Include="Images\iPhones\iPhone3GS_Good.jpg" />
