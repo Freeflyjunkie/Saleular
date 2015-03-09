@@ -1,41 +1,15 @@
 ﻿$(document).ready(function () {
-
-    var salesRep = $('.sales-rep-img');
-    salesRep.on('mouseover', function () {
-        var salesRepText = $('.sales-rep-text');
-
-        salesRepText.animate({
-            opacity: .5
-        }, 100, 'swing');
-
-        salesRepText.animate({
-            opacity: 1
-        }, 1000, 'swing');
+    
+    $('#salesRep').hover(function () {
+        $('#salesRepText').toggleClass("ci-text-shadow");
     });
 
-    var iphoneMavens = $('.iphone-img-text');
-    iphoneMavens.on('mouseover', function () {
-        var iPhoneText = $('#iphoneText');
-
-        iPhoneText.animate({
-            opacity: .5
-        }, 100, 'swing');
-
-        iPhoneText.animate({
-            opacity: 1
-        }, 1000, 'swing');
+    $('#iphones').hover(function () {        
+        $('#iphoneText').toggleClass("ci-text-shadow");
     });
 
-    var bridge = $('#nl-img-text');
-    bridge.on('mouseover', function () {
-        var nlTextId = $('#nlText');        
-
-        nlTextId.animate({
-            opacity: .5
-        }, 100, 'swing');        
-
-        nlTextId.animate({
-            opacity: 1
-        }, 1000, 'swing');        
+    $('#location').hover(function () {
+        $('#locationText').toggleClass("ci-text-shadow");
+        $('#bridgeText').toggleClass("ci-text-shadow-white");
     });
 });

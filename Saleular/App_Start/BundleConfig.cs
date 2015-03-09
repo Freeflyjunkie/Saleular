@@ -35,7 +35,7 @@ namespace Saleular
                     "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/Scripts/js").Include(
-                    "~/Scripts/jquery/jquery-{version}.js",
+                    "~/Scripts/jquery/jquery-{version}.js",                    
                     "~/Scripts/bootstrap/bootstrap.js",
                     "~/Scripts/respond.js",
                     "~/Scripts/site.js"));

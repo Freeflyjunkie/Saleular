@@ -1,25 +1,38 @@
-﻿.sales-rep-img {
-    cursor: pointer;
-    height: 250px;
+﻿.ci-text-shadow {
+    -ms-text-shadow: 5px 5px 5px #9aa9ba;
+    text-shadow: 5px 5px 5px #9aa9ba;    
+
+    -webkit-transition: text-shadow 1s; /* For Safari 3.1 to 6.0 */
+    -moz-transition: text-shadow 1s;
+    -ms-transition: text-shadow 1s;
+    -o-transition: text-shadow 1s;
+    transition: text-shadow 1s;    
 }
 
-.sales-rep-text {
-    padding-top: 10px;
+.ci-text-shadow-white {
+    -ms-text-shadow: 5px 5px 5px #ededed;
+    text-shadow: 5px 5px 5px #ededed;    
+
+    -webkit-transition: text-shadow 1s; /* For Safari 3.1 to 6.0 */
+    -moz-transition: text-shadow 1s;
+    -ms-transition: text-shadow 1s;
+    -o-transition: text-shadow 1s;
+    transition: text-shadow 1s;    
 }
 
-.iphone-img-text {
+.iphone-img {
     background-image: url('/Images/About/iphonebanner2.jpg');
     background-repeat: no-repeat;
     height: 200px;
 }
 
-#nl-img-text {
+.location-img {
     background-image: url('/Images/About/nlbanner.png');
     background-repeat: no-repeat;
     height: 200px;
 }
 
-.nl-text {
+#bridgeText {
     padding-top: 40px;
     text-align: right;
     color: white;
