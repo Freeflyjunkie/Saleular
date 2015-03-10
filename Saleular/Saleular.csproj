@@ -270,6 +270,10 @@
     <Compile Include="DAL\SaleularMigrations\201408200220404_AddPriceListRequest.Designer.cs">
       <DependentUpon>201408200220404_AddPriceListRequest.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAL\SaleularMigrations\201503100217078_AddEnhancements.cs" />
+    <Compile Include="DAL\SaleularMigrations\201503100217078_AddEnhancements.Designer.cs">
+      <DependentUpon>201503100217078_AddEnhancements.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAL\SaleularMigrations\Configuration.cs" />
     <Compile Include="Forms\IForm.cs" />
     <Compile Include="Forms\IFormFactory.cs" />
@@ -290,8 +294,12 @@
     <Compile Include="Interfaces\IRequestRepository.cs" />
     <Compile Include="Interfaces\IStorage.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\CustomerOrder.cs" />
     <Compile Include="Models\Gadget.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Order.cs" />
     <Compile Include="Models\PriceListRequest.cs" />
     <Compile Include="Models\Request.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1602,6 +1610,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DAL\SaleularMigrations\201408200220404_AddPriceListRequest.resx">
       <DependentUpon>201408200220404_AddPriceListRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAL\SaleularMigrations\201503100217078_AddEnhancements.resx">
+      <DependentUpon>201503100217078_AddEnhancements.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

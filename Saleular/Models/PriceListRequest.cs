@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -7,6 +8,8 @@ namespace Saleular.Models
 {
     public class PriceListRequest
     {
+        [Key]
+        [Required]
         public Int32 PriceListRequestId { get; set; }
         public String BusinessName { get; set; }
         public String Name { get; set; }
