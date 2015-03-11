@@ -93,3 +93,7 @@ input[type="checkbox"].input-validation-error {
 .validation-summary-valid {
     display: none;
 }
+
+.red-border {
+    border: 1px solid #b94a48;
+}
