@@ -3,56 +3,67 @@
     Layout = "~/Views/Shared/_Layout2.cshtml";
 }
 <div id="iphoneImage" class="col-lg-12 col-md-12 hidden-xs">
-    <span class="iphone-caption">
+    <h1 class="iphone-caption">
         We are the #1 source for iPhones
-    </span>
-    <span class="iphone-caption2">
+    </h1>
+    <h2 class="iphone-caption2">
         We carry a full inventory
-    </span>
-    <span class="iphone-caption3">
+    </h2>
+    <h2 class="iphone-caption3">
         of new, used and refurbished CDMA and GSM iPhones
-    </span>
+    </h2>
 </div>
-<div class="hidden-lg hidden-md hidden-sm">
-    <span class="iphone-caption4 col-sm-12 col-xs-12">
-        We are the #1 source for iPhones
-    </span>
-    <span class="iphone-caption4 col-sm-12 col-xs-12">
-        We constantly carry a full inventory
-    </span>
-    <span class="iphone-caption4 col-sm-12 col-xs-12">
-        of new, used and refurbished CDMA and GSM iPhones
-    </span>
+<div id="iphoneMaven" class="hidden-lg hidden-md hidden-sm">
+    <h2 class="section-center">The iPhone Mavens</h2>
+    <div class="section-center">
+        <table class="table table-condensed table-responsive no-border">
+            <tr>
+                <td class="h4">
+                    We are the #1 source for iPhones.
+                    <br />
+                    We carry a full inventory of
+                    <br />
+                    new, used and refurbished CDMA and GSM iPhones
+                </td>
+            </tr>
+        </table>
+    </div>
 </div>
 <div class="container">
-    <div class="col-lg-6 col-md-6">
+    <div class="col-lg-5 col-md-5 col-sm-5">
         <h2 class="section-center">Browse Our Selection</h2>
         <div class="section-center">
-            <h4>iPhone 4, 4S, 5, 5C, 5S, 6 and 6+...</h4>
-            <a class="btn btn-primary btn-xs" href="/Phone/Offer">Started Browsing</a>
+            <table class="table table-condensed table-responsive no-border">
+                <tr>
+                    <td>
+                        <h4>iPhone 4, 4S, 5, 5C, 5S, 6 and 6+...</h4>
+                        <a class="btn btn-primary btn-xs" href="/Phone/Offer">Started Browsing</a>
+                        <br />
+                        <br />
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
-    <div class="col-lg-6 col-md-6">
+    <div class="col-lg-2 col-md-2 col-sm-2"></div>
+    <div class="col-lg-5 col-md-5 col-sm-5">
         <h2 class="section-center">Contact Us</h2>
         <div class="section-center">
-            <div class="row">
-                <div class="col-lg-3"></div>
-                <div class="col-lg-2">
-                    <img src="~/Images/Home/twitter.jpg" height="60" />
-                </div>
-                <div class="col-lg-2">
-                    <img src="~/Images/Home/msn.jpg" height="60" />
-                </div>
-                <div class="col-lg-2">
-                    <img src="~/Images/Home/fb.jpg" height="60" />
-                </div>
-                <div class="col-lg-3"></div>
-            </div>
-            <div class="row">
-                <h4>Phone: 718.376.0800</h4>
-            </div>
-            @*Phone: 718.376.0800 | Twitter: @@saleular | MSN: saleular@live.com | Facebook: Like Us!*@
+            <table class="table table-condensed table-responsive no-border">
+                <tr>
+                    <td>
+                        <img src="~/Images/Home/twitter.jpg" class="social-media-img" />
+                    </td>
+                    <td>
+                        <img src="~/Images/Home/msn.jpg" class="social-media-img" />
+                    </td>
+                    <td>
+                        <img src="~/Images/Home/fb.jpg" class="social-media-img" />
+                    </td>
+                </tr>
+            </table>
         </div>
+        <h4 class="section-center">Phone: 718.376.0800</h4>
     </div>
 </div>
 

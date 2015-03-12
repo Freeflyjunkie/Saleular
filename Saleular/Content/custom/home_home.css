@@ -1,5 +1,9 @@
 ﻿.section-center {
-    text-align: center;
+    text-align: center;    
+}
+
+.no-border {
+    border: none;
 }
 
 #iphoneImage {
@@ -14,9 +18,25 @@
     margin: 0px 0px 0px 0px;
 }
 
+#iphoneMaven {
+    /*color: whitesmoke;
+    background-image: url('/Images/Home/maven.jpg');
+    background-repeat: no-repeat;
+    height: 191px;*/
+}
+
+.side-padding {
+    padding-left: 10px;
+    padding-right: 10px;    
+}
+
+.social-media-img {
+    height: 60px;
+}
+
 .iphone-caption {
     color: whitesmoke;
-    font-size: 35pt;
+    font-size: 48px;  
      -webkit-text-shadow: 2px 2px 2px #888888;
     -ms-text-shadow: 2px 2px 2px #888888;
     text-shadow: 2px 2px 2px #888888;
@@ -28,16 +48,16 @@
     -ms-opacity: 0;
     opacity: 0;
 
-    -webkit-transition: opacity 3s;
-    -moz-transition: opacity 3s;
-    -ms-transition: opacity 3s;
-    -o-transition: opacity 3s;
-    transition: opacity 3s;
+    -webkit-transition: opacity 3s, top 3s;
+    -moz-transition: opacity 3s, top 3s;
+    -ms-transition: opacity 3s, top 3s;
+    -o-transition: opacity 3s, top 3s;
+    transition: opacity 3s, top 3s;
 }
 
 .iphone-caption2 {
     color: whitesmoke;
-    font-size: 20pt;
+    font-size: 30px;  
     -webkit-text-shadow: 2px 2px 2px #888888;
     -ms-text-shadow: 2px 2px 2px #888888;
     text-shadow: 2px 2px 2px #888888;
@@ -57,8 +77,8 @@
 }
 
 .iphone-caption3 {
-    color: whitesmoke;
-    font-size: 20pt;
+    color: whitesmoke;    
+    font-size: 30px;  
      -webkit-text-shadow: 2px 2px 2px #888888;
     -ms-text-shadow: 2px 2px 2px #888888;
     text-shadow: 2px 2px 2px #888888;

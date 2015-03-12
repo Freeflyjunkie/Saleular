@@ -346,6 +346,7 @@
     <Content Include="Images\About\servicerep.png" />
     <Content Include="Images\Home\fb.jpg" />
     <Content Include="Images\Home\iphones.jpg" />
+    <Content Include="Images\Home\maven.jpg" />
     <Content Include="Images\Home\msn.jpg" />
     <Content Include="Images\Home\twitter.jpg" />
     <Content Include="Images\iPhones\iPhone3GS_Bad.jpg" />
