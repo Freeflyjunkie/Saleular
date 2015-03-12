@@ -16,6 +16,9 @@ namespace Saleular
             bundles.Add(new StyleBundle("~/Content/home_index").Include(
                     "~/Content/custom/home_index.css"));
 
+            bundles.Add(new StyleBundle("~/Content/home_home").Include(
+                    "~/Content/custom/home_home.css"));
+
             bundles.Add(new StyleBundle("~/Content/home_questions").Include(
                     "~/Content/custom/home_questions.css"));
 
@@ -49,6 +52,9 @@ namespace Saleular
 
             bundles.Add(new ScriptBundle("~/Scripts/home_index").Include(
                     "~/Scripts/custom/home_index.js"));
+
+            bundles.Add(new ScriptBundle("~/Scripts/home_home").Include(
+                    "~/Scripts/custom/home_home.js"));
 
             bundles.Add(new ScriptBundle("~/Scripts/home_questions").Include(
                     "~/Scripts/custom/home_questions.js"));

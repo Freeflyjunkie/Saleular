@@ -1,0 +1,85 @@
+﻿.section-center {
+    text-align: center;
+}
+
+#iphoneImage {
+    padding: 0px 0px 0px 0px;
+    background-image: url('/Images/Home/iphones.jpg');
+    background-repeat: no-repeat;
+    height: 388px;
+    background-color: black;
+}
+
+#navbar {
+    margin: 0px 0px 0px 0px;
+}
+
+.iphone-caption {
+    color: whitesmoke;
+    font-size: 35pt;
+     -webkit-text-shadow: 2px 2px 2px #888888;
+    -ms-text-shadow: 2px 2px 2px #888888;
+    text-shadow: 2px 2px 2px #888888;
+
+    position: absolute;
+    top: 300px;
+    left: 20px;
+    
+    -ms-opacity: 0;
+    opacity: 0;
+
+    -webkit-transition: opacity 3s;
+    -moz-transition: opacity 3s;
+    -ms-transition: opacity 3s;
+    -o-transition: opacity 3s;
+    transition: opacity 3s;
+}
+
+.iphone-caption2 {
+    color: whitesmoke;
+    font-size: 20pt;
+    -webkit-text-shadow: 2px 2px 2px #888888;
+    -ms-text-shadow: 2px 2px 2px #888888;
+    text-shadow: 2px 2px 2px #888888;
+
+    position: absolute;
+    top: 120px;
+    left: 20px;
+    
+    -ms-opacity: 0;
+    opacity: 0;
+
+    -webkit-transition: opacity 3s;
+    -moz-transition: opacity 3s;
+    -ms-transition: opacity 3s;
+    -o-transition: opacity 3s;
+    transition: opacity 3s;
+}
+
+.iphone-caption3 {
+    color: whitesmoke;
+    font-size: 20pt;
+     -webkit-text-shadow: 2px 2px 2px #888888;
+    -ms-text-shadow: 2px 2px 2px #888888;
+    text-shadow: 2px 2px 2px #888888;
+
+    position: absolute;
+    top: 150px;
+    left: 20px;
+    
+    -ms-opacity: 0;
+    opacity: 0;
+
+    -webkit-transition: opacity 3s;
+    -moz-transition: opacity 3s;
+    -ms-transition: opacity 3s;
+    -o-transition: opacity 3s;
+    transition: opacity 3s;
+}
+
+.iphone-caption4 {    
+    font-size: 20pt;
+     -webkit-text-shadow: 2px 2px 2px #888888;
+    -ms-text-shadow: 2px 2px 2px #888888;
+    text-shadow: 2px 2px 2px #888888;
+}
