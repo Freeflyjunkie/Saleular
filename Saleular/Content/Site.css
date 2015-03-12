@@ -10,6 +10,7 @@
 
 h2 {
     -webkit-text-shadow: 2px 2px 2px #888888;
+    -ms-text-shadow: 2px 2px 2px #888888;
     text-shadow: 2px 2px 2px #888888;
     padding: 0px;
     margin: 0px 0px 10px 0px;
@@ -34,23 +35,36 @@ footer h4 {
 }
 
 .box-shadow-dgray {
+    -webkit-box-shadow: 5px 5px 5px #888888;
+    -ms-box-shadow: 5px 5px 5px #888888;
     box-shadow: 5px 5px 5px #888888;
 }
 
 .btn {
+    -ms-border-radius: 5px;
     border-radius: 5px;
 }
 
 #menu {
+    -ms-border-radius: 5px;
     border-radius: 5px;
 }
 
+#menu2 {
+    padding: 0px;
+}
+
 .nav a:hover, .nav a {
+    -ms-border-radius: 5px;
     border-radius: 5px;
 }
 
 #guarenteed-text {
     margin: 20px 0px 0px 0px;
+}
+
+#guarenteed-text-mini {
+    margin: 0px 0px 0px 20px; 
 }
 
 .offerspaid-price {

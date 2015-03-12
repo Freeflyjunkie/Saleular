@@ -322,6 +322,7 @@
     <Content Include="Content\bootstrap\css\bootstrap.css" />
     <Content Include="Content\bootstrap\css\bootstrap.min.css" />
     <Content Include="Content\custom\home_companyinfo.css" />
+    <Content Include="Content\custom\home_home.css" />
     <Content Include="Content\custom\home_index.css" />
     <Content Include="Content\custom\home_questions.css" />
     <Content Include="Content\custom\phone_offer.css" />
@@ -343,6 +344,10 @@
     <Content Include="Images\About\nlbanner.jpg" />
     <Content Include="Images\About\nlbanner.png" />
     <Content Include="Images\About\servicerep.png" />
+    <Content Include="Images\Home\fb.jpg" />
+    <Content Include="Images\Home\iphones.jpg" />
+    <Content Include="Images\Home\msn.jpg" />
+    <Content Include="Images\Home\twitter.jpg" />
     <Content Include="Images\iPhones\iPhone3GS_Bad.jpg" />
     <Content Include="Images\iPhones\iPhone3GS_Good.jpg" />
     <Content Include="Images\iPhones\iPhone3G_Bad.jpg" />
@@ -435,6 +440,7 @@
     <Content Include="Scripts\angular\angular-animate.min.js.map" />
     <Content Include="Scripts\angular\angular.min.js.map" />
     <Content Include="Scripts\custom\home_companyinfo.js" />
+    <Content Include="Scripts\custom\home_home.js" />
     <Content Include="Scripts\errors.json" />
     <Content Include="Scripts\angular-touch.min.js.map" />
     <Content Include="Scripts\angular-sanitize.min.js.map" />
@@ -1579,6 +1585,8 @@
     <Content Include="Views\Phone\PriceListSent.cshtml" />
     <Content Include="Scripts\version.json" />
     <Content Include="Views\Home\CompanyInfo.cshtml" />
+    <Content Include="Views\Shared\_Layout2.cshtml" />
+    <Content Include="Views\Home\Home.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
