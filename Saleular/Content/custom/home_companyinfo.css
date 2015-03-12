@@ -1,23 +1,68 @@
-﻿.ci-text-shadow {
-    -ms-text-shadow: 5px 5px 5px #9aa9ba;
-    text-shadow: 5px 5px 5px #9aa9ba;    
+﻿#bridgeText {
+    padding-top: 40px;
+    text-align: right;
+    color: white;
+}
 
+#salesRep {
+    background-color: lightblue;
+}
+
+#customerServiceText {
+    position: absolute;
+    left: 500px;
+    top: 20px;
+    -ms-opacity: 0;
+    opacity: 0;
+    -webkit-text-shadow: 2px 2px 2px #888888;
+    -ms-text-shadow: 2px 2px 2px #888888;
+    text-shadow: 2px 2px 2px #888888;
+}
+
+#testimonialsTextHeader {    
+    position: absolute;
+    left: 500px;
+    top: 80px;
+
+    -ms-opacity: 0;
+    opacity: 0;
+}
+
+#testimonialsText1 {
+    position: absolute;
+    left: 500px;
+    top: 120px;
+
+    -ms-opacity: 0;
+    opacity: 0;
+}
+
+#testimonialsText2 {
+    position: absolute;
+    left: 500px;
+    top: 175px;
+    -ms-opacity: 0;
+    opacity: 0;
+}
+
+.ci-text-shadow {
+    -ms-text-shadow: 5px 5px 5px #9aa9ba;
+    text-shadow: 5px 5px 5px #9aa9ba;
     -webkit-transition: text-shadow 1s; /* For Safari 3.1 to 6.0 */
     -moz-transition: text-shadow 1s;
     -ms-transition: text-shadow 1s;
     -o-transition: text-shadow 1s;
-    transition: text-shadow 1s;    
+    transition: text-shadow 1s;
 }
 
 .ci-text-shadow-white {
     -ms-text-shadow: 5px 5px 5px #ededed;
-    text-shadow: 5px 5px 5px #ededed;    
-
+    text-shadow: 5px 5px 5px #ededed;
     -webkit-transition: text-shadow 1s; /* For Safari 3.1 to 6.0 */
     -moz-transition: text-shadow 1s;
     -ms-transition: text-shadow 1s;
     -o-transition: text-shadow 1s;
-    transition: text-shadow 1s;    
+    transition: text-shadow 1s;
 }
 
 .iphone-img {
@@ -32,12 +77,10 @@
     height: 200px;
 }
 
-#bridgeText {
-    padding-top: 40px;
-    text-align: right;
-    color: white;
-}
-
 .no-margin {
     margin-top: 0px;
+}
+
+.padding-left {
+    padding-left: 20px;
 }

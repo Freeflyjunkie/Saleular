@@ -1,8 +1,32 @@
-﻿body {    
+﻿#menu {
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#menu2 {
+    padding: 0px;
+}
+
+#navbar {
+    margin-bottom: 0px;
+}
+
+#footer {
+    padding: 0px;
+}
+
+#guarenteed-text {
+    margin: 20px 0px 0px 0px;
+}
+
+#guarenteed-text-mini {
+    margin: 0px 0px 0px 20px; 
+}
+
+body {    
     padding-bottom: 20px;    
 }
 
-/* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
@@ -45,26 +69,9 @@ footer h4 {
     border-radius: 5px;
 }
 
-#menu {
-    -ms-border-radius: 5px;
-    border-radius: 5px;
-}
-
-#menu2 {
-    padding: 0px;
-}
-
 .nav a:hover, .nav a {
     -ms-border-radius: 5px;
     border-radius: 5px;
-}
-
-#guarenteed-text {
-    margin: 20px 0px 0px 0px;
-}
-
-#guarenteed-text-mini {
-    margin: 0px 0px 0px 20px; 
 }
 
 .offerspaid-price {
@@ -77,10 +84,6 @@ footer h4 {
     font-weight: 500;
     text-align: left;
     color: #008cba;
-}
-
-#footer {
-    padding: 0px;
 }
 
 /* styles for validation helpers */

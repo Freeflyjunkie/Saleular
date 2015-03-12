@@ -338,6 +338,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\About\broken.jpg" />
+    <Content Include="Images\About\contato.jpg" />
     <Content Include="Images\About\csbanner.jpg" />
     <Content Include="Images\About\iphonebanner.jpg" />
     <Content Include="Images\About\iphonebanner2.jpg" />
