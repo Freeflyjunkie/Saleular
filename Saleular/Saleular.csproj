@@ -337,11 +337,13 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\About\bridge.jpg" />
     <Content Include="Images\About\broken.jpg" />
     <Content Include="Images\About\contato.jpg" />
     <Content Include="Images\About\csbanner.jpg" />
     <Content Include="Images\About\iphonebanner.jpg" />
     <Content Include="Images\About\iphonebanner2.jpg" />
+    <Content Include="Images\About\iphones.jpg" />
     <Content Include="Images\About\nlbanner.jpg" />
     <Content Include="Images\About\nlbanner.png" />
     <Content Include="Images\About\servicerep.png" />

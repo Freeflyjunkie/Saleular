@@ -1,59 +1,114 @@
 ﻿$(document).ready(function () {
     
     var c = $('#carousel');
-    c.carousel();
+    c.carousel();    
 
-    swingInCustomerServiceText();
+    var customerService = $('#customerServiceText');
+    var testimonialsTextHeader = $('#testimonialsTextHeader');
+    var testimonialsText = $('#testimonialsText');
+
+    var specializesText = $('#specializesText');
+    var businessTextHeader = $('#businessTextHeader');
+    var businessText = $('#businessText');
+
+    var locationText = $('#locationText');
+    var growthTextHeader = $('#growthTextHeader');
+    var growthText = $('#growthText');
+    
+    swingCustomerServiceText();
 
     c.on('slid', function () {
         var index = $(this).find('.active').index();
         
         if (index == 0) {
-            
+            swingCustomerServiceText();
+
+            resetLocationText();
+            resetSpecializesText();
         }
 
         if (index == 1) {
-            swingInCustomerServiceText();
+            swingSpecializesText();
+
+            resetLocationText();
+            resetCustomerServiceText();
+        }
+
+        if (index == 2) {
+            swingLocationText();
+
+            resetSpecializesText();
+            resetCustomerServiceText();
         }
     });
 
-    function swingInCustomerServiceText()
-    {
-        var customerService = $('#customerServiceText');
+    function resetCustomerServiceText() {
+        customerService.css({ 'left': '500px', opacity: 0 });
+        testimonialsTextHeader.css({ 'left': '500px', opacity: 0 });
+        testimonialsText.css({ 'left': '500px', opacity: 0 });        
+    }
+
+    function resetSpecializesText() {
+        specializesText.css({ 'left': '500px', opacity: 0 });
+        businessTextHeader.css({ 'left': '500px', opacity: 0 });
+        businessText.css({ 'left': '500px', opacity: 0 });
+    }
+
+    function resetLocationText() {
+        locationText.css({ 'left': '500px', opacity: 0 });
+        growthTextHeader.css({ 'left': '500px', opacity: 0 });
+        growthText.css({ 'left': '500px', opacity: 0 });
+    }
+
+    function swingCustomerServiceText()
+    {        
         customerService.animate({
             opacity: 1,
             left: '35px'
         }, 1000, 'swing');
-
-        var testimonialsTextHeader = $('#testimonialsTextHeader');
+        
         testimonialsTextHeader.animate({
             opacity: 1,
             left: '35px'
         }, 2000, 'swing');
+        
+        testimonialsText.animate({
+            opacity: 1,
+            left: '35px'
+        }, 3000, 'swing');                
+    }
 
-        var testimonialsText1 = $('#testimonialsText1');
-        testimonialsText1.animate({
+    function swingSpecializesText() {
+        specializesText.animate({
+            opacity: 1,
+            left: '35px'
+        }, 1000, 'swing');
+
+        businessTextHeader.animate({
+            opacity: 1,
+            left: '35px'
+        }, 2000, 'swing');
+        
+        businessText.animate({
             opacity: 1,
             left: '35px'
         }, 3000, 'swing');
-
-        var testimonialsText2 = $('#testimonialsText2');
-        testimonialsText2.animate({
-            opacity: 1,
-            left: '145px'
-        }, 3000, 'swing');
     }
 
-    //$('#salesRep').hover(function () {
-    //    $('#salesRepText').toggleClass("ci-text-shadow");
-    //});
+    function swingLocationText() {
+        locationText.animate({
+            opacity: 1,
+            left: '35px'
+        }, 1000, 'swing');
 
-    //$('#iphones').hover(function () {        
-    //    $('#iphoneText').toggleClass("ci-text-shadow");
-    //});
+        growthTextHeader.animate({
+            opacity: 1,
+            left: '35px'
+        }, 2000, 'swing');
 
-    //$('#location').hover(function () {
-    //    $('#locationText').toggleClass("ci-text-shadow");
-    //    $('#bridgeText').toggleClass("ci-text-shadow-white");
-    //});
+        growthText.animate({
+            opacity: 1,
+            left: '35px'
+        }, 3000, 'swing');
+    }
 });

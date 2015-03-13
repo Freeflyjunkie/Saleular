@@ -14,5 +14,5 @@
 
     caption3.animate({
         opacity: 1
-    }, 4000, 'swing');   
+    }, 3000, 'swing');   
 });

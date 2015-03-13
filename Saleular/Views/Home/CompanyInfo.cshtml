@@ -3,98 +3,130 @@
     Layout = "~/Views/Shared/_Layout2.cshtml";
 }
 
-<div style="margin-bottom: 10px" class="carousel slide hidden-sm hidden-xs" data-interval="6000" id="carousel">
+<div style="margin-bottom: 10px" class="carousel slide hidden-sm hidden-xs" data-interval="7000" id="carousel">
     <ol class="carousel-indicators">
         <li data-target="#carousel" data-slide-to="0" class="active"></li>
         <li data-target="#carousel" data-slide-to="1"></li>
         <li data-target="#carousel" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner">
-        <div class="item active text-center">
+        <div class="item active">
             <div class="row">
                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-xs-offset-3">
                     <img src="~/Images/About/contato.jpg" class="img-responsive" alt="1" />
                 </div>
             </div>
-            <h1 id="customerServiceText">Our Customers Service is #1</h1>            
+            <h1 id="customerServiceText">Our Customers Service is #1</h1>
             <div>
-                <h4 id="testimonialsTextHeader">Read testimonials from real customers who rave about our customer service.</h4>                
-                <h4 id="testimonialsText1">...I was very impressed and pleased with how everything was handled!<br />Very quick, professional, and easy!</h4>                
-                <h4 id="testimonialsText2">...I will never use another company due to the <br />excellent customer service.</h4>
-            </div>                        
-        </div>  
-        <div class="item text-center">
+                <h3 id="testimonialsTextHeader">Read testimonials from real customers who<br />rave about it!</h3>
+                <h4 id="testimonialsText">
+                    ...I was very impressed and pleased with how everything<br />was handled! Very quick, professional, and easy!
+                    <br/>
+                    <br/>
+                    ...I will definitely use this again in the future!
+                    <br/>
+                    <br />
+                    ...I will never use another company. Saleular has <br /><strong>excellent customer service</strong>!
+                </h4>
+            </div>
+        </div>
+        <div class="item">
             <div class="row">
                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-xs-offset-3">
-                    <img src="~/Images/About/contato.jpg" class="img-responsive" alt="1" />
+                    <img src="~/Images/About/iphones.jpg" class="img-responsive" alt="1" />
                 </div>
-            </div>             
-        </div>     
+            </div>
+            <h1 id="specializesText">Saleular <strong>specializes</strong> in<br />buying and selling iPhones.</h1>
+            <div>
+                <h3 id="businessTextHeader">Saleular has been in business,<br />buying and selling refurbished iPhones,<br />for over <strong>15 years</strong>!</h3>
+                <h4 id="businessText">
+                    We have the industry leading warranty program with<br />representatives ready to assist you.
+                    <br />
+                    <br />
+                    Feel free to call us 718.376.0800 or @Html.ActionLink("ask us a question", "Questions") online.
+                </h4>
+            </div>
+        </div>
+        <div class="item">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="bridge-background">                    
+                </div>
+            </div>
+            <h1 id="locationText">New Location!</h1>
+            <div>
+                <h2 id="growthTextHeader">We are very excited about our beautiful new location.</h2>
+                <h2 id="growthText">
+                    We are growing fast and dedicated to<br/>serving our loyal customers in the Brooklyn community.
+                </h2>
+            </div>
+        </div>
     </div>
     <a id="carousel-left-arrow" href="#carousel" class="carousel-control left" data-slide="prev"><span class="icon-prev"></span></a>
     <a id="carousel-right-arrow" href="#carousel" class="carousel-control right" data-slide="next"><span class="icon-next"></span></a>
 </div>
 <div class="row hidden-lg hidden-md">
     <div class="col-sm-12 col-xs-12">
-        <h2 id="customerServiceText">Our Customers Service is #1</h2>
-        <div id="testimonialsText">
-            <h2>Read testimonials from real customers who rave about our customer service.</h2>
-            <br />
-            <h4>...I was very impressed and pleased with how everything was handled!<br />Very quick, professional, and easy!</h4>
-            <br />
-            <h4>...I will never use another company due to the <br />excellent customer service.</h4>
-        </div>   
+        <h2>Our Customers Service is #1</h2>
+        <div>
+            <h3>Read testimonials from real customers who<br />rave about it!</h3>
+            <h4>
+                ...I was very impressed and pleased with how everything<br />was handled! Very quick, professional, and easy!
+                <br />
+                <br />
+                ...I will never use another company. Saleular has <br /><strong>excellent customer service</strong>!
+            </h4>
+        </div>
     </div>
 </div>
 
 @*<section class="row" id="salesRep">
-    <div class="col-lg-12 col-md-12">
-        <h2 class="padding-left">
-            Our Customers Service is #1
-        </h2>
-    </div>
-    <div class="col-lg-3 col-md-3">
-        <img src="~/Images/About/servicerep.png" class="img-responsive" alt="Saleular Representative" />
-    </div>
-    <div class="col-lg-9 col-md-9">
-        <h4 id="salesRepText">
-            Saleular has been in business, buying and selling used iPhones, for over 15 years. We have the industry leading warranty program with representatives on hand to help.
-            <br />
-            <br />
-            Feel free to call us 718.376.0800 or @Html.ActionLink("ask us a question", "Questions") online.
-        </h4>
-    </div>
-</section>
-<br />
-<br />
-<section class="row" id="iphones">
-    <div class="col-lg-12 col-md-12">
-        <h2>
-            The iPhone Mavens
-        </h2>        
-        <h4 id="iphoneText" class="no-margin">
-            Saleular <strong>specializes</strong> in buying and selling iPhones.
-        </h4>
-        <div class="col-lg-12 iphone-img img-responsive"></div>
-    </div>
-</section>
-<br />
-<br />
-<section class="row" id="location">
-    <div class="col-lg-12 col-md-12">
-        <h2>
-            Recently Expanded
-        </h2>
-        <h4 id="locationText" class="no-margin">
-            Due to our fast growth we expanded to a new larger location
-        </h4>
-        <div>
-            <div class="col-lg-12 location-img img-responsive">
-                <h3 id="bridgeText">...in the heart of Brooklyn New York!</h3>
+        <div class="col-lg-12 col-md-12">
+            <h2 class="padding-left">
+                Our Customers Service is #1
+            </h2>
+        </div>
+        <div class="col-lg-3 col-md-3">
+            <img src="~/Images/About/servicerep.png" class="img-responsive" alt="Saleular Representative" />
+        </div>
+        <div class="col-lg-9 col-md-9">
+            <h4 id="salesRepText">
+                Saleular has been in business, buying and selling used iPhones, for over 15 years. We have the industry leading warranty program with representatives on hand to help.
+                <br />
+                <br />
+                Feel free to call us 718.376.0800 or @Html.ActionLink("ask us a question", "Questions") online.
+            </h4>
+        </div>
+    </section>
+    <br />
+    <br />
+    <section class="row" id="iphones">
+        <div class="col-lg-12 col-md-12">
+            <h2>
+                The iPhone Mavens
+            </h2>
+            <h4 id="iphoneText" class="no-margin">
+                Saleular <strong>specializes</strong> in buying and selling iPhones.
+            </h4>
+            <div class="col-lg-12 iphone-img img-responsive"></div>
+        </div>
+    </section>
+    <br />
+    <br />
+    <section class="row" id="location">
+        <div class="col-lg-12 col-md-12">
+            <h2>
+                Recently Expanded
+            </h2>
+            <h4 id="locationText" class="no-margin">
+                Due to our fast growth we expanded to a new larger location
+            </h4>
+            <div>
+                <div class="col-lg-12 location-img img-responsive">
+                    <h3 id="bridgeText">...in the heart of Brooklyn New York!</h3>
+                </div>
             </div>
         </div>
-    </div>
-</section>*@
+    </section>*@
 <br />
 <br />
 @{
@@ -102,7 +134,7 @@
 }
 @section scripts
 {
-    @Scripts.Render("~/Scripts/home_companyinfo")    
+    @Scripts.Render("~/Scripts/home_companyinfo")
 }
 @section styles
 {

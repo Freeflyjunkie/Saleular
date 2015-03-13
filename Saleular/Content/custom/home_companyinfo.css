@@ -1,11 +1,7 @@
-﻿#bridgeText {
-    padding-top: 40px;
-    text-align: right;
-    color: white;
-}
-
-#salesRep {
-    background-color: lightblue;
+﻿#bridge-background {
+    background-image: url('/Images/About/bridge.jpg');
+    background-repeat: no-repeat;
+    height: 688px;
 }
 
 #customerServiceText {
@@ -22,27 +18,81 @@
 #testimonialsTextHeader {    
     position: absolute;
     left: 500px;
-    top: 80px;
+    top: 60px;
 
     -ms-opacity: 0;
     opacity: 0;
 }
 
-#testimonialsText1 {
+#testimonialsText {
     position: absolute;
     left: 500px;
-    top: 120px;
+    top: 150px;
 
     -ms-opacity: 0;
     opacity: 0;
 }
 
-#testimonialsText2 {
+#specializesText {
     position: absolute;
     left: 500px;
-    top: 175px;
+    top: 20px;
     -ms-opacity: 0;
     opacity: 0;
+    -webkit-text-shadow: 2px 2px 2px #888888;
+    -ms-text-shadow: 2px 2px 2px #888888;
+    text-shadow: 2px 2px 2px #888888;
+}
+
+#businessTextHeader {    
+    position: absolute;
+    left: 500px;
+    top: 150px;
+
+    -ms-opacity: 0;
+    opacity: 0;
+}
+
+#businessText {
+    position: absolute;
+    left: 500px;
+    top: 280px;
+
+    -ms-opacity: 0;
+    opacity: 0;
+}
+
+#locationText {
+    position: absolute;
+    left: 500px;
+    top: 20px;
+
+    -ms-opacity: 0;
+    opacity: 0;
+
+    color: whitesmoke;   
+}
+
+#growthTextHeader {    
+    position: absolute;
+    left: 500px;
+    top: 100px;
+
+    -ms-opacity: 0;
+    opacity: 0;
+
+    color: whitesmoke;
+}
+
+#growthText {
+    position: absolute;
+    left: 500px;
+    top: 160px;
+
+    -ms-opacity: 0;
+    opacity: 0;
+
+    color: whitesmoke;
 }
 
 .ci-text-shadow {

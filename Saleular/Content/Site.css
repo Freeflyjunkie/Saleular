@@ -32,6 +32,10 @@ body {
     padding-right: 15px;
 }
 
+.underline-this {
+    text-decoration: underline;
+}
+
 h2 {
     -webkit-text-shadow: 2px 2px 2px #888888;
     -ms-text-shadow: 2px 2px 2px #888888;
