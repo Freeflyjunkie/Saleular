@@ -27,13 +27,11 @@
     });
 
     msLink.on('click', function () {
-        var msWindow = window.open('http://www.twitter.com/saleular', 'msWindow');
-        msWindow.focus();
-        return false;
+        alert('Search Skype for Saleular1!');        
     });
 
     fbLink.on('click', function () {
-        var fbWindow = window.open('http://www.twitter.com/saleular', 'fbWindow');
+        var fbWindow = window.open('https://www.facebook.com/saleular', 'fbWindow');
         fbWindow.focus();
         return false;
     });
