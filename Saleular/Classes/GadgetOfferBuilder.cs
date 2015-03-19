@@ -108,7 +108,7 @@ namespace Saleular.Classes
 
                 if (!selections.Conditions.Contains(selections.SelectedCondition))
                 {
-                    selections.SelectedCapacity = "Select Condition...";
+                    selections.SelectedCondition = "Select Condition...";
                 }
 
 

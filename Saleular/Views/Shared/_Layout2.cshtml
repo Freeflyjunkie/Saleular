@@ -16,6 +16,9 @@
                 <img src="../../Images/Logos/saleular_sm.png" height="50" alt="" />
             </div>
             <div class="pull-left"><h1>Saleular</h1></div>
+            <div class="row pull-right" style="padding-right: 30px">
+                @Html.Partial("_LoginPartial")
+            </div>
         </div>        
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="menu2">
             <div id="navbar" class="navbar navbar-default">
@@ -29,15 +32,16 @@
                 <div class="navbar-collapse collapse">
                     <ul id="navmenu" class="nav navbar-nav navbar-left">
                         <li class="nav">@Html.ActionLink("Home", "Home", "Home")</li>
-                        <li class="nav">@Html.ActionLink("Buying iPhones", "Questions", "Home")</li>
-                        <li class="nav">@Html.ActionLink("Selling iPhones", "Questions", "Home")</li>
+                        <li class="nav">@Html.ActionLink("Buying iPhones", "PriceList", "Phone")</li>
+                        <li class="nav">@Html.ActionLink("Selling iPhones", "SellPhone", "Phone")</li>
+                        <li class="nav">@Html.ActionLink("Browse our iPhones", "BrowseSelection", "Phone")</li>
                         <li class="nav">@Html.ActionLink("Company Information", "CompanyInfo", "Home")</li>
                     </ul>
                 </div>
             </div>
         </div>
     </header>    
-    <div>@RenderSection("header", false)</div>
+    <div>@RenderSection("header", false)</div>  
     @RenderBody()
     @Scripts.Render("~/Scripts/js")
     @RenderSection("scripts", required: false)

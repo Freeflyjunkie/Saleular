@@ -1,5 +1,6 @@
-﻿@{
-    ViewBag.Title = "Looking To Buy iPhones";
+﻿@model Saleular.ViewModels.SelectedGadgetViewModel
+@{
+    ViewBag.Title = "Looking To Sell iPhones";
     Layout = "~/Views/Shared/_Layout2.cshtml";
 }
 
@@ -100,64 +101,76 @@
                 </span>
             </div>
         </div>
+        <hr />
+        <p>
+            What type of iPhones are you interested in selling?
+            <strong><em>Note: Saleular is only interested in iPhones</em></strong>
+        </p>
         <div class="form-group">
-            <label for="taxId" class="control-label col-lg-2 col-md-2 col-sm-2">Tax ID Number</label>
-            <div class="col-lg-5 col-md-5 col-sm-5">
+            <div class="col-lg-5 col-md-5 col-sm-5 col-lg-offset-2 col-md-offset-2 col-sm-offset-2">
                 <div class="input-group">
-                    <span id="taxIdAddon" data-toggle="tooltip" title="A Taxpayer Identification Number (TIN) is an identification number used by the Internal Revenue Service (IRS) in the administration of tax laws" class="input-group-addon box-shadow-dgray"><span id="taxIdDollarSign">$</span></span>
-                    <input id="taxId"
-                           type="text"
-                           name="taxId"
-                           class="form-control box-shadow-dgray"
-                           placeholder="e.g. A-00-000000"
-                           data-val="true"
-                           data-val-required="Your tax id is required" />
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-3">
-                <span class="control-label field-validation-valid" data-valmsg-for="taxId" data-valmsg-replace="true">
-                </span>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="businessAreaDropDown" class="control-label col-lg-2 col-md-2 col-sm-2">Business Area</label>
-            <div class="col-lg-5 col-md-5 col-sm-5">
-                <div class="input-group">
-                    <span id="businessAreaAddon" data-toggle="tooltip" title="Your type of business" class="input-group-addon box-shadow-dgray"><span class="glyphicon glyphicon-question-sign"></span></span>
                     <div class="dropdown">
-                        <input id="businessAreaSelection"
-                               type="text"
-                               name="businessAreaSelection"
-                               class="selected-value box-shadow-dgray" style="float: left"
-                               placeholder="e.g. Retailer"
-                               data-val="true"
-                               data-val-required="Your business area is required" />
+                        <div class="selected-value box-shadow-dgray" style="float: left" id="typeSelection">@Model.SelectedType</div>
                         <button class="btn btn-primary box-shadow-dgray" data-toggle="dropdown"><span class="caret"></span></button>
-                        <ul id="businessAreaDropDown" class="dropdown-menu">
-                            <li>
-                                <a href="#">Retailer</a>
-                            </li>
-                            <li>
-                                <a href="#">Distributor</a>
-                            </li>
-                            <li>
-                                <a href="#">Repair Service</a>
-                            </li>
-                            <li>
-                                <a href="#">Other</a>
-                            </li>
+                        <ul class="dropdown-menu" id="typeDropdown">
+                            @foreach (var gadgetType in Model.Types)
+                            {
+                                <li>
+                                    <a href="#">@gadgetType</a>
+                                </li>
+                            }
                         </ul>
                     </div>
                 </div>
+                <br />
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-3">
-                <span class="control-label field-validation-valid" data-valmsg-for="businessAreaSelection" data-valmsg-replace="true">
-                </span>
+            <br/>
+            <div class="col-lg-5 col-md-5 col-sm-5 col-lg-offset-2 col-md-offset-2 col-sm-offset-2">
+                <div class="input-group">
+                    <div class="dropdown">
+                        <div class="selected-value box-shadow-dgray" style="float: left" id="modelSelection">@Model.SelectedModel</div>
+                        <button class="btn btn-primary box-shadow-dgray" data-toggle="dropdown"><span class="caret"></span></button>
+                        <ul class="dropdown-menu" id="modelDropdown"></ul>
+                    </div>
+                </div>
+                <br />
+            </div>
+            <br />
+            <div class="col-lg-5 col-md-5 col-sm-5 col-lg-offset-2 col-md-offset-2 col-sm-offset-2">
+                <div class="input-group">
+                    <div class="dropdown">
+                        <div class=" selected-value box-shadow-dgray" style="float: left" id="carrierSelection">@Model.SelectedCarrier</div>
+                        <button class="btn btn-primary box-shadow-dgray" data-toggle="dropdown"><span class="caret"></span></button>
+                        <ul class="dropdown-menu" id="carrierDropdown"></ul>
+                    </div>
+                </div>
+                <br />
+            </div>
+            <br />
+            <div class="col-lg-5 col-md-5 col-sm-5 col-lg-offset-2 col-md-offset-2 col-sm-offset-2">
+                <div class="input-group">
+                    <div class="dropdown">
+                        <div class="selected-value box-shadow-dgray" style="float: left" id="capacitySelection">@Model.SelectedCapacity</div>
+                        <button class="btn btn-primary box-shadow-dgray" data-toggle="dropdown"><span class="caret"></span></button>
+                        <ul class="dropdown-menu" id="capacityDropdown"></ul>
+                    </div>
+                </div>                
+                <br />
+            </div>           
+            <div class="col-lg-5 col-md-5 col-sm-5 col-lg-offset-2 col-md-offset-2 col-sm-offset-2">
+                <div class="input-group">
+                    <div class="dropdown">
+                        <div class="selected-value box-shadow-dgray" style="float: left" id="conditionSelection">@Model.SelectedCondition</div>
+                        <button class="btn btn-primary box-shadow-dgray" data-toggle="dropdown"><span class="caret"></span></button>
+                        <ul class="dropdown-menu" id="conditionDropdown"></ul>
+                    </div>
+                </div>
+                <br />
             </div>
         </div>
         <div class="form-group">
             <div class="col-lg-11 col-md-11 col-lg-offset-2 col-md-offset-2 col-sm-offset-2">
-                <input type="submit" class="btn btn-primary" value="Get a Price List" />
+                <input type="submit" class="btn btn-primary" value="Get a Quote" />
             </div>
         </div>
     </form>
@@ -166,12 +179,9 @@
 @section header
 {
     <div class="col-lg-12 col-md-12">
-        <h2>Looking to Buy iPhones?</h2>
+        <h2>Looking to Sell iPhones?</h2>
         <p>
-            Wholesale pricing on all qualifying purchases, usually 40% off listed retail prices.
-            Additonal dollar volume discounts off wholesale prices.
-            <br/>        
-            To inquire about becoming a wholesale account, or to ask for a price list, fill out the form below and one of our sales representatives will call you back.
+            Fill out the form below and one of our sales representatives will call you back.
         </p>
         <hr />
     </div>
@@ -179,10 +189,9 @@
 @section scripts
 {
     @Scripts.Render("~/Scripts/validation")
-    @Scripts.Render("~/Scripts/phone_pricelist")
+    @Scripts.Render("~/Scripts/phone_sellphone")
 }
 @section styles
 {
-    <link href="~/Content/custom/phone_pricelist.css" rel="stylesheet" />
+    @Styles.Render("~/Content/phone_sellphone")
 }
-

@@ -1,0 +1,17 @@
+﻿#taxIdDollarSign {
+    padding-left: 3px;
+    padding-right: 2px;
+    font-weight: 900;
+}
+
+.selected-value {
+    height: 35px;
+    width: 165px;
+    padding: 5px 5px 5px 5px;
+    border: 1px solid gray;
+}
+
+.dropdown-menu {
+    width: 165px;
+    border: 1px solid gray;
+}

@@ -327,6 +327,7 @@
     <Content Include="Content\custom\home_questions.css" />
     <Content Include="Content\custom\phone_offer.css" />
     <Content Include="Content\custom\phone_pricelist.css" />
+    <Content Include="Content\custom\phone_sellphone.css" />
     <Content Include="Content\custom\phone_ship.css" />
     <Content Include="Content\custom\top_offers_paid.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
@@ -351,6 +352,7 @@
     <Content Include="Images\Home\iphones.jpg" />
     <Content Include="Images\Home\maven.jpg" />
     <Content Include="Images\Home\msn.jpg" />
+    <Content Include="Images\Home\skype.png" />
     <Content Include="Images\Home\twitter.jpg" />
     <Content Include="Images\iPhones\iPhone3GS_Bad.jpg" />
     <Content Include="Images\iPhones\iPhone3GS_Good.jpg" />
@@ -446,6 +448,7 @@
     <Content Include="Scripts\angular\angular.min.js.map" />
     <Content Include="Scripts\custom\home_companyinfo.js" />
     <Content Include="Scripts\custom\home_home.js" />
+    <Content Include="Scripts\custom\phone_sellphone.js" />
     <Content Include="Scripts\errors.json" />
     <Content Include="Scripts\angular-touch.min.js.map" />
     <Content Include="Scripts\angular-sanitize.min.js.map" />
@@ -1592,6 +1595,8 @@
     <Content Include="Views\Home\CompanyInfo.cshtml" />
     <Content Include="Views\Shared\_Layout2.cshtml" />
     <Content Include="Views\Home\Home.cshtml" />
+    <Content Include="Views\Phone\SellPhone.cshtml" />
+    <Content Include="Views\Phone\BrowseSelection.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />

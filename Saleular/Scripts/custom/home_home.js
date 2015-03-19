@@ -27,7 +27,8 @@
     });
 
     msLink.on('click', function () {
-        alert('Search Skype for Saleular1!');        
+        //alert('Search Skype for Saleular1!');        
+        //BootstrapDialog.alert('I want banana!');
     });
 
     fbLink.on('click', function () {

@@ -39,6 +39,17 @@ namespace Saleular.Controllers
             return View();
         }
 
+        public async Task<ActionResult> SellPhone()
+        {
+            var gadgetViewModel = await OfferBuilder.InitializeSelectedGadgetViewModelAsync();
+            return View(gadgetViewModel);            
+        }
+
+        public ActionResult BrowseSelection()
+        {
+            return View();
+        }
+
         [HttpPost]
         public ActionResult PriceList(string businessName, string name, string email, string phone, string address, string taxId, string businessAreaSelection)
         {
@@ -46,6 +57,31 @@ namespace Saleular.Controllers
             var messenger = factory.CreateMessenger(MessageFactory.MessengerType.Email);
             var emailBody = messenger.ConstructMessage(businessName, name, email, phone, address, taxId, businessAreaSelection);
             messenger.SendMessage("", "Price List Request", emailBody);
+
+            //var selectedGadget = (SelectedGadgetViewModel)Storage.Retrieve("SelectedGadgetViewModel");
+            var priceListRequest = new PriceListRequest
+            {
+                BusinessName = businessName,
+                Name = name,
+                Email = email,
+                Phone = phone,
+                Address = address,
+                TaxId = taxId,
+                BusinessAreaSelection = businessAreaSelection
+            };
+            PriceListRequestRepository.InsertRequest(priceListRequest);
+            PriceListRequestRepository.Save();
+
+            return View("PriceListSent");
+        }
+
+        [HttpPost]
+        public ActionResult SellPhone(string businessName, string name, string email, string phone, string address, string taxId, string businessAreaSelection)
+        {
+            var factory = new MessageFactory();
+            var messenger = factory.CreateMessenger(MessageFactory.MessengerType.Email);
+            var emailBody = messenger.ConstructMessage(businessName, name, email, phone, address, taxId, businessAreaSelection);
+            messenger.SendMessage("", "Sell iPhone Request", emailBody);
 
             //var selectedGadget = (SelectedGadgetViewModel)Storage.Retrieve("SelectedGadgetViewModel");
             var priceListRequest = new PriceListRequest

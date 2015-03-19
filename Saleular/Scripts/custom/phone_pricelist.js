@@ -8,8 +8,8 @@
     SetTooltip($('#taxIdAddon'));
     SetTooltip($('#businessAreaAddon'));
 
-    $('#guarenteed-text-span').hide();
-    $('#navmenu .nav').hide();
+    //$('#guarenteed-text-span').hide();
+    //$('#navmenu .nav').hide();
 
     // wire Model dropdown
     WireSelectButton($('#businessAreaDropDown li a'), $('#businessAreaSelection'));

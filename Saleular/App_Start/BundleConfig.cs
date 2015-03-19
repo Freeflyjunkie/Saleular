@@ -31,6 +31,9 @@ namespace Saleular
             bundles.Add(new StyleBundle("~/Content/phone_ship").Include(
                     "~/Content/custom/phone_ship.css"));
 
+            bundles.Add(new StyleBundle("~/Content/phone_sellphone").Include(
+                   "~/Content/custom/phone_sellphone.css"));
+
             // Scripts
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
@@ -73,6 +76,9 @@ namespace Saleular
 
             bundles.Add(new ScriptBundle("~/Scripts/phone_pricelist").Include(
                     "~/Scripts/custom/phone_pricelist.js"));
+
+            bundles.Add(new ScriptBundle("~/Scripts/phone_sellphone").Include(
+                    "~/Scripts/custom/phone_sellphone.js"));
 
             bundles.Add(new ScriptBundle("~/Scripts/angularjs").Include(
                     "~/Scripts/angular/angular.js"));
