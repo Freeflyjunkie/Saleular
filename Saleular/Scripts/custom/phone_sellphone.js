@@ -8,12 +8,18 @@
     // hide selection text
     var buttons = $('.hide-on-load');
     for (var i = 0; i < buttons.length; i++) {
-        $(buttons[i]).hide();        
+        $(buttons[i]).hide();
+    }
+
+    if (window.location.search != '') {        
+        var modelQs = window.location.href.split("?").slice(1).join("?");
+        var model = modelQs.split('=');        
+        LoadMenusWithModel(model[1]);
     }
 });
 
 function WireSelectButton(dropdownElements, selectControl) {
-    dropdownElements.on('click', function (e) {        
+    dropdownElements.on('click', function (e) {
         e.preventDefault();
 
         // set selection text
@@ -21,8 +27,7 @@ function WireSelectButton(dropdownElements, selectControl) {
         selectControl.text(selection);
 
         // is this the model dropdown?
-        if ($(selectControl).attr('id') == 'modelSelection')
-        {
+        if ($(selectControl).attr('id') == 'modelSelection') {
             // create json for POST
             var selectedgadget = {
                 SelectedType: 'iPhone',
@@ -32,52 +37,62 @@ function WireSelectButton(dropdownElements, selectControl) {
                 SelectedCondition: $('#conditionSelection').text()
             }
 
-            // POST to RefreshSelection
-            $.ajax({
-                type: "POST",
-                url: '/Phone/GetSelectedGadgetViewModel',
-                data: selectedgadget,
-                dataType: 'json',
-                success: function (data, status, xhr) {
-                    var buttons = $('.hide-on-load');
-                    buttons.show();
+            GetSelectedGadgetViewModel(selectedgadget);
+        }
+    });
+}
 
-                    // Reset selection text based type and model
-                    //$('#modelSelection').text(data.SelectedModel);
-                    $('#carrierSelection').text(data.SelectedCarrier);
-                    $('#capacitySelection').text(data.SelectedCapacity);
-                    $('#conditionSelection').text(data.SelectedCondition);
+function LoadMenusWithModel(model) {
 
-                    // Populate dropdowns based on Type selection text
-                    //PopulatePhoneDropdowns(data.Models, $('#modelDropdown'));
-                    PopulatePhoneDropdowns(data.Carriers, $('#carrierDropdown'));
-                    PopulatePhoneDropdowns(data.Capacities, $('#capacityDropdown'));
-                    PopulatePhoneDropdowns(data.Conditions, $('#conditionDropdown'));
+    // create json for POST
+    var selectedgadget = {
+        SelectedType: 'iPhone',
+        SelectedModel: model,
+        SelectedCarrier: '',
+        SelectedCapacity: '',
+        SelectedCondition: ''
+    }
 
-                    // Wire dropdowns
-                    //WireSelectButton($('#modelDropdown li a'), $('#modelSelection'));
-                    WireSelectButton($('#carrierDropdown li a'), $('#carrierSelection'));
-                    WireSelectButton($('#capacityDropdown li a'), $('#capacitySelection'));
-                    WireSelectButton($('#conditionDropdown li a'), $('#conditionSelection'));
+    GetSelectedGadgetViewModel(selectedgadget);
+}
 
-                    // Show Offer and scroll to the bottom
-                    //if (IsPriceReady()) {
-                    //    $('#offerSection').show();
-                    //    $('#price h2').html('$' + data.Price + '.00');
-                    //    $(document).scrollTop(1000);
-                    //}
-                    //else {
-                    //    $('#offerSection').hide();
-                    //}
-                },
-                error: function (xhr, status, error) {
-                    alert(status);
-                    alert(xhr.status);
-                    alert(xhr.responseJSON);
-                    alert(xhr.responseText);
-                    alert(error);
-                }
-            });
+function GetSelectedGadgetViewModel(selectedgadget) {
+
+    $.ajax({
+        type: "POST",
+        url: '/Phone/GetSelectedGadgetViewModel',
+        data: selectedgadget,
+        dataType: 'json',
+        success: function (data, status, xhr) {
+
+            // Show menus
+            var buttons = $('.hide-on-load');
+            buttons.show();
+
+            // Reset selection text based type and model
+            $('#modelSelection').text(data.SelectedModel);
+            $('#carrierSelection').text(data.SelectedCarrier);
+            $('#capacitySelection').text(data.SelectedCapacity);
+            $('#conditionSelection').text(data.SelectedCondition);
+
+            // Populate dropdowns based on Type selection text
+            PopulatePhoneDropdowns(data.Models, $('#modelDropdown'));
+            PopulatePhoneDropdowns(data.Carriers, $('#carrierDropdown'));
+            PopulatePhoneDropdowns(data.Capacities, $('#capacityDropdown'));
+            PopulatePhoneDropdowns(data.Conditions, $('#conditionDropdown'));
+
+            // Wire dropdowns
+            WireSelectButton($('#modelDropdown li a'), $('#modelSelection'));
+            WireSelectButton($('#carrierDropdown li a'), $('#carrierSelection'));
+            WireSelectButton($('#capacityDropdown li a'), $('#capacitySelection'));
+            WireSelectButton($('#conditionDropdown li a'), $('#conditionSelection'));
+        },
+        error: function (xhr, status, error) {
+            alert(status);
+            alert(xhr.status);
+            alert(xhr.responseJSON);
+            alert(xhr.responseText);
+            alert(error);
         }
     });
 }

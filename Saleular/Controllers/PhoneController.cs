@@ -19,7 +19,7 @@ namespace Saleular.Controllers
     [AllowAnonymous]
     public class PhoneController : Controller
     {
-        protected IStorage Storage;        
+        protected IStorage Storage;
         //protected IGadgetRepository GadgetRepository;
         protected IRequestRepository RequestRespository;
         protected IPriceListRequestRepository PriceListRequestRepository;
@@ -28,12 +28,12 @@ namespace Saleular.Controllers
 
         public PhoneController(IStorage storage, IRequestRepository request, IPriceListRequestRepository priceListRequest, IOfferBuilder offerBuilder)
         {
-            Storage = storage;            
+            Storage = storage;
             RequestRespository = request;
             PriceListRequestRepository = priceListRequest;
-            OfferBuilder = offerBuilder;            
+            OfferBuilder = offerBuilder;
         }
-        
+
         public ActionResult PriceList()
         {
             return View();
@@ -45,8 +45,8 @@ namespace Saleular.Controllers
             gadgetViewModel.SelectedType = "iPhone";
             gadgetViewModel = await OfferBuilder.SelectionChangedAsync(gadgetViewModel);
             Storage.Save("SelectedGadgetViewModel", gadgetViewModel);
-            return View(gadgetViewModel);            
-        }
+            return View(gadgetViewModel);
+        }       
 
         public ActionResult BrowseSelection()
         {
@@ -104,10 +104,10 @@ namespace Saleular.Controllers
         }
 
         public async Task<ActionResult> Offer()
-        {            
+        {
             var gadgetViewModel = await OfferBuilder.InitializeSelectedGadgetViewModelAsync();
             return View(gadgetViewModel);
-        }      
+        }
 
         [HttpPost]
         public async Task<JsonResult> GetSelectedGadgetViewModel(SelectedGadgetViewModel selectedGadget)
@@ -116,7 +116,7 @@ namespace Saleular.Controllers
             Storage.Save("SelectedGadgetViewModel", selectedGadget);
             return Json(selectedGadget, JsonRequestBehavior.AllowGet);
         }
-        
+
         public ActionResult Ship()
         {
             var selectedGadgetViewModel = (SelectedGadgetViewModel)Storage.Retrieve("SelectedGadgetViewModel");
@@ -125,14 +125,14 @@ namespace Saleular.Controllers
 
         [HttpPost]
         public ActionResult Ship(int id, string name, string address, string city, string state, string zip, string email, string comments)
-        {           
+        {
             var selectedGadget = (SelectedGadgetViewModel)Storage.Retrieve("SelectedGadgetViewModel");
             var request = new Request
             {
                 GadgetId = id,
                 Name = name,
                 Address = address,
-                City =city,
+                City = city,
                 State = state,
                 Zip = zip,
                 Email = email,
@@ -142,7 +142,7 @@ namespace Saleular.Controllers
             RequestRespository.Save();
             //var body = Messenger.ConstructMessage(name, address, city, state, zip, email, comments, selectedGadget);            
             //Messenger.SendMessage(email, "Cash For My Phone", body);            
-            return RedirectToAction("ShipSent");            
+            return RedirectToAction("ShipSent");
         }
 
         public ActionResult ShipSent()
