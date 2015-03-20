@@ -1,18 +1,9 @@
 ﻿$(document).ready(function () {
 
-    SetTooltip($('#businessNameAddon'));
-    SetTooltip($('#nameAddon'));
-    SetTooltip($('#emailAddon'));
-    SetTooltip($('#phoneAddon'));
-    SetTooltip($('#addressAddon'));
-    SetTooltip($('#taxIdAddon'));
-    SetTooltip($('#businessAreaAddon'));
+    SetTooltip($('.pointer-tooltip'));  
 
-    //$('#guarenteed-text-span').hide();
-    //$('#navmenu .nav').hide();
-
-    // wire Model dropdown
-    WireSelectButton($('#businessAreaDropDown li a'), $('#businessAreaSelection'));
+    // wire businessType dropdown
+    WireSelectButton($('#businessTypeDropdown li a'), $('#businessTypeSelection'));
 });
 
 function WireSelectButton(dropdownElements, selectControl) {
@@ -20,8 +11,8 @@ function WireSelectButton(dropdownElements, selectControl) {
         e.preventDefault();
 
         // set selection text
-        var selection = $(this).text();
-        selectControl.val(selection);
+        var selection = $(this).text();        
+        selectControl.text(selection);
     });
 }
 

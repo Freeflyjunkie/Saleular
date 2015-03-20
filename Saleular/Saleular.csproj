@@ -321,6 +321,7 @@
     <Content Include="Content\bootstrap-yeti.css" />
     <Content Include="Content\bootstrap\css\bootstrap.css" />
     <Content Include="Content\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\custom\phone_browseselection.css" />
     <Content Include="Content\custom\home_companyinfo.css" />
     <Content Include="Content\custom\home_home.css" />
     <Content Include="Content\custom\home_index.css" />
@@ -361,6 +362,8 @@
     <Content Include="Images\iPhones\iPhone4S_Good.jpg" />
     <Content Include="Images\iPhones\iPhone5C_Bad.jpg" />
     <Content Include="Images\iPhones\iPhone5C_Good.jpg" />
+    <Content Include="Images\iPhones\iPhone6plus.png" />
+    <Content Include="Images\iPhones\iPhone6.jpg" />
     <Content Include="Images\Loaders\ajax-loader.gif" />
     <Content Include="Images\Login\googlelogin.jpg" />
     <Content Include="Images\Logos\BusinessCardLogo.png" />
@@ -448,6 +451,7 @@
     <Content Include="Scripts\angular\angular.min.js.map" />
     <Content Include="Scripts\custom\home_companyinfo.js" />
     <Content Include="Scripts\custom\home_home.js" />
+    <Content Include="Scripts\custom\phone_browseselection.js" />
     <Content Include="Scripts\custom\phone_sellphone.js" />
     <Content Include="Scripts\errors.json" />
     <Content Include="Scripts\angular-touch.min.js.map" />

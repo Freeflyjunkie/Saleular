@@ -2,12 +2,6 @@
 
     SetTooltip($('.pointer-tooltip'));
 
-    //$('#guarenteed-text-span').hide();
-    //$('#navmenu .nav').hide();
-
-    // wire Model dropdown
-    WireSelectButton2($('#businessAreaDropDown li a'), $('#businessAreaSelection'));
-
     // wire Model dropdown
     WireSelectButton($('#modelDropdown li a'), $('#modelSelection'));
 
@@ -97,16 +91,6 @@ function PopulatePhoneDropdowns(data, dropdown) {
         html = html + liBegin + liText + liEnd;
     }
     $(dropdown).html(html);
-}
-
-function WireSelectButton2(dropdownElements, selectControl) {
-    dropdownElements.on('click', function (e) {
-        e.preventDefault();
-
-        // set selection text
-        var selection = $(this).text();
-        selectControl.val(selection);
-    });
 }
 
 function SetTooltip(addon) {

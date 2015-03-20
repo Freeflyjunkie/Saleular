@@ -28,11 +28,17 @@ namespace Saleular
             bundles.Add(new StyleBundle("~/Content/phone_offer").Include(
                     "~/Content/custom/phone_offer.css"));
 
+            bundles.Add(new StyleBundle("~/Content/phone_pricelist").Include(
+                    "~/Content/custom/phone_pricelist.css"));            
+
             bundles.Add(new StyleBundle("~/Content/phone_ship").Include(
                     "~/Content/custom/phone_ship.css"));
 
             bundles.Add(new StyleBundle("~/Content/phone_sellphone").Include(
                    "~/Content/custom/phone_sellphone.css"));
+
+            bundles.Add(new StyleBundle("~/Content/phone_browseselection").Include(
+                   "~/Content/custom/phone_browseselection.css"));
 
             // Scripts
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
@@ -79,6 +85,9 @@ namespace Saleular
 
             bundles.Add(new ScriptBundle("~/Scripts/phone_sellphone").Include(
                     "~/Scripts/custom/phone_sellphone.js"));
+
+            bundles.Add(new ScriptBundle("~/Scripts/phone_browseselection").Include(
+                    "~/Scripts/custom/phone_browseselection.js"));
 
             bundles.Add(new ScriptBundle("~/Scripts/angularjs").Include(
                     "~/Scripts/angular/angular.js"));
