@@ -131,6 +131,10 @@
     margin-top: 0px;
 }
 
+.no-border {
+    border: none;
+}
+
 .padding-left {
     padding-left: 20px;
 }

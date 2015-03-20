@@ -1,12 +1,6 @@
 ﻿$(document).ready(function () {
 
-    SetTooltip($('#businessNameAddon'));
-    SetTooltip($('#nameAddon'));
-    SetTooltip($('#emailAddon'));
-    SetTooltip($('#phoneAddon'));
-    SetTooltip($('#addressAddon'));
-    SetTooltip($('#taxIdAddon'));
-    SetTooltip($('#businessAreaAddon'));
+    SetTooltip($('.pointer-tooltip'));
 
     //$('#guarenteed-text-span').hide();
     //$('#navmenu .nav').hide();
@@ -15,12 +9,17 @@
     WireSelectButton2($('#businessAreaDropDown li a'), $('#businessAreaSelection'));
 
     // wire Model dropdown
-    WireSelectButton($('#typeDropdown li a'), $('#typeSelection'));    
+    WireSelectButton($('#modelDropdown li a'), $('#modelSelection'));
+
+    // hide selection text
+    var buttons = $('.hide-on-load');
+    for (var i = 0; i < buttons.length; i++) {
+        $(buttons[i]).hide();        
+    }
 });
 
 function WireSelectButton(dropdownElements, selectControl) {
-    dropdownElements.on('click', function (e) {
-
+    dropdownElements.on('click', function (e) {        
         e.preventDefault();
 
         // set selection text
@@ -28,11 +27,11 @@ function WireSelectButton(dropdownElements, selectControl) {
         selectControl.text(selection);
 
         // is this the model dropdown?
-        if ($(selectControl).attr('id') == 'typeSelection' || $(selectControl).attr('id') == 'modelSelection')
+        if ($(selectControl).attr('id') == 'modelSelection')
         {
             // create json for POST
             var selectedgadget = {
-                SelectedType: $('#typeSelection').text(),
+                SelectedType: 'iPhone',
                 SelectedModel: $('#modelSelection').text(),
                 SelectedCarrier: $('#carrierSelection').text(),
                 SelectedCapacity: $('#capacitySelection').text(),
@@ -46,23 +45,23 @@ function WireSelectButton(dropdownElements, selectControl) {
                 data: selectedgadget,
                 dataType: 'json',
                 success: function (data, status, xhr) {
-                    //var buttons = $('.input-group');
-                    //buttons.show();
+                    var buttons = $('.hide-on-load');
+                    buttons.show();
 
                     // Reset selection text based type and model
-                    $('#modelSelection').text(data.SelectedModel);
+                    //$('#modelSelection').text(data.SelectedModel);
                     $('#carrierSelection').text(data.SelectedCarrier);
                     $('#capacitySelection').text(data.SelectedCapacity);
                     $('#conditionSelection').text(data.SelectedCondition);
 
                     // Populate dropdowns based on Type selection text
-                    PopulatePhoneDropdowns(data.Models, $('#modelDropdown'));
+                    //PopulatePhoneDropdowns(data.Models, $('#modelDropdown'));
                     PopulatePhoneDropdowns(data.Carriers, $('#carrierDropdown'));
                     PopulatePhoneDropdowns(data.Capacities, $('#capacityDropdown'));
                     PopulatePhoneDropdowns(data.Conditions, $('#conditionDropdown'));
 
                     // Wire dropdowns
-                    WireSelectButton($('#modelDropdown li a'), $('#modelSelection'));
+                    //WireSelectButton($('#modelDropdown li a'), $('#modelSelection'));
                     WireSelectButton($('#carrierDropdown li a'), $('#carrierSelection'));
                     WireSelectButton($('#capacityDropdown li a'), $('#capacitySelection'));
                     WireSelectButton($('#conditionDropdown li a'), $('#conditionSelection'));

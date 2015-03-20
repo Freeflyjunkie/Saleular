@@ -4,161 +4,134 @@
     Layout = "~/Views/Shared/_Layout2.cshtml";
 }
 
-<div class="col-lg-12 col-md-12">
-    <form class="form-horizontal" method="post">
+<form class="form-horizontal" method="post">    
+    <div class="col-lg-6 col-md-6 col-sm-6 padding-top-20">
+        <div class="form-group padding-bottom-10">
+            <label for="businessName" class="control-label label-font">Company Name</label>
+            <div class="input-group">
+                <span id="businessNameAddon" data-toggle="tooltip" title="What company are you from?" class="input-group-addon box-shadow-dgray pointer-tooltip"><span class="glyphicon glyphicon-tower"></span></span>
+                <input id="businessName"
+                       type="text"
+                       name="businessName"
+                       class="form-control box-shadow-dgray"
+                       placeholder="e.g. The name of your company"
+                       data-val="true"
+                       data-val-required="Your business name is required" />
+            </div>
+            <span class="control-label field-validation-valid" data-valmsg-for="businessName" data-valmsg-replace="true"></span>
+        </div>
+        <div class="form-group padding-bottom-10">
+            <label for="name" class="control-label label-font">Name</label>
+            <div class="input-group">
+                <span id="nameAddon" data-toggle="tooltip" title="Your name please..." class="input-group-addon box-shadow-dgray pointer-tooltip"><span class="glyphicon glyphicon-user"></span></span>
+                <input id="name"
+                       type="text"
+                       name="name"
+                       class="form-control box-shadow-dgray"
+                       placeholder="e.g. Brad Pitt"
+                       data-val="true"
+                       data-val-required="Your name is required" />
+            </div>
+            <span class="control-label field-validation-valid" data-valmsg-for="name" data-valmsg-replace="true"></span>
+        </div>
+        <div class="form-group padding-bottom-10">
+            <label for="email" class="control-label label-font">Email</label>
+            <div class="input-group">
+                <span id="emailAddon" data-toggle="tooltip" title="This email address will be used for later correspondence" class="input-group-addon box-shadow-dgray pointer-tooltip">&#64;</span>
+                <input id="email"
+                       type="email"
+                       name="email"
+                       class="form-control box-shadow-dgray"
+                       placeholder="e.g. bpitt@gmail.com"
+                       data-val="true"
+                       data-val-required="Your email is required" />
+            </div>
+            <span class="control-label field-validation-valid" data-valmsg-for="email" data-valmsg-replace="true"></span>
+        </div>
+        <div class="form-group padding-bottom-10">
+            <label for="phone" class="control-label label-font">Phone Number</label>
+            <div class="input-group">
+                <span id="phoneAddon" data-toggle="tooltip" title="This phone number will be used for later correspondence" class="input-group-addon box-shadow-dgray pointer-tooltip"><span class="glyphicon glyphicon-phone"></span></span>
+                <input id="phone"
+                       type="text"
+                       name="phone"
+                       class="form-control box-shadow-dgray"
+                       placeholder="e.g. 222-555-1212"
+                       data-val="true"
+                       data-val-required="Your phone number is required" />
+            </div>
+            <span class="control-label field-validation-valid" data-valmsg-for="phone" data-valmsg-replace="true"></span>
+        </div>
+        <div class="form-group padding-bottom-10">
+            <label for="address" class="control-label label-font">Address</label>
+            <div class="input-group">
+                <span id="addressAddon" data-toggle="tooltip" title="This address will be used for later correspondence" class="input-group-addon box-shadow-dgray pointer-tooltip"><span class="glyphicon glyphicon-home"></span></span>
+                <input id="address"
+                       type="text"
+                       name="address"
+                       class="form-control box-shadow-dgray"
+                       placeholder="e.g. 123 Main Street"
+                       data-val="true"
+                       data-val-required="Your address is required" />
+            </div>
+            <span class="control-label field-validation-valid" data-valmsg-for="address" data-valmsg-replace="true"></span>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6">
+        <strong><em>Note: Saleular is only interested in iPhones</em></strong>
         <div class="form-group">
-            <label for="businessName" class="control-label col-lg-2 col-md-2 col-sm-2">Business Name</label>
-            <div class="col-lg-5 col-md-5 col-sm-5">
+            <div class="padding-bottom-10">
+                <label for="quantity" class="control-label label-font">Quantity</label>
                 <div class="input-group">
-                    <span id="businessNameAddon" data-toggle="tooltip" title="What company are you from?" class="input-group-addon box-shadow-dgray"><span class="glyphicon glyphicon-globe"></span></span>
-                    <input id="businessName"
-                           type="text"
-                           name="businessName"
-                           class="form-control box-shadow-dgray"
-                           placeholder="e.g. The name of your company"
+                    <span id="quantityAddon" data-toggle="tooltip" title="How many iPhones do you have?" class="input-group-addon box-shadow-dgray pointer-tooltip"><span class="glyphicon glyphicon-shopping-cart"></span></span>
+                    <input id="quantity"
+                           type="number"
+                           name="quantity"
+                           class="selected-value box-shadow-dgray"
+                           placeholder="e.g. 100"
                            data-val="true"
-                           data-val-required="Your business name is required" />
+                           data-val-required="The quantity is required and must be a number" />
+                </div>
+                <span class="control-label field-validation-valid" data-valmsg-for="quantity" data-valmsg-replace="true"></span>
+            </div>
+            <label for="modelSelection" class="control-label label-font">Model</label>
+            <div class="input-group padding-bottom-10">
+                <div class="dropdown">
+                    <button class="btn btn-primary box-shadow-dgray" data-toggle="dropdown"><span class="caret"></span></button>
+                    <div class="selected-value box-shadow-dgray" style="float: left" id="modelSelection">@Model.SelectedModel</div>
+                    <ul class="dropdown-menu" id="modelDropdown">
+                        @foreach (var iphonemodel in Model.Models)
+                        {
+                            <li>
+                                <a href="#">@iphonemodel</a>
+                            </li>
+                        }
+                    </ul>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-3">
-                <span class="control-label field-validation-valid" data-valmsg-for="businessName" data-valmsg-replace="true">
-                </span>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="name" class="control-label col-lg-2 col-md-2 col-sm-2">Name</label>
-            <div class="col-lg-5 col-md-5 col-sm-5">
-                <div class="input-group">
-                    <span id="nameAddon" data-toggle="tooltip" title="Your name please..." class="input-group-addon box-shadow-dgray"><span class="glyphicon glyphicon-user"></span></span>
-                    <input id="name"
-                           type="text"
-                           name="name"
-                           class="form-control box-shadow-dgray"
-                           placeholder="e.g. Brad Pitt"
-                           data-val="true"
-                           data-val-required="Your name is required" />
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-3">
-                <span class="control-label field-validation-valid" data-valmsg-for="name" data-valmsg-replace="true">
-                </span>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="email" class="control-label col-lg-2 col-md-2 col-sm-2">Email</label>
-            <div class="col-lg-5 col-md-5 col-sm-5">
-                <div class="input-group">
-                    <span id="emailAddon" data-toggle="tooltip" title="This email address will be used for later correspondence" class="input-group-addon box-shadow-dgray">&#64;</span>
-                    <input id="email"
-                           type="email"
-                           name="email"
-                           class="form-control box-shadow-dgray"
-                           placeholder="e.g. bpitt@gmail.com"
-                           data-val="true"
-                           data-val-required="Your email is required" />
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-3">
-                <span class="control-label field-validation-valid" data-valmsg-for="email" data-valmsg-replace="true">
-                </span>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="phone" class="control-label col-lg-2 col-md-2 col-sm-2">Phone Number</label>
-            <div class="col-lg-5 col-md-5 col-sm-5">
-                <div class="input-group">
-                    <span id="phoneAddon" data-toggle="tooltip" title="This phone number will be used for later correspondence" class="input-group-addon box-shadow-dgray"><span class="glyphicon glyphicon-phone"></span></span>
-                    <input id="phone"
-                           type="text"
-                           name="phone"
-                           class="form-control box-shadow-dgray"
-                           placeholder="e.g. 222-555-1212"
-                           data-val="true"
-                           data-val-required="Your phone number is required" />
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-3">
-                <span class="control-label field-validation-valid" data-valmsg-for="phone" data-valmsg-replace="true">
-                </span>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="address" class="control-label col-lg-2 col-md-2 col-sm-2">Address</label>
-            <div class="col-lg-5 col-md-5 col-sm-5">
-                <div class="input-group">
-                    <span id="addressAddon" data-toggle="tooltip" title="This address will be used for later correspondence" class="input-group-addon box-shadow-dgray"><span class="glyphicon glyphicon-home"></span></span>
-                    <input id="address"
-                           type="text"
-                           name="address"
-                           class="form-control box-shadow-dgray"
-                           placeholder="e.g. 123 Main Street"
-                           data-val="true"
-                           data-val-required="Your address is required" />
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-3">
-                <span class="control-label field-validation-valid" data-valmsg-for="address" data-valmsg-replace="true">
-                </span>
-            </div>
-        </div>
-        <hr />
-        <p>
-            What type of iPhones are you interested in selling?
-            <strong><em>Note: Saleular is only interested in iPhones</em></strong>
-        </p>
-        <div class="form-group">
-            <div class="col-lg-5 col-md-5 col-sm-5 col-lg-offset-2 col-md-offset-2 col-sm-offset-2">
-                <div class="input-group">
+            <div class="hide-on-load">
+                <label for="carrierSelection" class="control-label label-font">Carrier</label>
+                <div class="input-group padding-bottom-10">
                     <div class="dropdown">
-                        <div class="selected-value box-shadow-dgray" style="float: left" id="typeSelection">@Model.SelectedType</div>
-                        <button class="btn btn-primary box-shadow-dgray" data-toggle="dropdown"><span class="caret"></span></button>
-                        <ul class="dropdown-menu" id="typeDropdown">
-                            @foreach (var gadgetType in Model.Types)
-                            {
-                                <li>
-                                    <a href="#">@gadgetType</a>
-                                </li>
-                            }
-                        </ul>
-                    </div>
-                </div>
-                <br />
-            </div>
-            <br/>
-            <div class="col-lg-5 col-md-5 col-sm-5 col-lg-offset-2 col-md-offset-2 col-sm-offset-2">
-                <div class="input-group">
-                    <div class="dropdown">
-                        <div class="selected-value box-shadow-dgray" style="float: left" id="modelSelection">@Model.SelectedModel</div>
-                        <button class="btn btn-primary box-shadow-dgray" data-toggle="dropdown"><span class="caret"></span></button>
-                        <ul class="dropdown-menu" id="modelDropdown"></ul>
-                    </div>
-                </div>
-                <br />
-            </div>
-            <br />
-            <div class="col-lg-5 col-md-5 col-sm-5 col-lg-offset-2 col-md-offset-2 col-sm-offset-2">
-                <div class="input-group">
-                    <div class="dropdown">
-                        <div class=" selected-value box-shadow-dgray" style="float: left" id="carrierSelection">@Model.SelectedCarrier</div>
+                        <div class="selected-value box-shadow-dgray" style="float: left" id="carrierSelection">@Model.SelectedCarrier</div>
                         <button class="btn btn-primary box-shadow-dgray" data-toggle="dropdown"><span class="caret"></span></button>
                         <ul class="dropdown-menu" id="carrierDropdown"></ul>
                     </div>
                 </div>
-                <br />
             </div>
-            <br />
-            <div class="col-lg-5 col-md-5 col-sm-5 col-lg-offset-2 col-md-offset-2 col-sm-offset-2">
-                <div class="input-group">
+            <div class="hide-on-load">
+                <label for="capacitySelection" class="control-label label-font">Capacity</label>
+                <div class="input-group padding-bottom-10">
                     <div class="dropdown">
                         <div class="selected-value box-shadow-dgray" style="float: left" id="capacitySelection">@Model.SelectedCapacity</div>
                         <button class="btn btn-primary box-shadow-dgray" data-toggle="dropdown"><span class="caret"></span></button>
                         <ul class="dropdown-menu" id="capacityDropdown"></ul>
                     </div>
-                </div>                
-                <br />
-            </div>           
-            <div class="col-lg-5 col-md-5 col-sm-5 col-lg-offset-2 col-md-offset-2 col-sm-offset-2">
-                <div class="input-group">
+                </div>
+            </div>
+            <div class="hide-on-load">
+                <label for="conditionSelection" class="control-label label-font">Condition</label>
+                <div class="input-group padding-bottom-10">
                     <div class="dropdown">
                         <div class="selected-value box-shadow-dgray" style="float: left" id="conditionSelection">@Model.SelectedCondition</div>
                         <button class="btn btn-primary box-shadow-dgray" data-toggle="dropdown"><span class="caret"></span></button>
@@ -168,14 +141,13 @@
                 <br />
             </div>
         </div>
-        <div class="form-group">
-            <div class="col-lg-11 col-md-11 col-lg-offset-2 col-md-offset-2 col-sm-offset-2">
+    </div>    
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="form-group padding-top-10">
                 <input type="submit" class="btn btn-primary" value="Get a Quote" />
             </div>
-        </div>
-    </form>
-</div>
-
+        </div>    
+</form>
 @section header
 {
     <div class="col-lg-12 col-md-12">

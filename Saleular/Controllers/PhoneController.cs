@@ -42,6 +42,9 @@ namespace Saleular.Controllers
         public async Task<ActionResult> SellPhone()
         {
             var gadgetViewModel = await OfferBuilder.InitializeSelectedGadgetViewModelAsync();
+            gadgetViewModel.SelectedType = "iPhone";
+            gadgetViewModel = await OfferBuilder.SelectionChangedAsync(gadgetViewModel);
+            Storage.Save("SelectedGadgetViewModel", gadgetViewModel);
             return View(gadgetViewModel);            
         }
 

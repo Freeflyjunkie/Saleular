@@ -27,6 +27,18 @@ body {
     padding-bottom: 20px;    
 }
 
+.padding-bottom-10 {
+    padding-bottom: 10px;
+}
+
+.padding-top-10 {
+    padding-top: 10px;
+}
+
+.padding-top-20 {
+    padding-top: 20px;
+}
+
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
