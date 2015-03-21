@@ -1,4 +1,7 @@
+using System.Web;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNet.Identity.Owin;
 using Saleular.Models;
 
 namespace Saleular.DAL.IdentityMigrations
@@ -20,19 +23,24 @@ namespace Saleular.DAL.IdentityMigrations
 
         protected override void Seed(IdentityContext context)
         {
-            //  This method will be called after migrating to the latest version.
-            var hasher = new PasswordHasher();
+            //  This method will be called after migrating to the latest version.            
+            var hasher = new PasswordHasher();            
+            context.Roles.Add(new IdentityRole {Name = "Administrator"});
             context.Users.AddOrUpdate(u => u.UserName,
                 new ApplicationUser
                 {
                     UserName = "rbitran",
-                    PasswordHash = hasher.HashPassword("roybitran123")
+                    Email = "saleular1@gmail.com",
+                    PasswordHash = hasher.HashPassword("roybitran123"),
+                    SecurityStamp = hasher.HashPassword("123456789"),
                 },
                 new ApplicationUser
                 {
-                    UserName = "etorres",
-                    PasswordHash = hasher.HashPassword("charna64")
-                }); 
+                    UserName = "etorres",                    
+                    Email = "erictorres56@gmail.com",
+                    PasswordHash = hasher.HashPassword("charna64"),
+                    SecurityStamp = hasher.HashPassword("987654321"),
+                });             
         }
     }
 }

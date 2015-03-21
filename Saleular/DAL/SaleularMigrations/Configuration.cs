@@ -20,8 +20,58 @@ namespace Saleular.DAL.SaleularMigrations
 
         protected override void Seed(SaleularContext context)
         {
-            var phones = new List<Gadget>
+            var phones = new List<Gadget>            
             {
+                 // iPhone 6 Plus 64 GB Factory
+                new Gadget { Type = "iPhone",   
+                            Model = "6+", 
+                            Carrier = "Factory", 
+                            Capacity = "64 GB", 
+                            Condition = "Flawless", 
+                            Price = 455.00M,
+                            ImageUrl="/Images/iPhones/iPhone6plus" },
+
+                new Gadget { Type = "iPhone",   
+                            Model = "6+", 
+                            Carrier = "Factory", 
+                            Capacity = "64 GB", 
+                            Condition = "Good", 
+                            Price = 455.00M,
+                            ImageUrl="/Images/iPhones/iPhone6plus" },
+
+                new Gadget { Type = "iPhone",   
+                            Model = "6+", 
+                            Carrier = "Factory", 
+                            Capacity = "64 GB", 
+                            Condition = "Bad", 
+                            Price = 455.00M,
+                            ImageUrl="/Images/iPhones/iPhone6plus" },
+
+                // iPhone 6 64 GB Factory
+                new Gadget { Type = "iPhone",   
+                            Model = "6", 
+                            Carrier = "Factory", 
+                            Capacity = "64 GB", 
+                            Condition = "Flawless", 
+                            Price = 455.00M,
+                            ImageUrl="/Images/iPhones/iPhone6" },
+
+                new Gadget { Type = "iPhone",   
+                            Model = "6", 
+                            Carrier = "Factory", 
+                            Capacity = "64 GB", 
+                            Condition = "Good", 
+                            Price = 455.00M,
+                            ImageUrl="/Images/iPhones/iPhone6" },
+
+                new Gadget { Type = "iPhone",   
+                            Model = "6", 
+                            Carrier = "Factory", 
+                            Capacity = "64 GB", 
+                            Condition = "Bad", 
+                            Price = 455.00M,
+                            ImageUrl="/Images/iPhones/iPhone6" },
+
                 // iPhone 5S 64 GB Factory
                 new Gadget { Type = "iPhone",   
                             Model = "5S", 
