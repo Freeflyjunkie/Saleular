@@ -375,7 +375,7 @@ namespace Saleular.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Home", "Home");
             }
         }
 
