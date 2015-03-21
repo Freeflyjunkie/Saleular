@@ -230,6 +230,7 @@
     <Compile Include="Classes\SmsMessenger.cs" />
     <Compile Include="Classes\SQLStorage.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\GadgetManagementController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PhoneController.cs" />
@@ -798,6 +799,7 @@
     <Content Include="Views\Home\Home.cshtml" />
     <Content Include="Views\Phone\SellPhone.cshtml" />
     <Content Include="Views\Phone\BrowseSelection.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />

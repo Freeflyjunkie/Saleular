@@ -1,38 +1,39 @@
 ﻿@using Microsoft.AspNet.Identity
-@if (Request.IsAuthenticated)
-{
-    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    @if (Request.IsAuthenticated)
     {
-        @Html.AntiForgeryToken()
-
-        <ul class="nav navbar-nav navbar-right">
-            <li>
-                @Html.ActionLink("API Documentation", "Index", "Help", routeValues: null, htmlAttributes: new { title = "API Documentation" })
-            </li>
-            <li>
-                @Html.ActionLink("Manage Account", "Manage", "Account", routeValues: null, htmlAttributes: new { title = "Manage" })
-            </li>
-            <li>
-                @Html.ActionLink("Manage Admins", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })
-            </li>
-            <li>
-                @Html.ActionLink("Manage Gadgets", "Index", "GadgetManagement", routeValues: null, htmlAttributes: new { id = "registerLink2" })
-            </li>
-            <li>
-                @Html.ActionLink("Requests", "Index", "Request", routeValues: null, htmlAttributes: new { id = "requests" })
-            </li>
-            <li>
-                @Html.ActionLink("Price List Requests", "Index", "PriceListRequests", routeValues: null, htmlAttributes: new { id = "priceListRequests" })
-            </li>
-            <li>
-                <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
-            </li>
-        </ul>
+        using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-left" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="container">
+                <div>
+                    <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+                </div>
+                <div>
+                    @Html.ActionLink("API Documentation", "Index", "Help", routeValues: null, htmlAttributes: new { title = "API Documentation" })
+                </div>
+                <div>
+                    @Html.ActionLink("Manage Account", "Manage", "Account", routeValues: null, htmlAttributes: new { title = "Manage" })
+                </div>
+                <div>
+                    @Html.ActionLink("Manage Admins", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })
+                </div>
+                <div>
+                    @Html.ActionLink("Manage Gadgets", "Index", "GadgetManagement", routeValues: null, htmlAttributes: new { id = "registerLink2" })
+                </div>
+                <div>
+                    @Html.ActionLink("Requests", "Index", "Request", routeValues: null, htmlAttributes: new { id = "requests" })
+                </div>
+                <div>
+                    @Html.ActionLink("Price List Requests", "Index", "PriceListRequests", routeValues: null, htmlAttributes: new { id = "priceListRequests" })
+                </div>
+            </div>
+        }
     }
-}
-else
-{
-    <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
-    </ul>
-}
+    else
+    {
+        <div class="container">
+            <div class="col-lg-4 col-lg-offset-4">
+                @Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+            </div>
+        </div>
+    }

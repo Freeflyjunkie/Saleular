@@ -293,7 +293,12 @@ namespace Saleular.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Home", "Home");
+        }        
+        public ActionResult LogOff2()
+        {
+            AuthenticationManager.SignOut();
+            return RedirectToAction("Home", "Home");
         }
 
         //

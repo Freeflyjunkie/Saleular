@@ -14,6 +14,7 @@ using Saleular.ViewModels;
 
 namespace Saleular.Controllers
 {
+    [Authorize(Users = "etorres,rbitran")]
     public class RequestController : Controller
     {
         private readonly SaleularContext db = new SaleularContext();               
