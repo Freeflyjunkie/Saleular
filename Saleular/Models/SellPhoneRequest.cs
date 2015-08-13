@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Security;
 using System.Web;
 
 namespace Saleular.Models
 {
-    public class PriceListRequest
+    public class SellPhoneRequest
     {
         [Key]
         [Required]
@@ -20,8 +21,12 @@ namespace Saleular.Models
         [Required]
         public String Phone { get; set; }
         public String Address { get; set; }
-        public String TaxId { get; set; }
-        public String BusinessAreaSelection { get; set; }
+        public String TaxId { get; set; }        
+        public String Quantity { get; set; }
+        public String Model { get; set; }
+        public String Carrier { get; set; }
+        public String Capacity { get; set; }
+        public String Condition { get; set; }
         [Required]
         public DateTime CreatedDate { get; set; }
     }

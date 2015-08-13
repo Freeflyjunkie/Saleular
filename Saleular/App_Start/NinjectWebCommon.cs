@@ -69,6 +69,7 @@ namespace Saleular.App_Start
             kernel.Bind<IGadgetRepository>().To<GadgetRepository>();
             kernel.Bind<IRequestRepository>().To<RequestRepository>();
             kernel.Bind<IPriceListRequestRepository>().To<PriceListRequestRepository>();
+            kernel.Bind<ISellPhoneRequestRepository>().To<SellPhoneRequestRepository>();
             kernel.Bind<IOfferBuilder>().To<GadgetOfferBuilder>();
             kernel.Bind<IMessenger>().To<EmailMessenger>();
         }        

@@ -13,6 +13,9 @@ function WireSelectButton(dropdownElements, selectControl) {
         // set selection text
         var selection = $(this).text();        
         selectControl.text(selection);
+
+        var areaSelection = $('#businessAreaInput');
+        areaSelection.val(selection);
     });
 }
 

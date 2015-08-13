@@ -7,7 +7,7 @@
 <form class="form-horizontal" method="post">
     <div class="col-lg-6 col-md-6 col-sm-6 padding-top-20">
         <div class="form-group padding-bottom-10">
-            <label for="businessName" class="control-label label-font">Company Name</label>
+            <label for="businessName" class="control-label label-font">Company Name <span class="required">*</span></label>
             <div class="input-group">
                 <span id="businessNameAddon" data-toggle="tooltip" title="What company are you from?" class="input-group-addon box-shadow-dgray pointer-tooltip"><span class="glyphicon glyphicon-tower"></span></span>
                 <input id="businessName"
@@ -21,7 +21,7 @@
             <span class="control-label field-validation-valid" data-valmsg-for="businessName" data-valmsg-replace="true"></span>
         </div>
         <div class="form-group padding-bottom-10">
-            <label for="name" class="control-label label-font">Name</label>
+            <label for="name" class="control-label label-font">Name <span class="required">*</span></label>
             <div class="input-group">
                 <span id="nameAddon" data-toggle="tooltip" title="Your name please..." class="input-group-addon box-shadow-dgray pointer-tooltip"><span class="glyphicon glyphicon-user"></span></span>
                 <input id="name"
@@ -35,7 +35,7 @@
             <span class="control-label field-validation-valid" data-valmsg-for="name" data-valmsg-replace="true"></span>
         </div>
         <div class="form-group padding-bottom-10">
-            <label for="email" class="control-label label-font">Email</label>
+            <label for="email" class="control-label label-font">Email <span class="required">*</span></label>
             <div class="input-group">
                 <span id="emailAddon" data-toggle="tooltip" title="This email address will be used for later correspondence" class="input-group-addon box-shadow-dgray pointer-tooltip">&#64;</span>
                 <input id="email"
@@ -49,7 +49,7 @@
             <span class="control-label field-validation-valid" data-valmsg-for="email" data-valmsg-replace="true"></span>
         </div>
         <div class="form-group padding-bottom-10">
-            <label for="phone" class="control-label label-font">Phone Number</label>
+            <label for="phone" class="control-label label-font">Phone Number <span class="required">*</span></label>
             <div class="input-group">
                 <span id="phoneAddon" data-toggle="tooltip" title="This phone number will be used for later correspondence" class="input-group-addon box-shadow-dgray pointer-tooltip"><span class="glyphicon glyphicon-phone"></span></span>
                 <input id="phone"
@@ -70,9 +70,7 @@
                        type="text"
                        name="address"
                        class="form-control box-shadow-dgray"
-                       placeholder="e.g. 123 Main Street"
-                       data-val="true"
-                       data-val-required="Your address is required" />
+                       placeholder="e.g. 123 Main Street" />
             </div>
             <span class="control-label field-validation-valid" data-valmsg-for="address" data-valmsg-replace="true"></span>
         </div>
@@ -88,9 +86,7 @@
                            type="number"
                            name="quantity"
                            class="selected-value box-shadow-dgray"
-                           placeholder="e.g. 100"
-                           data-val="true"
-                           data-val-required="The quantity is required and must be a number" />
+                           placeholder="e.g. 100" />
                 </div>
                 <span class="control-label field-validation-valid" data-valmsg-for="quantity" data-valmsg-replace="true"></span>
             </div>
@@ -102,12 +98,13 @@
                     <ul class="dropdown-menu" id="modelDropdown">
                         @foreach (var iphonemodel in Model.Models)
                         {
-                        <li>
-                            <a href="#">@iphonemodel</a>
-                        </li>
+                            <li>
+                                <a href="#">@iphonemodel</a>
+                            </li>
                         }
                     </ul>
                 </div>
+                <input id="modelHidden" type="text" name="modelHidden" class="hidden" />                    
             </div>
             <div class="hide-on-load">
                 <label for="carrierSelection" class="control-label label-font">Carrier</label>
@@ -118,6 +115,7 @@
                         <ul class="dropdown-menu" id="carrierDropdown"></ul>
                     </div>
                 </div>
+                <input id="carrierHidden" type="text" name="carrierHidden" class="hidden" />                    
             </div>
             <div class="hide-on-load">
                 <label for="capacitySelection" class="control-label label-font">Capacity</label>
@@ -128,6 +126,7 @@
                         <ul class="dropdown-menu" id="capacityDropdown"></ul>
                     </div>
                 </div>
+                <input id="capacityHidden" type="text" name="capacityHidden" class="hidden" />                    
             </div>
             <div class="hide-on-load">
                 <label for="conditionSelection" class="control-label label-font">Condition</label>
@@ -138,13 +137,14 @@
                         <ul class="dropdown-menu" id="conditionDropdown"></ul>
                     </div>
                 </div>
+                <input id="conditionHidden" type="text" name="conditionHidden" class="hidden" />                    
                 <br />
             </div>
         </div>
     </div>
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="form-group padding-top-10">
-            <input type="submit" class="btn btn-primary" value="Get a Quote" />
+            <input type="submit" class="btn btn-primary" value="Request a Quote" />
         </div>
     </div>
 </form>

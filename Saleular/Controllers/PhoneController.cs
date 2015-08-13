@@ -23,20 +23,58 @@ namespace Saleular.Controllers
         //protected IGadgetRepository GadgetRepository;
         protected IRequestRepository RequestRespository;
         protected IPriceListRequestRepository PriceListRequestRepository;
+        protected ISellPhoneRequestRepository SellPhoneRequestRepository;
         protected IOfferBuilder OfferBuilder;
         //protected IMessenger Messenger;
 
-        public PhoneController(IStorage storage, IRequestRepository request, IPriceListRequestRepository priceListRequest, IOfferBuilder offerBuilder)
+        public PhoneController(IStorage storage, 
+            IRequestRepository request, 
+            IPriceListRequestRepository priceListRequestRepository, 
+            ISellPhoneRequestRepository sellPhoneRequestRepository,
+            IOfferBuilder offerBuilder)
         {
             Storage = storage;
             RequestRespository = request;
-            PriceListRequestRepository = priceListRequest;
+            PriceListRequestRepository = priceListRequestRepository;
+            SellPhoneRequestRepository = sellPhoneRequestRepository;
             OfferBuilder = offerBuilder;
+        }
+
+        public ActionResult BrowseSelection()
+        {
+            return View();
         }
 
         public ActionResult PriceList()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult PriceList(string businessName, string name, string email, string phone, string address, string taxId,
+            string businessAreaHidden)
+        {
+            //var factory = new MessageFactory();
+            //var messenger = factory.CreateMessenger(MessageFactory.MessengerType.Email);
+            //var emailBody = messenger.ConstructMessage(businessName, name, email, phone, address, taxId, businessAreaSelection);
+            //messenger.SendMessage("", "Price List Request", emailBody);
+
+            //var selectedGadget = (SelectedGadgetViewModel)Storage.Retrieve("SelectedGadgetViewModel");
+            var priceListRequest = new PriceListRequest
+            {
+                BusinessName = businessName,
+                Name = name,
+                Email = email,
+                Phone = phone,
+                Address = address,
+                TaxId = taxId,
+                BusinessAreaSelection = businessAreaHidden,
+                CreatedDate = DateTime.Now
+            };
+            PriceListRequestRepository.InsertRequest(priceListRequest);
+            PriceListRequestRepository.Save();
+
+            return View("PriceListSent");
         }
 
         public async Task<ActionResult> SellPhone()
@@ -46,61 +84,37 @@ namespace Saleular.Controllers
             gadgetViewModel = await OfferBuilder.SelectionChangedAsync(gadgetViewModel);
             Storage.Save("SelectedGadgetViewModel", gadgetViewModel);
             return View(gadgetViewModel);
-        }       
-
-        public ActionResult BrowseSelection()
-        {
-            return View();
         }
 
         [HttpPost]
-        public ActionResult PriceList(string businessName, string name, string email, string phone, string address, string taxId, string businessAreaSelection)
+        public ActionResult SellPhone(string businessName, string name, string email, string phone, string address, string taxId,
+            string quantity, string modelHidden, string capacityHidden, string carrierHidden, string conditionHidden)
         {
-            var factory = new MessageFactory();
-            var messenger = factory.CreateMessenger(MessageFactory.MessengerType.Email);
-            var emailBody = messenger.ConstructMessage(businessName, name, email, phone, address, taxId, businessAreaSelection);
-            messenger.SendMessage("", "Price List Request", emailBody);
+            //var factory = new MessageFactory();
+            //var messenger = factory.CreateMessenger(MessageFactory.MessengerType.Email);
+            //var emailBody = messenger.ConstructMessage(businessName, name, email, phone, address, taxId, businessAreaSelection);
+            //messenger.SendMessage("", "Sell iPhone Request", emailBody);
 
             //var selectedGadget = (SelectedGadgetViewModel)Storage.Retrieve("SelectedGadgetViewModel");
-            var priceListRequest = new PriceListRequest
+            var sellphoneRequest = new SellPhoneRequest
             {
                 BusinessName = businessName,
                 Name = name,
                 Email = email,
                 Phone = phone,
                 Address = address,
-                TaxId = taxId,
-                BusinessAreaSelection = businessAreaSelection
+                TaxId = taxId,                
+                Quantity = quantity,
+                Model = modelHidden,
+                Capacity = capacityHidden,
+                Carrier = carrierHidden,
+                Condition = conditionHidden,                
+                CreatedDate = DateTime.Now
             };
-            PriceListRequestRepository.InsertRequest(priceListRequest);
-            PriceListRequestRepository.Save();
+            SellPhoneRequestRepository.InsertRequest(sellphoneRequest);
+            SellPhoneRequestRepository.Save();
 
-            return View("PriceListSent");
-        }
-
-        [HttpPost]
-        public ActionResult SellPhone(string businessName, string name, string email, string phone, string address, string taxId, string businessAreaSelection)
-        {
-            var factory = new MessageFactory();
-            var messenger = factory.CreateMessenger(MessageFactory.MessengerType.Email);
-            var emailBody = messenger.ConstructMessage(businessName, name, email, phone, address, taxId, businessAreaSelection);
-            messenger.SendMessage("", "Sell iPhone Request", emailBody);
-
-            //var selectedGadget = (SelectedGadgetViewModel)Storage.Retrieve("SelectedGadgetViewModel");
-            var priceListRequest = new PriceListRequest
-            {
-                BusinessName = businessName,
-                Name = name,
-                Email = email,
-                Phone = phone,
-                Address = address,
-                TaxId = taxId,
-                BusinessAreaSelection = businessAreaSelection
-            };
-            PriceListRequestRepository.InsertRequest(priceListRequest);
-            PriceListRequestRepository.Save();
-
-            return View("PriceListSent");
+            return View("SellPhoneSent");
         }
 
         public async Task<ActionResult> Offer()

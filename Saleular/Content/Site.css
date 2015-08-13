@@ -131,6 +131,11 @@ input[type="checkbox"].input-validation-error {
     border: 1px solid #b94a48;
 }
 
+.required {
+    color: red;
+    font-weight: 800;
+}
+
 .dropdown-menu > li {
     position: relative;
     -webkit-user-select: none; /* Chrome/Safari */

@@ -3,7 +3,7 @@
     SetTooltip($('.pointer-tooltip'));
 
     // wire Model dropdown
-    WireSelectButton($('#modelDropdown li a'), $('#modelSelection'));
+    WireSelectButton($('#modelDropdown li a'), $('#modelSelection'), $('#modelHidden'));
 
     // hide selection text
     var buttons = $('.hide-on-load');
@@ -18,13 +18,14 @@
     }
 });
 
-function WireSelectButton(dropdownElements, selectControl) {
+function WireSelectButton(dropdownElements, selectControl, hiddenControl) {
     dropdownElements.on('click', function (e) {
         e.preventDefault();
 
         // set selection text
         var selection = $(this).text();
         selectControl.text(selection);
+        hiddenControl.text(selection);
 
         // is this the model dropdown?
         if ($(selectControl).attr('id') == 'modelSelection') {
@@ -82,10 +83,10 @@ function GetSelectedGadgetViewModel(selectedgadget) {
             PopulatePhoneDropdowns(data.Conditions, $('#conditionDropdown'));
 
             // Wire dropdowns
-            WireSelectButton($('#modelDropdown li a'), $('#modelSelection'));
-            WireSelectButton($('#carrierDropdown li a'), $('#carrierSelection'));
-            WireSelectButton($('#capacityDropdown li a'), $('#capacitySelection'));
-            WireSelectButton($('#conditionDropdown li a'), $('#conditionSelection'));
+            WireSelectButton($('#modelDropdown li a'), $('#modelSelection'), $('#modelHidden'));
+            WireSelectButton($('#carrierDropdown li a'), $('#carrierSelection'), $('#carrierHidden'));
+            WireSelectButton($('#capacityDropdown li a'), $('#capacitySelection'), $('#capacityHidden'));
+            WireSelectButton($('#conditionDropdown li a'), $('#conditionSelection'), $('#conditionHidden'));
         },
         error: function (xhr, status, error) {
             alert(status);
