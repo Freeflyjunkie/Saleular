@@ -235,7 +235,6 @@
     <Compile Include="Controllers\GadgetManagementController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PhoneController.cs" />
-    <Compile Include="Controllers\PriceListRequestsController.cs" />
     <Compile Include="Controllers\RequestController.cs" />
     <Compile Include="Controllers\SaleularServicesController.cs" />
     <Compile Include="Classes\Repositories\GadgetRepository.cs" />
@@ -847,11 +846,6 @@
     <Content Include="Views\Request\Index.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Decimal.cshtml" />
     <Content Include="Scripts\angular\version.json" />
-    <Content Include="Views\PriceListRequests\Create.cshtml" />
-    <Content Include="Views\PriceListRequests\Delete.cshtml" />
-    <Content Include="Views\PriceListRequests\Details.cshtml" />
-    <Content Include="Views\PriceListRequests\Edit.cshtml" />
-    <Content Include="Views\PriceListRequests\Index.cshtml" />
     <Content Include="Views\Phone\PriceList.cshtml" />
     <Content Include="Views\Phone\PriceListSent.cshtml" />
     <Content Include="Views\Home\CompanyInfo.cshtml" />
