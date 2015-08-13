@@ -50,11 +50,14 @@
                                     <li>
                                         @Html.ActionLink("Manage Gadgets", "Index", "GadgetManagement", routeValues: null, htmlAttributes: new { id = "gadgetLink" })
                                     </li>
-                                    <li>
+                                    @*<li>
                                         @Html.ActionLink("Requests", "Index", "Request", routeValues: null, htmlAttributes: new { id = "requestsLink" })
-                                    </li>
+                                    </li>*@
                                     <li>
                                         @Html.ActionLink("Price List Requests", "Index", "PriceListRequests", routeValues: null, htmlAttributes: new { id = "priceListRequestsLink" })
+                                    </li>
+                                    <li>
+                                        @Html.ActionLink("Sell Phone Requests", "Index", "SellPhoneRequests", routeValues: null, htmlAttributes: new { id = "sellPhoneRequestsLink" })
                                     </li>
                                     <li>
                                         @Html.ActionLink("Log Out", "LogOff2", "Account", routeValues: null, htmlAttributes: new { id = "logoffLink" })                                        

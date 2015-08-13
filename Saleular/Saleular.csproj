@@ -235,10 +235,12 @@
     <Compile Include="Controllers\GadgetManagementController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PhoneController.cs" />
+    <Compile Include="Controllers\PriceListRequestsController.cs" />
     <Compile Include="Controllers\RequestController.cs" />
     <Compile Include="Controllers\SaleularServicesController.cs" />
     <Compile Include="Classes\Repositories\GadgetRepository.cs" />
     <Compile Include="Classes\Repositories\GadgetXmlRepository.cs" />
+    <Compile Include="Controllers\SellPhoneRequestsController.cs" />
     <Compile Include="DAL\IdentityContext.cs" />
     <Compile Include="DAL\IdentityMigrations\201503202324510_migration1.cs" />
     <Compile Include="DAL\IdentityMigrations\201503202324510_migration1.Designer.cs">
@@ -261,6 +263,10 @@
     <Compile Include="DAL\SaleularMigrations\201508131849596_migration4.cs" />
     <Compile Include="DAL\SaleularMigrations\201508131849596_migration4.Designer.cs">
       <DependentUpon>201508131849596_migration4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SaleularMigrations\201508131940469_migration5.cs" />
+    <Compile Include="DAL\SaleularMigrations\201508131940469_migration5.Designer.cs">
+      <DependentUpon>201508131940469_migration5.cs</DependentUpon>
     </Compile>
     <Compile Include="DAL\SaleularMigrations\Configuration.cs" />
     <Compile Include="Forms\IForm.cs" />
@@ -855,6 +861,16 @@
     <Content Include="Views\Phone\BrowseSelection.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Phone\SellPhoneSent.cshtml" />
+    <Content Include="Views\PriceListRequests\Create.cshtml" />
+    <Content Include="Views\PriceListRequests\Delete.cshtml" />
+    <Content Include="Views\PriceListRequests\Details.cshtml" />
+    <Content Include="Views\PriceListRequests\Edit.cshtml" />
+    <Content Include="Views\PriceListRequests\Index.cshtml" />
+    <Content Include="Views\SellPhoneRequests\Create.cshtml" />
+    <Content Include="Views\SellPhoneRequests\Delete.cshtml" />
+    <Content Include="Views\SellPhoneRequests\Details.cshtml" />
+    <Content Include="Views\SellPhoneRequests\Edit.cshtml" />
+    <Content Include="Views\SellPhoneRequests\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
@@ -877,6 +893,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DAL\SaleularMigrations\201508131849596_migration4.resx">
       <DependentUpon>201508131849596_migration4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAL\SaleularMigrations\201508131940469_migration5.resx">
+      <DependentUpon>201508131940469_migration5.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

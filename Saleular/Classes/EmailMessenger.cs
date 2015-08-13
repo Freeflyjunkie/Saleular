@@ -1,4 +1,5 @@
 ﻿using Saleular.Interfaces;
+using Saleular.Models;
 using Saleular.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -23,24 +24,16 @@ namespace Saleular.Classes
             var mailMessage = new MailMessage
             {
                 IsBodyHtml = false,
-                From = new MailAddress("sales@saleular.com"),
+                From = new MailAddress("sales@saleular.com"),                
                 Subject = subject,
                 Body = body
             };
-            mailMessage.To.Add(new MailAddress("roy@saleular.com"));
+            mailMessage.To.Add(new MailAddress("sales@saleular.com"));
 
-            var smtpClient = new SmtpClient("relay-hosting.secureserver.net", 25);
-            smtpClient.Credentials = CredentialCache.DefaultNetworkCredentials;
-            smtpClient.Host = "";
-            smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
-            try
-            {
-                smtpClient.Send(mailMessage);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            SmtpClient client = new SmtpClient();
+            client.Host = "relay-hosting.secureserver.net";
+            client.Port = 25;
+            client.Send(mailMessage);
 
             //message.From = new MailAddress("sales@saleular.com");
             //message.To.Add(new MailAddress("roy@saleular.com"));
@@ -79,7 +72,7 @@ namespace Saleular.Classes
                 emailtext.AppendLine("");
             }
             emailtext.AppendLine("This user would like to ship you the following iPhones:");
-                        
+
             if (selectedGadget != null)
             {
                 emailtext.AppendLine(selectedGadget.SelectedModel);
@@ -99,24 +92,41 @@ namespace Saleular.Classes
             emailtext.AppendLine("This is a 'Sell My IPhone Request' from Saleular.com");
             emailtext.AppendLine(name);
             emailtext.AppendLine("The Email Address is:");
-            emailtext.AppendLine(userEmail);            
+            emailtext.AppendLine(userEmail);
             emailtext.AppendLine("");
             emailtext.AppendLine("User Question:");
-            emailtext.AppendLine(question);            
+            emailtext.AppendLine(question);
             return emailtext.ToString();
         }
-        
-        public string ConstructMessage(string businessName, string name, string email, string phone, string address, string taxId, string businessAreaSelection)
+
+        public string ConstructMessage(SellPhoneRequest sellPhoneRequest)
+        {
+            var emailtext = new StringBuilder();
+            emailtext.AppendLine("This is a 'Sell Phone Request' from Saleular.com");
+            emailtext.AppendLine("Business Name: " + sellPhoneRequest.BusinessName);
+            emailtext.AppendLine("Name: " + sellPhoneRequest.Name);
+            emailtext.AppendLine("Email: " + sellPhoneRequest.Email);
+            emailtext.AppendLine("Phone: " + sellPhoneRequest.Phone);
+            emailtext.AppendLine("Address: " + sellPhoneRequest.Address);
+            emailtext.AppendLine("Quantity: " + sellPhoneRequest.Quantity);
+            emailtext.AppendLine("Model: " + sellPhoneRequest.Model);
+            emailtext.AppendLine("Capacity: " + sellPhoneRequest.Capacity);
+            emailtext.AppendLine("Carrier: " + sellPhoneRequest.Carrier);
+            emailtext.AppendLine("Condition: " + sellPhoneRequest.Condition);
+            return emailtext.ToString();
+        }
+
+        public string ConstructMessage(PriceListRequest priceListRequest)
         {
             var emailtext = new StringBuilder();
             emailtext.AppendLine("This is a 'Price List Request' from Saleular.com");
-            emailtext.AppendLine("Business Name: " + businessName);
-            emailtext.AppendLine("Name: " + name);
-            emailtext.AppendLine("Email: " + email);
-            emailtext.AppendLine("Phone: " + phone);
-            emailtext.AppendLine("Address: " + address);
-            emailtext.AppendLine("Tax Id: " + taxId);
-            emailtext.AppendLine("Business Area: " + businessAreaSelection);
+            emailtext.AppendLine("Business Name: " + priceListRequest.BusinessName);
+            emailtext.AppendLine("Name: " + priceListRequest.Name);
+            emailtext.AppendLine("Email: " + priceListRequest.Email);
+            emailtext.AppendLine("Phone: " + priceListRequest.Phone);
+            emailtext.AppendLine("Address: " + priceListRequest.Address);
+            emailtext.AppendLine("Tax Id: " + priceListRequest.TaxId);
+            emailtext.AppendLine("Business Area: " + priceListRequest.BusinessAreaSelection);
             return emailtext.ToString();
         }
     }

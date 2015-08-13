@@ -53,13 +53,7 @@ namespace Saleular.Controllers
         [HttpPost]
         public ActionResult PriceList(string businessName, string name, string email, string phone, string address, string taxId,
             string businessAreaHidden)
-        {
-            //var factory = new MessageFactory();
-            //var messenger = factory.CreateMessenger(MessageFactory.MessengerType.Email);
-            //var emailBody = messenger.ConstructMessage(businessName, name, email, phone, address, taxId, businessAreaSelection);
-            //messenger.SendMessage("", "Price List Request", emailBody);
-
-            //var selectedGadget = (SelectedGadgetViewModel)Storage.Retrieve("SelectedGadgetViewModel");
+        {            
             var priceListRequest = new PriceListRequest
             {
                 BusinessName = businessName,
@@ -74,6 +68,11 @@ namespace Saleular.Controllers
             PriceListRequestRepository.InsertRequest(priceListRequest);
             PriceListRequestRepository.Save();
 
+            var factory = new MessageFactory();
+            var messenger = factory.CreateMessenger(MessageFactory.MessengerType.Email);
+            var emailBody = messenger.ConstructMessage(priceListRequest);
+            messenger.SendMessage("", "Price List Request", emailBody);
+
             return View("PriceListSent");
         }
 
@@ -87,23 +86,16 @@ namespace Saleular.Controllers
         }
 
         [HttpPost]
-        public ActionResult SellPhone(string businessName, string name, string email, string phone, string address, string taxId,
+        public ActionResult SellPhone(string businessName, string name, string email, string phone, string address, 
             string quantity, string modelHidden, string capacityHidden, string carrierHidden, string conditionHidden)
         {
-            //var factory = new MessageFactory();
-            //var messenger = factory.CreateMessenger(MessageFactory.MessengerType.Email);
-            //var emailBody = messenger.ConstructMessage(businessName, name, email, phone, address, taxId, businessAreaSelection);
-            //messenger.SendMessage("", "Sell iPhone Request", emailBody);
-
-            //var selectedGadget = (SelectedGadgetViewModel)Storage.Retrieve("SelectedGadgetViewModel");
-            var sellphoneRequest = new SellPhoneRequest
+           var sellphoneRequest = new SellPhoneRequest
             {
                 BusinessName = businessName,
                 Name = name,
                 Email = email,
                 Phone = phone,
-                Address = address,
-                TaxId = taxId,                
+                Address = address,                
                 Quantity = quantity,
                 Model = modelHidden,
                 Capacity = capacityHidden,
@@ -113,6 +105,11 @@ namespace Saleular.Controllers
             };
             SellPhoneRequestRepository.InsertRequest(sellphoneRequest);
             SellPhoneRequestRepository.Save();
+
+             var factory = new MessageFactory();
+            var messenger = factory.CreateMessenger(MessageFactory.MessengerType.Email);
+            var emailBody = messenger.ConstructMessage(sellphoneRequest);
+            messenger.SendMessage("", "Sell Phone Request", emailBody);
 
             return View("SellPhoneSent");
         }

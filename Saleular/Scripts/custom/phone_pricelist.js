@@ -3,19 +3,17 @@
     SetTooltip($('.pointer-tooltip'));  
 
     // wire businessType dropdown
-    WireSelectButton($('#businessTypeDropdown li a'), $('#businessTypeSelection'));
+    WireSelectButton($('#businessTypeDropdown li a'), $('#businessTypeSelection'), $('#businessAreaHidden'));
 });
 
-function WireSelectButton(dropdownElements, selectControl) {
+function WireSelectButton(dropdownElements, selectControl, hiddenControl) {
     dropdownElements.on('click', function (e) {
         e.preventDefault();
 
         // set selection text
         var selection = $(this).text();        
         selectControl.text(selection);
-
-        var areaSelection = $('#businessAreaInput');
-        areaSelection.val(selection);
+        hiddenControl.val(selection);        
     });
 }
 

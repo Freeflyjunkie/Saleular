@@ -25,7 +25,7 @@ function WireSelectButton(dropdownElements, selectControl, hiddenControl) {
         // set selection text
         var selection = $(this).text();
         selectControl.text(selection);
-        hiddenControl.text(selection);
+        hiddenControl.val(selection);
 
         // is this the model dropdown?
         if ($(selectControl).attr('id') == 'modelSelection') {

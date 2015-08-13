@@ -20,8 +20,7 @@ namespace Saleular.Models
         public String Email { get; set; }
         [Required]
         public String Phone { get; set; }
-        public String Address { get; set; }
-        public String TaxId { get; set; }        
+        public String Address { get; set; }        
         public String Quantity { get; set; }
         public String Model { get; set; }
         public String Carrier { get; set; }
