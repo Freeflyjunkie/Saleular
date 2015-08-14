@@ -324,7 +324,9 @@
     <Content Include="Content\custom\home_questions.css" />
     <Content Include="Content\custom\phone_offer.css" />
     <Content Include="Content\custom\phone_pricelist.css" />
+    <Content Include="Content\custom\phone_pricelistsent.css" />
     <Content Include="Content\custom\phone_sellphone.css" />
+    <Content Include="Content\custom\phone_sellphonesent.css" />
     <Content Include="Content\custom\phone_ship.css" />
     <Content Include="Content\custom\top_offers_paid.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />

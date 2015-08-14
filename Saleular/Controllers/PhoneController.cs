@@ -73,7 +73,7 @@ namespace Saleular.Controllers
             var emailBody = messenger.ConstructMessage(priceListRequest);
             messenger.SendMessage("", "Price List Request", emailBody);
 
-            return View("PriceListSent");
+            return View("PriceListSent", priceListRequest);
         }
 
         public async Task<ActionResult> SellPhone()
@@ -111,7 +111,7 @@ namespace Saleular.Controllers
             var emailBody = messenger.ConstructMessage(sellphoneRequest);
             messenger.SendMessage("", "Sell Phone Request", emailBody);
 
-            return View("SellPhoneSent");
+            return View("SellPhoneSent", sellphoneRequest);
         }
 
         public async Task<ActionResult> Offer()

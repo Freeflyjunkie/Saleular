@@ -29,13 +29,19 @@ namespace Saleular
                     "~/Content/custom/phone_offer.css"));
 
             bundles.Add(new StyleBundle("~/Content/phone_pricelist").Include(
-                    "~/Content/custom/phone_pricelist.css"));            
+                    "~/Content/custom/phone_pricelist.css"));
+
+            bundles.Add(new StyleBundle("~/Content/phone_pricelistsent").Include(
+                    "~/Content/custom/phone_pricelistsent.css"));            
 
             bundles.Add(new StyleBundle("~/Content/phone_ship").Include(
                     "~/Content/custom/phone_ship.css"));
 
             bundles.Add(new StyleBundle("~/Content/phone_sellphone").Include(
                    "~/Content/custom/phone_sellphone.css"));
+
+            bundles.Add(new StyleBundle("~/Content/phone_sellphonesent").Include(
+                   "~/Content/custom/phone_sellphonesent.css"));
 
             bundles.Add(new StyleBundle("~/Content/phone_browseselection").Include(
                    "~/Content/custom/phone_browseselection.css"));

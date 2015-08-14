@@ -1,14 +1,86 @@
-﻿@{
-    ViewBag.Title = "Looking To Buy iPhones";
+﻿@model Saleular.Models.PriceListRequest
+
+@{
+    ViewBag.Title = "Confirmation";
 }
+<form class="form-horizontal" method="post">
+    <div class="col-lg-6 col-md-6 col-sm-6">        
+        <div class="form-group padding-bottom-10">
+            <label class="control-label label-font">Company Name</label>
+            <div class="input-group">
+                @Model.BusinessName
+            </div>
+        </div>
+        <div class="form-group padding-bottom-10">
+            <label class="control-label label-font">Name</label>
+            <div class="input-group">
+                @Model.Name
+            </div>
+        </div>
+        <div class="form-group padding-bottom-10">
+            <label class="control-label label-font">Email</label>
+            <div class="input-group">
+                @Model.Email
+            </div>
+        </div>
+        <div class="form-group padding-bottom-10">
+            <label class="control-label label-font">Phone Number</label>
+            <div class="input-group">
+                @Model.Phone
+            </div>
+        </div>
+        <div class="form-group padding-bottom-10">
+            <label class="control-label label-font">Address</label>
+            <div class="input-group">
+                @if (Model.Address != "")
+                {
+                    @Model.Address
+                }
+                else
+                {
+                    <span>N/A</span>
+                }
+            </div>
+        </div>
+        <div class="form-group padding-bottom-10">
+            <label class="control-label label-font">Tax ID Number</label>
+            <div class="input-group">
+                @if (Model.TaxId != "")
+                {
+                    @Model.TaxId
+                }
+                else
+                {
+                    <span>N/A</span>
+                }
+            </div>
+        </div>
+        <div class="form-group padding-bottom-10">
+            <label class="control-label label-font">Business Type</label>
+            <div class="input-group padding-bottom-10">                
+                @if (Model.BusinessAreaSelection != "")
+                {
+                    @Model.BusinessAreaSelection
+                }
+                else
+                {
+                    <span>N/A</span>
+                }
+            </div>
+        </div>
+    </div>
+</form>
+
 @section header
 {
     <div class="col-lg-12 col-md-12">
-        <h2>Customer Service Is On It!</h2>
+        <h2>Confirmation</h2>
         <p>
-            We have recieved your request for a price list and will be contacting you shortly.
-        </p>        
-    </div> 
+            We have recieved your request for a price list and will be contacting you shortly. You can also call us at 718.376.0800.
+        </p>
+        <label class="control-label label-font">Preview of your request</label>
+        <hr />
+    </div>
 }
 @section scripts
 {
@@ -16,7 +88,7 @@
 }
 @section styles
 {
-
+    @Styles.Render("~/Content/phone_pricelistsent")
 }
 
 
