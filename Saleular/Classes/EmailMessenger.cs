@@ -30,8 +30,10 @@ namespace Saleular.Classes
             };
             mailMessage.To.Add(new MailAddress("sales@saleular.com"));
 
-            var smtpClient = new SmtpClient {Host = "relay-hosting.secureserver.net", Port = 25};
-            //smtpClient.Send(mailMessage);
+            var smtpClient = new SmtpClient();
+            smtpClient.Host = "relay-hosting.secureserver.net";
+            smtpClient.Port = 25;
+            smtpClient.Send(mailMessage);
         }
 
         public string ConstructMessage(string name, string address, string city, string state, string zip,
