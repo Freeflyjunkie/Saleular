@@ -36,6 +36,7 @@ namespace Saleular.Classes
             smtpClient.Send(mailMessage);
         }
 
+
         public string ConstructMessage(string name, string address, string city, string state, string zip,
             string userEmail, string additionalComments, SelectedGadgetViewModel selectedGadget)
         {
