@@ -30,23 +30,8 @@ namespace Saleular.Classes
             };
             mailMessage.To.Add(new MailAddress("sales@saleular.com"));
 
-            SmtpClient client = new SmtpClient();
-            client.Host = "relay-hosting.secureserver.net";
-            client.Port = 25;
-            client.Send(mailMessage);
-
-            //message.From = new MailAddress("sales@saleular.com");
-            //message.To.Add(new MailAddress("roy@saleular.com"));
-            //message.Subject = subject;
-            //message.Body = body;
-
-            //var smtpClient = new SmtpClient("smtpout.secureserver.net");
-            //smtpClient.Host = "relay-hosting.secureserver.net";            
-            //smtpClient.UseDefaultCredentials = false;
-            //smtpClient.Credentials = new NetworkCredential("sales@saleular.com", "Zion21378");
-            //smtpClient.EnableSsl = true;
-            //smtpClient.Port = 25;
-            //smtpClient.Send(message);
+            var smtpClient = new SmtpClient {Host = "relay-hosting.secureserver.net", Port = 25};
+            smtpClient.Send(mailMessage);
         }
 
         public string ConstructMessage(string name, string address, string city, string state, string zip,
