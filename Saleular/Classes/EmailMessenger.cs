@@ -24,11 +24,11 @@ namespace Saleular.Classes
             var mailMessage = new MailMessage
             {
                 IsBodyHtml = false,
-                From = new MailAddress("sales@saleular.com"),                
+                From = new MailAddress("web@saleular.com"),                
                 Subject = subject,
                 Body = body
             };
-            mailMessage.To.Add(new MailAddress("sales@saleular.com"));
+            mailMessage.To.Add(new MailAddress("web@saleular.com"));
 
             var smtpClient = new SmtpClient();
             smtpClient.Host = "relay-hosting.secureserver.net";
