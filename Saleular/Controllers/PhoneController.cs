@@ -7,6 +7,7 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Xml;
 using Saleular.Classes.Factories;
 using Saleular.Models;
 using Saleular.DAL;
@@ -56,7 +57,7 @@ namespace Saleular.Controllers
         {            
             var priceListRequest = new PriceListRequest
             {
-                BusinessName = businessName,
+                BusinessName = businessName,                
                 Name = name,
                 Email = email,
                 Phone = phone,
@@ -66,12 +67,12 @@ namespace Saleular.Controllers
                 CreatedDate = DateTime.Now
             };
             PriceListRequestRepository.InsertRequest(priceListRequest);
-            PriceListRequestRepository.Save();
+            PriceListRequestRepository.Save();                       
 
             var factory = new MessageFactory();
             var messenger = factory.CreateMessenger(MessageFactory.MessengerType.Email);
             var emailBody = messenger.ConstructMessage(priceListRequest);
-            messenger.SendMessage("", "Price List Request", emailBody);
+            messenger.SendMessage("", "Price List Request", emailBody);            
 
             return View("PriceListSent", priceListRequest);
         }

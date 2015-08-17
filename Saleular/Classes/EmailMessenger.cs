@@ -24,16 +24,21 @@ namespace Saleular.Classes
             var mailMessage = new MailMessage
             {
                 IsBodyHtml = false,
-                From = new MailAddress("web@saleular.com"),                
+                From = new MailAddress("sales@saleular.com"),
                 Subject = subject,
                 Body = body
             };
-            mailMessage.To.Add(new MailAddress("web@saleular.com"));
+            mailMessage.To.Add(new MailAddress("requests@saleular.com"));
+
 
             var smtpClient = new SmtpClient();
+            //smtpClient.UseDefaultCredentials = false;
+            //var credentials = new NetworkCredential("sales@saleular.com", "Zion21378");
+            //smtpClient.Credentials = credentials;
+            //smtpClient.Host = "smtpout.secureserver.net";
             smtpClient.Host = "relay-hosting.secureserver.net";
             smtpClient.Port = 25;
-            smtpClient.Send(mailMessage);
+            smtpClient.Send(mailMessage);            
         }
 
 
