@@ -7,18 +7,30 @@ namespace Saleular.DAL.SaleularMigrations
     {
         public override void Up()
         {
-            DropPrimaryKey("dbo.SellPhoneRequest");
-            AddColumn("dbo.SellPhoneRequest", "SellPhoneRequestId", c => c.Int(nullable: false, identity: true));
-            AddPrimaryKey("dbo.SellPhoneRequest", "SellPhoneRequestId");
-            DropColumn("dbo.SellPhoneRequest", "PriceListRequestId");
+            CreateTable(
+                "dbo.SellPhoneRequest",
+                c => new
+                {
+                    SellPhoneRequestId = c.Int(nullable: false, identity: true),
+                    BusinessName = c.String(nullable: false),
+                    Name = c.String(nullable: false),
+                    Email = c.String(nullable: false),
+                    Phone = c.String(nullable: false),
+                    Address = c.String(),
+                    TaxId = c.String(),
+                    BusinessAreaSelection = c.String(),
+                    Quantity = c.String(),
+                    Model = c.String(),
+                    Carrier = c.String(),
+                    Capacity = c.String(),
+                    Condition = c.String(),
+                })
+                .PrimaryKey(t => t.SellPhoneRequestId);            
         }
         
         public override void Down()
         {
-            AddColumn("dbo.SellPhoneRequest", "PriceListRequestId", c => c.Int(nullable: false, identity: true));
-            DropPrimaryKey("dbo.SellPhoneRequest");
-            DropColumn("dbo.SellPhoneRequest", "SellPhoneRequestId");
-            AddPrimaryKey("dbo.SellPhoneRequest", "PriceListRequestId");
+           
         }
     }
 }
