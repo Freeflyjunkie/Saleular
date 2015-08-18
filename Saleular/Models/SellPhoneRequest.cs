@@ -11,7 +11,7 @@ namespace Saleular.Models
     {
         [Key]
         [Required]
-        public Int32 PriceListRequestId { get; set; }
+        public Int32 SellPhoneRequestId { get; set; }
         [Required]
         public String BusinessName { get; set; }
         [Required]

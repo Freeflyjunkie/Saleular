@@ -5,79 +5,86 @@
     Layout = "~/Views/Shared/_Layout2.cshtml";
 }
 
-<h2>Details</h2>
-
-<div>
-    <h4>PriceListRequest</h4>
+<div class="col-lg-10 col-md-10 col-sm-10">
+    <h4>Details of the price list request</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.BusinessName)
-        </dt>
+    <p style="padding-left: 5px">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.PriceListRequestId }, new { @class = "btn btn-sm btn-info" })
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-sm btn-info" })        
+    </p>   
+    <div>        
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.BusinessName)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.BusinessName)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.BusinessName)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Phone)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Phone)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Phone)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Phone)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Address)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Address)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Address)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TaxId)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.TaxId)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.TaxId)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.TaxId)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.BusinessAreaSelection)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.BusinessAreaSelection)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.BusinessAreaSelection)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.BusinessAreaSelection)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CreatedDate)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.CreatedDate)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.CreatedDate)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.CreatedDate)
+            </dd>
 
-    </dl>
+        </dl>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.PriceListRequestId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+@section header
+{
+    <div class="col-lg-12 col-md-12">
+        <h2>Price List Request Details</h2>
+    </div>
+}
+

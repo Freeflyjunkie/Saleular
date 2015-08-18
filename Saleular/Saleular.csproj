@@ -268,6 +268,10 @@
     <Compile Include="DAL\SaleularMigrations\201508131940469_migration5.Designer.cs">
       <DependentUpon>201508131940469_migration5.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAL\SaleularMigrations\201508182058181_migration6.cs" />
+    <Compile Include="DAL\SaleularMigrations\201508182058181_migration6.Designer.cs">
+      <DependentUpon>201508182058181_migration6.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAL\SaleularMigrations\Configuration.cs" />
     <Compile Include="Forms\IForm.cs" />
     <Compile Include="Forms\IFormFactory.cs" />
@@ -899,6 +903,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DAL\SaleularMigrations\201508131940469_migration5.resx">
       <DependentUpon>201508131940469_migration5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAL\SaleularMigrations\201508182058181_migration6.resx">
+      <DependentUpon>201508182058181_migration6.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
