@@ -41,7 +41,7 @@ namespace Saleular.Controllers
         // GET: /GadgetManagement/Create
         public ActionResult Create()
         {
-            return View();
+            return View(new Gadget{Price = 0});
         }
 
         // POST: /GadgetManagement/Create

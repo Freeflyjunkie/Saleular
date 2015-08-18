@@ -39,7 +39,7 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administration</a>
                                 <ul class="dropdown-menu">                                    
                                     <li>
-                                        @Html.ActionLink("API Documentation", "Index", "Help", routeValues: null, htmlAttributes: new { title = "API Documentation" })
+                                        @Html.ActionLink("API Documentation", "Index", "Help", routeValues: null, htmlAttributes: new { title = "API Documentation", target = "_blank" })
                                     </li>
                                     <li>
                                         @Html.ActionLink("Manage Account", "Manage", "Account", routeValues: null, htmlAttributes: new { title = "Manage" })
@@ -57,7 +57,7 @@
                                         @Html.ActionLink("Price List Requests", "Index", "PriceListRequests", routeValues: null, htmlAttributes: new { id = "priceListRequestsLink" })
                                     </li>
                                     <li>
-                                        @Html.ActionLink("Sell Phone Requests", "Index", "SellPhoneRequests", routeValues: null, htmlAttributes: new { id = "sellPhoneRequestsLink" })
+                                        @Html.ActionLink("Offer Requests", "Index", "SellPhoneRequests", routeValues: null, htmlAttributes: new { id = "sellPhoneRequestsLink" })
                                     </li>
                                     <li>
                                         @Html.ActionLink("Log Out", "LogOff2", "Account", routeValues: null, htmlAttributes: new { id = "logoffLink" })                                        
