@@ -351,8 +351,10 @@
     <Content Include="Images\About\nlbanner.jpg" />
     <Content Include="Images\About\nlbanner.png" />
     <Content Include="Images\About\servicerep.png" />
+    <Content Include="Images\Home\email.png" />
     <Content Include="Images\Home\fb.jpg" />
     <Content Include="Images\Home\iphones.jpg" />
+    <Content Include="Images\Home\li.png" />
     <Content Include="Images\Home\maven.jpg" />
     <Content Include="Images\Home\msn.jpg" />
     <Content Include="Images\Home\skype.png" />

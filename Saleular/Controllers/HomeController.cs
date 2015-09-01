@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Saleular.Classes.Factories;
 using Saleular.DAL;
 using Saleular.Interfaces;
 using Saleular.ViewModels;
@@ -44,6 +45,17 @@ namespace Saleular.Controllers
 
         public ActionResult Home()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Home(string email, string message)
+        {
+            var factory = new MessageFactory();
+            var messenger = factory.CreateMessenger(MessageFactory.MessengerType.Email);
+            var emailBody = messenger.ConstructMessage(email, message);
+            messenger.SendMessage("", "Customer Email", emailBody);  
+
             return View();
         }
 

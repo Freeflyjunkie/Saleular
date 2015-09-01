@@ -3,6 +3,8 @@
     var caption2 = $('.iphone-caption2');
     var caption3 = $('.iphone-caption3');
 
+    setTooltip($('.pointer-tooltip'));
+
     caption.animate({
         opacity: 1,
         top: '20px'
@@ -19,6 +21,7 @@
     var twitterLink = $('#twitterLink');
     var msLink = $('#msLink');
     var fbLink = $('#fbLink');
+    var liLink = $('#liLink');
 
     twitterLink.on('click', function() {
         var twitterWindow = window.open('http://www.twitter.com/saleular', 'twitterWindow');
@@ -36,4 +39,16 @@
         fbWindow.focus();
         return false;
     });
+
+    liLink.on('click', function () {
+        var liWindow = window.open('https://www.linkedin.com/pub/roy-bitran/40/560/359', 'liWindow');
+        liWindow.focus();
+        return false;
+    });
+
+
+    function setTooltip(addon) {
+        addon.tooltip();
+        addon.css('cursor', 'pointer');
+    }
 });

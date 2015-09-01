@@ -37,5 +37,11 @@ namespace Saleular.Classes
         {
             throw new NotImplementedException();
         }
+
+
+        public string ConstructMessage(string email, string message)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

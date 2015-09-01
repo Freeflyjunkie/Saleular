@@ -15,5 +15,6 @@ namespace Saleular.Interfaces
         string ConstructMessage(string name, string userEmail, string additionalComments);        
         string ConstructMessage(SellPhoneRequest sellPhoneRequest);
         string ConstructMessage(PriceListRequest priceListRequest);
+        string ConstructMessage(string email, string message);
     }
 }

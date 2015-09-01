@@ -60,10 +60,16 @@
                     <td>
                         <img id="fbLink" src="~/Images/Home/fb.jpg" class="social-media-img" />
                     </td>
+                    <td>
+                        <img id="liLink" src="~/Images/Home/li.png" class="social-media-img" />
+                    </td>
+                    <td>
+                        <img id="eLink" data-toggle="modal" data-target="#myEmailModal" src="~/Images/Home/email.png" class="social-media-img" />
+                    </td>
                 </tr>
             </table>
         </div>
-        <h4 class="section-center">Phone: 718.376.0800</h4>        
+        <h4 class="section-center">Phone: 718.376.0800</h4>
     </div>
 </div>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -73,13 +79,13 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h2 class="modal-title" id="myModalLabel">Saleular on Skype</h2>
             </div>
-            <div class="modal-body">                
+            <div class="modal-body">
                 1. Start Skype
-                <br/>
+                <br />
                 2. Click the people tab on the left part of the screen.
-                <br/>
+                <br />
                 3. In the people screen, click the add contact icon at the top of the screen.
-                <br/>
+                <br />
                 4. The search screen opens.
                 <br />
                 5. Enter the name, <strong>Saleular1</strong> and press Enter.
@@ -91,7 +97,52 @@
                 8. Send a contact request to Saleular.
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">Close</button>                
+                <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="myEmailModal" tabindex="-1" role="dialog" aria-labelledby="myEmailModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h2 class="modal-title" id="myModalLabel">Email Saleular</h2>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" method="post">
+                    <div class="form-group padding-bottom-10 padding-left-10 padding-right-10">
+                        <label for="email" class="control-label label-font">Your Email Address <span class="required">*</span></label>
+                        <div class="input-group">
+                            <span id="emailAddon" data-toggle="tooltip" title="This email address will be used for later correspondence" class="input-group-addon box-shadow-dgray pointer-tooltip">&#64;</span>
+                            <input id="email"
+                                   type="email"
+                                   name="email"
+                                   class="form-control box-shadow-dgray"
+                                   placeholder="e.g. bpitt@gmail.com"
+                                   data-val="true"
+                                   data-val-required="Your email is required" />
+                        </div>
+                        <span class="control-label field-validation-valid" data-valmsg-for="email" data-valmsg-replace="true"></span>
+                    </div>
+                    <div class="form-group padding-bottom-10 padding-left-10 padding-right-10">
+                        <label for="message" class="control-label label-font">Email Message <span class="required">*</span></label>
+                        <div class="input-group">
+                            <span id="emailAddon" data-toggle="tooltip" title="What message do you want to send to Saleular?" class="input-group-addon box-shadow-dgray pointer-tooltip"><span class="glyphicon glyphicon-envelope"></span></span>
+                            <textarea id="message"
+                                      name="message"
+                                      rows="10"
+                                      class="form-control box-shadow-dgray"
+                                      placeholder="e.g. My question is..."
+                                      data-val="true"
+                                      data-val-required="Your email body is required"></textarea>
+                        </div>
+                        <span class="control-label field-validation-valid" data-valmsg-for="message" data-valmsg-replace="true"></span>
+                    </div>
+                    <div class="form-group padding-bottom-10 padding-left-10">
+                        <input type="submit" class="btn btn-primary" value="Send" />
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -99,6 +150,7 @@
 
 @section scripts
 {
+    @Scripts.Render("~/Scripts/validation")
     @Scripts.Render("~/Scripts/home_home")
 }
 

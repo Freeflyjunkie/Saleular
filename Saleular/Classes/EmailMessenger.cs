@@ -122,5 +122,14 @@ namespace Saleular.Classes
             emailtext.AppendLine("Business Area: " + priceListRequest.BusinessAreaSelection);
             return emailtext.ToString();
         }
+
+        public string ConstructMessage(string email, string message)
+        {
+            var emailtext = new StringBuilder();
+            emailtext.AppendLine("This is a 'Customer Email' from Saleular.com");
+            emailtext.AppendLine("Email From: " + email);
+            emailtext.AppendLine("Message :" + message);
+            return emailtext.ToString();
+        }
     }
 }
