@@ -15,7 +15,9 @@
             <div class="pull-left" style="padding-top: 2px">
                 <img src="../../Images/Logos/saleular_sm.png" height="50" alt="" />
             </div>
-            <div class="pull-left"><h1>Saleular</h1></div>
+            <div class="pull-left">
+                <h1>Saleular</h1>                
+            </div>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="menu2">
             <div id="navbar" class="navbar navbar-default">
@@ -35,35 +37,35 @@
                         <li>@Html.ActionLink("Company Information", "CompanyInfo", "Home")</li>
                         @if (Request.IsAuthenticated)
                         {
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administration</a>
-                                <ul class="dropdown-menu">                                    
-                                    <li>
-                                        @Html.ActionLink("API Documentation", "Index", "Help", routeValues: null, htmlAttributes: new { title = "API Documentation", target = "_blank" })
-                                    </li>
-                                    <li>
-                                        @Html.ActionLink("Manage Account", "Manage", "Account", routeValues: null, htmlAttributes: new { title = "Manage" })
-                                    </li>
-                                    <li>
-                                        @Html.ActionLink("Manage Admins", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })
-                                    </li>
-                                    <li>
-                                        @Html.ActionLink("Manage Gadgets", "Index", "GadgetManagement", routeValues: null, htmlAttributes: new { id = "gadgetLink" })
-                                    </li>
-                                    @*<li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administration</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    @Html.ActionLink("API Documentation", "Index", "Help", routeValues: null, htmlAttributes: new { title = "API Documentation", target = "_blank" })
+                                </li>
+                                <li>
+                                    @Html.ActionLink("Manage Account", "Manage", "Account", routeValues: null, htmlAttributes: new { title = "Manage" })
+                                </li>
+                                <li>
+                                    @Html.ActionLink("Manage Admins", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })
+                                </li>
+                                <li>
+                                    @Html.ActionLink("Manage Gadgets", "Index", "GadgetManagement", routeValues: null, htmlAttributes: new { id = "gadgetLink" })
+                                </li>
+                                @*<li>
                                         @Html.ActionLink("Requests", "Index", "Request", routeValues: null, htmlAttributes: new { id = "requestsLink" })
                                     </li>*@
-                                    <li>
-                                        @Html.ActionLink("Price List Requests", "Index", "PriceListRequests", routeValues: null, htmlAttributes: new { id = "priceListRequestsLink" })
-                                    </li>
-                                    <li>
-                                        @Html.ActionLink("Offer Requests", "Index", "SellPhoneRequests", routeValues: null, htmlAttributes: new { id = "sellPhoneRequestsLink" })
-                                    </li>
-                                    <li>
-                                        @Html.ActionLink("Log Out", "LogOff2", "Account", routeValues: null, htmlAttributes: new { id = "logoffLink" })                                        
-                                    </li>
-                                </ul>
-                            </li>
+                                <li>
+                                    @Html.ActionLink("Price List Requests", "Index", "PriceListRequests", routeValues: null, htmlAttributes: new { id = "priceListRequestsLink" })
+                                </li>
+                                <li>
+                                    @Html.ActionLink("Offer Requests", "Index", "SellPhoneRequests", routeValues: null, htmlAttributes: new { id = "sellPhoneRequestsLink" })
+                                </li>
+                                <li>
+                                    @Html.ActionLink("Log Out", "LogOff2", "Account", routeValues: null, htmlAttributes: new { id = "logoffLink" })
+                                </li>
+                            </ul>
+                        </li>
                         }
                     </ul>
                 </div>

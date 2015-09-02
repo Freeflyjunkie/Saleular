@@ -22,4 +22,6 @@
         root.find('.sub-menu:visible').hide();
     });
 
+    //var player = $("#player");
+    //player.prop("volume", 0.1);    
 });

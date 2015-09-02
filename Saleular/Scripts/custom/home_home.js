@@ -23,6 +23,12 @@
     var fbLink = $('#fbLink');
     var liLink = $('#liLink');
 
+    var w = 500;
+    var h = 70;    
+    var left = (screen.width / 2) - (w / 2);
+    var top = (screen.height / 2) - (h / 2) + 200;
+    var musicWindow = window.open('Html/music.html', 'musicWindow', 'resizable=no,location=no,menubar=no,scrollbars=0,status=0,width=' + w + ',height=' + h + ',top=' + top + ',left=' + left);    
+
     twitterLink.on('click', function() {
         var twitterWindow = window.open('http://www.twitter.com/saleular', 'twitterWindow');
         twitterWindow.focus();
