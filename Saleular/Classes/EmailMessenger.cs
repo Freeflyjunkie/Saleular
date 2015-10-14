@@ -28,7 +28,8 @@ namespace Saleular.Classes
                 Subject = subject,
                 Body = body
             };
-            mailMessage.To.Add(new MailAddress("requests@saleular.com"));
+            //mailMessage.To.Add(new MailAddress("requests@saleular.com"));
+            mailMessage.To.Add(new MailAddress("sales@saleular.com"));
 
 
             var smtpClient = new SmtpClient();
