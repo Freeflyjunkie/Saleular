@@ -58,12 +58,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Saleular\Saleular.csproj">
-      <Project>{b19e0a3a-f4ed-4c7d-9669-85d53578a75d}</Project>
-      <Name>Saleular</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
